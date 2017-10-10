@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\ProjectBuildProperties.targets" />
+  
+  <ItemGroup>
+    <Compile Include="..\TestEntities.cs" Link="TestEntities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0" />
+    <PackageReference Include="NSubstitute" Version="2.0.3" />
+    <PackageReference Include="xunit" Version="2.3.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Niam.XRM.Framework\Niam.XRM.Framework.csproj" />
+	  <ProjectReference Include="..\Niam.XRM.TestFramework\Niam.XRM.TestFramework.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" /> <!-- Test project tag. -->
+  </ItemGroup>
+</Project>
