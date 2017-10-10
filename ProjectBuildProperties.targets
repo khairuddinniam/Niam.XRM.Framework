@@ -10,13 +10,14 @@
     <Version>0.0.2.1</Version>
     <PackageId>$(AssemblyName)</PackageId>
     <Title>$(AssemblyName)</Title>
-    <Description>$(AssemblyName)</Description>
+    <Description>Dynamics 365 Plugin Framework</Description>
     <Company>Khairuddin Ni'am</Company>
     <Authors>Khairuddin Ni'am</Authors>
     <Product>Niam.XRM.Framework</Product>
     <Copyright>2017</Copyright>
+    <PackageLicenseUrl>https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/khairuddinniam/Niam.XRM.Framework</PackageProjectUrl>
     <PackageTags>Dynamics 365</PackageTags>
-    <PackageReleaseNotes>Dynamics 365 Framework</PackageReleaseNotes>
 
     <PackageOutputPath>$(SolutionDir)build\packages</PackageOutputPath>
   </PropertyGroup>

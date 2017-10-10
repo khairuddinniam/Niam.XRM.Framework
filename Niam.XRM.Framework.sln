@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Niam.XRM.Framework", "Niam.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3BAE8014-6EB0-401C-BAD1-869428842625}"
 	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
 		NuGet.config = NuGet.config
 		open-source.snk = open-source.snk
 		ProjectBuildProperties.targets = ProjectBuildProperties.targets
+		README.md = README.md
 		TestEntities.cs = TestEntities.cs
 	EndProjectSection
 EndProject
