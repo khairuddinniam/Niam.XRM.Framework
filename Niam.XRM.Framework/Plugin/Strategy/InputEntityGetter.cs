@@ -20,8 +20,7 @@ namespace Niam.XRM.Framework.Plugin.Strategy
         
         public static InputEntityGetterBase GetHandler(string message)
         {
-            InputEntityGetterBase handler;
-            if (Handlers.TryGetValue(message, out handler))
+            if (Handlers.TryGetValue(message, out var handler))
                 return handler;
 
             throw new InvalidPluginExecutionException($"Message '{message}' doesn't have {nameof(InputEntityGetterBase)} handler.");

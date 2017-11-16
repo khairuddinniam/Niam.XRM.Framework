@@ -2,6 +2,7 @@
 using NSubstitute;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Xrm.Sdk.Query;
 using Niam.XRM.Framework.Data;
 using Niam.XRM.Framework.Interfaces.Plugin;
 using Niam.XRM.Framework.Interfaces.Plugin.Configurations;
@@ -51,19 +52,28 @@ namespace Niam.XRM.TestFramework
                 reference.RelatedEntities.Clear();
                 reference.FormattedValues.Clear();
                 reference.KeyAttributes.Clear();
-
-                var filteredAttributes =
-                    from attr in value.Attributes
-                    join col in _pluginConfig.TransactionContext.ColumnSet.Columns
-                        on attr.Key equals col
-                    select attr;
-                foreach (var attribute in filteredAttributes)
+                
+                foreach (var attribute in GetFilteredAttributes(value))
                     Context.Reference[attribute.Key] = attribute.Value;
 
                 reference.RelatedEntities.AddRange(value.RelatedEntities);
                 reference.FormattedValues.AddRange(value.FormattedValues);
                 reference.KeyAttributes.AddRange(value.KeyAttributes);
             }
+        }
+
+        private IEnumerable<KeyValuePair<string, object>> GetFilteredAttributes(TEntity reference)
+        {
+            ColumnSet columnSet = _pluginConfig.TransactionContext.ColumnSet;
+            if (columnSet.AllColumns) return reference.Attributes;
+
+            var filteredAttributes =
+                from attr in reference.Attributes
+                join col in columnSet.Columns
+                    on attr.Key equals col
+                select attr;
+
+            return filteredAttributes;
         }
 
         private void ExecuteConfigure()

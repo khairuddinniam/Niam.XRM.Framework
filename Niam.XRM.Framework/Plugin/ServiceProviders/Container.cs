@@ -18,7 +18,7 @@ namespace Niam.XRM.Framework.Plugin.ServiceProviders
         {
             if (typeof (IServiceProvider) == serviceType) return this;
 
-            return _registeredObjects.TryGetValue(serviceType, out Func<IContainer, object> serviceFactory)
+            return _registeredObjects.TryGetValue(serviceType, out var serviceFactory)
                 ? serviceFactory(this)
                 : _serviceProvider.GetService(serviceType);
         }

@@ -25,8 +25,7 @@ namespace Niam.XRM.Framework.Plugin.Strategy
 
         ImageEntityGetterBase IImageEntityGetter.GetHandler(int stage)
         {
-            ImageEntityGetterBase handler;
-            if (_handlers.TryGetValue(stage, out handler))
+            if (_handlers.TryGetValue(stage, out var handler))
                 return handler;
 
             throw new InvalidPluginExecutionException($"Stage '{stage}' doesn't have {nameof(ImageEntityGetterBase)} handler.");
