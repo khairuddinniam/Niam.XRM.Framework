@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
@@ -83,6 +84,21 @@ namespace Niam.XRM.Framework
 
         public static void Set<T>(this T entity, Expression<Func<T, Money>> attribute, IValueProvider<decimal> valueProvider)
             where T : Entity => Set(entity, attribute, valueProvider.GetValue());
+
+        public static void Set<T>(this T entity, Expression<Func<T, EntityCollection>> attribute,
+            EntityReference valueRef, params EntityReference[] otherValueRefs)
+            where T : Entity => Set(entity, attribute, new[] { valueRef }.Concat(otherValueRefs));
+
+        public static void Set<T>(this T entity, Expression<Func<T, EntityCollection>> attribute,
+            IEnumerable<EntityReference> valueRefs)
+            where T : Entity
+        {
+            var activityParties = valueRefs
+                .Select(partyRef => new Entity("activityparty") { Attributes = { ["partyid"] = partyRef } })
+                .ToList();
+            var collection = new EntityCollection(activityParties);
+            entity.Set(attribute, collection);
+        }
 
         public static bool Remove<T>(this T entity, Expression<Func<T, object>> attribute)
             where T : Entity => Remove(entity, Name(attribute));

@@ -53,8 +53,7 @@ namespace Niam.XRM.Framework
 
         public static Entity GetImage(this EntityImageCollection images, string key)
         {
-            Entity image;
-            return images.TryGetValue(key, out image) ? image : null;
+            return images.TryGetValue(key, out var image) ? image : null;
         }
 
         public static T ToEntity<T>(this EntityReference reference)

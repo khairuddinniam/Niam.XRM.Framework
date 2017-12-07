@@ -264,6 +264,99 @@ namespace Niam.XRM.Framework.Tests
 
     }
 
+    [EntityName("activityparty")]
+    public class ActivityParty : Entity
+    {
+        public static class Options
+        {
+            public enum InstanceTypeCode
+            {
+                NotRecurring,
+                RecurringMaster,
+                RecurringInstance,
+                RecurringException,
+                RecurringFutureException
+            }
+
+            public enum ParticipationTypeMask
+            {
+                Sender = 1,
+                ToRecipient,
+                CCRecipient,
+                BCCRecipient,
+                RequiredAttendee,
+                OptionalAttendee,
+                Organizer,
+                Regarding,
+                Owner,
+                Resource,
+                Customer
+            }
+        }
+
+        public const string EntityLogicalName = "activityparty";
+
+        public readonly EntityReference OwnerId;
+
+        public readonly Guid? ActivityPartyId;
+
+        public readonly bool? DoNotPostalMail;
+
+        public readonly DateTime? ScheduledEnd;
+
+        public readonly bool? DoNotEmail;
+
+        public readonly string AddressUsed;
+
+        public readonly bool? IsPartyDeleted;
+
+        public readonly bool? DoNotPhone;
+
+        public readonly EntityReference PartyId;
+
+        public readonly Guid? OwningUser;
+
+        public readonly string ExchangeEntryId;
+
+        public readonly bool? DoNotFax;
+
+        public readonly int? AddressUsedEmailColumnNumber;
+
+        public readonly EntityReference ActivityId;
+
+        public readonly OptionSetValue InstanceTypeCode;
+
+        public readonly DateTime? ScheduledStart;
+
+        public readonly int? VersionNumber;
+
+        public readonly Guid? OwningBusinessUnit;
+
+        public readonly double? Effort;
+
+        public readonly EntityReference ResourceSpecId;
+
+        public readonly OptionSetValue ParticipationTypeMask;
+
+        [Column("activitypartyid")]
+        public override Guid Id
+        {
+            get
+            {
+                return base.Id;
+            }
+            set
+            {
+                base.Id = value;
+                base["activitypartyid"] = value;
+            }
+        }
+
+        public ActivityParty() : base("activityparty")
+        {
+        }
+    }
+
     [EntityLogicalName("new_testentity")]
     public class new_testentity : UserOrTeamEntity
     {
@@ -351,6 +444,7 @@ namespace Niam.XRM.Framework.Tests
         public readonly int? xts_otherint = null;
         public readonly string xts_string = null;
         public readonly string xts_otherstring = null;
+        public readonly EntityCollection xts_activityparties = null;
     }
 
     [EntityLogicalName("xts_relatedentity")]

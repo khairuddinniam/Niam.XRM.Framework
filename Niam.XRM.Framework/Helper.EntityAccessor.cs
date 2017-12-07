@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using Microsoft.Xrm.Sdk;
 using Niam.XRM.Framework.Interfaces;
@@ -51,6 +53,21 @@ namespace Niam.XRM.Framework
 
         public static void Set<T>(this IEntitySetter<T> accessor, Expression<Func<T, Money>> attribute, IValueProvider<decimal> valueProvider)
             where T : Entity => Set(accessor, attribute, valueProvider.GetValue());
+
+        public static void Set<T>(this IEntitySetter<T> accessor, Expression<Func<T, EntityCollection>> attribute,
+            EntityReference valueRef, params EntityReference[] otherValueRefs)
+            where T : Entity => Set(accessor, attribute, new[] { valueRef }.Concat(otherValueRefs));
+
+        public static void Set<T>(this IEntitySetter<T> accessor, Expression<Func<T, EntityCollection>> attribute,
+            IEnumerable<EntityReference> valueRefs)
+            where T : Entity
+        {
+            var activityParties = valueRefs
+                .Select(partyRef => new Entity("activityparty") { Attributes = { ["partyid"] = partyRef } })
+                .ToList();
+            var collection = new EntityCollection(activityParties);
+            accessor.Set(attribute, collection);
+        }
 
         public static bool Equal<T, TV>(this IEntityGetter<T> accessor, Expression<Func<T, TV>> attribute, TV comparisonValue)
             where T : Entity => Equal(Get(accessor, attribute), comparisonValue);

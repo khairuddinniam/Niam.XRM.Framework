@@ -431,5 +431,44 @@ namespace Niam.XRM.Framework.Tests
             Assert.Equal(12, Helper.Info<xts_activestatecodetest>().StateCodeActiveValue);
             Assert.Null(Helper.Info<xts_nokeytest>().StateCodeActiveValue);
         }
+
+        [Fact] // Assume ActivityParty
+        public void Can_set_entity_collection_using_single_entity_reference()
+        {
+            var entityReference = new EntityReference("equipment", Guid.NewGuid());
+            var entity = new xts_entity();
+            entity.Set(e => e.xts_activityparties, entityReference);
+
+            var collection = entity.Get(e => e.xts_activityparties);
+            var activityParty = collection.Entities[0].ToEntity<ActivityParty>();
+            Assert.Equal(entityReference, activityParty.Get(e => e.PartyId));
+        }
+
+        [Fact] // Assume ActivityParty
+        public void Can_set_entity_collection_using_params_entity_reference()
+        {
+            var equipmentReference = new EntityReference("equipment", Guid.NewGuid());
+            var leadReference = new EntityReference("lead", Guid.NewGuid());
+            var entity = new xts_entity();
+            entity.Set(e => e.xts_activityparties, equipmentReference, leadReference);
+
+            var collection = entity.Get(e => e.xts_activityparties);
+            Assert.Equal(equipmentReference, collection.Entities[0].ToEntity<ActivityParty>().Get(e => e.PartyId));
+            Assert.Equal(leadReference, collection.Entities[1].ToEntity<ActivityParty>().Get(e => e.PartyId));
+        }
+
+        [Fact] // Assume ActivityParty
+        public void Can_set_entity_collection_using_entity_references()
+        {
+            var equipmentReference = new EntityReference("equipment", Guid.NewGuid());
+            var leadReference = new EntityReference("lead", Guid.NewGuid());
+            var references = new[] { equipmentReference, leadReference };
+            var entity = new xts_entity();
+            entity.Set(e => e.xts_activityparties, references);
+
+            var collection = entity.Get(e => e.xts_activityparties);
+            Assert.Equal(equipmentReference, collection.Entities[0].ToEntity<ActivityParty>().Get(e => e.PartyId));
+            Assert.Equal(leadReference, collection.Entities[1].ToEntity<ActivityParty>().Get(e => e.PartyId));
+        }
     }
 }
