@@ -100,6 +100,27 @@ namespace Niam.XRM.TestFramework.Tests
             Assert.Equal("CustomWrapper", Input.Get(e => e.xts_withcolumnattribute));
         }
 
+        [Fact]
+        public void Can_execute_late_bound_operation()
+        {
+            
+        }
+
+        public class LateBoundOperation : OperationBase
+        {
+            public LateBoundOperation(ITransactionContext<Entity> context) : base(context)
+            {
+            }
+
+            protected override void HandleExecute()
+            {
+                var first = Get<int?>("first");
+                var second = Get<int?>("second");
+                var total = first + second;
+                Set("total", total);
+            }
+        }
+
         public class Operation : OperationBase<xts_entity>
         {
             public Operation(ITransactionContext<xts_entity> context) : base(context)

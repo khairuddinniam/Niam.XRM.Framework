@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Reflection;
 using Microsoft.Xrm.Sdk;
 using Niam.XRM.Framework.Interfaces;
 using Niam.XRM.Framework.Interfaces.Plugin;
@@ -7,25 +9,10 @@ using AttributeCollection = Microsoft.Xrm.Sdk.AttributeCollection;
 
 namespace Niam.XRM.Framework.Plugin
 {
-    public class TransactionContextEntity<T> : EntityAccessorWrapper<T>, ITransactionContextEntity<T>, IDisposable
+    public class TransactionContextEntity<T> : EntityAccessorWrapper<T>, ITransactionContextEntity<T>
         where T : Entity
     {
-        private readonly Lazy<bool> _isEarlyBound;
-        private EventHandlerList _eventHandlers = new EventHandlerList();
-        
-        public EventHandlerList EventHandlers
-        {
-            get => _eventHandlers;
-            set
-            {
-                _eventHandlers = value;
-                if (_isEarlyBound.Value)
-                {
-                    ((INotifyPropertyChanging) Entity).PropertyChanging += GetAttributeChangingEventHandler();
-                    ((INotifyPropertyChanged) Entity).PropertyChanged += GetAttributeChangedEventHandler();
-                }
-            }
-        }
+        private IEntityInfo EntityInfo { get; } = Helper.Info<T>();
 
         public Guid Id
         {
@@ -45,63 +32,15 @@ namespace Niam.XRM.Framework.Plugin
             set => Entity.Attributes = value;
         }
 
-        public virtual event PropertyChangingEventHandler AttributeChanging
-        {
-            add
-            {
-                EventHandlers.AddHandler(TxContextEntity.AttributeChangingEventKey, value);
-                if (_isEarlyBound.Value)
-                    ((INotifyPropertyChanging) Entity).PropertyChanging += value;
-            }
+        public event AttributeChangingEventHandler AttributeChanging;
 
-            remove
-            {
-                EventHandlers.RemoveHandler(TxContextEntity.AttributeChangingEventKey, value);
-                if (_isEarlyBound.Value)
-                    ((INotifyPropertyChanging) Entity).PropertyChanging -= value;
-            }
-        }
+        public event AttributeChangedEventHandler AttributeChanged;
 
-        public virtual event PropertyChangedEventHandler AttributeChanged
-        {
-            add
-            {
-                EventHandlers.AddHandler(TxContextEntity.AttributeChangedEventKey, value);
-                if (_isEarlyBound.Value)
-                    ((INotifyPropertyChanged) Entity).PropertyChanged += value;
-            }
-
-            remove
-            {
-                EventHandlers.RemoveHandler(TxContextEntity.AttributeChangedEventKey, value);
-                if (_isEarlyBound.Value)
-                    ((INotifyPropertyChanged) Entity).PropertyChanged -= value;
-            }
-        }
-        
         public object this[string attributeName]
         {
             get => Get<object>(attributeName);
             set => Set(attributeName, value);
         }
-
-        private void OnAttributeChanging(string attributeName)
-        {
-            var handler = GetAttributeChangingEventHandler();
-            handler?.Invoke(Entity, new PropertyChangingEventArgs(attributeName));
-        }
-
-        protected PropertyChangingEventHandler GetAttributeChangingEventHandler() =>
-            (PropertyChangingEventHandler)EventHandlers[TxContextEntity.AttributeChangingEventKey];
-
-        private void OnAttributeChanged(string attributeName)
-        {
-            var handler = GetAttributeChangedEventHandler();
-            handler?.Invoke(Entity, new PropertyChangedEventArgs(attributeName));
-        }
-
-        protected PropertyChangedEventHandler GetAttributeChangedEventHandler() =>
-            (PropertyChangedEventHandler)EventHandlers[TxContextEntity.AttributeChangedEventKey];
         
         public TransactionContextEntity(T entity)
             : this(new EntityAccessor<T>(entity))
@@ -111,19 +50,36 @@ namespace Niam.XRM.Framework.Plugin
         public TransactionContextEntity(IEntityAccessor<T> accessor)
             : base(accessor)
         {
-            _isEarlyBound = new Lazy<bool>(() => Entity.IsEarlyBoundEntity());
+            if (EntityInfo.IsCrmSvcUtilGenerated)
+            {
+                ((INotifyPropertyChanging) Entity).PropertyChanging += (sender, e) =>
+                {
+                    var attributeName = Helper.Info<T>().GetAttributeName(e.PropertyName);
+                    AttributeChanging?.Invoke(sender, new AttributeChangingEventArgs(attributeName, e.PropertyName));
+                };
+
+                ((INotifyPropertyChanged) Entity).PropertyChanged += (sender, e) =>
+                {
+                    var attributeName = Helper.Info<T>().GetAttributeName(e.PropertyName);
+                    AttributeChanged?.Invoke(sender, new AttributeChangedEventArgs(attributeName, e.PropertyName));
+                };
+            }
+        }
+
+        public override void Set(MemberInfo memberInfo, object value)
+        {
+            if (EntityInfo.IsCrmSvcUtilGenerated)
+                base.Set(memberInfo, value);
+            else
+                Set(EntityInfo.GetAttributeName(memberInfo.Name), value);
+            
         }
 
         public override void Set(string attributeName, object value)
         {
-            OnAttributeChanging(attributeName);
+            AttributeChanging?.Invoke(Entity, new AttributeChangingEventArgs<T>(attributeName));
             base.Set(attributeName, value);
-            OnAttributeChanged(attributeName);
-        }
-        
-        public void Dispose()
-        {
-            _eventHandlers?.Dispose();
+            AttributeChanged?.Invoke(Entity, new AttributeChangedEventArgs<T>(attributeName));
         }
     }
 }

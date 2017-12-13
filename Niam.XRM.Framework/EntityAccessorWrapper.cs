@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using Microsoft.Xrm.Sdk;
 using Niam.XRM.Framework.Interfaces;
 
@@ -21,6 +22,9 @@ namespace Niam.XRM.Framework
 
         public virtual string GetFormattedValue(string attributeName) 
             => _accessor.GetFormattedValue(attributeName);
+
+        public virtual void Set(MemberInfo memberInfo, object value)
+            => _accessor.Set(memberInfo, value);
 
         public virtual void Set(string attributeName, object value) 
             => _accessor.Set(attributeName, value);

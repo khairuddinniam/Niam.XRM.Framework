@@ -14,9 +14,9 @@ namespace Niam.XRM.Framework.Plugin.Actions
             input.AttributeChanged += (entity, e) =>
             {
                 var source = (Entity) entity;
-                reference[e.PropertyName] = source[e.PropertyName];
-                var sourceFormattedValue = source.GetFormattedValue(e.PropertyName);
-                reference.SetFormattedValue(e.PropertyName, sourceFormattedValue);
+                reference[e.AttributeName] = source[e.AttributeName];
+                var sourceFormattedValue = source.GetFormattedValue(e.AttributeName);
+                reference.SetFormattedValue(e.AttributeName, sourceFormattedValue);
             };
         }
     }

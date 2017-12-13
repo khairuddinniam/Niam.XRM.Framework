@@ -86,8 +86,6 @@ namespace Niam.XRM.Framework.Plugin
 
         public void Dispose()
         {
-            _input?.Dispose();
-            _reference?.Dispose();
         }
     }
 }

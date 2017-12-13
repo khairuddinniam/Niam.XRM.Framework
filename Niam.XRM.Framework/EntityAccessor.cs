@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using Microsoft.Xrm.Sdk;
 using Niam.XRM.Framework.Interfaces;
 
@@ -20,7 +21,10 @@ namespace Niam.XRM.Framework
         public virtual string GetFormattedValue(string attributeName)
             => Entity.GetFormattedValue(attributeName);
 
-        public virtual void Set(string attributeName, object value) 
+        public virtual void Set(MemberInfo memberInfo, object value)
+            => Entity.Set(memberInfo, value);
+
+        public virtual void Set(string attributeName, object value)
             => Entity.Set(attributeName, value);
 
         public virtual void Set(string attributeName, IAttributeValueProvider attributeValueProvider)

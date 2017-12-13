@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,22 +27,44 @@ namespace Niam.XRM.Framework
 
             static EntityCache()
             {
-                var attributes = new Dictionary<string, string>();
+                var dataMap = new Dictionary<string, string>();
+                var propertyMap = new Dictionary<string, PropertyInfo>();
                 const BindingFlags bindingFlags = BindingFlags.Public | BindingFlags.Instance;
-                var memberInfos = typeof(T).GetMembers(bindingFlags).ToArray();
-                foreach (var mi in memberInfos)
-                    attributes[mi.Name] = GetAttributeName(mi);
+                var memberInfos = typeof(T).GetMembers(bindingFlags)
+                    .Where(mi => mi.MemberType == MemberTypes.Field || mi.MemberType == MemberTypes.Property)
+                    .ToArray();
 
-                var info = new EntityInfo
+                foreach (var mi in memberInfos)
                 {
-                    LogicalName = GetEntityLogicalName(),
-                    Attributes = attributes,
-                    PrimaryNameAttribute = GetPrimaryNameAttribute(memberInfos, attributes),
-                    StateCodeActiveValue = GetStateCodeActiveValue(memberInfos, attributes)
-                };
+                    var memberName = mi.Name;
+                    var attributeName = GetAttributeName(mi);
+                    dataMap[memberName] = attributeName;
+                    dataMap[attributeName] = memberName;
+
+                    if (mi.MemberType == MemberTypes.Property)
+                        propertyMap[memberName] = (PropertyInfo) mi;
+                }
+                
+                var info = typeof(T) == typeof(Entity)
+                    ? new EntityInfo { LogicalName = "CRM_SDK_ENTITY" } 
+                    : new EntityInfo
+                    {
+                        IsCrmSvcUtilGenerated = GetIsCrmSvcUtilGenerated(),
+                        LogicalName = GetEntityLogicalName(),
+                        DataMap = dataMap,
+                        Properties = propertyMap,
+                        PrimaryNameAttribute = GetPrimaryNameAttribute(memberInfos, dataMap),
+                        StateCodeActiveValue = GetStateCodeActiveValue(memberInfos, dataMap)
+                    };
 
                 EntityCache.Infos.TryAdd(info.LogicalName, info);
                 Info = info;
+            }
+
+            private static bool GetIsCrmSvcUtilGenerated()
+            {
+                var attribute = typeof(T).GetCustomAttribute<GeneratedCodeAttribute>();
+                return attribute?.Tool == "CrmSvcUtil";
             }
 
             private static string GetEntityLogicalName()
@@ -55,23 +78,26 @@ namespace Niam.XRM.Framework
 
             private static string GetAttributeName(MemberInfo mi)
             {
+                var logicalNameAttribute = mi.GetCustomAttribute<AttributeLogicalNameAttribute>();
+                if (logicalNameAttribute != null)
+                    return logicalNameAttribute.LogicalName;
+
                 var columnAttribute = mi.GetCustomAttribute<ColumnAttribute>();
                 var attributeName = columnAttribute != null ? columnAttribute.Name : mi.Name.ToLower();
                 return attributeName;
             }
 
-            private static string GetPrimaryNameAttribute(IEnumerable<MemberInfo> memberInfos, IDictionary<string, string> attributes)
+            private static string GetPrimaryNameAttribute(IEnumerable<MemberInfo> memberInfos, IDictionary<string, string> dataMap)
             {
                 var keyMemberInfo = memberInfos.FirstOrDefault(mi => mi.GetCustomAttribute<KeyAttribute>() != null);
-                return keyMemberInfo != null ? attributes[keyMemberInfo.Name] : null;
+                return keyMemberInfo != null ? dataMap[keyMemberInfo.Name] : null;
             }
 
-            private static int? GetStateCodeActiveValue(IEnumerable<MemberInfo> memberInfos, IDictionary<string, string> attributes)
+            private static int? GetStateCodeActiveValue(IEnumerable<MemberInfo> memberInfos, IDictionary<string, string> dataMap)
             {
-                var stateCodeAttribute = attributes.FirstOrDefault(p => p.Value == "statecode");
-                if (stateCodeAttribute.Key == null) return null;
+                if (!dataMap.TryGetValue("statecode", out var stateCodeMemberName)) return null;
 
-                var memberInfo = memberInfos.First(mi => mi.Name == stateCodeAttribute.Key);
+                var memberInfo = memberInfos.First(mi => mi.Name == stateCodeMemberName);
                 var descAttributes = memberInfo.GetCustomAttributes<DescriptionAttribute>().ToArray();
                 if (!descAttributes.Any()) return null;
 

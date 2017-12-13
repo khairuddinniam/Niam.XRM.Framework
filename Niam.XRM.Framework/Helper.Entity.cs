@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using Microsoft.Xrm.Sdk;
 using Niam.XRM.Framework.Interfaces;
 
@@ -45,23 +45,8 @@ namespace Niam.XRM.Framework
             where T : Entity
             => SetFormattedValue(entity, Name(attribute), formattedValue);
 
-        public static void Set(this Entity entity, string attributeName, object value)
-        {
-            entity[attributeName] = value;
-
-            var isPrimaryField = (entity.LogicalName + "id") == attributeName;
-            if (isPrimaryField)
-                entity.Id = (Guid) value;
-        }
-
-        public static void Set<T>(this T entity, string attributeName, IAttributeValueProvider attributeValueProvider)
-            where T : Entity => Set(entity, attributeName, attributeValueProvider.GetValueFor(attributeName));
-
         public static void Set<T, TV>(this T entity, Expression<Func<T, TV>> attribute, IAttributeValueProvider<T, TV> attributeValueProvider)
             where T : Entity => Set(entity, attribute, attributeValueProvider.GetValueFor(attribute));
-
-        public static void Set<T>(this T entity, string attributeName, IValueProvider valueProvider)
-            where T : Entity => Set(entity, attributeName, valueProvider.GetValue());
 
         public static void Set<T, TV>(this T entity, Expression<Func<T, TV>> attribute, IValueProvider<TV> valueProvider)
             where T : Entity => Set(entity, attribute, valueProvider.GetValue());
@@ -71,7 +56,7 @@ namespace Niam.XRM.Framework
             where TV : struct => Set(entity, attribute, valueProvider.GetValue());
 
         public static void Set<T, TV>(this T entity, Expression<Func<T, TV>> attribute, TV value)
-            where T : Entity => Set(entity, Name(attribute), value);
+            where T : Entity => Set(entity, GetMemberInfo(attribute), value);
 
         public static void Set<T>(this T entity, Expression<Func<T, OptionSetValue>> attribute, Enum value)
             where T : Entity => Set(entity, attribute, value.ToOptionSetValue());
@@ -99,6 +84,37 @@ namespace Niam.XRM.Framework
             var collection = new EntityCollection(activityParties);
             entity.Set(attribute, collection);
         }
+
+        public static void Set<T>(this T entity, MemberInfo memberInfo, object value)
+            where T : Entity
+        {
+            var info = Info<T>();
+            if (info.IsCrmSvcUtilGenerated)
+            {
+                info.GetPropertyInfo(memberInfo.Name).SetValue(entity, value);
+            }
+            else
+            {
+                var attributeName = info.GetAttributeName(memberInfo.Name);
+                Set(entity, attributeName, value);
+            }
+        }
+
+        public static void Set<T>(this T entity, string attributeName, object value)
+            where T : Entity
+        {
+            entity[attributeName] = value;
+
+            var isPrimaryField = (entity.LogicalName + "id") == attributeName;
+            if (isPrimaryField)
+                entity.Id = (Guid) value;
+        }
+
+        public static void Set<T>(this T entity, string attributeName, IAttributeValueProvider attributeValueProvider)
+            where T : Entity => Set(entity, attributeName, attributeValueProvider.GetValueFor(attributeName));
+
+        public static void Set<T>(this T entity, string attributeName, IValueProvider valueProvider)
+            where T : Entity => Set(entity, attributeName, valueProvider.GetValue());
 
         public static bool Remove<T>(this T entity, Expression<Func<T, object>> attribute)
             where T : Entity => Remove(entity, Name(attribute));
@@ -137,7 +153,7 @@ namespace Niam.XRM.Framework
             where T : Entity
         {
             var memberInfo = GetMemberInfo(attribute);
-            return Info<T>().Attributes[memberInfo.Name];
+            return Info<T>().GetAttributeName(memberInfo.Name);
         }
 
         // Get entity primary name attribute.
@@ -163,8 +179,5 @@ namespace Niam.XRM.Framework
 
         public static bool ContainsAny<T>(this T entity, string attribute, params string[] otherAttributes) 
             where T : Entity => entity.Contains(attribute) || otherAttributes.Any(entity.Contains);
-
-        public static bool IsEarlyBoundEntity<T>(this T entity)
-            where T : Entity => entity is INotifyPropertyChanging && entity is INotifyPropertyChanged;
     }
 }

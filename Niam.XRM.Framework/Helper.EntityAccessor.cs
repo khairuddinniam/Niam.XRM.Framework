@@ -40,7 +40,7 @@ namespace Niam.XRM.Framework
             where TV : struct => accessor.Set(Name(attribute), valueProvider.GetValue());
 
         public static void Set<T, TV>(this IEntitySetter<T> accessor, Expression<Func<T, TV>> attribute, TV value)
-            where T : Entity => accessor.Set(Name(attribute), value);
+            where T : Entity => accessor.Set(GetMemberInfo(attribute), value);
 
         public static void Set<T>(this IEntitySetter<T> accessor, Expression<Func<T, OptionSetValue>> attribute, Enum value)
             where T : Entity => Set(accessor, attribute, value.ToOptionSetValue());

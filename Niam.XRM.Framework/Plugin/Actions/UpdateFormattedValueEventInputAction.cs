@@ -14,18 +14,18 @@ namespace Niam.XRM.Framework.Plugin.Actions
             context.Input.AttributeChanged += UpdateFormattedValue;
         }
 
-        private static void RemoveFormattedValue(object entity, PropertyChangingEventArgs e)
+        private static void RemoveFormattedValue(object entity, AttributeChangingEventArgs e)
         {
             var source = (Entity) entity;
-            source.FormattedValues.Remove(e.PropertyName);
+            source.FormattedValues.Remove(e.AttributeName);
         }
 
-        private static void UpdateFormattedValue(object entity, PropertyChangedEventArgs e)
+        private static void UpdateFormattedValue(object entity, AttributeChangedEventArgs e)
         {
             var source = (Entity) entity;
-            var value = source[e.PropertyName];
+            var value = source[e.AttributeName];
             if (value is EntityReference reference && reference.Name != null)
-                source.FormattedValues[e.PropertyName] = reference.Name;
+                source.FormattedValues[e.AttributeName] = reference.Name;
         }
     }
 }

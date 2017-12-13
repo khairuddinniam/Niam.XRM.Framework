@@ -2,6 +2,7 @@
   <Import Project="..\ProjectBuildProperties.targets" />
   
   <ItemGroup>
+    <Compile Include="..\DefaultOrganizationCrmSdkTypes.cs" Link="DefaultOrganizationCrmSdkTypes.cs" />
     <Compile Include="..\TestEntities.cs" Link="TestEntities.cs" />
   </ItemGroup>
   <ItemGroup>

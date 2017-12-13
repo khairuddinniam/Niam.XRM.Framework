@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
 using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Client;
 using NSubstitute;
 using Niam.XRM.Framework.Interfaces;
 using Xunit;
@@ -31,7 +31,7 @@ namespace Niam.XRM.Framework.Tests
         }
 
         [Fact]
-        public void Can_get_attribute_name()
+        public void Can_get_attribute_name_from_custom_entity()
         {
             var entity = new xts_entity();
             Assert.Equal("xts_entityid", Helper.Name<xts_entity>(e => e.Id));
@@ -40,6 +40,25 @@ namespace Niam.XRM.Framework.Tests
             Assert.Equal("xts_column", entity.Name(e => e.xts_withcolumnattribute));
             Assert.Equal("attributewithcasechar", Helper.Name<xts_entity>(e => e.AttributeWithCaseChar));
             Assert.Equal("attributewithcasechar", entity.Name(e => e.AttributeWithCaseChar));
+        }
+
+        [Fact]
+        public void Can_get_attribute_name_from_crmsvcutil_generated()
+        {
+            var account = new MsGenerated.Account();
+            Assert.Equal("accountid", Helper.Name<MsGenerated.Account>(e => e.Id));
+            Assert.Equal("accountid", account.Name(e => e.Id));
+        }
+
+        [Fact]
+        public void Can_get_info_for_entity_type()
+        {
+            Assert.False(Helper.Info<Entity>().IsCrmSvcUtilGenerated);
+            Assert.Equal("CRM_SDK_ENTITY", Helper.Info<Entity>().LogicalName);
+            Assert.Null(Helper.Info<Entity>().PrimaryNameAttribute);
+            Assert.Null(Helper.Info<Entity>().StateCodeActiveValue);
+            Assert.Null(Helper.Info<Entity>().GetAttributeName("hello"));
+            Assert.Null(Helper.Info<Entity>().GetMemberName("world"));
         }
 
         [Fact]
@@ -386,18 +405,36 @@ namespace Niam.XRM.Framework.Tests
         }
         
         [Fact]
-        public void Can_check_early_bound_entity_or_not()
+        public void Can_check_whether_entity_is_crmsvcutil_generated_or_not()
         {
-            var notEarlyBound = new xts_entity();
-            Assert.False(notEarlyBound.IsEarlyBoundEntity());
-            var earlyBound = new EarlyBoundEntity();
-            Assert.True((bool) earlyBound.IsEarlyBoundEntity());
+            Assert.False(Helper.Info<xts_entity>().IsCrmSvcUtilGenerated);
+            Assert.True(Helper.Info<CrmSvcUtilGeneratedEntity>().IsCrmSvcUtilGenerated);
         }
 
-        private class EarlyBoundEntity : Entity, INotifyPropertyChanging, INotifyPropertyChanged
+        [Fact]
+        public void MsGenerated_set_through_property()
         {
-            public event PropertyChangingEventHandler PropertyChanging;
-            public event PropertyChangedEventHandler PropertyChanged;
+            var entity = new CrmSvcUtilGeneratedEntity();
+            entity.Set(e => e.AttributeThroughProperty, new OptionSetValue(1));
+            Assert.True(entity.SetThroughProperty);
+        }
+
+        [EntityLogicalName("CrmSvcUtilGeneratedEntity")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.1.0.239")]
+        private class CrmSvcUtilGeneratedEntity : Entity
+        {
+            public bool SetThroughProperty { get; private set; }
+
+            [AttributeLogicalNameAttribute("attributethroughproperty")]
+            public OptionSetValue AttributeThroughProperty
+            {
+                get => GetAttributeValue<OptionSetValue>("attributethroughproperty");
+                set
+                {
+                    SetAttributeValue("attributethroughproperty", value);
+                    SetThroughProperty = true;
+                }
+            }
         }
 
         [Fact]
