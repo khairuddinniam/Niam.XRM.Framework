@@ -28,6 +28,7 @@ namespace Niam.XRM.Framework.Tests
             Assert.False(nullOptionSet.Equal(TestEnum.One));
             Assert.True(new OptionSetValue(1).Equal(TestEnum.One));
             Assert.True(new OptionSetValue(2).Equal(TestEnum.Two));
+            Assert.True(new OptionSetValue(3).Equal(3));
             TestEnum? nullEnum = null;
             Assert.True(nullOptionSet.Equal(nullEnum));
             Assert.False(new OptionSetValue(1).Equal(nullEnum));
@@ -41,6 +42,9 @@ namespace Niam.XRM.Framework.Tests
             Assert.False(optionSet.EqualsAny(TestEnum.One));
             Assert.True(optionSet.EqualsAny(TestEnum.Two));
             Assert.True(optionSet.EqualsAny(TestEnum.One, TestEnum.Two));
+            Assert.False(optionSet.EqualsAny(1));
+            Assert.True(optionSet.EqualsAny(2));
+            Assert.True(optionSet.EqualsAny(1, 2));
 
             optionSet = new OptionSetValue(3);
             Assert.False(optionSet.EqualsAny(TestEnum.One, TestEnum.Two));

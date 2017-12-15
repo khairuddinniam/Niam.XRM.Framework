@@ -12,5 +12,12 @@ namespace Niam.XRM.Framework
 
             return ancestor;
         }
+
+        public static T GetShared<T>(this IPluginExecutionContext context, string key)
+        {
+            return context.SharedVariables.TryGetValue(key, out var value)
+                ? (T) value
+                : default (T);
+        }
     }
 }

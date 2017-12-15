@@ -26,6 +26,8 @@ namespace Niam.XRM.Framework.Plugin
         where TE : Entity
         where TW : EntityWrapper<TE>
     {
+        protected TE Input => Context.Input.Entity;
+
         protected OperationBase(ITransactionContext<TE> context) : base(context)
         {
         }

@@ -25,5 +25,16 @@ namespace Niam.XRM.Framework.Tests
             context.ParentContext.Returns(parentContext);
             Assert.Same(grandParentContext, context.GetAncestor());
         }
+
+        [Fact]
+        public void Can_get_shared()
+        {
+            var context = Substitute.For<IPluginExecutionContext>();
+            context.SharedVariables.Returns(new ParameterCollection());
+
+            Assert.Null(context.GetShared<string>("hello"));
+            context.SharedVariables["hello"] = "world";
+            Assert.Equal("world", context.GetShared<string>("hello"));
+        }
     }
 }

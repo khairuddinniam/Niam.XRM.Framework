@@ -11,5 +11,6 @@ namespace Niam.XRM.Framework.Interfaces.Plugin.Configurations
         IContainer Container { get; }
         IList<Func<IOrganizationService, IServiceProvider, IOrganizationService>> ServiceDecorators { get; }
         ITransactionContextConfiguration<T> TransactionContext { get; }
+        bool EnableLogging { get; }
     }
 }

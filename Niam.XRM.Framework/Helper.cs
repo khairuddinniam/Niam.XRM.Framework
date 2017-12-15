@@ -75,6 +75,14 @@ namespace Niam.XRM.Framework
             return options.Any(opt => Equal(value, opt));
         }
 
+        public static bool Equal(OptionSetValue value, int option) => Equal(value, new OptionSetValue(option));
+
+        public static bool EqualsAny(OptionSetValue value, int firstOption, params int[] otherOptions)
+        {
+            var options = new[] { firstOption }.Concat(otherOptions);
+            return options.Any(opt => Equal(value, opt));
+        }
+
         public static IEnumerable<TResult> FullOuterJoin<TA, TB, TKey, TResult>(
             this IEnumerable<TA> a,
             IEnumerable<TB> b,
@@ -125,7 +133,7 @@ namespace Niam.XRM.Framework
 
         public static T GetOrAdd<T>(this IDictionary<string, object> storage, string key, Func<T> valueFactory)
         {
-            if (storage.TryGetValue(key, out object existingValue))
+            if (storage.TryGetValue(key, out var existingValue))
                 return (T) existingValue;
 
             var value = valueFactory();

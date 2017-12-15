@@ -32,7 +32,7 @@ namespace Niam.XRM.Framework.Plugin.ServiceProviders
 
         public void Register<TRegisterType>(Func<IContainer, TRegisterType> instanceFactory)
             where TRegisterType : class =>
-                Register(typeof (TRegisterType), instanceFactory);
+            Register(typeof (TRegisterType), instanceFactory);
 
         public void Register(Type registerType, Func<IContainer, object> instanceFactory) =>
             _registeredObjects[registerType] = instanceFactory;

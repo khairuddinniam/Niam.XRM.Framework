@@ -12,7 +12,12 @@ namespace Niam.XRM.Framework
 
         public static bool Equal(this OptionSetValue value, Enum option) => Helper.Equal(value, option);
 
+        public static bool Equal(this OptionSetValue value, int option) => Helper.Equal(value, option);
+
         public static bool EqualsAny(this OptionSetValue value, Enum firstOption, params Enum[] otherOptions)
+            => Helper.EqualsAny(value, firstOption, otherOptions);
+
+        public static bool EqualsAny(this OptionSetValue value, int firstOption, params int[] otherOptions)
             => Helper.EqualsAny(value, firstOption, otherOptions);
     }
 }
