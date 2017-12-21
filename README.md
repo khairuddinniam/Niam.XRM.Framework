@@ -2,24 +2,31 @@
 Fast, easy and lightweight Microsoft Dynamics CRM Plugin Framework that support premise and online edition. One framework to rule them all.
 
 ## Supported Version
+
 - Microsoft Dynamic CRM 2015
 - Microsoft Dynamic CRM 2016
 - Microsoft Dynamic CRM 365
 
 ## Installation
+
 Using nuget package manager:
+
 ```
 PM> Install-Package Niam.XRM.Framework
 ```
-Please see the [Niam.Xrm.Framework nuget packages](https://www.nuget.org/packages/Niam.XRM.Framework) to see the version of supported [Microsoft.Crm.Sdk.CoreAssemblies](https://www.nuget.org/packages/Microsoft.CrmSdk.CoreAssemblies). This framework will follow the versioning of Crm.Sdk.
+
+Please see the [Niam.Xrm.Framework nuget packages](https://www.nuget.org/packages/Niam.XRM.Framework) to see the version of supported [Microsoft.Crm.Sdk.CoreAssemblies](https://www.nuget.org/packages/Microsoft.CrmSdk.CoreAssemblies). This framework version number will follow the version number of Microsoft.Crm.Sdk.CoreAssemblies.
 
 ## Getting Started
+
 This framework support late bound and early bound entities. For creating plugin we define into 3 parts:
+
 1. ColumnSetConfig Class
-2. Operation Class (Business related)
-3. Plugin Class
+1. Operation Class (Business related)
+1. Plugin Class
 
 ### ColumnSetConfig Class
+
 Configuration for entity target ColumnSet (On Update and Delete Operation).
 
 ``` csharp
@@ -45,6 +52,7 @@ namespace XrmTutorial
 ```
 
 ### Operation Class
+
 Operation / Business class for your plugin.
 
 ``` csharp
@@ -82,6 +90,7 @@ namespace XrmTutorial
 ```
 
 ### Plugin Class
+
 Plugin class for calling the ColumnSetConfig and Operation.
 
 ``` csharp
