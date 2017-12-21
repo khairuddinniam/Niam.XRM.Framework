@@ -55,6 +55,8 @@ namespace XrmTutorial
 
 Operation / Business class for your plugin.
 
+#### Late Bound Example
+
 ``` csharp
 using System;
 using Microsoft.Xrm.Sdk;
@@ -84,6 +86,43 @@ namespace XrmTutorial
             if (parentRef == null) return "";
             var parent = Service.Retrieve("new_entity1", parentRef.Id, new ColumnSet("new_name"));
             return parent.GetAttributeValue<string>("new_name");
+        }
+    }
+}
+```
+
+#### Early Bound Example
+
+``` csharp
+using System;
+using Microsoft.Xrm.Sdk;
+using Niam.XRM.Framework;
+using Niam.XRM.Framework.Data;
+using Niam.XRM.Framework.Interfaces.Plugin;
+using Niam.XRM.Framework.Plugin;
+
+namespace XrmTutorial
+{
+    public class SetDefaultValueEarlyBound : OperationBase<Entities.new_entity1>
+    {
+        public SetDefaultValueEarlyBound(ITransactionContext<Entities.new_entity1> context) : base(context)
+        {
+        }
+
+        protected override void HandleExecute()
+        {
+            var parentName = GetParentName();
+            Set(e=>e.new_name, parentName + Wrapper.Id);
+            Set(e=>e.new_transactiondate, DateTime.UtcNow);
+            Set(e => e.new_amount, new Money(1000m));
+        }
+
+        private string GetParentName()
+        {
+            var columnSet = new ColumnSet<Entities.new_entity1>(e => e.new_name);
+            var result = Wrapper.GetRelated(e => e.new_parentid, columnSet);
+
+            return result != null ? result.Get(e => e.new_name) : "";
         }
     }
 }
