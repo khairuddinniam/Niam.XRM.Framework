@@ -277,6 +277,12 @@ namespace Niam.XRM.Framework.Tests
             entity.Set(e => e.xts_optionsetvalue, 12);
 
             Assert.Equal(12, entity.Get(e => e.xts_optionsetvalue).Value);
+
+            entity.Set(e => e.xts_optionsetvalue, (int?) 15);
+            Assert.Equal(15, entity.Get(e => e.xts_optionsetvalue).Value);
+
+            entity.Set(e => e.xts_optionsetvalue, (int?) null);
+            Assert.Null(entity.Get(e => e.xts_optionsetvalue));
         }
 
         private enum TestOptions
@@ -453,6 +459,10 @@ namespace Niam.XRM.Framework.Tests
             entity.Set(e => e.xts_decimal, 2300m);
             Assert.Equal(2300m, entity.GetValue(e => e.xts_decimal));
             Assert.Equal(2300m, entity.GetValue(e => e.xts_decimal, 4000m));
+
+            int? optionValue = entity.GetValue(e => e.xts_optionsetvalue);
+            Assert.Null(optionValue);
+            Assert.Equal(123, entity.GetValue(e => e.xts_optionsetvalue, 123));
         }
 
         [Fact]
