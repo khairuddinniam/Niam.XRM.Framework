@@ -145,11 +145,11 @@ namespace Niam.XRM.Framework
         /// <summary>
         /// Deserialize json string to an instance of type T using DataContractJsonSerializer.
         /// </summary>
-        public static string ToJson<T>(this T obj)
+        public static string ToJson<T>(this T obj, DataContractJsonSerializerSettings settings = null)
         {
             using (var stream = new MemoryStream())
             {
-                var serializer = new DataContractJsonSerializer(typeof(T));
+                var serializer = new DataContractJsonSerializer(typeof(T), settings);
                 serializer.WriteObject(stream, obj);
                 return Encoding.UTF8.GetString(stream.ToArray());
             }
