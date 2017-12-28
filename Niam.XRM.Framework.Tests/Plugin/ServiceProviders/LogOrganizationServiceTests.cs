@@ -8,6 +8,7 @@ using NSubstitute;
 using NSubstitute.Core;
 using Xunit;
 using Xunit.Abstractions;
+using System.ServiceModel;
 
 namespace Niam.XRM.Framework.Tests.Plugin.ServiceProviders
 {
@@ -261,6 +262,84 @@ namespace Niam.XRM.Framework.Tests.Plugin.ServiceProviders
             Assert.NotNull(_logParts[2]);
             Assert.Equal("Response: -", _logParts[3]);
             Assert.StartsWith("OrganizationService.Disassociate [", _logParts[4]);
+        }
+        
+        [Theory]
+        [MemberData(nameof(GetExceptionTestData))]
+        public void Can_log_exception_on_create(Exception ex)
+        {
+            _service.Create(Arg.Any<Entity>()).Returns(ci => throw ex);
+
+            var entity = new Entity("account")
+            {
+                ["new_string"] = "hello world",
+                ["new_number"] = 1234,
+                ["new_optionset"] = new OptionSetValue(1),
+                ["new_lookupid"] = new EntityReference("contact", Guid.NewGuid())
+            };
+
+            Assert.ThrowsAny<Exception>(() => _logService.Create(entity));
+
+            Assert.Contains(_logParts, l => l == "The application terminated with an error.");
+        }
+
+        [Theory]
+        [MemberData(nameof(GetExceptionTestData))]
+        public void Can_log_exception_on_update(Exception ex)
+        {
+            _service.When(s => s.Update(Arg.Any<Entity>())).Do(ci => throw ex);
+
+            var entity = new Entity("account")
+            {
+                Id = Guid.NewGuid(),
+                ["new_string"] = "hello world",
+                ["new_number"] = 1234,
+                ["new_optionset"] = new OptionSetValue(1),
+                ["new_lookupid"] = new EntityReference("contact", Guid.NewGuid())
+            };
+
+            Assert.ThrowsAny<Exception>(() => _logService.Update(entity));
+
+            Assert.Contains(_logParts, l => l == "The application terminated with an error.");
+        }
+
+        [Theory]
+        [MemberData(nameof(GetExceptionTestData))]
+        public void Can_log_exception_on_retrieve(Exception ex)
+        {
+            _service.Retrieve(Arg.Any<string>(), Arg.Any<Guid>(), Arg.Any<ColumnSet>()).Returns(ci => throw ex);
+
+            var id = Guid.NewGuid();
+            var columnSet = new ColumnSet("new_string", "new_number", "new_optionset", "new_lookupid");
+            Assert.ThrowsAny<Exception>(() => _logService.Retrieve("account", id, columnSet));
+
+            Assert.Contains(_logParts, l => l == "The application terminated with an error.");
+        }
+
+        [Theory]
+        [MemberData(nameof(GetExceptionTestData))]
+        public void Can_log_exception_on_delete(Exception ex)
+        {
+            _service.When(s => s.Delete(Arg.Any<string>(), Arg.Any<Guid>())).Do(ci => throw ex);
+
+            Assert.ThrowsAny<Exception>(() => _logService.Delete("account", Guid.NewGuid()));
+
+            Assert.Contains(_logParts, l => l == "The application terminated with an error.");
+        }
+
+        public static IEnumerable<object[]> GetExceptionTestData()
+        {
+            yield return new object[] { new TimeoutException("This is timeout exception") };
+            yield return new object[] { new TimeoutException("This is timeout exception", new InvalidOperationException("This is inner exception")) };
+            var faultException = new FaultException<OrganizationServiceFault>(new OrganizationServiceFault
+            {
+                ErrorCode = 1234,
+                Message = "Org service fault",
+                Timestamp = DateTime.UtcNow,
+                TraceText = "Org service trace text"
+            }, "Failed");
+            yield return new object[] { faultException };
+            yield return new object[] { new Exception("Generic exception", faultException) };
         }
     }
 }

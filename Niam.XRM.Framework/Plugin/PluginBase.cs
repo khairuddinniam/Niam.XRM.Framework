@@ -27,7 +27,7 @@ namespace Niam.XRM.Framework.Plugin
         {
             if (serviceProvider == null) throw new ArgumentNullException(nameof(serviceProvider));
 
-            var contextConfig = new TransactionContextConfiguration<T>();
+            var contextConfig = new TransactionContextConfiguration<T>(this);
             var container = new Container(serviceProvider);
             var pluginConfig = new PluginConfiguration<T>(container, contextConfig);
             PluginConfigure(pluginConfig);
@@ -52,7 +52,6 @@ namespace Niam.XRM.Framework.Plugin
 
         private void PrePluginConfigure(IPluginConfiguration<T> config)
         {
-            config.TransactionContext.Plugin = this;
             ConfigureServiceFactory(config);
         }
 
