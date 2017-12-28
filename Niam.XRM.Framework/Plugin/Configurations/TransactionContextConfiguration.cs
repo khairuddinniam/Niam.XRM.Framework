@@ -14,8 +14,13 @@ namespace Niam.XRM.Framework.Plugin.Configurations
 
         public IList<IReferenceAction> ReferenceActions { get; } = new List<IReferenceAction>(DefaultConfig.ReferenceActions);
 
-        public IPluginBase Plugin { get; set; }
+        public IPluginBase Plugin { get; }
 
         public ColumnSet<T> ColumnSet { get; set; } = new ColumnSet<T>();
+
+        public TransactionContextConfiguration(IPluginBase plugin = null)
+        {
+            Plugin = plugin;
+        }
     }
 }

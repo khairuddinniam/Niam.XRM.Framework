@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 
-[assembly: CLSCompliant(true)]
+[assembly: CLSCompliant(false)]
 
 [assembly: InternalsVisibleTo("Niam.XRM.Framework.Tests, PublicKey=" +
                                 "0024000004800000940000000602000000240000525341310004000001000100e9252f1b121cc3" +

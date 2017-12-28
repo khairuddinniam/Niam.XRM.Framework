@@ -45,10 +45,7 @@ namespace Niam.XRM.Framework.Tests.Plugin
         public void Can_get_plugin_from_config()
         {
             var plugin = Substitute.For<IPluginBase>();
-            var config = new TransactionContextConfiguration<Entity>
-            {
-                Plugin = plugin
-            };
+            var config = new TransactionContextConfiguration<Entity>(plugin);
 
             var serviceProvider = Substitute.For<IServiceProvider>();
             var txContext = new TransactionContext<Entity>(serviceProvider, config);

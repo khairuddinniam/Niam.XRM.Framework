@@ -6,7 +6,7 @@ using Xunit;
 
 namespace Niam.XRM.Framework.Tests.Plugin.ServiceProviders
 {
-    public class ContainerTest
+    public class ContainerTests
     {
         [Fact]
         public void Can_get_service()
@@ -46,6 +46,19 @@ namespace Niam.XRM.Framework.Tests.Plugin.ServiceProviders
             container.Register(c => updatedManualRegisteredContext);
             Assert.Same(updatedManualRegisteredContext, container.Resolve<IPluginExecutionContext>());
             Assert.Same(manualRegisteredContext, lastPreviousContext);
+        }
+
+        [Fact]
+        public void Can_dispose_disposeable_registered_object()
+        {
+            var disposeable = Substitute.For<IDisposable>();
+            var crmServiceProvider = Substitute.For<IServiceProvider>();
+            using (var container = new Container(crmServiceProvider))
+            {
+                container.Register(disposeable);
+            }
+
+            disposeable.Received(1).Dispose();
         }
     }
 }

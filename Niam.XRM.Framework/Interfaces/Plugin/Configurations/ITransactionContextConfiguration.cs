@@ -10,7 +10,7 @@ namespace Niam.XRM.Framework.Interfaces.Plugin.Configurations
     {
         IList<IInputAction> InputActions { get; }
         IList<IReferenceAction> ReferenceActions { get; }
-        IPluginBase Plugin { get; set; }
+        IPluginBase Plugin { get; }
         ColumnSet<T> ColumnSet { get; set; } 
     }
 }

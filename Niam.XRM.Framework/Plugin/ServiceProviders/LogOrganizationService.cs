@@ -172,10 +172,39 @@ namespace Niam.XRM.Framework.Plugin.ServiceProviders
 
                 return result;
             }
-            catch (FaultException<OrganizationServiceFault>)
+            catch (Exception ex)
             {
+                LogError(ex);
                 throw;
             }
+        }
+
+        private void LogError(Exception ex)
+        {
+            _tracingService.Trace("The application terminated with an error.");
+
+            if (ex is FaultException<OrganizationServiceFault>)
+                LogOrganizationServiceFault((FaultException<OrganizationServiceFault>) ex);
+            else if (ex.InnerException is FaultException<OrganizationServiceFault>)
+                LogOrganizationServiceFault((FaultException<OrganizationServiceFault>) ex.InnerException);
+            else
+                LogException(ex);
+        }
+
+        private void LogException(Exception ex)
+        {
+            _tracingService.Trace($"Message: {ex.Message}");
+            _tracingService.Trace($"Stack Trace: {ex.StackTrace}");
+            var innerFault = ex.InnerException?.Message != null ? " - " : ex.InnerException?.Message;
+            _tracingService.Trace($"Inner Fault: {innerFault}");
+        }
+
+        private void LogOrganizationServiceFault(FaultException<OrganizationServiceFault> ex)
+        {
+            _tracingService.Trace($"Timestamp: {ex.Detail.Timestamp}");
+            _tracingService.Trace($"Code: {ex.Detail.ErrorCode}");
+            _tracingService.Trace($"Message: {ex.Detail.Message}");
+            _tracingService.Trace($"Trace: {ex.Detail.TraceText}");
         }
     }
 }
