@@ -72,7 +72,7 @@ namespace Niam.XRM.Framework.Plugin.Configurations
             private const string LogOptionKey = "pc-log-option";
             private const string LogDirKey = "pc-log-dir";
 
-            public PluginLogOption LogOption { get; }
+            public PluginLogOption LogOption { get; } = PluginLogOption.Off;
             public string LogDirPath { get; }
 
             public LogConfig(PluginLogOption logOption, string logDirPath)

@@ -8,7 +8,7 @@ using Microsoft.Xrm.Sdk.Query;
 
 namespace Niam.XRM.Framework.Plugin.ServiceProviders
 {
-    public class LogOrganizationService : IOrganizationService
+    internal class LogOrganizationService : IOrganizationService
     {
         private static readonly object VoidValue = new object();
         private readonly IOrganizationService _service;
@@ -206,5 +206,8 @@ namespace Niam.XRM.Framework.Plugin.ServiceProviders
             _tracingService.Trace($"Message: {ex.Detail.Message}");
             _tracingService.Trace($"Trace: {ex.Detail.TraceText}");
         }
+
+        public static IOrganizationService Decorate(IOrganizationService service, IServiceProvider serviceProvider) => 
+            new LogOrganizationService(service, serviceProvider.GetService<ITracingService>());
     }
 }

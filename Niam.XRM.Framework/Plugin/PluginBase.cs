@@ -52,21 +52,14 @@ namespace Niam.XRM.Framework.Plugin
 
         private void PrePluginConfigure(IPluginConfiguration<T> config)
         {
-            ConfigureServiceFactory(config);
+            DefaultConfig.PluginConfigureServiceFactory(config);
+            DefaultConfig.PluginConfigureLogging(config);
         }
 
         protected virtual void Configure(IPluginConfiguration<T> config)
         {
         }
-
-        private static void ConfigureServiceFactory(IPluginConfiguration<T> config)
-        {
-            var crmServiceFactory = config.Container.Resolve<IOrganizationServiceFactory>();
-            var serviceProvider = config.Container.Resolve<IServiceProvider>();
-            var serviceFactory = new ServiceFactory(crmServiceFactory, serviceProvider, config.ServiceDecorators);
-            config.Container.Register<IOrganizationServiceFactory>(serviceFactory);
-        }
-
+        
         protected abstract void ExecuteCrmPlugin(ITransactionContext<T> context);
     }
 }
