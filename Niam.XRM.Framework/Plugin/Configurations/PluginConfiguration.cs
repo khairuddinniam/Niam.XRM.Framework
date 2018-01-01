@@ -8,6 +8,9 @@ using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 using Niam.XRM.Framework.Interfaces.Plugin.Configurations;
 using Niam.XRM.Framework.Interfaces.Plugin.ServiceProviders;
+using Niam.XRM.Framework.Interfaces.Plugin;
+using Niam.XRM.Framework.Interfaces.Plugin.Actions;
+using Niam.XRM.Framework.Data;
 
 namespace Niam.XRM.Framework.Plugin.Configurations
 {
@@ -17,18 +20,32 @@ namespace Niam.XRM.Framework.Plugin.Configurations
         private readonly Lazy<LogConfig> _logConfig;
 
         public IContainer Container { get; }
+
         public IList<Func<IOrganizationService, IServiceProvider, IOrganizationService>> ServiceDecorators { get; } 
             = new List<Func<IOrganizationService, IServiceProvider, IOrganizationService>>();
-        public ITransactionContextConfiguration<T> TransactionContext { get; }
 
         public PluginLogOption LogOption => _logConfig.Value.LogOption;
+
         public string LogDirPath => _logConfig.Value.LogDirPath;
 
-        public PluginConfiguration(IContainer container, ITransactionContextConfiguration<T> context, _Assembly assembly = null)
+        public IList<IInputAction> InputActions { get; } = new List<IInputAction>(DefaultConfig.InputActions);
+
+        public IList<IReferenceAction> ReferenceActions { get; } = new List<IReferenceAction>(DefaultConfig.ReferenceActions);
+
+        public IPluginBase Plugin { get; }
+
+        public ColumnSet<T> ColumnSet { get; set; } = new ColumnSet<T>();
+
+        public PluginConfiguration(_Assembly assembly = null)
         {
-            Container = container ?? throw new ArgumentNullException(nameof(container));
-            TransactionContext = context ?? throw new ArgumentNullException(nameof(context));
             _logConfig = new Lazy<LogConfig>(() => GetLogConfig(assembly));
+        }
+
+        public PluginConfiguration(IPluginBase plugin, IContainer container, _Assembly assembly = null)
+            : this(assembly)
+        {
+            Plugin = plugin ?? throw new ArgumentNullException(nameof(plugin));
+            Container = container ?? throw new ArgumentNullException(nameof(container));
         }
 
         private LogConfig GetLogConfig(_Assembly assembly)

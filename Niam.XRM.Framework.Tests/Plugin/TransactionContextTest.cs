@@ -7,6 +7,7 @@ using Niam.XRM.Framework.Plugin.Configurations;
 using Xunit;
 using Niam.XRM.TestFramework;
 using Niam.XRM.Framework.Data;
+using Niam.XRM.Framework.Interfaces.Plugin.ServiceProviders;
 
 namespace Niam.XRM.Framework.Tests.Plugin
 {
@@ -45,7 +46,8 @@ namespace Niam.XRM.Framework.Tests.Plugin
         public void Can_get_plugin_from_config()
         {
             var plugin = Substitute.For<IPluginBase>();
-            var config = new TransactionContextConfiguration<Entity>(plugin);
+            var container = Substitute.For<IContainer>();
+            var config = new PluginConfiguration<Entity>(plugin, container);
 
             var serviceProvider = Substitute.For<IServiceProvider>();
             var txContext = new TransactionContext<Entity>(serviceProvider, config);
@@ -103,7 +105,9 @@ namespace Niam.XRM.Framework.Tests.Plugin
             test.PluginExecutionContext.MessageName.Returns(PluginMessage.Update);
             test.PluginExecutionContext.InputParameters["Target"] = input.ToEntity<Entity>();
 
-            var config = new TransactionContextConfiguration<xts_entity>
+            var plugin = Substitute.For<IPluginBase>();
+            var container = Substitute.For<IContainer>();
+            var config = new PluginConfiguration<xts_entity>(plugin, container)
             {
                 ColumnSet = new ColumnSet<xts_entity>(e => e.xts_string, e => e.xts_optionsetvalue)
             };

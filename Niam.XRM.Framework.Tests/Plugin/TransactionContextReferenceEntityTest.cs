@@ -7,6 +7,8 @@ using Niam.XRM.Framework.Plugin;
 using Niam.XRM.Framework.Plugin.Configurations;
 using Niam.XRM.TestFramework;
 using Xunit;
+using Niam.XRM.Framework.Interfaces.Plugin;
+using Niam.XRM.Framework.Interfaces.Plugin.ServiceProviders;
 
 namespace Niam.XRM.Framework.Tests.Plugin
 {
@@ -96,7 +98,9 @@ namespace Niam.XRM.Framework.Tests.Plugin
             test.PluginExecutionContext.MessageName.Returns(PluginMessage.Update);
             test.PluginExecutionContext.InputParameters["Target"] = entity;
 
-            var config = new TransactionContextConfiguration<Entity>
+            var plugin = Substitute.For<IPluginBase>();
+            var container = Substitute.For<IContainer>();
+            var config = new PluginConfiguration<Entity>(plugin, container)
             {
                 ColumnSet = new ColumnSet("xts_money")
             };

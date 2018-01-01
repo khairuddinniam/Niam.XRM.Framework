@@ -9,6 +9,7 @@ using Niam.XRM.Framework.Plugin;
 using Niam.XRM.Framework.Plugin.Configurations;
 using NSubstitute;
 using Xunit;
+using Niam.XRM.Framework.Interfaces.Plugin;
 
 namespace Niam.XRM.Framework.Tests.Plugin.Configurations
 {
@@ -27,8 +28,8 @@ namespace Niam.XRM.Framework.Tests.Plugin.Configurations
             container.Resolve<IPluginExecutionContext>().Returns(context);
             context.SharedVariables["pc-log-option"] = (int) logOption;
             var txConfig = Substitute.For<ITransactionContextConfiguration<xts_entity>>();
-
-            var config = new PluginConfiguration<xts_entity>(container, txConfig);
+            var plugin = Substitute.For<IPluginBase>();
+            var config = new PluginConfiguration<xts_entity>(plugin, container);
             Assert.Equal(logOption, config.LogOption);
         }
 
@@ -48,8 +49,9 @@ namespace Niam.XRM.Framework.Tests.Plugin.Configurations
             var container = Substitute.For<IContainer>();
             container.Resolve<IPluginExecutionContext>().Returns(context);
             var txConfig = Substitute.For<ITransactionContextConfiguration<xts_entity>>();
-
-            var config = new PluginConfiguration<xts_entity>(container, txConfig, assembly);
+            
+            var plugin = Substitute.For<IPluginBase>();
+            var config = new PluginConfiguration<xts_entity>(plugin, container, assembly);
             Assert.Equal(PluginLogOption.File, config.LogOption);
             Directory.Delete(dirName);
             Assert.Equal(PluginLogOption.File, config.LogOption);
@@ -80,8 +82,9 @@ namespace Niam.XRM.Framework.Tests.Plugin.Configurations
 
             var assembly = Substitute.For<_Assembly>();
             assembly.GetCustomAttributes(Arg.Any<Type>(), Arg.Any<bool>()).Returns(new object[0]);
-
-            var pluginConfig = new PluginConfiguration<xts_entity>(container, txConfig, assembly);
+            
+            var plugin = Substitute.For<IPluginBase>();
+            var pluginConfig = new PluginConfiguration<xts_entity>(plugin, container, assembly);
             service.DidNotReceive().Retrieve(Arg.Any<string>(), Arg.Any<Guid>(), Arg.Any<ColumnSet>());
             Assert.Equal(logOption, pluginConfig.LogOption);
             service.Received(1).Retrieve(Arg.Any<string>(), Arg.Any<Guid>(), Arg.Any<ColumnSet>());
@@ -89,7 +92,7 @@ namespace Niam.XRM.Framework.Tests.Plugin.Configurations
             service.Received(1).Retrieve(Arg.Any<string>(), Arg.Any<Guid>(), Arg.Any<ColumnSet>());
             Assert.Null(pluginConfig.LogDirPath);
 
-            var anotherPluginConfig = new PluginConfiguration<xts_entity>(container, txConfig);
+            var anotherPluginConfig = new PluginConfiguration<xts_entity>(plugin, container);
             Assert.Equal(logOption, anotherPluginConfig.LogOption);
             service.Received(1).Retrieve(Arg.Any<string>(), Arg.Any<Guid>(), Arg.Any<ColumnSet>());
             Assert.Equal(logOption, anotherPluginConfig.LogOption);

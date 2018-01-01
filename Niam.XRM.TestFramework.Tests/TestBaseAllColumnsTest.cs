@@ -10,7 +10,7 @@ namespace Niam.XRM.TestFramework.Tests
     {
         protected override void Configure(IPluginConfiguration<xts_entity> config)
         {
-            config.TransactionContext.ColumnSet = new ColumnSet(true);
+            config.ColumnSet = new ColumnSet(true);
         }
         
         [Fact]

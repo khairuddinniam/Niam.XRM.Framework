@@ -13,8 +13,7 @@ namespace Niam.XRM.TestFramework.Tests
     {
         protected override void Configure(IPluginConfiguration<xts_entity> config)
         {
-            config.TransactionContext.ColumnSet = 
-                new ColumnSet<xts_entity>(e => e.xts_money);
+            config.ColumnSet = new ColumnSet<xts_entity>(e => e.xts_money);
         }
 
         [Fact]
@@ -34,8 +33,8 @@ namespace Niam.XRM.TestFramework.Tests
     {
         protected override void Configure(IPluginConfiguration<xts_entity> config)
         {
-            var attribute = config.TransactionContext.Plugin.UnsecureConfig;
-            config.TransactionContext.ColumnSet = new ColumnSet(attribute);
+            var attribute = config.Plugin.UnsecureConfig;
+            config.ColumnSet = new ColumnSet(attribute);
         }
 
         [Fact]

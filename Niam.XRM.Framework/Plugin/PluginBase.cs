@@ -27,11 +27,10 @@ namespace Niam.XRM.Framework.Plugin
         {
             if (serviceProvider == null) throw new ArgumentNullException(nameof(serviceProvider));
 
-            var contextConfig = new TransactionContextConfiguration<T>(this);
             var container = new Container(serviceProvider);
-            var pluginConfig = new PluginConfiguration<T>(container, contextConfig);
-            PluginConfigure(pluginConfig);
-            var context = container.ToTransactionContext<T>(contextConfig);
+            var config = new PluginConfiguration<T>(this, container);
+            PluginConfigure(config);
+            var context = container.ToTransactionContext<T>(config);
             try
             {
                 ExecuteCrmPlugin(context);

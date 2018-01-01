@@ -64,7 +64,7 @@ namespace Niam.XRM.TestFramework
 
         private IEnumerable<KeyValuePair<string, object>> GetFilteredAttributes(TEntity reference)
         {
-            ColumnSet columnSet = _pluginConfig.TransactionContext.ColumnSet;
+            ColumnSet columnSet = _pluginConfig.ColumnSet;
             if (columnSet.AllColumns) return reference.Attributes;
 
             var filteredAttributes =
@@ -79,12 +79,10 @@ namespace Niam.XRM.TestFramework
         private void ExecuteConfigure()
         {
             if (_configureExecuted) return;
-
-            var contextConfig = Substitute.For<ITransactionContextConfiguration<TEntity>>();
-            contextConfig.ColumnSet = new ColumnSet<TEntity>();
-            contextConfig.Plugin.Returns(ci => Context.Plugin);
+            
             var config = Substitute.For<IPluginConfiguration<TEntity>>();
-            config.TransactionContext.Returns(contextConfig);
+            config.ColumnSet = new ColumnSet<TEntity>();
+            config.Plugin.Returns(ci => Context.Plugin);
             _pluginConfig = config;
             Configure(config);
 

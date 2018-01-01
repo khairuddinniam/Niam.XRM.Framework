@@ -23,10 +23,12 @@ namespace Niam.XRM.Framework.Plugin
 
         public IOrganizationServiceFactory ServiceFactory => _serviceFactory ?? (_serviceFactory = ServiceProvider.GetService<IOrganizationServiceFactory>());
 
+        public PluginLogOption LogOption => Config.LogOption;
+
         protected TransactionContextBase(IServiceProvider serviceProvider, ITransactionContextConfiguration<T> config) 
             : base(serviceProvider)
         {
-            Config = config ?? new TransactionContextConfiguration<T>();
+            Config = config ?? new PluginConfiguration<T>();
         }
     }
 }
