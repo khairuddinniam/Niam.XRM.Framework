@@ -8,17 +8,15 @@
   </PropertyGroup>
   
   <PropertyGroup>
-    <Version>7.1.0.1</Version>
     <PackageId>$(AssemblyName)</PackageId>
     <Title>$(AssemblyName)</Title>
-    <Description>Dynamics 365 Plugin Framework</Description>
     <Company>Khairuddin Ni'am</Company>
     <Authors>Khairuddin Ni'am</Authors>
-    <Product>Niam.XRM.Framework</Product>
+    <Product>$(AssemblyName)</Product>
     <Copyright>2018</Copyright>
     <PackageLicenseUrl>https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/khairuddinniam/Niam.XRM.Framework</PackageProjectUrl>
-    <PackageTags>Dynamics 365</PackageTags>
+    <PackageTags>Dynamics CRM 2016 365 XRM D365 Dynamics365</PackageTags>
 
     <PackageOutputPath>$(SolutionDir)build\packages</PackageOutputPath>
   </PropertyGroup>

@@ -76,7 +76,7 @@ namespace XrmTutorial
         {
             var parentRef = Get<EntityReference>("new_parentid");
             var parentName = GetParentName(parentRef);
-            Set("new_name", parentName + Get(e=>e.Id));
+            Set("new_name", parentName + Wrapper.Id.ToString());
             Set("new_transactiondate", DateTime.UtcNow);
             Set("new_amount", new Money(1000m));
         }
@@ -112,8 +112,8 @@ namespace XrmTutorial
         protected override void HandleExecute()
         {
             var parentName = GetParentName();
-            Set(e=>e.new_name, parentName + Wrapper.Id);
-            Set(e=>e.new_transactiondate, DateTime.UtcNow);
+            Set(e => e.new_name, parentName + Wrapper.Id.ToString());
+            Set(e => e.new_transactiondate, DateTime.UtcNow);
             Set(e => e.new_amount, new Money(1000m));
         }
 
@@ -150,7 +150,7 @@ namespace XrmTutorial
 
         protected override void Configure(IPluginConfiguration<Entity> config)
         {
-            ColumnSetConfig.Configure(config.TransactionContext);
+            ColumnSetConfig.Configure(config);
         }
 
         protected override void ExecuteCrmPlugin(ITransactionContext<Entity> context)
