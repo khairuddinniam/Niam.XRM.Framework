@@ -34,13 +34,13 @@ namespace Niam.XRM.Framework.Tests.Plugin.Configurations
         }
 
         [Fact]
-        public void Get_enable_logging_from_assembly_attribute()
+        public void Get_enable_logging_from_assembly_attribute_file()
         {
             const string dirName = "log-folder";
             Directory.CreateDirectory(dirName);
 
             var assembly = Substitute.For<_Assembly>();
-            assembly.GetCustomAttributes(Arg.Any<Type>(), Arg.Any<bool>())
+            assembly.GetCustomAttributes(Arg.Is<Type>(t => t == typeof(FilePluginLoggingAttribute)), Arg.Any<bool>())
                 .Returns(new object[] { new FilePluginLoggingAttribute(dirName) });
 
             var context = Substitute.For<IPluginExecutionContext>();
@@ -64,7 +64,7 @@ namespace Niam.XRM.Framework.Tests.Plugin.Configurations
         [InlineData(Organization.Options.PluginTraceLogSetting.Off, PluginLogOption.Off)]
         [InlineData(Organization.Options.PluginTraceLogSetting.Exception, PluginLogOption.Off)]
         [InlineData(Organization.Options.PluginTraceLogSetting.All, PluginLogOption.Crm)]
-        public void Get_enable_logging_from_trace_log_setting(
+        public void Get_enable_logging_from_assembly_attribute_trace_log_setting(
             Organization.Options.PluginTraceLogSetting setting, PluginLogOption logOption)
         {
             var organization = new Organization { Id = Guid.NewGuid() };
@@ -81,7 +81,7 @@ namespace Niam.XRM.Framework.Tests.Plugin.Configurations
             var txConfig = Substitute.For<ITransactionContextConfiguration<xts_entity>>();
 
             var assembly = Substitute.For<_Assembly>();
-            assembly.GetCustomAttributes(Arg.Any<Type>(), Arg.Any<bool>()).Returns(new object[0]);
+            assembly.GetCustomAttributes(Arg.Is<Type>(t => t == typeof(PluginCrmLoggingAttribute)), Arg.Any<bool>()).Returns(new object[] { new PluginCrmLoggingAttribute() });
             
             var plugin = Substitute.For<IPluginBase>();
             var pluginConfig = new PluginConfiguration<xts_entity>(plugin, container, assembly);
@@ -101,6 +101,22 @@ namespace Niam.XRM.Framework.Tests.Plugin.Configurations
             Assert.Equal((int) logOption, context.SharedVariables["pc-log-option"]);
             Assert.Null(context.SharedVariables["pc-log-dir"]);
             Assert.Null(anotherPluginConfig.LogDirPath);
+        }
+
+        [Fact]
+        public void Disable_log()
+        {
+            var assembly = Substitute.For<_Assembly>();
+            assembly.GetCustomAttributes(Arg.Any<Type>(), Arg.Any<bool>()).Returns(new object[0]);
+            var plugin = Substitute.For<IPluginBase>();
+
+            var context = Substitute.For<IPluginExecutionContext>();
+            context.SharedVariables.Returns(new ParameterCollection());
+            var container = Substitute.For<IContainer>();
+            container.Resolve<IPluginExecutionContext>().Returns(context);
+            var pluginConfig = new PluginConfiguration<xts_entity>(plugin, container, assembly);
+
+            Assert.Equal(PluginLogOption.Off, pluginConfig.LogOption);
         }
     }
 }

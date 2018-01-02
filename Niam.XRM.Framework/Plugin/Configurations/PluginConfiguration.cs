@@ -55,7 +55,6 @@ namespace Niam.XRM.Framework.Plugin.Configurations
             {
                 logConfig =
                     GetLogConfigFromAssemblyAttribute(assembly) ??
-                    GetLogConfigFromOrganization(context) ??
                     new LogConfig(PluginLogOption.Off, null);
 
                 logConfig.Save(context.SharedVariables);
@@ -64,26 +63,38 @@ namespace Niam.XRM.Framework.Plugin.Configurations
             return logConfig;
         }
 
-        private static LogConfig GetLogConfigFromAssemblyAttribute(_Assembly assembly)
+        private LogConfig GetLogConfigFromAssemblyAttribute(_Assembly assembly)
         {
-            var filePluginLogAttribute = (FilePluginLoggingAttribute) (assembly ?? Assembly.GetExecutingAssembly())
-                .GetCustomAttributes(typeof(FilePluginLoggingAttribute), false)
-                .FirstOrDefault();
-            if (filePluginLogAttribute != null && Directory.Exists(filePluginLogAttribute.DirPath))
-                return new LogConfig(PluginLogOption.File, filePluginLogAttribute.DirPath);
+            assembly = assembly ?? Assembly.GetExecutingAssembly();
+            if (TryGetAttribute<FilePluginLoggingAttribute>(assembly, out var filePluginLogAttribute))
+            {
+                if (Directory.Exists(filePluginLogAttribute.DirPath))
+                    return new LogConfig(PluginLogOption.File, filePluginLogAttribute.DirPath);
+            } else if (TryGetAttribute<PluginCrmLoggingAttribute>(assembly, out var pluginCrmLogAttribute) && ShouldLogToCrm())
+            {
+                return new LogConfig(PluginLogOption.Crm, null);
+            }
 
             return null;
         }
 
-        private LogConfig GetLogConfigFromOrganization(IPluginExecutionContext context)
+        private static bool TryGetAttribute<T>(_Assembly assembly, out T attribute)
+            where T : Attribute
         {
+            attribute = (T) assembly.GetCustomAttributes(typeof(T), false).FirstOrDefault();
+            return attribute != null;
+        }
+
+        private bool ShouldLogToCrm()
+        {
+            var context = Container.Resolve<IPluginExecutionContext>();
             var service = Container.Resolve<IOrganizationService>();
             var organization = service.Retrieve("organization", context.OrganizationId, new ColumnSet("plugintracelogsetting"));
             var pluginTraceLogSetting = organization.Get<OptionSetValue>("plugintracelogsetting");
             var shouldLog = pluginTraceLogSetting.Equal(2); // All
-            return shouldLog ? new LogConfig(PluginLogOption.Crm, null) : null;
+            return shouldLog;
         }
-        
+                
         private class LogConfig
         {
             private const string LogOptionKey = "pc-log-option";
