@@ -81,7 +81,7 @@ namespace Niam.XRM.Framework.Tests.Plugin.Configurations
             var txConfig = Substitute.For<ITransactionContextConfiguration<xts_entity>>();
 
             var assembly = Substitute.For<_Assembly>();
-            assembly.GetCustomAttributes(Arg.Is<Type>(t => t == typeof(PluginCrmLoggingAttribute)), Arg.Any<bool>()).Returns(new object[] { new PluginCrmLoggingAttribute() });
+            assembly.GetCustomAttributes(Arg.Is<Type>(t => t == typeof(CrmPluginLoggingAttribute)), Arg.Any<bool>()).Returns(new object[] { new CrmPluginLoggingAttribute() });
             
             var plugin = Substitute.For<IPluginBase>();
             var pluginConfig = new PluginConfiguration<xts_entity>(plugin, container, assembly);

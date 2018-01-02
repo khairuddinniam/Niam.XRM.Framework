@@ -70,7 +70,7 @@ namespace Niam.XRM.Framework.Plugin.Configurations
             {
                 if (Directory.Exists(filePluginLogAttribute.DirPath))
                     return new LogConfig(PluginLogOption.File, filePluginLogAttribute.DirPath);
-            } else if (TryGetAttribute<PluginCrmLoggingAttribute>(assembly, out var pluginCrmLogAttribute) && ShouldLogToCrm())
+            } else if (TryGetAttribute<CrmPluginLoggingAttribute>(assembly, out var pluginCrmLogAttribute) && ShouldLogToCrm())
             {
                 return new LogConfig(PluginLogOption.Crm, null);
             }
