@@ -25,6 +25,9 @@ namespace Niam.XRM.Framework
         public static decimal GetValue<T>(this T entity, Expression<Func<T, Money>> moneyAttribute, decimal defaultValue = 0m)
             where T : Entity => Get(entity, moneyAttribute).GetValueOrDefault(defaultValue);
 
+        public static int? GetValue<T>(this T entity, Expression<Func<T, OptionSetValue>> optionAttribute, int? defaultValue = null)
+            where T : Entity => Get(entity, optionAttribute)?.Value ?? defaultValue;
+
         public static TV GetValue<T, TV>(this T entity, Expression<Func<T, TV?>> attribute, TV defaultValue = default(TV))
             where T : Entity
             where TV : struct
@@ -61,8 +64,8 @@ namespace Niam.XRM.Framework
         public static void Set<T>(this T entity, Expression<Func<T, OptionSetValue>> attribute, Enum value)
             where T : Entity => Set(entity, attribute, value.ToOptionSetValue());
 
-        public static void Set<T>(this T entity, Expression<Func<T, OptionSetValue>> attribute, int value)
-            where T : Entity => Set(entity, attribute, new OptionSetValue(value));
+        public static void Set<T>(this T entity, Expression<Func<T, OptionSetValue>> attribute, int? value)
+            where T : Entity => Set(entity, attribute, value.HasValue ? new OptionSetValue(value.Value) : null);
 
         public static void Set<T>(this T entity, Expression<Func<T, Money>> attribute, decimal value)
             where T : Entity => Set(entity, attribute, new Money(value));

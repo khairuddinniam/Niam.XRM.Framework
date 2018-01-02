@@ -2,6 +2,7 @@
 using Microsoft.Xrm.Sdk;
 using Niam.XRM.Framework.Data;
 using Niam.XRM.Framework.Interfaces.Plugin.Actions;
+using Niam.XRM.Framework.Plugin.Configurations;
 
 namespace Niam.XRM.Framework.Interfaces.Plugin.Configurations
 {
@@ -10,7 +11,9 @@ namespace Niam.XRM.Framework.Interfaces.Plugin.Configurations
     {
         IList<IInputAction> InputActions { get; }
         IList<IReferenceAction> ReferenceActions { get; }
-        IPluginBase Plugin { get; set; }
-        ColumnSet<T> ColumnSet { get; set; } 
+        IPluginBase Plugin { get; }
+        ColumnSet<T> ColumnSet { get; set; }
+        PluginLogOption LogOption { get; }
+        string LogDirPath { get; }
     }
 }

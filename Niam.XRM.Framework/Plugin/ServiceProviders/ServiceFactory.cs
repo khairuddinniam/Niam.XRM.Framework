@@ -15,9 +15,9 @@ namespace Niam.XRM.Framework.Plugin.ServiceProviders
             IServiceProvider provider, 
             IList<Func<IOrganizationService, IServiceProvider, IOrganizationService>> serviceDecorators)
         {
-            _factory = factory;
-            _provider = provider;
-            _serviceDecorators = serviceDecorators;
+            _factory = factory ?? throw new ArgumentNullException(nameof(factory));
+            _provider = provider ?? throw new ArgumentNullException(nameof(provider));
+            _serviceDecorators = serviceDecorators ?? throw new ArgumentNullException(nameof(serviceDecorators));
         }
 
         public IOrganizationService CreateOrganizationService(Guid? userId)

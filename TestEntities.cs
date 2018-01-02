@@ -357,6 +357,765 @@ namespace Niam.XRM.Framework.Tests
         }
     }
 
+    [EntityName("organization")]
+    public class Organization : Entity
+    {
+        public static class Options
+        {
+            public enum DateFormatCode
+            {
+
+            }
+
+            public enum FullNameConventionCode
+            {
+                LastNameFirstName,
+                FirstName,
+                LastNameFirstNameMiddleInitial,
+                FirstNameMiddleInitialLastName,
+                LastNameFirstNameMiddleName,
+                FirstNameMiddleNameLastName,
+                LastNameSpaceFirstName,
+                LastNameNoSpaceFirstName
+            }
+
+            public enum ReportScriptErrors
+            {
+                NoPreferenceForSendingAnErrorReportToMicrosoftAboutMicrosoftDynamics365,
+                AskMeForPermissionToSendAnErrorReportToMicrosoft,
+                AutomaticallySendAnErrorReportToMicrosoftWithoutAskingMeForPermission,
+                NeverSendAnErrorReportToMicrosoftAboutMicrosoftDynamics365
+            }
+
+            public enum DefaultRecurrenceEndRangeType
+            {
+                NoEndDate = 1,
+                NumberOfOccurrences,
+                EndByDate
+            }
+
+            public enum FiscalPeriodFormatPeriod
+            {
+                Quarter0 = 1,
+                Q0,
+                P0,
+                Month0,
+                M0,
+                Semester0,
+                MonthName
+            }
+
+            public enum CurrencyFormatCode
+            {
+                _123,
+                _1231,
+                _1232,
+                _1233
+            }
+
+            public enum TimeFormatCode
+            {
+
+            }
+
+            public enum PluginTraceLogSetting
+            {
+                Off,
+                Exception,
+                All
+            }
+
+            public enum SharePointDeploymentType
+            {
+                Online,
+                OnPremises
+            }
+
+            public enum FiscalYearFormatYear
+            {
+                YYYY = 1,
+                YY,
+                GGYY
+            }
+
+            public enum EmailConnectionChannel
+            {
+                ServerSideSynchronization,
+                MicrosoftDynamics365EmailRouter
+            }
+
+            public enum NegativeFormatCode
+            {
+                Brackets,
+                Dash,
+                DashPlusSpace,
+                TrailingDash,
+                SpacePlusTrailingDash
+            }
+
+            public enum FiscalYearFormatSuffix
+            {
+                FY = 1,
+                FiscalYear
+            }
+
+            public enum WeekStartDayCode
+            {
+
+            }
+
+            public enum YammerPostMethod
+            {
+                Public,
+                Private
+            }
+
+            public enum CurrencyDisplayOption
+            {
+                CurrencySymbol,
+                CurrencyCode
+            }
+
+            public enum ISVIntegrationCode
+            {
+                None,
+                Web,
+                OutlookWorkstationClient,
+                WebOutlookWorkstationClient,
+                OutlookLaptopClient,
+                WebOutlookLaptopClient,
+                Outlook,
+                All
+            }
+
+            public enum DiscountCalculationMethod
+            {
+                LineItem,
+                PerUnit
+            }
+
+            public enum FiscalYearFormatPrefix
+            {
+                FY = 1
+            }
+        }
+
+        public const string EntityLogicalName = "organization";
+
+        public readonly int? EmailSendPollingPeriod;
+
+        public readonly int? MinAddressBookSyncInterval;
+
+        public readonly bool? AllowOfflineScheduledSyncs;
+
+        public readonly int? MinOfflineSyncInterval;
+
+        public readonly bool? IsAuditEnabled;
+
+        public readonly Guid? UserGroupId;
+
+        public readonly string AzureSchedulerJobCollectionName;
+
+        public readonly Guid? SqlAccessGroupId;
+
+        public readonly int? CurrentCategoryNumber;
+
+        public readonly OptionSetValue DateFormatCode;
+
+        public readonly int? RiErrorStatus;
+
+        public readonly int? MaxProductsInBundle;
+
+        public readonly int? PastExpansionWindow;
+
+        public readonly bool? IsPreviewEnabledForActionCard;
+
+        public readonly bool? IsDefaultCountryCodeCheckEnabled;
+
+        public readonly int? CurrencyDecimalPrecision;
+
+        public readonly bool? GlobalAppendUrlParametersEnabled;
+
+        public readonly int? UserAccessAuditingInterval;
+
+        public readonly string ParsedTableColumnPrefix;
+
+        public readonly string DefaultCountryCode;
+
+        public readonly string QuotePrefix;
+
+        public readonly string TimeFormatString;
+
+        public readonly bool? IgnoreInternalEmail;
+
+        public readonly bool? NotifyMailboxOwnerOfEmailServerLevelAlerts;
+
+        public readonly Guid? SystemUserId;
+
+        public readonly int? YearStartWeekCode;
+
+        public readonly bool? IsFolderAutoCreatedonSP;
+
+        public readonly int? LocaleId;
+
+        public readonly bool? IsActivityAnalysisEnabled;
+
+        public readonly string ExternalBaseUrl;
+
+        public readonly bool? SuppressSLA;
+
+        public readonly bool? AllowAutoResponseCreation;
+
+        public readonly int? MaxConditionsForMobileOfflineFilters;
+
+        public readonly bool? IsDuplicateDetectionEnabledForImport;
+
+        public readonly int? MaxAppointmentDurationDays;
+
+        public readonly bool? GetStartedPaneContentEnabled;
+
+        public readonly int? MobileOfflineSyncInterval;
+
+        public readonly Guid? BusinessClosureCalendarId;
+
+        public readonly bool? PowerBiFeatureEnabled;
+
+        public readonly OptionSetValue FullNameConventionCode;
+
+        public readonly int? CurrentInvoiceNumber;
+
+        public readonly int? MaxUploadFileSize;
+
+        public readonly bool? UseReadForm;
+
+        public readonly string CampaignPrefix;
+
+        public readonly string CurrencySymbol;
+
+        public readonly OptionSetValue ReportScriptErrors;
+
+        public readonly OptionSetValue DefaultRecurrenceEndRangeType;
+
+        public readonly Guid? ReportingGroupId;
+
+        public readonly Guid? DelegatedAdminUserId;
+
+        public readonly EntityReference BaseCurrencyId;
+
+        public readonly bool? IsAppMode;
+
+        public readonly string OrderPrefix;
+
+        public readonly string OfficeGraphDelveUrl;
+
+        public readonly OptionSetValue FiscalPeriodFormatPeriod;
+
+        public readonly string PrivacyStatementUrl;
+
+        public readonly int? VersionNumber;
+
+        public readonly Guid? PrivilegeUserGroupId;
+
+        public readonly bool? IsEmailMonitoringAllowed;
+
+        public readonly OptionSetValue CurrencyFormatCode;
+
+        public readonly string HighContrastThemeData;
+
+        public readonly string DefaultThemeData;
+
+        public readonly string DefaultEmailSettings;
+
+        public readonly int? UniqueSpecifierLength;
+
+        public readonly string WidgetProperties;
+
+        public readonly bool? ShowWeekNumber;
+
+        public readonly bool? AppDesignerExperienceEnabled;
+
+        public readonly string DecimalSymbol;
+
+        public readonly bool? AutoApplySLA;
+
+        public readonly string AMDesignator;
+
+        public readonly bool? CascadeStatusUpdate;
+
+        public readonly int? LanguageCode;
+
+        public readonly int? NextCustomObjectTypeCode;
+
+        public readonly bool? IsConflictDetectionEnabledForMobileClient;
+
+        public readonly string FiscalYearFormat;
+
+        public readonly bool? EnablePricingOnCreate;
+
+        public readonly bool? ShowKBArticleDeprecationNotification;
+
+        public readonly int? TrackingTokenIdDigits;
+
+        public readonly string GlobalHelpUrl;
+
+        public readonly string ReferenceSiteMapXml;
+
+        public readonly DateTime? CreatedOn;
+
+        public readonly bool? IsDelveActionHubIntegrationEnabled;
+
+        public readonly string NumberGroupFormat;
+
+        public readonly int? FiscalPeriodType;
+
+        public readonly bool? IsOfficeGraphEnabled;
+
+        public readonly int? NextTrackingNumber;
+
+        public readonly bool? GlobalHelpUrlEnabled;
+
+        public readonly bool? AllowAutoUnsubscribeAcknowledgement;
+
+        public readonly string BingMapsApiKey;
+
+        public readonly int? CurrentKaNumber;
+
+        public readonly bool? IsAutoDataCaptureEnabled;
+
+        public readonly bool? UseLegacyRendering;
+
+        public readonly int? PinpointLanguageCode;
+
+        public readonly string InitialVersion;
+
+        public readonly EntityReference ModifiedOnBehalfBy;
+
+        public readonly bool? GrantAccessToNetworkService;
+
+        public readonly int? MaxRecordsForExportToExcel;
+
+        public readonly int? MaxRecordsForLookupFilters;
+
+        public readonly bool? IsFullTextSearchEnabled;
+
+        public readonly string ExternalPartyEntitySettings;
+
+        public readonly bool? IsSOPIntegrationEnabled;
+
+        public readonly OptionSetValue TimeFormatCode;
+
+        public readonly bool? DisplayNavigationTour;
+
+        public readonly bool? OrgInsightsEnabled;
+
+        public readonly Guid? SampleDataImportId;
+
+        public readonly int? MobileOfflineMinLicenseProd;
+
+        public readonly EntityReference CreatedOnBehalfBy;
+
+        public readonly string KMSettings;
+
+        public readonly bool? GenerateAlertsForInformation;
+
+        public readonly int? CurrentQuoteNumber;
+
+        public readonly bool? SocialInsightsEnabled;
+
+        public readonly bool? UseInbuiltRuleForDefaultPricelistSelection;
+
+        public readonly int? HashDeltaSubjectCount;
+
+        public readonly EntityReference AcknowledgementTemplateId;
+
+        public readonly string OrgDbOrgSettings;
+
+        public readonly DateTime? MetadataSyncLastTimeOfNeverExpiredDeletedObjects;
+
+        public readonly string TrackingPrefix;
+
+        public readonly OptionSetValue PluginTraceLogSetting;
+
+        public readonly string TokenKey;
+
+        public readonly int? MaxVerboseLoggingMailbox;
+
+        public readonly string FiscalPeriodFormat;
+
+        public readonly string KaPrefix;
+
+        public readonly string SiteMapXml;
+
+        public readonly string NumberFormat;
+
+        public readonly bool? IsDisabled;
+
+        public readonly int? ExpireChangeTrackingInDays;
+
+        public readonly bool? IsAppointmentAttachmentSyncEnabled;
+
+        public readonly Guid? SupportUserId;
+
+        public readonly int? CurrentKbNumber;
+
+        public readonly int? LongDateFormatCode;
+
+        public readonly string SchemaNamePrefix;
+
+        public readonly bool? IsFiscalPeriodMonthBased;
+
+        public readonly int? TagMaxAggressiveCycles;
+
+        public readonly int? MaxSupportedInternetExplorerVersion;
+
+        public readonly int? MaximumDynamicPropertiesAllowed;
+
+        public readonly string BulkOperationPrefix;
+
+        public readonly bool? IsPresenceEnabled;
+
+        public readonly bool? IsEmailServerProfileContentFilteringEnabled;
+
+        public readonly int? MailboxPermanentIssueMinRange;
+
+        public readonly bool? IsPreviewForAutoCaptureEnabled;
+
+        public readonly int? BaseCurrencyPrecision;
+
+        public readonly int? TrackingTokenIdBase;
+
+        public readonly bool? UseSkypeProtocol;
+
+        public readonly bool? IsMailboxForcedUnlockingEnabled;
+
+        public readonly string CategoryPrefix;
+
+        public readonly bool? UsePositionHierarchy;
+
+        public readonly string ReportingGroupName;
+
+        public readonly string HashFilterKeywords;
+
+        public readonly bool? IsFolderBasedTrackingEnabled;
+
+        public readonly OptionSetValue SharePointDeploymentType;
+
+        public readonly int? CurrentParsedTableNumber;
+
+        public readonly bool? EnableBingMapsIntegration;
+
+        public readonly bool? QuickFindRecordLimitEnabled;
+
+        public readonly bool? AllowUnresolvedPartiesOnEmailSend;
+
+        public readonly bool? IsActionCardEnabled;
+
+        public readonly string BlockedAttachments;
+
+        public readonly bool? EnableLPAuthoring;
+
+        public readonly string InvoicePrefix;
+
+        public readonly bool? IsDuplicateDetectionEnabledForOnlineCreateUpdate;
+
+        public readonly bool? AllowOutlookScheduledSyncs;
+
+        public readonly bool? IsAssignedTasksSyncEnabled;
+
+        public readonly bool? RestrictStatusUpdate;
+
+        public readonly bool? IsMobileClientOnDemandSyncEnabled;
+
+        public readonly OptionSetValue FiscalYearFormatYear;
+
+        public readonly bool? RenderSecureIFrameForEmail;
+
+        public readonly bool? GenerateAlertsForWarnings;
+
+        public readonly OptionSetValue EmailConnectionChannel;
+
+        public readonly string V3CalloutConfigHash;
+
+        public readonly string DisabledReason;
+
+        public readonly bool? CortanaProactiveExperienceEnabled;
+
+        public readonly string DateSeparator;
+
+        public readonly string CasePrefix;
+
+        public readonly Guid? PrivReportingGroupId;
+
+        public readonly string DateFormatString;
+
+        public readonly bool? IsResourceBookingExchangeSyncEnabled;
+
+        public readonly int? CalendarType;
+
+        public readonly int? IncomingEmailExchangeEmailRetrievalBatchSize;
+
+        public readonly OptionSetValue NegativeFormatCode;
+
+        public readonly int? MaxFolderBasedTrackingMappings;
+
+        public readonly bool? AutoApplyDefaultonCaseUpdate;
+
+        public readonly int? FiscalYearDisplayCode;
+
+        public readonly string ContractPrefix;
+
+        public readonly int? RecurrenceExpansionSynchCreateMax;
+
+        public readonly string PMDesignator;
+
+        public readonly bool? SQMEnabled;
+
+        public readonly bool? UnresolveEmailAddressIfMultipleMatch;
+
+        public readonly bool? IsDuplicateDetectionEnabledForOfflineSync;
+
+        public readonly int? GoalRollupExpiryTime;
+
+        public readonly string PrivReportingGroupName;
+
+        public readonly int? MinOutlookSyncInterval;
+
+        public readonly int? CurrentImportSequenceNumber;
+
+        public readonly string PostMessageWhitelistDomains;
+
+        public readonly bool? TaskBasedFlowEnabled;
+
+        public readonly Guid? IntegrationUserId;
+
+        public readonly bool? SocialInsightsTermsAccepted;
+
+        public readonly bool? OfficeAppsAutoDeploymentEnabled;
+
+        public readonly bool? IsPreviewForEmailMonitoringAllowed;
+
+        public readonly string KbPrefix;
+
+        public readonly bool? FiscalSettingsUpdated;
+
+        public readonly string TimeSeparator;
+
+        public readonly bool? DisableSocialCare;
+
+        public readonly bool? IsDuplicateDetectionEnabled;
+
+        public readonly string ExternalPartyCorrelationKeys;
+
+        public readonly bool? AllowAutoUnsubscribe;
+
+        public readonly bool? GenerateAlertsForErrors;
+
+        public readonly string SqlAccessGroupName;
+
+        public readonly int? FutureExpansionWindow;
+
+        public readonly int? MetadataSyncTimestamp;
+
+        public readonly int? MaximumSLAKPIPerEntityWithActiveSLA;
+
+        public readonly string SlaPauseStates;
+
+        public readonly string BaseISOCurrencyCode;
+
+        public readonly int? MobileOfflineMinLicenseTrial;
+
+        public readonly bool? EnforceReadOnlyPlugins;
+
+        public readonly byte[] EntityImage;
+
+        public readonly int? CurrentCaseNumber;
+
+        public readonly EntityReference DefaultMobileOfflineProfileId;
+
+        public readonly bool? OOBPriceCalculationEnabled;
+
+        public readonly int? TagPollingPeriod;
+
+        public readonly bool? IsMobileOfflineEnabled;
+
+        public readonly EntityReference ModifiedBy;
+
+        public readonly string WebResourceHash;
+
+        public readonly OptionSetValue FiscalYearFormatSuffix;
+
+        public readonly int? RecurrenceDefaultNumberOfOccurrences;
+
+        public readonly int? RecurrenceExpansionJobBatchInterval;
+
+        public readonly int? RecurrenceExpansionJobBatchSize;
+
+        public readonly bool? AutoApplyDefaultonCaseCreate;
+
+        public readonly string ParsedTablePrefix;
+
+        public readonly bool? IsDelegateAccessEnabled;
+
+        public readonly bool? IsAutoSaveEnabled;
+
+        public readonly string NumberSeparator;
+
+        public readonly int? CurrentCampaignNumber;
+
+        public readonly int? MaximumEntitiesWithActiveSLA;
+
+        public readonly int? SortId;
+
+        public readonly bool? AllowWebExcelExport;
+
+        public readonly bool? AllowClientMessageBarAd;
+
+        public readonly bool? AllowUsersSeeAppdownloadMessage;
+
+        public readonly OptionSetValue WeekStartDayCode;
+
+        public readonly DateTime? FiscalCalendarStart;
+
+        public readonly int? MaxDepthForHierarchicalSecurityModel;
+
+        public readonly int? CurrentOrderNumber;
+
+        public readonly int? HashMaxCount;
+
+        public readonly bool? AllowMarketingEmailExecution;
+
+        public readonly int? MailboxIntermittentIssueMinRange;
+
+        public readonly OptionSetValue YammerPostMethod;
+
+        public readonly bool? IsMailboxInactiveBackoffEnabled;
+
+        public readonly bool? IsHierarchicalSecurityModelEnabled;
+
+        public readonly bool? EmailCorrelationEnabled;
+
+        public readonly int? CurrentContractNumber;
+
+        public readonly int? ExpireSubscriptionsInDays;
+
+        public readonly int? MaxVerboseLoggingSyncCycles;
+
+        public readonly string SignupOutlookDownloadFWLink;
+
+        public readonly bool? TextAnalyticsEnabled;
+
+        public readonly string FeatureSet;
+
+        public readonly bool? IsRelationshipInsightsEnabled;
+
+        public readonly string Picture;
+
+        public readonly bool? IsUserAccessAuditEnabled;
+
+        public readonly int? DaysSinceRecordLastModifiedMaxValue;
+
+        public readonly int? GoalRollupFrequency;
+
+        public readonly bool? ShareToPreviousOwnerOnAssign;
+
+        public readonly int? MaximumActiveBusinessProcessFlowsAllowedPerEntity;
+
+        public readonly bool? RequireApprovalForUserEmail;
+
+        public readonly bool? RequireApprovalForQueueEmail;
+
+        public readonly bool? AllowUserFormModePreference;
+
+        [Key]
+        public readonly string Name;
+
+        public readonly string DefaultCrmCustomName;
+
+        public readonly int? YammerGroupId;
+
+        public readonly string SocialInsightsInstance;
+
+        public readonly bool? CreateProductsWithoutParentInActiveState;
+
+        public readonly bool? EnableMicrosoftFlowIntegration;
+
+        public readonly Guid? OrganizationId;
+
+        public readonly bool? YammerOAuthAccessTokenExpired;
+
+        public readonly string ACIWebEndpointUrl;
+
+        public readonly int? TimeZoneRuleVersionNumber;
+
+        public readonly bool? IsExternalSearchIndexEnabled;
+
+        public readonly int? TokenExpiry;
+
+        public readonly bool? IsEnabledForAllRoles;
+
+        public readonly OptionSetValue CurrencyDisplayOption;
+
+        public readonly OptionSetValue ISVIntegrationCode;
+
+        public readonly EntityReference DefaultEmailServerProfileId;
+
+        public readonly OptionSetValue DiscountCalculationMethod;
+
+        public readonly string BaseCurrencySymbol;
+
+        public readonly bool? IsContactMailingAddressSyncEnabled;
+
+        public readonly OptionSetValue FiscalYearFormatPrefix;
+
+        public readonly bool? IsOneDriveEnabled;
+
+        public readonly bool? AllowAddressBookSyncs;
+
+        public readonly DateTime? ModifiedOn;
+
+        public readonly string FiscalYearPeriodConnect;
+
+        public readonly bool? EnableSmartMatching;
+
+        public readonly EntityReference CreatedBy;
+
+        public readonly int? HashMinAddressCount;
+
+        public readonly bool? AllowEntityOnlyAudit;
+
+        public readonly bool? ProductRecommendationsEnabled;
+
+        public readonly int? NegativeCurrencyFormatCode;
+
+        public readonly string YammerNetworkPermalink;
+
+        public readonly int? MaximumTrackingNumber;
+
+        public readonly int? PricingDecimalPrecision;
+
+        public readonly int? CurrentBulkOperationNumber;
+
+        public readonly int? UTCConversionTimeZoneCode;
+
+        [Column("organizationid")]
+        public override Guid Id
+        {
+            get
+            {
+                return base.Id;
+            }
+            set
+            {
+                base.Id = value;
+                base["organizationid"] = value;
+            }
+        }
+
+        public Organization() : base("organization")
+        {
+        }
+    }
+
     [EntityLogicalName("new_testentity")]
     public class new_testentity : UserOrTeamEntity
     {

@@ -7,6 +7,7 @@ namespace Niam.XRM.Framework.Plugin.ServiceProviders
     internal class Container : IServiceProvider, IContainer, IDisposable
     {
         private readonly IDictionary<Type, Func<IContainer, object>> _registeredObjects = new Dictionary<Type, Func<IContainer, object>>(); 
+        private readonly IList<IDisposable> _disposables = new List<IDisposable>();
         private readonly IServiceProvider _serviceProvider;
 
         public Container(IServiceProvider serviceProvider)
@@ -27,12 +28,17 @@ namespace Niam.XRM.Framework.Plugin.ServiceProviders
             where TRegisterType : class =>
             Register(typeof (TRegisterType), instance);
 
-        public void Register(Type registerType, object instance) =>
-            _registeredObjects[registerType] = c => instance;
+        public void Register(Type registerType, object instance)
+        {
+            Register(registerType, c => instance);
+
+            if (instance is IDisposable disposeable)
+                _disposables.Add(disposeable);
+        }
 
         public void Register<TRegisterType>(Func<IContainer, TRegisterType> instanceFactory)
             where TRegisterType : class =>
-                Register(typeof (TRegisterType), instanceFactory);
+            Register(typeof (TRegisterType), instanceFactory);
 
         public void Register(Type registerType, Func<IContainer, object> instanceFactory) =>
             _registeredObjects[registerType] = instanceFactory;
@@ -41,6 +47,12 @@ namespace Niam.XRM.Framework.Plugin.ServiceProviders
 
         public object Resolve(Type type) => GetService(type);
 
-        public void Dispose() => _registeredObjects.Clear();
+        public void Dispose()
+        {
+            _registeredObjects.Clear();
+
+            foreach (var disposable in _disposables)
+                disposable.Dispose();
+        }
     }
 }

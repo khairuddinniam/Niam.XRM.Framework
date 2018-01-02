@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.Xrm.Sdk;
+using Niam.XRM.Framework.Plugin.Configurations;
 
 namespace Niam.XRM.Framework.Interfaces.Plugin
 {
@@ -10,5 +11,6 @@ namespace Niam.XRM.Framework.Interfaces.Plugin
         IOrganizationService SystemService { get; }
         IOrganizationServiceFactory ServiceFactory { get; }
         IServiceProvider ServiceProvider { get; }
+        PluginLogOption LogOption { get; }
     }
 }

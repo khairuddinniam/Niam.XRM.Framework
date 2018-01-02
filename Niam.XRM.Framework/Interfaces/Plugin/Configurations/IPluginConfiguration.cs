@@ -5,11 +5,10 @@ using Niam.XRM.Framework.Interfaces.Plugin.ServiceProviders;
 
 namespace Niam.XRM.Framework.Interfaces.Plugin.Configurations
 {
-    public interface IPluginConfiguration<T>
+    public interface IPluginConfiguration<T> : ITransactionContextConfiguration<T>
         where T : Entity
     {
         IContainer Container { get; }
         IList<Func<IOrganizationService, IServiceProvider, IOrganizationService>> ServiceDecorators { get; }
-        ITransactionContextConfiguration<T> TransactionContext { get; }
     }
 }

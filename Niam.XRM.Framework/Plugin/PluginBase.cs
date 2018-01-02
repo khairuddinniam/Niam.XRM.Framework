@@ -27,11 +27,10 @@ namespace Niam.XRM.Framework.Plugin
         {
             if (serviceProvider == null) throw new ArgumentNullException(nameof(serviceProvider));
 
-            var contextConfig = new TransactionContextConfiguration<T>();
             var container = new Container(serviceProvider);
-            var pluginConfig = new PluginConfiguration<T>(container, contextConfig);
-            PluginConfigure(pluginConfig);
-            var context = container.ToTransactionContext<T>(contextConfig);
+            var config = new PluginConfiguration<T>(this, container);
+            PluginConfigure(config);
+            var context = container.ToTransactionContext<T>(config);
             try
             {
                 ExecuteCrmPlugin(context);
@@ -52,22 +51,14 @@ namespace Niam.XRM.Framework.Plugin
 
         private void PrePluginConfigure(IPluginConfiguration<T> config)
         {
-            config.TransactionContext.Plugin = this;
-            ConfigureServiceFactory(config);
+            DefaultConfig.PluginConfigureServiceFactory(config);
+            DefaultConfig.PluginConfigureLogging(config);
         }
 
         protected virtual void Configure(IPluginConfiguration<T> config)
         {
         }
-
-        private static void ConfigureServiceFactory(IPluginConfiguration<T> config)
-        {
-            var crmServiceFactory = config.Container.Resolve<IOrganizationServiceFactory>();
-            var serviceProvider = config.Container.Resolve<IServiceProvider>();
-            var serviceFactory = new ServiceFactory(crmServiceFactory, serviceProvider, config.ServiceDecorators);
-            config.Container.Register<IOrganizationServiceFactory>(serviceFactory);
-        }
-
+        
         protected abstract void ExecuteCrmPlugin(ITransactionContext<T> context);
     }
 }

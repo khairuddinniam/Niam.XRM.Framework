@@ -26,11 +26,15 @@ namespace Niam.XRM.Framework.Plugin
         where TE : Entity
         where TW : EntityWrapper<TE>
     {
+        protected TE Input => Context.Input.Entity;
+
         protected OperationBase(ITransactionContext<TE> context) : base(context)
         {
         }
 
-        public void Execute() => HandleExecute();
+        public void Execute() => ExecuteCore();
+
+        protected override sealed void HandleExecuteCore() => HandleExecute();
 
         protected abstract void HandleExecute();
         

@@ -2,6 +2,7 @@ using System;
 using System.Globalization;
 using Microsoft.Xrm.Sdk;
 using Niam.XRM.Framework.Interfaces.Plugin;
+using System.Diagnostics;
 
 namespace Niam.XRM.Framework.Plugin
 {
@@ -37,15 +38,16 @@ namespace Niam.XRM.Framework.Plugin
         /// could execute the plug-in at the same time. All per invocation state information 
         /// is stored in the context. This means that you should not use global variables in plug-ins.
         /// </remarks>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", MessageId = "CrmVSSolution411.NewProj.PluginBase+LocalPluginContext.Trace(System.String)", Justification = "Execute")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters", Justification = "Execute")]
         public void Execute(IServiceProvider serviceProvider)
         {
             if (serviceProvider == null)
                 throw new ArgumentNullException(nameof(serviceProvider));
 
             // Construct the local plug-in context.
+            var stopwatch = Stopwatch.StartNew();
             var tracingService = serviceProvider.GetService<ITracingService>();        
-            tracingService.Trace(string.Format(CultureInfo.InvariantCulture, "Entered {0}.Execute()", _pluginType));
+            tracingService.Trace("Entered {0}.Execute()", _pluginType);
 
             try
             {
@@ -57,13 +59,14 @@ namespace Niam.XRM.Framework.Plugin
             }
             catch (Exception e)
             {
-                tracingService.Trace(string.Format(CultureInfo.InvariantCulture, "Exception: {0}", e));
-                tracingService.Trace(string.Format(CultureInfo.InvariantCulture, "Stack Trace: {0}", e.StackTrace));
+                tracingService.Trace("Exception: {0}", e);
+                tracingService.Trace("Stack Trace: {0}", e.StackTrace);
                 throw new InvalidPluginExecutionException(e.Message, e);
             }
             finally
             {
-                tracingService.Trace(string.Format(CultureInfo.InvariantCulture, "Exiting {0}.Execute()", _pluginType));
+                stopwatch.Stop();
+                tracingService.Trace("Exiting {0}.Execute() [{1:g}]", _pluginType, stopwatch.Elapsed);
             }
         }
 
