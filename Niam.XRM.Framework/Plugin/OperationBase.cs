@@ -32,7 +32,9 @@ namespace Niam.XRM.Framework.Plugin
         {
         }
 
-        public void Execute() => HandleExecute();
+        public void Execute() => ExecuteCore();
+
+        protected override sealed void HandleExecuteCore() => HandleExecute();
 
         protected abstract void HandleExecute();
         

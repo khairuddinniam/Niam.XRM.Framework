@@ -27,7 +27,9 @@ namespace Niam.XRM.Framework.Plugin
         {
         }
 
-        public void Validate() => HandleValidate();
+        public void Validate() => ExecuteCore();
+
+        protected sealed override void HandleExecuteCore() => HandleValidate();
 
         protected abstract void HandleValidate();
     }

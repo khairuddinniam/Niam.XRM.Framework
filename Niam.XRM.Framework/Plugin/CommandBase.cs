@@ -7,6 +7,8 @@ using Niam.XRM.Framework.Infrastructure;
 using Niam.XRM.Framework.Interfaces;
 using Niam.XRM.Framework.Interfaces.Data;
 using Niam.XRM.Framework.Interfaces.Plugin;
+using Niam.XRM.Framework.Plugin.Configurations;
+using System.Diagnostics;
 
 namespace Niam.XRM.Framework.Plugin
 {
@@ -24,11 +26,57 @@ namespace Niam.XRM.Framework.Plugin
         
         private TW GetWrapper() => InstanceEntityWrapper<TE, TW>.Create(Context.Reference.Entity, Context);
 
+        protected event Action OnExecuting;
+
+        protected event Action<Exception> OnExecutionError;
+
+        protected event Action OnExecuted;
+
         protected CommandBase(ITransactionContext<TE> context)
         {
             Context = context ?? throw new ArgumentNullException(nameof(context));
             _wrapper = new Lazy<TW>(GetWrapper);
+            InitEvents();
         }
+
+        private void InitEvents()
+        {
+            if (Context.LogOption != PluginLogOption.Off)
+            {
+                var stopwatch = new Stopwatch();
+                OnExecuting += () =>
+                {
+                    stopwatch.Start();
+                    Context.Trace($"Entered {GetType()} execution");
+                };
+
+                OnExecuted += () =>
+                {
+                    stopwatch.Stop();
+                    Context.Trace($"Exiting {GetType()} execution [{stopwatch.Elapsed:g}]");
+                };
+            }
+        }
+
+        protected void ExecuteCore()
+        {
+            OnExecuting?.Invoke();
+            try
+            {
+                HandleExecuteCore();
+            }
+            catch (Exception ex)
+            {
+                OnExecutionError?.Invoke(ex);
+                throw;
+            }
+            finally
+            {
+                OnExecuted?.Invoke();
+            }
+        }
+
+        protected abstract void HandleExecuteCore();
 
         protected bool Changed<TV>(Expression<Func<TE, TV>> attribute, TV from, TV to)
             => Changed(Helper.Name(attribute), from, to);

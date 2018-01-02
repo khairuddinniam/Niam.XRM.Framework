@@ -10,11 +10,19 @@ using Niam.XRM.TestFramework;
 using System.Linq;
 using System.Linq.Expressions;
 using Niam.XRM.Framework.Interfaces.Data;
+using Xunit.Abstractions;
 
 namespace Niam.XRM.Framework.Tests.Plugin
 {
     public class CommandBaseTest
     {
+        private readonly ITestOutputHelper _output;
+
+        public CommandBaseTest(ITestOutputHelper output)
+        {
+            _output = output;
+        }
+
         [Fact]
         public void Can_create_command()
         {
@@ -29,15 +37,6 @@ namespace Niam.XRM.Framework.Tests.Plugin
             var command = new Command(context);
             Assert.NotNull(command.PublicWrapper);
             Assert.Same(reference, command.PublicWrapper.Entity);
-        }
-
-        private class Command : CommandBase<Entity, EntityWrapper<Entity>>
-        {
-            public EntityWrapper<Entity> PublicWrapper => Wrapper;
-
-            public Command(ITransactionContext<Entity> context) : base(context)
-            {
-            }
         }
 
         [Fact]
@@ -64,6 +63,10 @@ namespace Niam.XRM.Framework.Tests.Plugin
             public EntityWrapper<xts_entity> PublicWrapper => Wrapper;
 
             public CommandGeneric(ITransactionContext<xts_entity> context) : base(context)
+            {
+            }
+
+            protected override void HandleExecuteCore()
             {
             }
         }
@@ -344,6 +347,29 @@ namespace Niam.XRM.Framework.Tests.Plugin
             Assert.Equal("Hello world", command.GetNameTest<xts_keytest>(e => e.xts_referenceid));
         }
 
+        [Fact]
+        public void Can_execute_events()
+        {
+            var logs = new List<string>();
+            var tracingService = Substitute.For<ITracingService>();
+            tracingService.When(s => s.Trace(Arg.Any<string>(), Arg.Any<object[]>()))
+                .Do(ci => {
+                    var format = ci.ArgAt<string>(0);
+                    var args = ci.ArgAt<object[]>(1);
+                    string log = String.Format(format, args);
+                    _output.WriteLine(log);
+                    logs.Add(log);
+                });
+
+            var context = Substitute.For<ITransactionContext<xts_entity>>();
+            context.TracingService.Returns(tracingService);
+
+            Assert.ThrowsAny<Exception>(() => new Command(context).Execute());
+            Assert.Equal("OnExecuting", logs[0]);
+            Assert.Equal("Hello Error", logs[1]);
+            Assert.Equal("OnExecuted", logs[2]);
+        }
+
         public enum CommandEnumTest
         {
             Eleven = 11,
@@ -352,9 +378,32 @@ namespace Niam.XRM.Framework.Tests.Plugin
             Fourteen = 14
         }
 
+        private class Command : CommandBase<Entity, EntityWrapper<Entity>>
+        {
+            public EntityWrapper<Entity> PublicWrapper => Wrapper;
+
+            public Command(ITransactionContext<Entity> context) : base(context)
+            {
+                OnExecuting += () => Context.Trace("OnExecuting");
+                OnExecutionError += ex => Context.Trace(ex.Message);
+                OnExecuted += () => Context.Trace("OnExecuted");
+            }
+
+            public void Execute() => ExecuteCore();
+
+            protected override void HandleExecuteCore()
+            {
+                throw new InvalidOperationException("Hello Error");
+            }
+        }
+
         private class CommandTest : CommandBase<xts_entity, EntityWrapper<xts_entity>>
         {
             public CommandTest(ITransactionContext<xts_entity> context) : base(context)
+            {
+            }
+            
+            protected override void HandleExecuteCore()
             {
             }
 

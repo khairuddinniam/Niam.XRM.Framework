@@ -11,11 +11,21 @@ using Niam.XRM.Framework.Interfaces.Plugin;
 using Niam.XRM.Framework.Plugin;
 using Niam.XRM.TestFramework;
 using Xunit;
+using Niam.XRM.Framework.Plugin.Configurations;
+using Niam.XRM.Framework.Interfaces.Plugin.Configurations;
+using Xunit.Abstractions;
 
 namespace Niam.XRM.Framework.Tests.Plugin
 {
     public class OperationBaseTest
     {
+        private readonly ITestOutputHelper _output;
+
+        public OperationBaseTest(ITestOutputHelper output)
+        {
+            _output = output;
+        }
+
         [Theory]
         [MemberData(nameof(GetCorrectConditionsForUpdate))]
         public void Can_access_wrapper(string message, int stage)
@@ -191,6 +201,31 @@ namespace Niam.XRM.Framework.Tests.Plugin
                 moneyValueProvider.GetValue().Returns(new Money(7890m));
                 Set(e => e.xts_totalmoney, moneyValueProvider);
             }
+        }
+
+        [Theory]
+        [InlineData(PluginLogOption.Crm)]
+        [InlineData(PluginLogOption.File)]
+        public void Can_log_operation_execution(PluginLogOption pluginLogOption)
+        {
+            var list = new List<string>();
+            var tracingService = Substitute.For<ITracingService>();
+            tracingService.When(s => s.Trace(Arg.Any<string>(), Arg.Any<object[]>()))
+                .Do(ci => {
+                    var format = ci.ArgAt<string>(0);
+                    var args = ci.ArgAt<object[]>(1);
+                    string log = String.Format(format, args);
+                    _output.WriteLine(log);
+                    list.Add(log);
+                });
+
+            var context = Substitute.For<ITransactionContext<xts_entity>>();
+            context.LogOption.Returns(pluginLogOption);
+            context.TracingService.Returns(tracingService);
+
+            new Operation(context).Execute();
+            Assert.StartsWith("Entered", list[0]);
+            Assert.StartsWith("Exiting", list[1]);
         }
 
         private enum EnumTest
