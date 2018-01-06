@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Version>7.1.0.1-rc1</Version>
+    <Version>7.1.0.1-rc2</Version>
     <Description>Dynamics 365 Plugin Framework</Description>
     <PackageReleaseNotes>
     </PackageReleaseNotes>
@@ -16,6 +16,7 @@
     <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="7.1.1" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
   </ItemGroup>
 </Project>

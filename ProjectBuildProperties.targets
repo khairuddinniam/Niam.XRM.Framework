@@ -5,6 +5,7 @@
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>..\open-source.snk</AssemblyOriginatorKeyFile>
     <DelaySign>False</DelaySign>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
   </PropertyGroup>
   
   <PropertyGroup>

@@ -14,6 +14,7 @@
 	<ProjectReference Include="..\Niam.XRM.TestFramework\Niam.XRM.TestFramework.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
   </ItemGroup>
   <ItemGroup>
