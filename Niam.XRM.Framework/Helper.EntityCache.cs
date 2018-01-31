@@ -30,6 +30,8 @@ namespace Niam.XRM.Framework
             
             public static IEntityInfo GetOrAddInfo(Type entityType)
             {
+                var entityName = GetEntityLogicalName(entityType);
+                if (entityName == null && typeof(Entity) != entityType) return null;
                 if (Infos.TryGetValue(entityType, out var cached)) return cached;
 
                 var dataMap = new Dictionary<string, string>();
@@ -55,7 +57,7 @@ namespace Niam.XRM.Framework
                     : new EntityInfo
                     {
                         IsCrmSvcUtilGenerated = GetIsCrmSvcUtilGenerated(entityType),
-                        LogicalName = GetEntityLogicalName(entityType),
+                        LogicalName = entityName,
                         DataMap = dataMap,
                         Properties = propertyMap,
                         PrimaryNameAttribute = GetPrimaryNameAttribute(memberInfos, dataMap),
