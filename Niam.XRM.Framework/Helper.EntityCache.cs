@@ -17,20 +17,25 @@ namespace Niam.XRM.Framework
     {
         internal static class EntityCache
         {
-            internal static readonly ConcurrentDictionary<string,IEntityInfo> Infos 
-                = new ConcurrentDictionary<string, IEntityInfo>();
-        }
+            private static readonly ConcurrentDictionary<Type, IEntityInfo> Infos 
+                = new ConcurrentDictionary<Type, IEntityInfo>();
 
-        private static class EntityCache<T> where T : Entity
-        {
-            internal static readonly IEntityInfo Info;
+            public static void Clear() => Infos.Clear();
 
-            static EntityCache()
+            public static bool TryGetValue(string entityName, out IEntityInfo value)
             {
+                value = Infos.Values.FirstOrDefault(i => i.LogicalName == entityName);
+                return value != null;
+            }
+            
+            public static IEntityInfo GetOrAddInfo(Type entityType)
+            {
+                if (Infos.TryGetValue(entityType, out var cached)) return cached;
+
                 var dataMap = new Dictionary<string, string>();
                 var propertyMap = new Dictionary<string, PropertyInfo>();
                 const BindingFlags bindingFlags = BindingFlags.Public | BindingFlags.Instance;
-                var memberInfos = typeof(T).GetMembers(bindingFlags)
+                var memberInfos = entityType.GetMembers(bindingFlags)
                     .Where(mi => mi.MemberType == MemberTypes.Field || mi.MemberType == MemberTypes.Property)
                     .ToArray();
 
@@ -44,36 +49,34 @@ namespace Niam.XRM.Framework
                     if (mi.MemberType == MemberTypes.Property)
                         propertyMap[memberName] = (PropertyInfo) mi;
                 }
-                
-                var info = typeof(T) == typeof(Entity)
-                    ? new EntityInfo { LogicalName = "CRM_SDK_ENTITY" } 
+
+                var info = entityType == typeof(Entity)
+                    ? new EntityInfo { LogicalName = "CRM_SDK_ENTITY" }
                     : new EntityInfo
                     {
-                        IsCrmSvcUtilGenerated = GetIsCrmSvcUtilGenerated(),
-                        LogicalName = GetEntityLogicalName(),
+                        IsCrmSvcUtilGenerated = GetIsCrmSvcUtilGenerated(entityType),
+                        LogicalName = GetEntityLogicalName(entityType),
                         DataMap = dataMap,
                         Properties = propertyMap,
                         PrimaryNameAttribute = GetPrimaryNameAttribute(memberInfos, dataMap),
                         StateCodeActiveValue = GetStateCodeActiveValue(memberInfos, dataMap)
                     };
 
-                EntityCache.Infos.TryAdd(info.LogicalName, info);
-                Info = info;
+                Infos.TryAdd(entityType, info);
+
+                return info;
             }
 
-            private static bool GetIsCrmSvcUtilGenerated()
+            private static bool GetIsCrmSvcUtilGenerated(Type entityType)
             {
-                var attribute = typeof(T).GetCustomAttribute<GeneratedCodeAttribute>();
+                var attribute = entityType.GetCustomAttribute<GeneratedCodeAttribute>();
                 return attribute?.Tool == "CrmSvcUtil";
             }
 
-            private static string GetEntityLogicalName()
+            private static string GetEntityLogicalName(Type entityType)
             {
-                var nameAttribute = typeof (T).GetCustomAttribute<EntityLogicalNameAttribute>();
-                if (nameAttribute == null)
-                    throw new InvalidOperationException("The type doesn't have EntityLogicalNameAttribute.");
-
-                return nameAttribute.LogicalName;
+                var nameAttribute = entityType.GetCustomAttribute<EntityLogicalNameAttribute>();
+                return nameAttribute?.LogicalName;
             }
 
             private static string GetAttributeName(MemberInfo mi)
@@ -103,6 +106,18 @@ namespace Niam.XRM.Framework
 
                 var attributeInfo = descAttributes.First().Description.FromJson<EntityInfo>();
                 return attributeInfo.StateCodeActiveValue;
+            }
+        }
+
+        private static class EntityCache<T> where T : Entity
+        {
+            internal static readonly IEntityInfo Info;
+
+            static EntityCache()
+            {
+                Info = EntityCache.GetOrAddInfo(typeof(T));
+                if (Info == null)
+                    throw new InvalidOperationException("The type doesn't have EntityLogicalNameAttribute.");
             }
         }
     }

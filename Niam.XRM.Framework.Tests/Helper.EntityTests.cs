@@ -517,5 +517,13 @@ namespace Niam.XRM.Framework.Tests
             Assert.Equal(equipmentReference, collection.Entities[0].ToEntity<ActivityParty>().Get(e => e.PartyId));
             Assert.Equal(leadReference, collection.Entities[1].ToEntity<ActivityParty>().Get(e => e.PartyId));
         }
+
+        [Fact]
+        public void Can_get_entity_info_from_type()
+        {
+            var info = Helper.Info(typeof(xts_relatedentity));
+            Assert.Equal("xts_entityid", info.GetAttributeName("Id"));
+            Assert.Equal("xts_entityid", Helper.Name<xts_relatedentity>(e => e.Id));
+        }
     }
 }

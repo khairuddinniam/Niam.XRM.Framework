@@ -121,7 +121,7 @@ namespace Niam.XRM.Framework.Tests
         [Fact]
         public void Can_get_primary_attribute()
         {
-            Helper.EntityCache.Infos.TryRemove("xts_keytest", out IEntityInfo value);
+            Helper.EntityCache.Clear();
 
             var test = new TestHelper();
             var metadata = new EntityMetadata
@@ -144,9 +144,8 @@ namespace Niam.XRM.Framework.Tests
             var service = test.Service;
             Assert.Equal("primarynameattributekey", service.GetPrimaryAttribute("xts_keytest"));
             test.Service.Received(1).Execute(Arg.Any<OrganizationRequest>());
-
-            var info = Helper.Info<xts_keytest>();
-            Helper.EntityCache.Infos.TryAdd(info.LogicalName, info); // Cache entity info.
+            
+            Helper.EntityCache.GetOrAddInfo(typeof(xts_keytest)); // Cache entity info.
             Assert.Equal("primarynameattributekey", service.GetPrimaryAttribute("xts_keytest"));
             test.Service.Received(1).Execute(Arg.Any<OrganizationRequest>());
         }

@@ -167,7 +167,10 @@ namespace Niam.XRM.Framework
             where T : Entity => EntityCache<T>.Info;
 
         public static IEntityInfo Info(string entityName)
-            => EntityCache.Infos.TryGetValue(entityName, out IEntityInfo value) ? value : null;
+            => EntityCache.TryGetValue(entityName, out var value) ? value : null;
+
+        public static IEntityInfo Info(Type entityType)
+            => EntityCache.GetOrAddInfo(entityType);
 
         public static bool ContainsAny<T>(
             this T entity, 
