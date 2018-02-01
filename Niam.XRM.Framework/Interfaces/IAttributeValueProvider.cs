@@ -6,7 +6,7 @@ namespace Niam.XRM.Framework.Interfaces
 {
     public interface IAttributeValueProvider
     {
-        object GetValueFor(string targetAttribute);
+        object GetValueFor(string targetEntityName, string targetAttribute);
     }
 
     public interface IAttributeValueProvider<T, TV> : IAttributeValueProvider

@@ -174,7 +174,7 @@ namespace Niam.XRM.Framework.Tests
         public void Can_set_through_attribute_value_provider()
         {
             var valueProvider = Substitute.For<IAttributeValueProvider>();
-            valueProvider.GetValueFor(Arg.Any<string>()).Returns("1234");
+            valueProvider.GetValueFor(Arg.Any<string>(), Arg.Any<string>()).Returns("1234");
 
             var entity = new Entity();
             var accessor = new EntityAccessor<Entity>(entity);

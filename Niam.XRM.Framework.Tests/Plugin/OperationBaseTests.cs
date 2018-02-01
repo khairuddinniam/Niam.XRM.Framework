@@ -179,7 +179,7 @@ namespace Niam.XRM.Framework.Tests.Plugin
                 Set(e => e.xts_otheroptionsetvalue, 45);
 
                 var stringAttributeValueProvider = Substitute.For<IAttributeValueProvider>();
-                stringAttributeValueProvider.GetValueFor(Arg.Any<string>()).Returns("HELLO");
+                stringAttributeValueProvider.GetValueFor(Arg.Any<string>(), Arg.Any<string>()).Returns("HELLO");
                 Set("xts_string", stringAttributeValueProvider);
 
                 var intValueProvider = Substitute.For<IValueProvider<int>>();

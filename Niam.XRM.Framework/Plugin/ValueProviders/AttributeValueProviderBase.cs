@@ -11,7 +11,7 @@ namespace Niam.XRM.Framework.Plugin.ValueProviders
         public TV GetValueFor(Expression<Func<T, TV>> targetAttribute)
             => HandleGetValueFor(Helper.Name(targetAttribute));
 
-        public object GetValueFor(string targetAttribute)
+        public object GetValueFor(string targetEntityName, string targetAttribute)
             => HandleGetValueFor(targetAttribute);
 
         protected abstract TV HandleGetValueFor(string targetAttribute);

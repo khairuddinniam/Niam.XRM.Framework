@@ -28,6 +28,7 @@ namespace Niam.XRM.Framework.Tests
         public void Can_get_entity_name()
         {
             Assert.Equal("xts_entity", Helper.Name<xts_entity>());
+            Assert.Equal("xts_entity", Helper.Name(typeof(xts_entity)));
         }
 
         [Fact]
@@ -312,7 +313,7 @@ namespace Niam.XRM.Framework.Tests
         public void Can_set_through_attribute_value_provider()
         {
             var valueProvider = Substitute.For<IAttributeValueProvider>();
-            valueProvider.GetValueFor(Arg.Any<string>()).Returns("1234");
+            valueProvider.GetValueFor(Arg.Any<string>(), Arg.Any<string>()).Returns("1234");
 
             var entity = new Entity();
             entity.Set("xts_attribute", valueProvider);
@@ -340,8 +341,12 @@ namespace Niam.XRM.Framework.Tests
 
             var entity = new Entity();
             entity.Set("xts_attribute", valueProvider);
-
             Assert.Equal("1234", entity.Get<string>("xts_attribute"));
+
+            var spesificValueProvider = Substitute.For<IValueProvider<int>>();
+            spesificValueProvider.GetValue().Returns(4567);
+            entity.Set<int>("xts_number", spesificValueProvider);
+            Assert.Equal(4567, entity.Get<int>("xts_number"));
         }
         
         [Fact]

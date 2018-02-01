@@ -88,10 +88,9 @@ namespace Niam.XRM.Framework
             entity.Set(attribute, collection);
         }
 
-        public static void Set<T>(this T entity, MemberInfo memberInfo, object value)
-            where T : Entity
+        public static void Set(this Entity entity, MemberInfo memberInfo, object value)
         {
-            var info = Info<T>();
+            var info = Info(entity.GetType());
             if (info.IsCrmSvcUtilGenerated)
             {
                 info.GetPropertyInfo(memberInfo.Name).SetValue(entity, value);
@@ -103,8 +102,7 @@ namespace Niam.XRM.Framework
             }
         }
 
-        public static void Set<T>(this T entity, string attributeName, object value)
-            where T : Entity
+        public static void Set(this Entity entity, string attributeName, object value)
         {
             entity[attributeName] = value;
 
@@ -113,17 +111,19 @@ namespace Niam.XRM.Framework
                 entity.Id = (Guid) value;
         }
 
-        public static void Set<T>(this T entity, string attributeName, IAttributeValueProvider attributeValueProvider)
-            where T : Entity => Set(entity, attributeName, attributeValueProvider.GetValueFor(attributeName));
+        public static void Set(this Entity entity, string attributeName, IAttributeValueProvider attributeValueProvider)
+            => Set(entity, attributeName, attributeValueProvider.GetValueFor(entity.LogicalName, attributeName));
 
-        public static void Set<T>(this T entity, string attributeName, IValueProvider valueProvider)
-            where T : Entity => Set(entity, attributeName, valueProvider.GetValue());
+        public static void Set(this Entity entity, string attributeName, IValueProvider valueProvider)
+            => Set(entity, attributeName, valueProvider.GetValue());
+
+        public static void Set<TV>(this Entity entity, string attributeName, IValueProvider<TV> valueProvider)
+            => Set(entity, attributeName, valueProvider.GetValue());
 
         public static bool Remove<T>(this T entity, Expression<Func<T, object>> attribute)
             where T : Entity => Remove(entity, Name(attribute));
 
-        public static bool Remove<T>(this T entity, string attribute)
-            where T : Entity => entity.Attributes.Remove(attribute);
+        public static bool Remove(this Entity entity, string attribute) => entity.Attributes.Remove(attribute);
 
         public static bool Equal<T, TV>(this T entity, Expression<Func<T, TV>> attribute, TV comparisonValue)
             where T : Entity => Equal(Get(entity, attribute), comparisonValue);
@@ -137,6 +137,8 @@ namespace Niam.XRM.Framework
         // Get entity logical name.
         public static string Name<T>()
             where T : Entity => EntityCache<T>.Info.LogicalName;
+
+        public static string Name(Type entityType) => Info(entityType).LogicalName;
 
         // Get attribute logical name.
         public static string Name<T>(this T entity, Expression<Func<T, object>> attribute)
