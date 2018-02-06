@@ -54,6 +54,9 @@ namespace Niam.XRM.Framework
         public static void Set<T, TV>(this T entity, Expression<Func<T, TV>> attribute, IValueProvider<TV> valueProvider)
             where T : Entity => Set(entity, attribute, valueProvider.GetValue());
 
+        public static void Set<T, TV>(this T entity, Expression<Func<T, TV>> attribute, IAttributeValueProvider valueProvider)
+            where T : Entity => Set(entity, attribute, (TV) valueProvider.GetValueFor(Name<T>(), Name(attribute)));
+
         public static void Set<T, TV>(this T entity, Expression<Func<T, TV?>> attribute, IValueProvider<TV> valueProvider)
             where T : Entity
             where TV : struct => Set(entity, attribute, valueProvider.GetValue());
