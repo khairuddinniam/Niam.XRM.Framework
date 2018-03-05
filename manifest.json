@@ -1161,10 +1161,10 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "1akY8FC2v6aca/8qTT/fkg=="
+          "hash": "LQhjumG1Jc07Hs6boZjRqQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -1212,7 +1212,7 @@
           "hash": "1+FgJwHObKZWpizZ+H0jWA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1224,7 +1224,7 @@
           "hash": "J5Z4XfBf78WVODfXyLY+3A=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1236,7 +1236,7 @@
           "hash": "XyBBn6GUYwz8U7XWuD/6nw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1248,7 +1248,7 @@
           "hash": "/dTpyj7vdQfDan6zqM2ACA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
