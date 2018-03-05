@@ -28,8 +28,8 @@
       },
       {
         "files": [
-          "articles/**.md",
-          "articles/**/toc.yml",
+          "tutorials/**.md",
+          "tutorials/**/toc.yml",
           "toc.yml",
           "*.md"
         ]
@@ -55,6 +55,10 @@
     ],
     "dest": "_site",
     "globalMetadataFiles": [],
+    "globalMetadata": {
+      "_appFooter": "<span>Copyright © 2018 <strong>Khairuddin Ni'am, Temmy Wahyu Raharjo</strong></span>",
+      "_disableContribution": true
+    },
     "fileMetadataFiles": [],
     "template": [
       "default"
