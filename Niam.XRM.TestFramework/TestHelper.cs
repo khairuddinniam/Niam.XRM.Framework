@@ -25,6 +25,7 @@ namespace Niam.XRM.TestFramework
         public IList<EntityReference> DeletedEntities { get; } = new List<EntityReference>();
         public IOrganizationService Service { get; }
         public IPluginExecutionContext PluginExecutionContext { get; }
+        public ITracingService TracingService { get; }
         public IServiceProvider ServiceProvider { get; }
 
         public TestHelper()
@@ -34,6 +35,7 @@ namespace Niam.XRM.TestFramework
 
             Service = CreateOrganizationService();
             PluginExecutionContext = CreatePluginExecutionContext();
+            TracingService = Substitute.For<ITracingService>();
             ServiceProvider = CreateServiceProvider();
         }
 
@@ -171,6 +173,7 @@ namespace Niam.XRM.TestFramework
             var serviceProvider = Substitute.For<IServiceProvider>();
             serviceProvider.GetService(Arg.Is(typeof(IPluginExecutionContext))).Returns(PluginExecutionContext);
             serviceProvider.GetService(Arg.Is(typeof(IOrganizationServiceFactory))).Returns(serviceFactory);
+            serviceProvider.GetService(Arg.Is(typeof(ITracingService))).Returns(TracingService);
 
             return serviceProvider;
         }
