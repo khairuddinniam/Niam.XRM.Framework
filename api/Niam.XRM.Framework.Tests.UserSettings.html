@@ -1,0 +1,3235 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class UserSettings
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class UserSettings
+   ">
+    <meta name="generator" content="docfx 2.32.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Niam.XRM.Framework.Tests.UserSettings">
+  
+  
+  <h1 id="Niam_XRM_Framework_Tests_UserSettings" data-uid="Niam.XRM.Framework.Tests.UserSettings" class="text-break">Class UserSettings
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Microsoft.Xrm.Sdk.Entity</span></div>
+    <div class="level2"><span class="xref">UserSettings</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.Runtime.Serialization.IExtensibleDataObject</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">Microsoft.Xrm.Sdk.Entity.Contains(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Xrm.Sdk.Entity.ToEntity&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Xrm.Sdk.Entity.ToEntityReference()</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Xrm.Sdk.Entity.GetAttributeValue&lt;T&gt;(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Xrm.Sdk.Entity.SetAttributeValue(System.String, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Xrm.Sdk.Entity.GetFormattedAttributeValue(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Xrm.Sdk.Entity.GetRelatedEntity&lt;TEntity&gt;(System.String, System.Nullable&lt;Microsoft.Xrm.Sdk.EntityRole&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Xrm.Sdk.Entity.SetRelatedEntity&lt;TEntity&gt;(System.String, System.Nullable&lt;Microsoft.Xrm.Sdk.EntityRole&gt;, TEntity)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Xrm.Sdk.Entity.GetRelatedEntities&lt;TEntity&gt;(System.String, System.Nullable&lt;Microsoft.Xrm.Sdk.EntityRole&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Xrm.Sdk.Entity.SetRelatedEntities&lt;TEntity&gt;(System.String, System.Nullable&lt;Microsoft.Xrm.Sdk.EntityRole&gt;, System.Collections.Generic.IEnumerable&lt;TEntity&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Xrm.Sdk.Entity.LogicalName</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Xrm.Sdk.Entity.Attributes</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Xrm.Sdk.Entity.EntityState</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Xrm.Sdk.Entity.FormattedValues</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Xrm.Sdk.Entity.RelatedEntities</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Xrm.Sdk.Entity.RowVersion</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Xrm.Sdk.Entity.KeyAttributes</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Xrm.Sdk.Entity.Item[System.String]</span>
+    </div>
+    <div>
+      <span class="xref">Microsoft.Xrm.Sdk.Entity.ExtensionData</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Niam.XRM.Framework.Tests.html">Niam.XRM.Framework.Tests</a></h6>
+  <h6><strong>Assembly</strong>: Niam.XRM.Framework.Tests.dll</h6>
+  <h5 id="Niam_XRM_Framework_Tests_UserSettings_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[EntityLogicalName(&quot;usersettings&quot;)]
+public class UserSettings : Entity, IExtensibleDataObject</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings__ctor.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L56">View Source</a>
+  </span>
+  <a id="Niam_XRM_Framework_Tests_UserSettings__ctor_" data-uid="Niam.XRM.Framework.Tests.UserSettings.#ctor*"></a>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings__ctor" data-uid="Niam.XRM.Framework.Tests.UserSettings.#ctor">UserSettings()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UserSettings()</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_AddressBookSyncInterval.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.AddressBookSyncInterval%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L75">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_AddressBookSyncInterval" data-uid="Niam.XRM.Framework.Tests.UserSettings.AddressBookSyncInterval">AddressBookSyncInterval</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? AddressBookSyncInterval</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_AdvancedFindStartupMode.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.AdvancedFindStartupMode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L211">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_AdvancedFindStartupMode" data-uid="Niam.XRM.Framework.Tests.UserSettings.AdvancedFindStartupMode">AdvancedFindStartupMode</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? AdvancedFindStartupMode</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_AllowEmailCredentials.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.AllowEmailCredentials%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L155">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_AllowEmailCredentials" data-uid="Niam.XRM.Framework.Tests.UserSettings.AllowEmailCredentials">AllowEmailCredentials</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly bool? AllowEmailCredentials</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_AMDesignator.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.AMDesignator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L153">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_AMDesignator" data-uid="Niam.XRM.Framework.Tests.UserSettings.AMDesignator">AMDesignator</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly string AMDesignator</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_AutoCreateContactOnPromote.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.AutoCreateContactOnPromote%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L123">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_AutoCreateContactOnPromote" data-uid="Niam.XRM.Framework.Tests.UserSettings.AutoCreateContactOnPromote">AutoCreateContactOnPromote</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? AutoCreateContactOnPromote</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_BusinessUnitId.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.BusinessUnitId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L151">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_BusinessUnitId" data-uid="Niam.XRM.Framework.Tests.UserSettings.BusinessUnitId">BusinessUnitId</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly Guid? BusinessUnitId</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Guid</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_CalendarType.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.CalendarType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L215">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_CalendarType" data-uid="Niam.XRM.Framework.Tests.UserSettings.CalendarType">CalendarType</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? CalendarType</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_CreatedBy.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.CreatedBy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L213">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_CreatedBy" data-uid="Niam.XRM.Framework.Tests.UserSettings.CreatedBy">CreatedBy</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly EntityReference CreatedBy</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.Xrm.Sdk.EntityReference</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_CreatedOn.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.CreatedOn%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L97">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_CreatedOn" data-uid="Niam.XRM.Framework.Tests.UserSettings.CreatedOn">CreatedOn</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly DateTime? CreatedOn</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.DateTime</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_CreatedOnBehalfBy.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.CreatedOnBehalfBy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L173">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_CreatedOnBehalfBy" data-uid="Niam.XRM.Framework.Tests.UserSettings.CreatedOnBehalfBy">CreatedOnBehalfBy</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly EntityReference CreatedOnBehalfBy</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.Xrm.Sdk.EntityReference</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_CurrencyDecimalPrecision.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.CurrencyDecimalPrecision%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L255">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_CurrencyDecimalPrecision" data-uid="Niam.XRM.Framework.Tests.UserSettings.CurrencyDecimalPrecision">CurrencyDecimalPrecision</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? CurrencyDecimalPrecision</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_CurrencyFormatCode.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.CurrencyFormatCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L163">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_CurrencyFormatCode" data-uid="Niam.XRM.Framework.Tests.UserSettings.CurrencyFormatCode">CurrencyFormatCode</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? CurrencyFormatCode</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_CurrencySymbol.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.CurrencySymbol%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L169">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_CurrencySymbol" data-uid="Niam.XRM.Framework.Tests.UserSettings.CurrencySymbol">CurrencySymbol</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly string CurrencySymbol</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_DataValidationModeForExportToExcel.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.DataValidationModeForExportToExcel%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L207">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_DataValidationModeForExportToExcel" data-uid="Niam.XRM.Framework.Tests.UserSettings.DataValidationModeForExportToExcel">DataValidationModeForExportToExcel</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly OptionSetValue DataValidationModeForExportToExcel</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.Xrm.Sdk.OptionSetValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_DateFormatCode.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.DateFormatCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L87">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_DateFormatCode" data-uid="Niam.XRM.Framework.Tests.UserSettings.DateFormatCode">DateFormatCode</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? DateFormatCode</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_DateFormatString.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.DateFormatString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L171">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_DateFormatString" data-uid="Niam.XRM.Framework.Tests.UserSettings.DateFormatString">DateFormatString</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly string DateFormatString</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_DateSeparator.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.DateSeparator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L119">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_DateSeparator" data-uid="Niam.XRM.Framework.Tests.UserSettings.DateSeparator">DateSeparator</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly string DateSeparator</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_DecimalSymbol.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.DecimalSymbol%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L259">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_DecimalSymbol" data-uid="Niam.XRM.Framework.Tests.UserSettings.DecimalSymbol">DecimalSymbol</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly string DecimalSymbol</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_DefaultCalendarView.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.DefaultCalendarView%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L131">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_DefaultCalendarView" data-uid="Niam.XRM.Framework.Tests.UserSettings.DefaultCalendarView">DefaultCalendarView</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? DefaultCalendarView</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_DefaultCountryCode.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.DefaultCountryCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L179">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_DefaultCountryCode" data-uid="Niam.XRM.Framework.Tests.UserSettings.DefaultCountryCode">DefaultCountryCode</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly string DefaultCountryCode</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_DefaultDashboardId.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.DefaultDashboardId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L245">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_DefaultDashboardId" data-uid="Niam.XRM.Framework.Tests.UserSettings.DefaultDashboardId">DefaultDashboardId</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly Guid? DefaultDashboardId</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Guid</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_DefaultSearchExperience.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.DefaultSearchExperience%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L159">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_DefaultSearchExperience" data-uid="Niam.XRM.Framework.Tests.UserSettings.DefaultSearchExperience">DefaultSearchExperience</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly OptionSetValue DefaultSearchExperience</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.Xrm.Sdk.OptionSetValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_EmailPassword.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.EmailPassword%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L225">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_EmailPassword" data-uid="Niam.XRM.Framework.Tests.UserSettings.EmailPassword">EmailPassword</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly string EmailPassword</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_EmailUsername.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.EmailUsername%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L247">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_EmailUsername" data-uid="Niam.XRM.Framework.Tests.UserSettings.EmailUsername">EmailUsername</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly string EmailUsername</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_EntityFormMode.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.EntityFormMode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L77">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_EntityFormMode" data-uid="Niam.XRM.Framework.Tests.UserSettings.EntityFormMode">EntityFormMode</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly OptionSetValue EntityFormMode</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.Xrm.Sdk.OptionSetValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_EntityLogicalName.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.EntityLogicalName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L55">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_EntityLogicalName" data-uid="Niam.XRM.Framework.Tests.UserSettings.EntityLogicalName">EntityLogicalName</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string EntityLogicalName = &quot;usersettings&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_FullNameConventionCode.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.FullNameConventionCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L203">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_FullNameConventionCode" data-uid="Niam.XRM.Framework.Tests.UserSettings.FullNameConventionCode">FullNameConventionCode</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? FullNameConventionCode</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_GetStartedPaneContentEnabled.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.GetStartedPaneContentEnabled%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L195">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_GetStartedPaneContentEnabled" data-uid="Niam.XRM.Framework.Tests.UserSettings.GetStartedPaneContentEnabled">GetStartedPaneContentEnabled</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly bool? GetStartedPaneContentEnabled</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_HelpLanguageId.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.HelpLanguageId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L103">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_HelpLanguageId" data-uid="Niam.XRM.Framework.Tests.UserSettings.HelpLanguageId">HelpLanguageId</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? HelpLanguageId</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_HomepageArea.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.HomepageArea%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L111">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_HomepageArea" data-uid="Niam.XRM.Framework.Tests.UserSettings.HomepageArea">HomepageArea</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly string HomepageArea</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_HomepageLayout.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.HomepageLayout%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L83">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_HomepageLayout" data-uid="Niam.XRM.Framework.Tests.UserSettings.HomepageLayout">HomepageLayout</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly string HomepageLayout</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_HomepageSubarea.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.HomepageSubarea%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L241">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_HomepageSubarea" data-uid="Niam.XRM.Framework.Tests.UserSettings.HomepageSubarea">HomepageSubarea</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly string HomepageSubarea</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_IgnoreUnsolicitedEmail.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.IgnoreUnsolicitedEmail%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L147">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_IgnoreUnsolicitedEmail" data-uid="Niam.XRM.Framework.Tests.UserSettings.IgnoreUnsolicitedEmail">IgnoreUnsolicitedEmail</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly bool? IgnoreUnsolicitedEmail</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_IncomingEmailFilteringMethod.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.IncomingEmailFilteringMethod%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L105">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_IncomingEmailFilteringMethod" data-uid="Niam.XRM.Framework.Tests.UserSettings.IncomingEmailFilteringMethod">IncomingEmailFilteringMethod</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly OptionSetValue IncomingEmailFilteringMethod</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.Xrm.Sdk.OptionSetValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_IsAppsForCrmAlertDismissed.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.IsAppsForCrmAlertDismissed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L227">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_IsAppsForCrmAlertDismissed" data-uid="Niam.XRM.Framework.Tests.UserSettings.IsAppsForCrmAlertDismissed">IsAppsForCrmAlertDismissed</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly bool? IsAppsForCrmAlertDismissed</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_IsAutoDataCaptureEnabled.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.IsAutoDataCaptureEnabled%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L125">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_IsAutoDataCaptureEnabled" data-uid="Niam.XRM.Framework.Tests.UserSettings.IsAutoDataCaptureEnabled">IsAutoDataCaptureEnabled</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly bool? IsAutoDataCaptureEnabled</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_IsDefaultCountryCodeCheckEnabled.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.IsDefaultCountryCodeCheckEnabled%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L99">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_IsDefaultCountryCodeCheckEnabled" data-uid="Niam.XRM.Framework.Tests.UserSettings.IsDefaultCountryCodeCheckEnabled">IsDefaultCountryCodeCheckEnabled</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly bool? IsDefaultCountryCodeCheckEnabled</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_IsDuplicateDetectionEnabledWhenGoingOnline.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.IsDuplicateDetectionEnabledWhenGoingOnline%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L229">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_IsDuplicateDetectionEnabledWhenGoingOnline" data-uid="Niam.XRM.Framework.Tests.UserSettings.IsDuplicateDetectionEnabledWhenGoingOnline">IsDuplicateDetectionEnabledWhenGoingOnline</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly bool? IsDuplicateDetectionEnabledWhenGoingOnline</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_IsGuidedHelpEnabled.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.IsGuidedHelpEnabled%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L143">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_IsGuidedHelpEnabled" data-uid="Niam.XRM.Framework.Tests.UserSettings.IsGuidedHelpEnabled">IsGuidedHelpEnabled</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly bool? IsGuidedHelpEnabled</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_IsResourceBookingExchangeSyncEnabled.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.IsResourceBookingExchangeSyncEnabled%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L223">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_IsResourceBookingExchangeSyncEnabled" data-uid="Niam.XRM.Framework.Tests.UserSettings.IsResourceBookingExchangeSyncEnabled">IsResourceBookingExchangeSyncEnabled</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly bool? IsResourceBookingExchangeSyncEnabled</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_IsSendAsAllowed.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.IsSendAsAllowed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L231">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_IsSendAsAllowed" data-uid="Niam.XRM.Framework.Tests.UserSettings.IsSendAsAllowed">IsSendAsAllowed</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly bool? IsSendAsAllowed</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_LastAlertsViewedTime.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.LastAlertsViewedTime%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L205">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_LastAlertsViewedTime" data-uid="Niam.XRM.Framework.Tests.UserSettings.LastAlertsViewedTime">LastAlertsViewedTime</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly DateTime? LastAlertsViewedTime</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.DateTime</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_LocaleId.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.LocaleId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L219">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_LocaleId" data-uid="Niam.XRM.Framework.Tests.UserSettings.LocaleId">LocaleId</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? LocaleId</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_LongDateFormatCode.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.LongDateFormatCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L113">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_LongDateFormatCode" data-uid="Niam.XRM.Framework.Tests.UserSettings.LongDateFormatCode">LongDateFormatCode</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? LongDateFormatCode</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_ModifiedBy.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.ModifiedBy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L121">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_ModifiedBy" data-uid="Niam.XRM.Framework.Tests.UserSettings.ModifiedBy">ModifiedBy</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly EntityReference ModifiedBy</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.Xrm.Sdk.EntityReference</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_ModifiedOn.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.ModifiedOn%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L157">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_ModifiedOn" data-uid="Niam.XRM.Framework.Tests.UserSettings.ModifiedOn">ModifiedOn</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly DateTime? ModifiedOn</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.DateTime</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_ModifiedOnBehalfBy.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.ModifiedOnBehalfBy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L197">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_ModifiedOnBehalfBy" data-uid="Niam.XRM.Framework.Tests.UserSettings.ModifiedOnBehalfBy">ModifiedOnBehalfBy</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly EntityReference ModifiedOnBehalfBy</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.Xrm.Sdk.EntityReference</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_NegativeCurrencyFormatCode.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.NegativeCurrencyFormatCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L233">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_NegativeCurrencyFormatCode" data-uid="Niam.XRM.Framework.Tests.UserSettings.NegativeCurrencyFormatCode">NegativeCurrencyFormatCode</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? NegativeCurrencyFormatCode</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_NegativeFormatCode.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.NegativeFormatCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L201">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_NegativeFormatCode" data-uid="Niam.XRM.Framework.Tests.UserSettings.NegativeFormatCode">NegativeFormatCode</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? NegativeFormatCode</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_NextTrackingNumber.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.NextTrackingNumber%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L95">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_NextTrackingNumber" data-uid="Niam.XRM.Framework.Tests.UserSettings.NextTrackingNumber">NextTrackingNumber</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? NextTrackingNumber</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_NumberGroupFormat.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.NumberGroupFormat%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L139">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_NumberGroupFormat" data-uid="Niam.XRM.Framework.Tests.UserSettings.NumberGroupFormat">NumberGroupFormat</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly string NumberGroupFormat</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_NumberSeparator.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.NumberSeparator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L135">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_NumberSeparator" data-uid="Niam.XRM.Framework.Tests.UserSettings.NumberSeparator">NumberSeparator</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly string NumberSeparator</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_OfflineSyncInterval.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.OfflineSyncInterval%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L73">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_OfflineSyncInterval" data-uid="Niam.XRM.Framework.Tests.UserSettings.OfflineSyncInterval">OfflineSyncInterval</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? OfflineSyncInterval</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_OutlookSyncInterval.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.OutlookSyncInterval%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L71">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_OutlookSyncInterval" data-uid="Niam.XRM.Framework.Tests.UserSettings.OutlookSyncInterval">OutlookSyncInterval</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? OutlookSyncInterval</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_PagingLimit.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.PagingLimit%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L91">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_PagingLimit" data-uid="Niam.XRM.Framework.Tests.UserSettings.PagingLimit">PagingLimit</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? PagingLimit</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_PersonalizationSettings.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.PersonalizationSettings%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L185">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_PersonalizationSettings" data-uid="Niam.XRM.Framework.Tests.UserSettings.PersonalizationSettings">PersonalizationSettings</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly string PersonalizationSettings</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_PMDesignator.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.PMDesignator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L221">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_PMDesignator" data-uid="Niam.XRM.Framework.Tests.UserSettings.PMDesignator">PMDesignator</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly string PMDesignator</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_PricingDecimalPrecision.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.PricingDecimalPrecision%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L129">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_PricingDecimalPrecision" data-uid="Niam.XRM.Framework.Tests.UserSettings.PricingDecimalPrecision">PricingDecimalPrecision</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? PricingDecimalPrecision</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_ReportScriptErrors.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.ReportScriptErrors%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L199">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_ReportScriptErrors" data-uid="Niam.XRM.Framework.Tests.UserSettings.ReportScriptErrors">ReportScriptErrors</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly OptionSetValue ReportScriptErrors</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.Xrm.Sdk.OptionSetValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_ResourceBookingExchangeSyncVersion.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.ResourceBookingExchangeSyncVersion%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L133">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_ResourceBookingExchangeSyncVersion" data-uid="Niam.XRM.Framework.Tests.UserSettings.ResourceBookingExchangeSyncVersion">ResourceBookingExchangeSyncVersion</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? ResourceBookingExchangeSyncVersion</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_ShowWeekNumber.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.ShowWeekNumber%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L137">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_ShowWeekNumber" data-uid="Niam.XRM.Framework.Tests.UserSettings.ShowWeekNumber">ShowWeekNumber</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly bool? ShowWeekNumber</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_SplitViewState.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.SplitViewState%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L79">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_SplitViewState" data-uid="Niam.XRM.Framework.Tests.UserSettings.SplitViewState">SplitViewState</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly bool? SplitViewState</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_SyncContactCompany.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.SyncContactCompany%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L257">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_SyncContactCompany" data-uid="Niam.XRM.Framework.Tests.UserSettings.SyncContactCompany">SyncContactCompany</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly bool? SyncContactCompany</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_SystemUserId.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.SystemUserId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L177">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_SystemUserId" data-uid="Niam.XRM.Framework.Tests.UserSettings.SystemUserId">SystemUserId</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly Guid? SystemUserId</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Guid</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_TimeFormatCode.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.TimeFormatCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L237">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_TimeFormatCode" data-uid="Niam.XRM.Framework.Tests.UserSettings.TimeFormatCode">TimeFormatCode</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? TimeFormatCode</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_TimeFormatString.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.TimeFormatString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L263">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_TimeFormatString" data-uid="Niam.XRM.Framework.Tests.UserSettings.TimeFormatString">TimeFormatString</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly string TimeFormatString</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_TimeSeparator.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.TimeSeparator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L89">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_TimeSeparator" data-uid="Niam.XRM.Framework.Tests.UserSettings.TimeSeparator">TimeSeparator</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly string TimeSeparator</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_TimeZoneBias.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.TimeZoneBias%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L127">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_TimeZoneBias" data-uid="Niam.XRM.Framework.Tests.UserSettings.TimeZoneBias">TimeZoneBias</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? TimeZoneBias</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_TimeZoneCode.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.TimeZoneCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L167">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_TimeZoneCode" data-uid="Niam.XRM.Framework.Tests.UserSettings.TimeZoneCode">TimeZoneCode</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? TimeZoneCode</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_TimeZoneDaylightBias.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.TimeZoneDaylightBias%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L109">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_TimeZoneDaylightBias" data-uid="Niam.XRM.Framework.Tests.UserSettings.TimeZoneDaylightBias">TimeZoneDaylightBias</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? TimeZoneDaylightBias</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_TimeZoneDaylightDay.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.TimeZoneDaylightDay%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L93">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_TimeZoneDaylightDay" data-uid="Niam.XRM.Framework.Tests.UserSettings.TimeZoneDaylightDay">TimeZoneDaylightDay</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? TimeZoneDaylightDay</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_TimeZoneDaylightDayOfWeek.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.TimeZoneDaylightDayOfWeek%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L117">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_TimeZoneDaylightDayOfWeek" data-uid="Niam.XRM.Framework.Tests.UserSettings.TimeZoneDaylightDayOfWeek">TimeZoneDaylightDayOfWeek</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? TimeZoneDaylightDayOfWeek</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_TimeZoneDaylightHour.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.TimeZoneDaylightHour%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L141">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_TimeZoneDaylightHour" data-uid="Niam.XRM.Framework.Tests.UserSettings.TimeZoneDaylightHour">TimeZoneDaylightHour</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? TimeZoneDaylightHour</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_TimeZoneDaylightMinute.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.TimeZoneDaylightMinute%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L261">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_TimeZoneDaylightMinute" data-uid="Niam.XRM.Framework.Tests.UserSettings.TimeZoneDaylightMinute">TimeZoneDaylightMinute</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? TimeZoneDaylightMinute</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_TimeZoneDaylightMonth.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.TimeZoneDaylightMonth%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L165">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_TimeZoneDaylightMonth" data-uid="Niam.XRM.Framework.Tests.UserSettings.TimeZoneDaylightMonth">TimeZoneDaylightMonth</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? TimeZoneDaylightMonth</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_TimeZoneDaylightSecond.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.TimeZoneDaylightSecond%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L209">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_TimeZoneDaylightSecond" data-uid="Niam.XRM.Framework.Tests.UserSettings.TimeZoneDaylightSecond">TimeZoneDaylightSecond</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? TimeZoneDaylightSecond</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_TimeZoneDaylightYear.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.TimeZoneDaylightYear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L101">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_TimeZoneDaylightYear" data-uid="Niam.XRM.Framework.Tests.UserSettings.TimeZoneDaylightYear">TimeZoneDaylightYear</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? TimeZoneDaylightYear</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_TimeZoneStandardBias.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.TimeZoneStandardBias%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L243">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_TimeZoneStandardBias" data-uid="Niam.XRM.Framework.Tests.UserSettings.TimeZoneStandardBias">TimeZoneStandardBias</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? TimeZoneStandardBias</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_TimeZoneStandardDay.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.TimeZoneStandardDay%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L145">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_TimeZoneStandardDay" data-uid="Niam.XRM.Framework.Tests.UserSettings.TimeZoneStandardDay">TimeZoneStandardDay</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? TimeZoneStandardDay</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_TimeZoneStandardDayOfWeek.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.TimeZoneStandardDayOfWeek%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L239">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_TimeZoneStandardDayOfWeek" data-uid="Niam.XRM.Framework.Tests.UserSettings.TimeZoneStandardDayOfWeek">TimeZoneStandardDayOfWeek</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? TimeZoneStandardDayOfWeek</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_TimeZoneStandardHour.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.TimeZoneStandardHour%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L217">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_TimeZoneStandardHour" data-uid="Niam.XRM.Framework.Tests.UserSettings.TimeZoneStandardHour">TimeZoneStandardHour</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? TimeZoneStandardHour</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_TimeZoneStandardMinute.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.TimeZoneStandardMinute%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L193">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_TimeZoneStandardMinute" data-uid="Niam.XRM.Framework.Tests.UserSettings.TimeZoneStandardMinute">TimeZoneStandardMinute</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? TimeZoneStandardMinute</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_TimeZoneStandardMonth.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.TimeZoneStandardMonth%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L187">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_TimeZoneStandardMonth" data-uid="Niam.XRM.Framework.Tests.UserSettings.TimeZoneStandardMonth">TimeZoneStandardMonth</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? TimeZoneStandardMonth</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_TimeZoneStandardSecond.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.TimeZoneStandardSecond%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L189">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_TimeZoneStandardSecond" data-uid="Niam.XRM.Framework.Tests.UserSettings.TimeZoneStandardSecond">TimeZoneStandardSecond</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? TimeZoneStandardSecond</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_TimeZoneStandardYear.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.TimeZoneStandardYear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L191">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_TimeZoneStandardYear" data-uid="Niam.XRM.Framework.Tests.UserSettings.TimeZoneStandardYear">TimeZoneStandardYear</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? TimeZoneStandardYear</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_TrackingTokenId.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.TrackingTokenId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L81">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_TrackingTokenId" data-uid="Niam.XRM.Framework.Tests.UserSettings.TrackingTokenId">TrackingTokenId</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? TrackingTokenId</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_TransactionCurrencyId.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.TransactionCurrencyId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L251">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_TransactionCurrencyId" data-uid="Niam.XRM.Framework.Tests.UserSettings.TransactionCurrencyId">TransactionCurrencyId</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly EntityReference TransactionCurrencyId</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.Xrm.Sdk.EntityReference</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_UILanguageId.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.UILanguageId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L107">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_UILanguageId" data-uid="Niam.XRM.Framework.Tests.UserSettings.UILanguageId">UILanguageId</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? UILanguageId</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_UseCrmFormForAppointment.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.UseCrmFormForAppointment%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L149">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_UseCrmFormForAppointment" data-uid="Niam.XRM.Framework.Tests.UserSettings.UseCrmFormForAppointment">UseCrmFormForAppointment</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly bool? UseCrmFormForAppointment</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_UseCrmFormForContact.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.UseCrmFormForContact%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L235">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_UseCrmFormForContact" data-uid="Niam.XRM.Framework.Tests.UserSettings.UseCrmFormForContact">UseCrmFormForContact</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly bool? UseCrmFormForContact</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_UseCrmFormForEmail.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.UseCrmFormForEmail%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L161">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_UseCrmFormForEmail" data-uid="Niam.XRM.Framework.Tests.UserSettings.UseCrmFormForEmail">UseCrmFormForEmail</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly bool? UseCrmFormForEmail</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_UseCrmFormForTask.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.UseCrmFormForTask%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L253">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_UseCrmFormForTask" data-uid="Niam.XRM.Framework.Tests.UserSettings.UseCrmFormForTask">UseCrmFormForTask</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly bool? UseCrmFormForTask</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_UseImageStrips.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.UseImageStrips%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L181">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_UseImageStrips" data-uid="Niam.XRM.Framework.Tests.UserSettings.UseImageStrips">UseImageStrips</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly bool? UseImageStrips</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_UserProfile.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.UserProfile%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L85">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_UserProfile" data-uid="Niam.XRM.Framework.Tests.UserSettings.UserProfile">UserProfile</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly string UserProfile</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_VersionNumber.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.VersionNumber%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L183">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_VersionNumber" data-uid="Niam.XRM.Framework.Tests.UserSettings.VersionNumber">VersionNumber</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int? VersionNumber</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_VisualizationPaneLayout.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.VisualizationPaneLayout%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L249">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_VisualizationPaneLayout" data-uid="Niam.XRM.Framework.Tests.UserSettings.VisualizationPaneLayout">VisualizationPaneLayout</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly OptionSetValue VisualizationPaneLayout</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.Xrm.Sdk.OptionSetValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_WorkdayStartTime.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.WorkdayStartTime%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L115">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_WorkdayStartTime" data-uid="Niam.XRM.Framework.Tests.UserSettings.WorkdayStartTime">WorkdayStartTime</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly string WorkdayStartTime</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_WorkdayStopTime.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.WorkdayStopTime%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L175">View Source</a>
+  </span>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_WorkdayStopTime" data-uid="Niam.XRM.Framework.Tests.UserSettings.WorkdayStopTime">WorkdayStopTime</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly string WorkdayStopTime</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings_Id.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings.Id%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L60">View Source</a>
+  </span>
+  <a id="Niam_XRM_Framework_Tests_UserSettings_Id_" data-uid="Niam.XRM.Framework.Tests.UserSettings.Id*"></a>
+  <h4 id="Niam_XRM_Framework_Tests_UserSettings_Id" data-uid="Niam.XRM.Framework.Tests.UserSettings.Id">Id</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Column(&quot;systemuserid&quot;)]
+public override Guid Id { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Guid</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Microsoft.Xrm.Sdk.Entity.Id</span></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.Runtime.Serialization.IExtensibleDataObject</span>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_ToJson__1___0_System_Runtime_Serialization_Json_DataContractJsonSerializerSettings_">Helper.ToJson&lt;T&gt;(T, DataContractJsonSerializerSettings)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_ToEntityAccessor__1_Microsoft_Xrm_Sdk_Entity_">Helper.ToEntityAccessor&lt;T&gt;(Entity)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_ToEntityAccessor__1___0_">Helper.ToEntityAccessor&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Get__2___0_System_Linq_Expressions_Expression_System_Func___0___1___">Helper.Get&lt;T, TV&gt;(T, Expression&lt;Func&lt;T, TV&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Get__1_Microsoft_Xrm_Sdk_Entity_System_String_">Helper.Get&lt;TV&gt;(Entity, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_GetValue__1___0_System_Linq_Expressions_Expression_System_Func___0_Microsoft_Xrm_Sdk_Money___System_Decimal_">Helper.GetValue&lt;T&gt;(T, Expression&lt;Func&lt;T, Money&gt;&gt;, Decimal)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_GetValue__1___0_System_Linq_Expressions_Expression_System_Func___0_Microsoft_Xrm_Sdk_OptionSetValue___System_Nullable_System_Int32__">Helper.GetValue&lt;T&gt;(T, Expression&lt;Func&lt;T, OptionSetValue&gt;&gt;, Nullable&lt;Int32&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_GetValue__2___0_System_Linq_Expressions_Expression_System_Func___0_System_Nullable___1______1_">Helper.GetValue&lt;T, TV&gt;(T, Expression&lt;Func&lt;T, Nullable&lt;TV&gt;&gt;&gt;, TV)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_GetFormattedValue_Microsoft_Xrm_Sdk_Entity_System_String_">Helper.GetFormattedValue(Entity, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_GetFormattedValue__1___0_System_Linq_Expressions_Expression_System_Func___0_System_Object___">Helper.GetFormattedValue&lt;T&gt;(T, Expression&lt;Func&lt;T, Object&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_SetFormattedValue_Microsoft_Xrm_Sdk_Entity_System_String_System_String_">Helper.SetFormattedValue(Entity, String, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_SetFormattedValue__1___0_System_Linq_Expressions_Expression_System_Func___0_System_Object___System_String_">Helper.SetFormattedValue&lt;T&gt;(T, Expression&lt;Func&lt;T, Object&gt;&gt;, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Set__2___0_System_Linq_Expressions_Expression_System_Func___0___1___Niam_XRM_Framework_Interfaces_IAttributeValueProvider___0___1__">Helper.Set&lt;T, TV&gt;(T, Expression&lt;Func&lt;T, TV&gt;&gt;, IAttributeValueProvider&lt;T, TV&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Set__2___0_System_Linq_Expressions_Expression_System_Func___0___1___Niam_XRM_Framework_Interfaces_IValueProvider___1__">Helper.Set&lt;T, TV&gt;(T, Expression&lt;Func&lt;T, TV&gt;&gt;, IValueProvider&lt;TV&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Set__2___0_System_Linq_Expressions_Expression_System_Func___0___1___Niam_XRM_Framework_Interfaces_IAttributeValueProvider_">Helper.Set&lt;T, TV&gt;(T, Expression&lt;Func&lt;T, TV&gt;&gt;, IAttributeValueProvider)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Set__2___0_System_Linq_Expressions_Expression_System_Func___0_System_Nullable___1____Niam_XRM_Framework_Interfaces_IValueProvider___1__">Helper.Set&lt;T, TV&gt;(T, Expression&lt;Func&lt;T, Nullable&lt;TV&gt;&gt;&gt;, IValueProvider&lt;TV&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Set__2___0_System_Linq_Expressions_Expression_System_Func___0___1_____1_">Helper.Set&lt;T, TV&gt;(T, Expression&lt;Func&lt;T, TV&gt;&gt;, TV)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Set__1___0_System_Linq_Expressions_Expression_System_Func___0_Microsoft_Xrm_Sdk_OptionSetValue___System_Enum_">Helper.Set&lt;T&gt;(T, Expression&lt;Func&lt;T, OptionSetValue&gt;&gt;, Enum)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Set__1___0_System_Linq_Expressions_Expression_System_Func___0_Microsoft_Xrm_Sdk_OptionSetValue___System_Nullable_System_Int32__">Helper.Set&lt;T&gt;(T, Expression&lt;Func&lt;T, OptionSetValue&gt;&gt;, Nullable&lt;Int32&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Set__1___0_System_Linq_Expressions_Expression_System_Func___0_Microsoft_Xrm_Sdk_Money___System_Decimal_">Helper.Set&lt;T&gt;(T, Expression&lt;Func&lt;T, Money&gt;&gt;, Decimal)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Set__1___0_System_Linq_Expressions_Expression_System_Func___0_Microsoft_Xrm_Sdk_Money___Niam_XRM_Framework_Interfaces_IValueProvider_System_Decimal__">Helper.Set&lt;T&gt;(T, Expression&lt;Func&lt;T, Money&gt;&gt;, IValueProvider&lt;Decimal&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Set__1___0_System_Linq_Expressions_Expression_System_Func___0_Microsoft_Xrm_Sdk_EntityCollection___Microsoft_Xrm_Sdk_EntityReference_Microsoft_Xrm_Sdk_EntityReference___">Helper.Set&lt;T&gt;(T, Expression&lt;Func&lt;T, EntityCollection&gt;&gt;, EntityReference, EntityReference[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Set__1___0_System_Linq_Expressions_Expression_System_Func___0_Microsoft_Xrm_Sdk_EntityCollection___System_Collections_Generic_IEnumerable_Microsoft_Xrm_Sdk_EntityReference__">Helper.Set&lt;T&gt;(T, Expression&lt;Func&lt;T, EntityCollection&gt;&gt;, IEnumerable&lt;EntityReference&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Set_Microsoft_Xrm_Sdk_Entity_System_Reflection_MemberInfo_System_Object_">Helper.Set(Entity, MemberInfo, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Set_Microsoft_Xrm_Sdk_Entity_System_String_System_Object_">Helper.Set(Entity, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Set_Microsoft_Xrm_Sdk_Entity_System_String_Niam_XRM_Framework_Interfaces_IAttributeValueProvider_">Helper.Set(Entity, String, IAttributeValueProvider)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Set_Microsoft_Xrm_Sdk_Entity_System_String_Niam_XRM_Framework_Interfaces_IValueProvider_">Helper.Set(Entity, String, IValueProvider)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Set__1_Microsoft_Xrm_Sdk_Entity_System_String_Niam_XRM_Framework_Interfaces_IValueProvider___0__">Helper.Set&lt;TV&gt;(Entity, String, IValueProvider&lt;TV&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Remove__1___0_System_Linq_Expressions_Expression_System_Func___0_System_Object___">Helper.Remove&lt;T&gt;(T, Expression&lt;Func&lt;T, Object&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Remove_Microsoft_Xrm_Sdk_Entity_System_String_">Helper.Remove(Entity, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Equal__2___0_System_Linq_Expressions_Expression_System_Func___0___1_____1_">Helper.Equal&lt;T, TV&gt;(T, Expression&lt;Func&lt;T, TV&gt;&gt;, TV)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Equal__1___0_System_Linq_Expressions_Expression_System_Func___0_Microsoft_Xrm_Sdk_OptionSetValue___System_Enum_">Helper.Equal&lt;T&gt;(T, Expression&lt;Func&lt;T, OptionSetValue&gt;&gt;, Enum)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_EqualsAny__1___0_System_Linq_Expressions_Expression_System_Func___0_Microsoft_Xrm_Sdk_OptionSetValue___System_Enum_System_Enum___">Helper.EqualsAny&lt;T&gt;(T, Expression&lt;Func&lt;T, OptionSetValue&gt;&gt;, Enum, Enum[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Name__1___0_System_Linq_Expressions_Expression_System_Func___0_System_Object___">Helper.Name&lt;T&gt;(T, Expression&lt;Func&lt;T, Object&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Name__2___0_System_Linq_Expressions_Expression_System_Func___0___1___">Helper.Name&lt;T, TV&gt;(T, Expression&lt;Func&lt;T, TV&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_ContainsAny__1___0_System_Linq_Expressions_Expression_System_Func___0_System_Object___System_Linq_Expressions_Expression_System_Func___0_System_Object_____">Helper.ContainsAny&lt;T&gt;(T, Expression&lt;Func&lt;T, Object&gt;&gt;, Expression&lt;Func&lt;T, Object&gt;&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_ContainsAny__1___0_System_String_System_String___">Helper.ContainsAny&lt;T&gt;(T, String, String[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_GetAliasedEntity_Microsoft_Xrm_Sdk_Entity_System_String_">Helper.GetAliasedEntity(Entity, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_GetAliasedEntity__1_Microsoft_Xrm_Sdk_Entity_System_String_">Helper.GetAliasedEntity&lt;T&gt;(Entity, String)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_Framework_Tests_UserSettings.md&amp;value=---%0Auid%3A%20Niam.XRM.Framework.Tests.UserSettings%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/TestEntities.cs/#L52" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

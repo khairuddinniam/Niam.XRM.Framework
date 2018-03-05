@@ -1,0 +1,1584 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class CommandBase&lt;TE, TW&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class CommandBase&lt;TE, TW&gt;
+   ">
+    <meta name="generator" content="docfx 2.32.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2">
+  
+  
+  <h1 id="Niam_XRM_Framework_Plugin_CommandBase_2" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2" class="text-break">Class CommandBase&lt;TE, TW&gt;
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">CommandBase&lt;TE, TW&gt;</span></div>
+      <div class="level2"><a class="xref" href="Niam.XRM.Framework.Plugin.OperationBase-2.html">OperationBase&lt;TE, TW&gt;</a></div>
+      <div class="level2"><a class="xref" href="Niam.XRM.Framework.Plugin.ValidationBase-2.html">ValidationBase&lt;TE, TW&gt;</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Niam.XRM.Framework.Interfaces.Data.IEntityWrapperRelation-1.html">IEntityWrapperRelation</a>&lt;TE&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Niam.XRM.Framework.Plugin.html">Niam.XRM.Framework.Plugin</a></h6>
+  <h6><strong>Assembly</strong>: Niam.XRM.Framework.dll</h6>
+  <h5 id="Niam_XRM_Framework_Plugin_CommandBase_2_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class CommandBase&lt;TE, TW&gt; : IEntityWrapperRelation&lt;TE&gt; where TE : Entity where TW : class, IEntityWrapper&lt;TE&gt;</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TE</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TW</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <a id="Niam_XRM_Framework_Plugin_CommandBase_2__ctor_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.#ctor*"></a>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2__ctor_Niam_XRM_Framework_Interfaces_Plugin_ITransactionContext__0__" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.#ctor(Niam.XRM.Framework.Interfaces.Plugin.ITransactionContext{`0})">CommandBase(ITransactionContext&lt;TE&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected CommandBase(ITransactionContext&lt;TE&gt; context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Niam.XRM.Framework.Interfaces.Plugin.ITransactionContext-1.html">ITransactionContext</a>&lt;TE&gt;</td>
+        <td><span class="parametername">context</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <a id="Niam_XRM_Framework_Plugin_CommandBase_2_Context_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.Context*"></a>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_Context" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.Context">Context</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected ITransactionContext&lt;TE&gt; Context { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Niam.XRM.Framework.Interfaces.Plugin.ITransactionContext-1.html">ITransactionContext</a>&lt;TE&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Niam_XRM_Framework_Plugin_CommandBase_2_Initial_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.Initial*"></a>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_Initial" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.Initial">Initial</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected IEntityGetter&lt;TE&gt; Initial { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Niam.XRM.Framework.Interfaces.IEntityGetter-1.html">IEntityGetter</a>&lt;TE&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Niam_XRM_Framework_Plugin_CommandBase_2_Service_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.Service*"></a>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_Service" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.Service">Service</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected IOrganizationService Service { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.Xrm.Sdk.IOrganizationService</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Niam_XRM_Framework_Plugin_CommandBase_2_Wrapper_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.Wrapper*"></a>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_Wrapper" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.Wrapper">Wrapper</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual TW Wrapper { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TW</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="Niam_XRM_Framework_Plugin_CommandBase_2_Changed_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.Changed*"></a>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_Changed_System_Linq_Expressions_Expression_System_Func__0_Microsoft_Xrm_Sdk_Money___System_Nullable_System_Decimal__System_Nullable_System_Decimal__" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.Changed(System.Linq.Expressions.Expression{System.Func{`0,Microsoft.Xrm.Sdk.Money}},System.Nullable{System.Decimal},System.Nullable{System.Decimal})">Changed(Expression&lt;Func&lt;TE, Money&gt;&gt;, Nullable&lt;Decimal&gt;, Nullable&lt;Decimal&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool Changed(Expression&lt;Func&lt;TE, Money&gt;&gt; moneyAttribute, decimal? from, decimal? to)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;TE, <span class="xref">Microsoft.Xrm.Sdk.Money</span>&gt;&gt;</td>
+        <td><span class="parametername">moneyAttribute</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Decimal</span>&gt;</td>
+        <td><span class="parametername">from</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Decimal</span>&gt;</td>
+        <td><span class="parametername">to</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Niam_XRM_Framework_Plugin_CommandBase_2_Changed_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.Changed*"></a>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_Changed_System_Linq_Expressions_Expression_System_Func__0_Microsoft_Xrm_Sdk_OptionSetValue___System_Enum_System_Enum_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.Changed(System.Linq.Expressions.Expression{System.Func{`0,Microsoft.Xrm.Sdk.OptionSetValue}},System.Enum,System.Enum)">Changed(Expression&lt;Func&lt;TE, OptionSetValue&gt;&gt;, Enum, Enum)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool Changed(Expression&lt;Func&lt;TE, OptionSetValue&gt;&gt; optionAttribute, Enum from, Enum to)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;TE, <span class="xref">Microsoft.Xrm.Sdk.OptionSetValue</span>&gt;&gt;</td>
+        <td><span class="parametername">optionAttribute</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Enum</span></td>
+        <td><span class="parametername">from</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Enum</span></td>
+        <td><span class="parametername">to</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Niam_XRM_Framework_Plugin_CommandBase_2_Changed_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.Changed*"></a>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_Changed__1_System_Linq_Expressions_Expression_System_Func__0___0_____0___0_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.Changed``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},``0,``0)">Changed&lt;TV&gt;(Expression&lt;Func&lt;TE, TV&gt;&gt;, TV, TV)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool Changed&lt;TV&gt;(Expression&lt;Func&lt;TE, TV&gt;&gt; attribute, TV from, TV to)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;TE, TV&gt;&gt;</td>
+        <td><span class="parametername">attribute</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TV</span></td>
+        <td><span class="parametername">from</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TV</span></td>
+        <td><span class="parametername">to</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TV</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Niam_XRM_Framework_Plugin_CommandBase_2_Changed_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.Changed*"></a>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_Changed__1_System_String___0___0_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.Changed``1(System.String,``0,``0)">Changed&lt;TV&gt;(String, TV, TV)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool Changed&lt;TV&gt;(string attribute, TV from, TV to)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">attribute</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TV</span></td>
+        <td><span class="parametername">from</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TV</span></td>
+        <td><span class="parametername">to</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TV</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Niam_XRM_Framework_Plugin_CommandBase_2_Equal_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.Equal*"></a>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_Equal_System_Linq_Expressions_Expression_System_Func__0_Microsoft_Xrm_Sdk_OptionSetValue___System_Enum_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.Equal(System.Linq.Expressions.Expression{System.Func{`0,Microsoft.Xrm.Sdk.OptionSetValue}},System.Enum)">Equal(Expression&lt;Func&lt;TE, OptionSetValue&gt;&gt;, Enum)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool Equal(Expression&lt;Func&lt;TE, OptionSetValue&gt;&gt; optionAttribute, Enum option)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;TE, <span class="xref">Microsoft.Xrm.Sdk.OptionSetValue</span>&gt;&gt;</td>
+        <td><span class="parametername">optionAttribute</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Enum</span></td>
+        <td><span class="parametername">option</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Niam_XRM_Framework_Plugin_CommandBase_2_Equal_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.Equal*"></a>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_Equal__1_System_Linq_Expressions_Expression_System_Func__0___0_____0_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.Equal``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},``0)">Equal&lt;TV&gt;(Expression&lt;Func&lt;TE, TV&gt;&gt;, TV)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool Equal&lt;TV&gt;(Expression&lt;Func&lt;TE, TV&gt;&gt; attribute, TV comparisonValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;TE, TV&gt;&gt;</td>
+        <td><span class="parametername">attribute</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TV</span></td>
+        <td><span class="parametername">comparisonValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TV</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Niam_XRM_Framework_Plugin_CommandBase_2_Equal_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.Equal*"></a>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_Equal__1_System_String___0_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.Equal``1(System.String,``0)">Equal&lt;TV&gt;(String, TV)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool Equal&lt;TV&gt;(string attribute, TV comparisonValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">attribute</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TV</span></td>
+        <td><span class="parametername">comparisonValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TV</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Niam_XRM_Framework_Plugin_CommandBase_2_EqualsAny_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.EqualsAny*"></a>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_EqualsAny_System_Linq_Expressions_Expression_System_Func__0_Microsoft_Xrm_Sdk_OptionSetValue___System_Enum_System_Enum___" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.EqualsAny(System.Linq.Expressions.Expression{System.Func{`0,Microsoft.Xrm.Sdk.OptionSetValue}},System.Enum,System.Enum[])">EqualsAny(Expression&lt;Func&lt;TE, OptionSetValue&gt;&gt;, Enum, Enum[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool EqualsAny(Expression&lt;Func&lt;TE, OptionSetValue&gt;&gt; optionAttribute, Enum firstOption, params Enum[] otherOptions)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;TE, <span class="xref">Microsoft.Xrm.Sdk.OptionSetValue</span>&gt;&gt;</td>
+        <td><span class="parametername">optionAttribute</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Enum</span></td>
+        <td><span class="parametername">firstOption</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Enum</span>[]</td>
+        <td><span class="parametername">otherOptions</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Niam_XRM_Framework_Plugin_CommandBase_2_ExecuteCore_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.ExecuteCore*"></a>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_ExecuteCore" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.ExecuteCore">ExecuteCore()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void ExecuteCore()</code></pre>
+  </div>
+  <a id="Niam_XRM_Framework_Plugin_CommandBase_2_Get_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.Get*"></a>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_Get__1_System_Linq_Expressions_Expression_System_Func__0___0___" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.Get``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">Get&lt;TV&gt;(Expression&lt;Func&lt;TE, TV&gt;&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected TV Get&lt;TV&gt;(Expression&lt;Func&lt;TE, TV&gt;&gt; attribute)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;TE, TV&gt;&gt;</td>
+        <td><span class="parametername">attribute</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TV</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TV</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Niam_XRM_Framework_Plugin_CommandBase_2_Get_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.Get*"></a>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_Get__1_System_String_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.Get``1(System.String)">Get&lt;TV&gt;(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected TV Get&lt;TV&gt;(string attribute)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">attribute</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TV</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TV</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Niam_XRM_Framework_Plugin_CommandBase_2_GetAllRelated_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.GetAllRelated*"></a>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_GetAllRelated_System_String_System_String_Microsoft_Xrm_Sdk_Query_ColumnSet_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.GetAllRelated(System.String,System.String,Microsoft.Xrm.Sdk.Query.ColumnSet)">GetAllRelated(String, String, ColumnSet)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected IEnumerable&lt;IEntityWrapper&lt;Entity&gt;&gt; GetAllRelated(string relatedEntityName, string relatedToParentAttribute, ColumnSet relatedColumnSet)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">relatedEntityName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">relatedToParentAttribute</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Microsoft.Xrm.Sdk.Query.ColumnSet</span></td>
+        <td><span class="parametername">relatedColumnSet</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Niam.XRM.Framework.Interfaces.Data.IEntityWrapper-1.html">IEntityWrapper</a>&lt;<span class="xref">Microsoft.Xrm.Sdk.Entity</span>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Niam_XRM_Framework_Plugin_CommandBase_2_GetAllRelated_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.GetAllRelated*"></a>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_GetAllRelated__1_System_Linq_Expressions_Expression_System_Func___0_Microsoft_Xrm_Sdk_EntityReference___Niam_XRM_Framework_Interfaces_Data_IColumnSet___0__" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.GetAllRelated``1(System.Linq.Expressions.Expression{System.Func{``0,Microsoft.Xrm.Sdk.EntityReference}},Niam.XRM.Framework.Interfaces.Data.IColumnSet{``0})">GetAllRelated&lt;TR&gt;(Expression&lt;Func&lt;TR, EntityReference&gt;&gt;, IColumnSet&lt;TR&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected IEnumerable&lt;IEntityWrapper&lt;TR&gt;&gt; GetAllRelated&lt;TR&gt;(Expression&lt;Func&lt;TR, EntityReference&gt;&gt; relatedToParentAttribute, IColumnSet&lt;TR&gt; relatedColumnSet)where TR : Entity</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;TR, <span class="xref">Microsoft.Xrm.Sdk.EntityReference</span>&gt;&gt;</td>
+        <td><span class="parametername">relatedToParentAttribute</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Niam.XRM.Framework.Interfaces.Data.IColumnSet-1.html">IColumnSet</a>&lt;TR&gt;</td>
+        <td><span class="parametername">relatedColumnSet</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Niam.XRM.Framework.Interfaces.Data.IEntityWrapper-1.html">IEntityWrapper</a>&lt;TR&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TR</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Niam_XRM_Framework_Plugin_CommandBase_2_GetAllRelated_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.GetAllRelated*"></a>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_GetAllRelated__2_System_Linq_Expressions_Expression_System_Func___0_Microsoft_Xrm_Sdk_EntityReference___Niam_XRM_Framework_Interfaces_Data_IColumnSet___0__" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.GetAllRelated``2(System.Linq.Expressions.Expression{System.Func{``0,Microsoft.Xrm.Sdk.EntityReference}},Niam.XRM.Framework.Interfaces.Data.IColumnSet{``0})">GetAllRelated&lt;TR, TWrapper&gt;(Expression&lt;Func&lt;TR, EntityReference&gt;&gt;, IColumnSet&lt;TR&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected IEnumerable&lt;TWrapper&gt; GetAllRelated&lt;TR, TWrapper&gt;(Expression&lt;Func&lt;TR, EntityReference&gt;&gt; relatedToParentAttribute, IColumnSet&lt;TR&gt; relatedColumnSet)where TR : Entity where TWrapper : class, IEntityWrapper&lt;TR&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;TR, <span class="xref">Microsoft.Xrm.Sdk.EntityReference</span>&gt;&gt;</td>
+        <td><span class="parametername">relatedToParentAttribute</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Niam.XRM.Framework.Interfaces.Data.IColumnSet-1.html">IColumnSet</a>&lt;TR&gt;</td>
+        <td><span class="parametername">relatedColumnSet</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TWrapper&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TR</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TWrapper</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Niam_XRM_Framework_Plugin_CommandBase_2_GetFormattedValue_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.GetFormattedValue*"></a>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_GetFormattedValue_System_Linq_Expressions_Expression_System_Func__0_System_Object___" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.GetFormattedValue(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})">GetFormattedValue(Expression&lt;Func&lt;TE, Object&gt;&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string GetFormattedValue(Expression&lt;Func&lt;TE, object&gt;&gt; attribute)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;TE, <span class="xref">System.Object</span>&gt;&gt;</td>
+        <td><span class="parametername">attribute</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Niam_XRM_Framework_Plugin_CommandBase_2_GetFormattedValue_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.GetFormattedValue*"></a>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_GetFormattedValue_System_String_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.GetFormattedValue(System.String)">GetFormattedValue(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string GetFormattedValue(string attributeName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">attributeName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Niam_XRM_Framework_Plugin_CommandBase_2_GetName_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.GetName*"></a>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_GetName__1_System_Linq_Expressions_Expression_System_Func__0_Microsoft_Xrm_Sdk_EntityReference___" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.GetName``1(System.Linq.Expressions.Expression{System.Func{`0,Microsoft.Xrm.Sdk.EntityReference}})">GetName&lt;TR&gt;(Expression&lt;Func&lt;TE, EntityReference&gt;&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string GetName&lt;TR&gt;(Expression&lt;Func&lt;TE, EntityReference&gt;&gt; relatedAttribute)where TR : Entity</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;TE, <span class="xref">Microsoft.Xrm.Sdk.EntityReference</span>&gt;&gt;</td>
+        <td><span class="parametername">relatedAttribute</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TR</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Niam_XRM_Framework_Plugin_CommandBase_2_GetRelated_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.GetRelated*"></a>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_GetRelated_System_String_Microsoft_Xrm_Sdk_Query_ColumnSet_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.GetRelated(System.String,Microsoft.Xrm.Sdk.Query.ColumnSet)">GetRelated(String, ColumnSet)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected IEntityWrapper&lt;Entity&gt; GetRelated(string relatedAttribute, ColumnSet relatedColumnSet)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">relatedAttribute</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Microsoft.Xrm.Sdk.Query.ColumnSet</span></td>
+        <td><span class="parametername">relatedColumnSet</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Niam.XRM.Framework.Interfaces.Data.IEntityWrapper-1.html">IEntityWrapper</a>&lt;<span class="xref">Microsoft.Xrm.Sdk.Entity</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Niam_XRM_Framework_Plugin_CommandBase_2_GetRelated_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.GetRelated*"></a>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_GetRelated__1_System_Linq_Expressions_Expression_System_Func__0_Microsoft_Xrm_Sdk_EntityReference___Niam_XRM_Framework_Interfaces_Data_IColumnSet___0__" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.GetRelated``1(System.Linq.Expressions.Expression{System.Func{`0,Microsoft.Xrm.Sdk.EntityReference}},Niam.XRM.Framework.Interfaces.Data.IColumnSet{``0})">GetRelated&lt;TR&gt;(Expression&lt;Func&lt;TE, EntityReference&gt;&gt;, IColumnSet&lt;TR&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected IEntityWrapper&lt;TR&gt; GetRelated&lt;TR&gt;(Expression&lt;Func&lt;TE, EntityReference&gt;&gt; relatedAttribute, IColumnSet&lt;TR&gt; relatedColumnSet)where TR : Entity</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;TE, <span class="xref">Microsoft.Xrm.Sdk.EntityReference</span>&gt;&gt;</td>
+        <td><span class="parametername">relatedAttribute</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Niam.XRM.Framework.Interfaces.Data.IColumnSet-1.html">IColumnSet</a>&lt;TR&gt;</td>
+        <td><span class="parametername">relatedColumnSet</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Niam.XRM.Framework.Interfaces.Data.IEntityWrapper-1.html">IEntityWrapper</a>&lt;TR&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TR</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Niam_XRM_Framework_Plugin_CommandBase_2_GetRelated_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.GetRelated*"></a>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_GetRelated__2_System_Linq_Expressions_Expression_System_Func__0_Microsoft_Xrm_Sdk_EntityReference___Niam_XRM_Framework_Interfaces_Data_IColumnSet___0__" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.GetRelated``2(System.Linq.Expressions.Expression{System.Func{`0,Microsoft.Xrm.Sdk.EntityReference}},Niam.XRM.Framework.Interfaces.Data.IColumnSet{``0})">GetRelated&lt;TR, TWrapper&gt;(Expression&lt;Func&lt;TE, EntityReference&gt;&gt;, IColumnSet&lt;TR&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected TWrapper GetRelated&lt;TR, TWrapper&gt;(Expression&lt;Func&lt;TE, EntityReference&gt;&gt; relatedReference, IColumnSet&lt;TR&gt; relatedColumnSet)where TR : Entity where TWrapper : class, IEntityWrapper&lt;TR&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;TE, <span class="xref">Microsoft.Xrm.Sdk.EntityReference</span>&gt;&gt;</td>
+        <td><span class="parametername">relatedReference</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Niam.XRM.Framework.Interfaces.Data.IColumnSet-1.html">IColumnSet</a>&lt;TR&gt;</td>
+        <td><span class="parametername">relatedColumnSet</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TWrapper</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TR</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TWrapper</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Niam_XRM_Framework_Plugin_CommandBase_2_GetValue_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.GetValue*"></a>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_GetValue_System_Linq_Expressions_Expression_System_Func__0_Microsoft_Xrm_Sdk_Money___System_Decimal_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.GetValue(System.Linq.Expressions.Expression{System.Func{`0,Microsoft.Xrm.Sdk.Money}},System.Decimal)">GetValue(Expression&lt;Func&lt;TE, Money&gt;&gt;, Decimal)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected decimal GetValue(Expression&lt;Func&lt;TE, Money&gt;&gt; moneyAttribute, decimal defaultValue = 0M)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;TE, <span class="xref">Microsoft.Xrm.Sdk.Money</span>&gt;&gt;</td>
+        <td><span class="parametername">moneyAttribute</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Decimal</span></td>
+        <td><span class="parametername">defaultValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Decimal</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Niam_XRM_Framework_Plugin_CommandBase_2_GetValue_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.GetValue*"></a>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_GetValue__1_System_Linq_Expressions_Expression_System_Func__0_System_Nullable___0______0_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.GetValue``1(System.Linq.Expressions.Expression{System.Func{`0,System.Nullable{``0}}},``0)">GetValue&lt;TV&gt;(Expression&lt;Func&lt;TE, Nullable&lt;TV&gt;&gt;&gt;, TV)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected TV GetValue&lt;TV&gt;(Expression&lt;Func&lt;TE, TV? &gt;&gt; attribute, TV defaultValue = default (TV))where TV : struct</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;TE, <span class="xref">System.Nullable</span>&lt;TV&gt;&gt;&gt;</td>
+        <td><span class="parametername">attribute</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TV</span></td>
+        <td><span class="parametername">defaultValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TV</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TV</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Niam_XRM_Framework_Plugin_CommandBase_2_HandleExecuteCore_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.HandleExecuteCore*"></a>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_HandleExecuteCore" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.HandleExecuteCore">HandleExecuteCore()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void HandleExecuteCore()</code></pre>
+  </div>
+  <h3 id="events">Events
+  </h3>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_OnExecuted" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.OnExecuted">OnExecuted</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected event Action OnExecuted</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_OnExecuting" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.OnExecuting">OnExecuting</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected event Action OnExecuting</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_OnExecutionError" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.OnExecutionError">OnExecutionError</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected event Action&lt;Exception&gt; OnExecutionError</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span>&lt;<span class="xref">System.Exception</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <a id="Niam_XRM_Framework_Plugin_CommandBase_2_Niam_XRM_Framework_Interfaces_Data_IEntityWrapperRelation_TE__GetRelated_" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.Niam#XRM#Framework#Interfaces#Data#IEntityWrapperRelation{TE}#GetRelated*"></a>
+  <h4 id="Niam_XRM_Framework_Plugin_CommandBase_2_Niam_XRM_Framework_Interfaces_Data_IEntityWrapperRelation_TE__GetRelated__1_System_Linq_Expressions_Expression_System_Func__0_Microsoft_Xrm_Sdk_EntityReference___Niam_XRM_Framework_Interfaces_Data_IColumnSet___0__" data-uid="Niam.XRM.Framework.Plugin.CommandBase`2.Niam#XRM#Framework#Interfaces#Data#IEntityWrapperRelation{TE}#GetRelated``1(System.Linq.Expressions.Expression{System.Func{`0,Microsoft.Xrm.Sdk.EntityReference}},Niam.XRM.Framework.Interfaces.Data.IColumnSet{``0})">IEntityWrapperRelation&lt;TE&gt;.GetRelated&lt;TE&gt;(Expression&lt;Func&lt;TE, EntityReference&gt;&gt;, IColumnSet&lt;TE&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEntityWrapper&lt;TR&gt; IEntityWrapperRelation&lt;TE&gt;.GetRelated&lt;TR&gt;(Expression&lt;Func&lt;TE, EntityReference&gt;&gt; relatedAttribute, IColumnSet&lt;TR&gt; relatedColumnSet)where TR : Entity</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Linq.Expressions.Expression</span>&lt;<span class="xref">System.Func</span>&lt;TE, <span class="xref">Microsoft.Xrm.Sdk.EntityReference</span>&gt;&gt;</td>
+        <td><span class="parametername">relatedAttribute</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Niam.XRM.Framework.Interfaces.Data.IColumnSet-1.html">IColumnSet</a>&lt;TR&gt;</td>
+        <td><span class="parametername">relatedColumnSet</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Niam.XRM.Framework.Interfaces.Data.IEntityWrapper-1.html">IEntityWrapper</a>&lt;TR&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TR</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Interfaces.Data.IEntityWrapperRelation-1.html">IEntityWrapperRelation&lt;T&gt;</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_ToJson__1___0_System_Runtime_Serialization_Json_DataContractJsonSerializerSettings_">Helper.ToJson&lt;T&gt;(T, DataContractJsonSerializerSettings)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © 2018 <strong>Khairuddin Ni'am, Temmy Wahyu Raharjo</strong></span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

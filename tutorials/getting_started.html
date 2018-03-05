@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Getting Started </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Getting Started ">
+    <meta name="generator" content="docfx 2.32.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h2 id="getting-started">Getting Started</h2>
+
+<p>This framework support late bound and early bound entities. For creating plugin we define into 3 parts:</p>
+<ol>
+<li>ColumnSetConfig Class</li>
+<li>Operation Class (Business related)</li>
+<li>Plugin Class</li>
+</ol>
+<h3 id="columnsetconfig-class">ColumnSetConfig Class</h3>
+<p>Configuration for entity target ColumnSet (On Update and Delete Operation).</p>
+<pre><code class="lang-csharp">using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Query;
+using Niam.XRM.Framework.Interfaces.Plugin.Configurations;
+
+namespace XrmTutorial
+{
+    public static class ColumnSetConfig
+    {
+        public static void Configure(ITransactionContextConfiguration&lt;Entity&gt; config)
+        {
+            var columnSet = new ColumnSet(
+                &quot;new_name&quot;,
+                &quot;new_parentid&quot;,
+                &quot;new_transactiondate&quot;,
+                &quot;new_amount&quot;);
+            config.ColumnSet = columnSet;
+        }
+    }
+}
+</code></pre><h3 id="operation-class">Operation Class</h3>
+<p>Operation / Business class for your plugin.</p>
+<h4 id="late-bound-example">Late Bound Example</h4>
+<pre><code class="lang-csharp">using System;
+using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Query;
+using Niam.XRM.Framework.Interfaces.Plugin;
+using Niam.XRM.Framework.Plugin;
+
+namespace XrmTutorial
+{
+    public class SetDefaultValue : OperationBase
+    {
+        public SetDefaultValue(ITransactionContext&lt;Entity&gt; context) : base(context)
+        {
+        }
+
+        protected override void HandleExecute()
+        {
+            var parentRef = Get&lt;EntityReference&gt;(&quot;new_parentid&quot;);
+            var parentName = GetParentName(parentRef);
+            Set(&quot;new_name&quot;, parentName + Wrapper.Id.ToString());
+            Set(&quot;new_transactiondate&quot;, DateTime.UtcNow);
+            Set(&quot;new_amount&quot;, new Money(1000m));
+        }
+
+        private string GetParentName(EntityReference parentRef)
+        {
+            if (parentRef == null) return &quot;&quot;;
+            var parent = Service.Retrieve(&quot;new_entity1&quot;, parentRef.Id, new ColumnSet(&quot;new_name&quot;));
+            return parent.GetAttributeValue&lt;string&gt;(&quot;new_name&quot;);
+        }
+    }
+}
+</code></pre><h4 id="early-bound-example">Early Bound Example</h4>
+<pre><code class="lang-csharp">using System;
+using Microsoft.Xrm.Sdk;
+using Niam.XRM.Framework;
+using Niam.XRM.Framework.Data;
+using Niam.XRM.Framework.Interfaces.Plugin;
+using Niam.XRM.Framework.Plugin;
+
+namespace XrmTutorial
+{
+    public class SetDefaultValueEarlyBound : OperationBase&lt;Entities.new_entity1&gt;
+    {
+        public SetDefaultValueEarlyBound(ITransactionContext&lt;Entities.new_entity1&gt; context) : base(context)
+        {
+        }
+
+        protected override void HandleExecute()
+        {
+            var parentName = GetParentName();
+            Set(e =&gt; e.new_name, parentName + Wrapper.Id.ToString());
+            Set(e =&gt; e.new_transactiondate, DateTime.UtcNow);
+            Set(e =&gt; e.new_amount, new Money(1000m));
+        }
+
+        private string GetParentName()
+        {
+            var columnSet = new ColumnSet&lt;Entities.new_entity1&gt;(e =&gt; e.new_name);
+            var result = Wrapper.GetRelated(e =&gt; e.new_parentid, columnSet);
+
+            return result != null ? result.Get(e =&gt; e.new_name) : &quot;&quot;;
+        }
+    }
+}
+</code></pre><h3 id="plugin-class">Plugin Class</h3>
+<p>Plugin class for calling the ColumnSetConfig and Operation.</p>
+<pre><code class="lang-csharp">using Microsoft.Xrm.Sdk;
+using Niam.XRM.Framework;
+using Niam.XRM.Framework.Interfaces.Plugin;
+using Niam.XRM.Framework.Interfaces.Plugin.Configurations;
+using Niam.XRM.Framework.Plugin;
+
+namespace XrmTutorial
+{
+    public class PreOperationEntity1 : PluginBase, IPlugin
+    {
+        public PreOperationEntity1(string unsecure, string secure) : 
+            base(unsecure, secure)
+        {
+        }
+
+        protected override void Configure(IPluginConfiguration&lt;Entity&gt; config)
+        {
+            ColumnSetConfig.Configure(config);
+        }
+
+        protected override void ExecuteCrmPlugin(ITransactionContext&lt;Entity&gt; context)
+        {
+            if (context.Input.ContainsAny(&quot;new_name&quot;))
+            {
+                new SetDefaultValue(context).Execute();
+            }
+        }
+    }
+}
+</code></pre></article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © 2018 <strong>Khairuddin Ni'am, Temmy Wahyu Raharjo</strong></span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

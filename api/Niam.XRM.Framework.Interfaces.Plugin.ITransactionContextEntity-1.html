@@ -1,0 +1,384 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface ITransactionContextEntity&lt;T&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface ITransactionContextEntity&lt;T&gt;
+   ">
+    <meta name="generator" content="docfx 2.32.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Niam.XRM.Framework.Interfaces.Plugin.ITransactionContextEntity`1">
+  
+  
+  <h1 id="Niam_XRM_Framework_Interfaces_Plugin_ITransactionContextEntity_1" data-uid="Niam.XRM.Framework.Interfaces.Plugin.ITransactionContextEntity`1" class="text-break">Interface ITransactionContextEntity&lt;T&gt;
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Niam.XRM.Framework.Interfaces.IEntityAccessor-1.html#Niam_XRM_Framework_Interfaces_IEntityAccessor_1_Entity">IEntityAccessor&lt;T&gt;.Entity</a>
+    </div>
+    <div>
+      <a class="xref" href="Niam.XRM.Framework.Interfaces.IEntityGetter-1.html#Niam_XRM_Framework_Interfaces_IEntityGetter_1_Get__1_System_String_">IEntityGetter&lt;T&gt;.Get&lt;TV&gt;(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Niam.XRM.Framework.Interfaces.IEntityGetter-1.html#Niam_XRM_Framework_Interfaces_IEntityGetter_1_GetFormattedValue_System_String_">IEntityGetter&lt;T&gt;.GetFormattedValue(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Niam.XRM.Framework.Interfaces.IEntitySetter-1.html#Niam_XRM_Framework_Interfaces_IEntitySetter_1_Set_System_Reflection_MemberInfo_System_Object_">IEntitySetter&lt;T&gt;.Set(MemberInfo, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Niam.XRM.Framework.Interfaces.IEntitySetter-1.html#Niam_XRM_Framework_Interfaces_IEntitySetter_1_Set_System_String_System_Object_">IEntitySetter&lt;T&gt;.Set(String, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Niam.XRM.Framework.Interfaces.IEntitySetter-1.html#Niam_XRM_Framework_Interfaces_IEntitySetter_1_Set_System_String_Niam_XRM_Framework_Interfaces_IAttributeValueProvider_">IEntitySetter&lt;T&gt;.Set(String, IAttributeValueProvider)</a>
+    </div>
+    <div>
+      <a class="xref" href="Niam.XRM.Framework.Interfaces.IEntitySetter-1.html#Niam_XRM_Framework_Interfaces_IEntitySetter_1_Set_System_String_Niam_XRM_Framework_Interfaces_IValueProvider_">IEntitySetter&lt;T&gt;.Set(String, IValueProvider)</a>
+    </div>
+    <div>
+      <a class="xref" href="Niam.XRM.Framework.Interfaces.IEntitySetter-1.html#Niam_XRM_Framework_Interfaces_IEntitySetter_1_SetFormattedValue_System_String_System_String_">IEntitySetter&lt;T&gt;.SetFormattedValue(String, String)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Niam.XRM.Framework.Interfaces.Plugin.html">Niam.XRM.Framework.Interfaces.Plugin</a></h6>
+  <h6><strong>Assembly</strong>: Niam.XRM.Framework.dll</h6>
+  <h5 id="Niam_XRM_Framework_Interfaces_Plugin_ITransactionContextEntity_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface ITransactionContextEntity&lt;out T&gt; : IEntityAccessor&lt;T&gt;, IEntityGetter&lt;T&gt;, IEntitySetter&lt;T&gt; where T : Entity</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <a id="Niam_XRM_Framework_Interfaces_Plugin_ITransactionContextEntity_1_Attributes_" data-uid="Niam.XRM.Framework.Interfaces.Plugin.ITransactionContextEntity`1.Attributes*"></a>
+  <h4 id="Niam_XRM_Framework_Interfaces_Plugin_ITransactionContextEntity_1_Attributes" data-uid="Niam.XRM.Framework.Interfaces.Plugin.ITransactionContextEntity`1.Attributes">Attributes</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">AttributeCollection Attributes { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.Xrm.Sdk.AttributeCollection</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Niam_XRM_Framework_Interfaces_Plugin_ITransactionContextEntity_1_Id_" data-uid="Niam.XRM.Framework.Interfaces.Plugin.ITransactionContextEntity`1.Id*"></a>
+  <h4 id="Niam_XRM_Framework_Interfaces_Plugin_ITransactionContextEntity_1_Id" data-uid="Niam.XRM.Framework.Interfaces.Plugin.ITransactionContextEntity`1.Id">Id</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Guid Id { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Guid</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Niam_XRM_Framework_Interfaces_Plugin_ITransactionContextEntity_1_Item_" data-uid="Niam.XRM.Framework.Interfaces.Plugin.ITransactionContextEntity`1.Item*"></a>
+  <h4 id="Niam_XRM_Framework_Interfaces_Plugin_ITransactionContextEntity_1_Item_System_String_" data-uid="Niam.XRM.Framework.Interfaces.Plugin.ITransactionContextEntity`1.Item(System.String)">Item[String]</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">object this[string attributeName] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">attributeName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Niam_XRM_Framework_Interfaces_Plugin_ITransactionContextEntity_1_LogicalName_" data-uid="Niam.XRM.Framework.Interfaces.Plugin.ITransactionContextEntity`1.LogicalName*"></a>
+  <h4 id="Niam_XRM_Framework_Interfaces_Plugin_ITransactionContextEntity_1_LogicalName" data-uid="Niam.XRM.Framework.Interfaces.Plugin.ITransactionContextEntity`1.LogicalName">LogicalName</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string LogicalName { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="events">Events
+  </h3>
+  <h4 id="Niam_XRM_Framework_Interfaces_Plugin_ITransactionContextEntity_1_AttributeChanged" data-uid="Niam.XRM.Framework.Interfaces.Plugin.ITransactionContextEntity`1.AttributeChanged">AttributeChanged</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">event AttributeChangedEventHandler AttributeChanged</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Niam.XRM.Framework.AttributeChangedEventHandler.html">AttributeChangedEventHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Niam_XRM_Framework_Interfaces_Plugin_ITransactionContextEntity_1_AttributeChanging" data-uid="Niam.XRM.Framework.Interfaces.Plugin.ITransactionContextEntity`1.AttributeChanging">AttributeChanging</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">event AttributeChangingEventHandler AttributeChanging</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Niam.XRM.Framework.AttributeChangingEventHandler.html">AttributeChangingEventHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_ToEntityReference__1_Niam_XRM_Framework_Interfaces_Plugin_ITransactionContextEntity___0__">Helper.ToEntityReference&lt;T&gt;(ITransactionContextEntity&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_ContainsAny__1_Niam_XRM_Framework_Interfaces_Plugin_ITransactionContextEntity___0__System_String_System_String___">Helper.ContainsAny&lt;T&gt;(ITransactionContextEntity&lt;T&gt;, String, String[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_ContainsAny__1_Niam_XRM_Framework_Interfaces_Plugin_ITransactionContextEntity___0__System_Linq_Expressions_Expression_System_Func___0_System_Object___System_Linq_Expressions_Expression_System_Func___0_System_Object_____">Helper.ContainsAny&lt;T&gt;(ITransactionContextEntity&lt;T&gt;, Expression&lt;Func&lt;T, Object&gt;&gt;, Expression&lt;Func&lt;T, Object&gt;&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_ToJson__1___0_System_Runtime_Serialization_Json_DataContractJsonSerializerSettings_">Helper.ToJson&lt;T&gt;(T, DataContractJsonSerializerSettings)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Get__2_Niam_XRM_Framework_Interfaces_IEntityGetter___0__System_Linq_Expressions_Expression_System_Func___0___1___">Helper.Get&lt;T, TV&gt;(IEntityGetter&lt;T&gt;, Expression&lt;Func&lt;T, TV&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_GetValue__1_Niam_XRM_Framework_Interfaces_IEntityGetter___0__System_Linq_Expressions_Expression_System_Func___0_Microsoft_Xrm_Sdk_Money___System_Decimal_">Helper.GetValue&lt;T&gt;(IEntityGetter&lt;T&gt;, Expression&lt;Func&lt;T, Money&gt;&gt;, Decimal)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_GetValue__2_Niam_XRM_Framework_Interfaces_IEntityGetter___0__System_Linq_Expressions_Expression_System_Func___0_System_Nullable___1______1_">Helper.GetValue&lt;T, TV&gt;(IEntityGetter&lt;T&gt;, Expression&lt;Func&lt;T, Nullable&lt;TV&gt;&gt;&gt;, TV)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_GetFormattedValue__1_Niam_XRM_Framework_Interfaces_IEntityGetter___0__System_Linq_Expressions_Expression_System_Func___0_System_Object___">Helper.GetFormattedValue&lt;T&gt;(IEntityGetter&lt;T&gt;, Expression&lt;Func&lt;T, Object&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_SetFormattedValue__1_Niam_XRM_Framework_Interfaces_IEntitySetter___0__System_Linq_Expressions_Expression_System_Func___0_System_Object___System_String_">Helper.SetFormattedValue&lt;T&gt;(IEntitySetter&lt;T&gt;, Expression&lt;Func&lt;T, Object&gt;&gt;, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Set__2_Niam_XRM_Framework_Interfaces_IEntitySetter___0__System_Linq_Expressions_Expression_System_Func___0___1___Niam_XRM_Framework_Interfaces_IAttributeValueProvider___0___1__">Helper.Set&lt;T, TV&gt;(IEntitySetter&lt;T&gt;, Expression&lt;Func&lt;T, TV&gt;&gt;, IAttributeValueProvider&lt;T, TV&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Set__2_Niam_XRM_Framework_Interfaces_IEntitySetter___0__System_Linq_Expressions_Expression_System_Func___0___1___Niam_XRM_Framework_Interfaces_IValueProvider___1__">Helper.Set&lt;T, TV&gt;(IEntitySetter&lt;T&gt;, Expression&lt;Func&lt;T, TV&gt;&gt;, IValueProvider&lt;TV&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Set__2_Niam_XRM_Framework_Interfaces_IEntitySetter___0__System_Linq_Expressions_Expression_System_Func___0_System_Nullable___1____Niam_XRM_Framework_Interfaces_IValueProvider___1__">Helper.Set&lt;T, TV&gt;(IEntitySetter&lt;T&gt;, Expression&lt;Func&lt;T, Nullable&lt;TV&gt;&gt;&gt;, IValueProvider&lt;TV&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Set__2_Niam_XRM_Framework_Interfaces_IEntitySetter___0__System_Linq_Expressions_Expression_System_Func___0___1_____1_">Helper.Set&lt;T, TV&gt;(IEntitySetter&lt;T&gt;, Expression&lt;Func&lt;T, TV&gt;&gt;, TV)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Set__1_Niam_XRM_Framework_Interfaces_IEntitySetter___0__System_Linq_Expressions_Expression_System_Func___0_Microsoft_Xrm_Sdk_OptionSetValue___System_Enum_">Helper.Set&lt;T&gt;(IEntitySetter&lt;T&gt;, Expression&lt;Func&lt;T, OptionSetValue&gt;&gt;, Enum)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Set__1_Niam_XRM_Framework_Interfaces_IEntitySetter___0__System_Linq_Expressions_Expression_System_Func___0_Microsoft_Xrm_Sdk_OptionSetValue___System_Int32_">Helper.Set&lt;T&gt;(IEntitySetter&lt;T&gt;, Expression&lt;Func&lt;T, OptionSetValue&gt;&gt;, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Set__1_Niam_XRM_Framework_Interfaces_IEntitySetter___0__System_Linq_Expressions_Expression_System_Func___0_Microsoft_Xrm_Sdk_Money___System_Decimal_">Helper.Set&lt;T&gt;(IEntitySetter&lt;T&gt;, Expression&lt;Func&lt;T, Money&gt;&gt;, Decimal)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Set__1_Niam_XRM_Framework_Interfaces_IEntitySetter___0__System_Linq_Expressions_Expression_System_Func___0_Microsoft_Xrm_Sdk_Money___Niam_XRM_Framework_Interfaces_IValueProvider_System_Decimal__">Helper.Set&lt;T&gt;(IEntitySetter&lt;T&gt;, Expression&lt;Func&lt;T, Money&gt;&gt;, IValueProvider&lt;Decimal&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Set__1_Niam_XRM_Framework_Interfaces_IEntitySetter___0__System_Linq_Expressions_Expression_System_Func___0_Microsoft_Xrm_Sdk_EntityCollection___Microsoft_Xrm_Sdk_EntityReference_Microsoft_Xrm_Sdk_EntityReference___">Helper.Set&lt;T&gt;(IEntitySetter&lt;T&gt;, Expression&lt;Func&lt;T, EntityCollection&gt;&gt;, EntityReference, EntityReference[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Set__1_Niam_XRM_Framework_Interfaces_IEntitySetter___0__System_Linq_Expressions_Expression_System_Func___0_Microsoft_Xrm_Sdk_EntityCollection___System_Collections_Generic_IEnumerable_Microsoft_Xrm_Sdk_EntityReference__">Helper.Set&lt;T&gt;(IEntitySetter&lt;T&gt;, Expression&lt;Func&lt;T, EntityCollection&gt;&gt;, IEnumerable&lt;EntityReference&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Equal__2_Niam_XRM_Framework_Interfaces_IEntityGetter___0__System_Linq_Expressions_Expression_System_Func___0___1_____1_">Helper.Equal&lt;T, TV&gt;(IEntityGetter&lt;T&gt;, Expression&lt;Func&lt;T, TV&gt;&gt;, TV)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Equal__2_Niam_XRM_Framework_Interfaces_IEntityGetter___0__System_String___1_">Helper.Equal&lt;T, TV&gt;(IEntityGetter&lt;T&gt;, String, TV)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_Equal__1_Niam_XRM_Framework_Interfaces_IEntityGetter___0__System_Linq_Expressions_Expression_System_Func___0_Microsoft_Xrm_Sdk_OptionSetValue___System_Enum_">Helper.Equal&lt;T&gt;(IEntityGetter&lt;T&gt;, Expression&lt;Func&lt;T, OptionSetValue&gt;&gt;, Enum)</a>
+  </div>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_EqualsAny__1_Niam_XRM_Framework_Interfaces_IEntityGetter___0__System_Linq_Expressions_Expression_System_Func___0_Microsoft_Xrm_Sdk_OptionSetValue___System_Enum_System_Enum___">Helper.EqualsAny&lt;T&gt;(IEntityGetter&lt;T&gt;, Expression&lt;Func&lt;T, OptionSetValue&gt;&gt;, Enum, Enum[])</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © 2018 <strong>Khairuddin Ni'am, Temmy Wahyu Raharjo</strong></span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

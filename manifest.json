@@ -1,0 +1,1328 @@
+{
+  "homepages": [],
+  "source_base_path": "H:/works/indie/Niam.XRM.Framework/doc",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.AttributeChangedEventArgs-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.AttributeChangedEventArgs-1.html",
+          "hash": "QecfYPw1sa5NtRZ1S/P/6w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.AttributeChangedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.AttributeChangedEventArgs.html",
+          "hash": "JbD/AY+lhYNUmV+ycooZCA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.AttributeChangedEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.AttributeChangedEventHandler.html",
+          "hash": "PgPw1k79r9zIz39IPwK//g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.AttributeChangingEventArgs-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.AttributeChangingEventArgs-1.html",
+          "hash": "Q7h9DTTQpdEc3KnVKI3V0A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.AttributeChangingEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.AttributeChangingEventArgs.html",
+          "hash": "rf9vZRyhFqhf1Gl4BAkHsA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.AttributeChangingEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.AttributeChangingEventHandler.html",
+          "hash": "Lvs6S4IP1Wcy50WLkS6APA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Data.ColumnSet-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Data.ColumnSet-1.html",
+          "hash": "XYi1Qfb+v3ZOnopLzTlLAQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Data.EntityWrapper-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Data.EntityWrapper-1.html",
+          "hash": "sldWpO5X69wg5t23mx70zA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Data.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Data.html",
+          "hash": "ZbEEogVXun7si4TJRrs8yg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.EntityAccessor-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.EntityAccessor-1.html",
+          "hash": "nCY6KjkYkYiWjbmmVNvzWQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.EntityAccessorWrapper-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.EntityAccessorWrapper-1.html",
+          "hash": "WVt2992A8ZoWaZjSiCvC8g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.EntityInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.EntityInfo.html",
+          "hash": "Jx/GmTj3tO0x5xPxEoy3Dw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Helper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Helper.html",
+          "hash": "g8uyjlgZBzMJI1t2QgjeKw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Infrastructure.Instance-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Infrastructure.Instance-1.html",
+          "hash": "qO0jAGvzSPcnALad6H70Gg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Infrastructure.InstanceEntityWrapper-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Infrastructure.InstanceEntityWrapper-2.html",
+          "hash": "F02BPwM19dmad0BjkCB4sA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Infrastructure.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Infrastructure.html",
+          "hash": "9rzjC5E5ixIkHbCy1VP/Mg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.Data.IColumnSet-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.Data.IColumnSet-1.html",
+          "hash": "98FD5l05KOXYOCp59ZoqsA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.Data.IEntityWrapper-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.Data.IEntityWrapper-1.html",
+          "hash": "KA+LcoRaT7N4CROliApNzQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.Data.IEntityWrapperRelation-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.Data.IEntityWrapperRelation-1.html",
+          "hash": "pxQq7j/DnJMYAdhul1v/bA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.Data.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.Data.html",
+          "hash": "nYpa4TEoKQ3/CEeGmsdeEQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.IAttributeValueProvider-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.IAttributeValueProvider-2.html",
+          "hash": "An/qP4X5saTJktQPfR0z1Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.IAttributeValueProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.IAttributeValueProvider.html",
+          "hash": "mQvII1Mlm/dBsyjqXM8Low=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.IEntityAccessor-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.IEntityAccessor-1.html",
+          "hash": "km9Vd93y7Un/NZtk0OHZsw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.IEntityGetter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.IEntityGetter-1.html",
+          "hash": "5fkv5mq+Pf7QBfiYXfN4sA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.IEntityInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.IEntityInfo.html",
+          "hash": "Zuk7C6vLj3PGxdXReJkn9w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.IEntitySetter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.IEntitySetter-1.html",
+          "hash": "WIm9TKPKSlfwXx5QbXMMBA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.IValueProvider-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.IValueProvider-1.html",
+          "hash": "wsExRYwn7zhPUhBiIiGrtQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.IValueProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.IValueProvider.html",
+          "hash": "4YxAR0V+aNSdRZCnwnYLqg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.Actions.IInputAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.Actions.IInputAction.html",
+          "hash": "PYfW6mkxbatyGVAY7dr0UQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.Actions.IInputActionContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.Actions.IInputActionContext.html",
+          "hash": "TCXEjehPMWszPYifukVDIg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.Actions.IReferenceAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.Actions.IReferenceAction.html",
+          "hash": "kJD7NfB3Su+M2iR0tPSsvw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.Actions.IReferenceActionContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.Actions.IReferenceActionContext.html",
+          "hash": "4tSS6ui3jJyy5xQ3uJCgJQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.Actions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.Actions.html",
+          "hash": "0qIMGfR4+9JSlAIAzY55zA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.Configurations.IPluginConfiguration-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.Configurations.IPluginConfiguration-1.html",
+          "hash": "oU5UPkNUSei/+m4vQP/FDg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.Configurations.ITransactionContextConfiguration-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.Configurations.ITransactionContextConfiguration-1.html",
+          "hash": "temmJMuhG4MXZv5VCjHaCA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.Configurations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.Configurations.html",
+          "hash": "caIg5VCLn/QWYWwY6lbFPQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.IContextBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.IContextBase.html",
+          "hash": "8i6qb4N0n87w2R/XvugyqA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.IOperation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.IOperation.html",
+          "hash": "eQXX5Ta+HA7rhRbppIRFCA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.IPluginBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.IPluginBase.html",
+          "hash": "K3A3+2b9WlShYCvj/BUkwQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.ITransactionContext-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.ITransactionContext-1.html",
+          "hash": "MPPnJh1TaCz5UbA3R4Dzrw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.ITransactionContextBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.ITransactionContextBase.html",
+          "hash": "OqnXd6UJiWDT4C3Iyy1yew=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.ITransactionContextEntity-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.ITransactionContextEntity-1.html",
+          "hash": "kyEt9qLYsm3JtPRBz9B6VA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.IValidation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.IValidation.html",
+          "hash": "9qr5jw+QexyCju4yrCTyAA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.ServiceProviders.IContainer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.ServiceProviders.IContainer.html",
+          "hash": "MGbYXVfvDEU1AZjGv2VLAQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.ServiceProviders.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.ServiceProviders.html",
+          "hash": "PIgslyG0zZybcZf2Lx02GQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.Plugin.html",
+          "hash": "hvZSRuhdO/18K8N+4y/X9A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Interfaces.html",
+          "hash": "tn769mVW80fV2YnsD52etQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.OptionSetValueHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.OptionSetValueHelper.html",
+          "hash": "4jcCzF03TPEbAH5+mTKpLw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.Actions.CopyToReferenceAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.Actions.CopyToReferenceAction.html",
+          "hash": "UzYudU0tXKs3o0SQxD2U8g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.Actions.CopyValueEventReferenceAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.Actions.CopyValueEventReferenceAction.html",
+          "hash": "ttSJSxDBeu4Zyi1SKvDbaQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.Actions.InputActionContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.Actions.InputActionContext.html",
+          "hash": "oih9ZTsPFKCX+xSCcqfD6g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.Actions.ReferenceActionContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.Actions.ReferenceActionContext.html",
+          "hash": "q/hmPXUd2fFh1py5mq2W/Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.Actions.UpdateFormattedValueEventInputAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.Actions.UpdateFormattedValueEventInputAction.html",
+          "hash": "mYydgR7VmaMTMyJE/8E3RQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.Actions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.Actions.html",
+          "hash": "lkkIA7vvmukjA7rARGEDOg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.CommandBase-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.CommandBase-2.html",
+          "hash": "E7w0qmhZnb7CyQxkuTz1hA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.Configurations.PluginConfiguration-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.Configurations.PluginConfiguration-1.html",
+          "hash": "pgYu4CZ9Yjl3Y+77sSDW9Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.Configurations.PluginLogOption.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.Configurations.PluginLogOption.html",
+          "hash": "Xa/38E8zB9nxCLiuLQ5VEw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.Configurations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.Configurations.html",
+          "hash": "89R8vJHmQdC6uQDboQLOTg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.CrmPluginLoggingAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.CrmPluginLoggingAttribute.html",
+          "hash": "Iofwb2kGM4O1zBvGmstlug=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.FilePluginLoggingAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.FilePluginLoggingAttribute.html",
+          "hash": "gvYyFG4BMJTLfxCwVHaAQA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.Metadata.MetadataExt.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.Metadata.MetadataExt.html",
+          "hash": "uEGRknYpdx98VisiQVcC2Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.Metadata.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.Metadata.html",
+          "hash": "1xC4C3zHLTX7n1OPbV18AQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.OperationBase-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.OperationBase-1.html",
+          "hash": "Fh00Qka2KChxFuLIjE6ohA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.OperationBase-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.OperationBase-2.html",
+          "hash": "kTi80IS6aBR7nu9WzRR0sQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.OperationBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.OperationBase.html",
+          "hash": "tqkVaNqB7NnGHxkSmJh4jA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.OrganizationServiceBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.OrganizationServiceBase.html",
+          "hash": "bOmv0QCCvVSuqmqN/d5Kdw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.PluginBase-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.PluginBase-1.html",
+          "hash": "+Avo5p1EEWHNA43RROIGOg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.PluginBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.PluginBase.html",
+          "hash": "l6pkq59Ow6UpevxJ/UDoPQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.PluginCoreBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.PluginCoreBase.html",
+          "hash": "+dvbdYUGV+mpHfgUsjr4EQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.PluginHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.PluginHelper.html",
+          "hash": "qnVwCA8l5hsE2hmBq2SL1A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.SdkMessageProcessingStepStage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.SdkMessageProcessingStepStage.html",
+          "hash": "rcyBvrFfG2kNOna/mzprXA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.TransactionContextEntity-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.TransactionContextEntity-1.html",
+          "hash": "9h3MNkg2e+FKBqab3QZuaw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.TransactionContextExt.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.TransactionContextExt.html",
+          "hash": "nel2zgTkDyfETywGI3hn2A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.ValidationBase-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.ValidationBase-1.html",
+          "hash": "/8uO84JaKvpPic/Kh7XWzw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.ValidationBase-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.ValidationBase-2.html",
+          "hash": "Ve+hiF6BGvB4yQKf3sel9w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.ValidationBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.ValidationBase.html",
+          "hash": "YEY6YMeMilgJ0VT8DwRttg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.ValueProviders.AttributeValueProviderBase-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.ValueProviders.AttributeValueProviderBase-2.html",
+          "hash": "qpScGn75gTxJKqms5jYLEQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.ValueProviders.TodayDate.ITodayDateValueProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.ValueProviders.TodayDate.ITodayDateValueProvider.html",
+          "hash": "W3kH1VcFm661tpeaZa8tsw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.ValueProviders.TodayDate.TodayDateValueProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.ValueProviders.TodayDate.TodayDateValueProvider.html",
+          "hash": "TbmK1nYLobPak7Bo1TNr3A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.ValueProviders.TodayDate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.ValueProviders.TodayDate.html",
+          "hash": "ZUBm2qgknBkQlL8YvYCJYQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.ValueProviders.ValueProviderBase-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.ValueProviders.ValueProviderBase-1.html",
+          "hash": "Mp8Tqaz4y/aU2vLnmAtfjg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.ValueProviders.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.ValueProviders.html",
+          "hash": "6LXb4hrinVcyGw+JPh2hAA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.Plugin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.Plugin.html",
+          "hash": "iy5220XQHMMFmwzOeOdWyA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.PluginMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.PluginMessage.html",
+          "hash": "+SDIlDr5wAVvphKkqgCOQA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.Framework.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.Framework.html",
+          "hash": "PcMzG/iDMhN7YG5r7qdrLw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.TestFramework.Query.ConditionExp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.TestFramework.Query.ConditionExp.html",
+          "hash": "ImtCBQFN+Vq3/RgFeogOjA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.TestFramework.Query.ExpressionHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.TestFramework.Query.ExpressionHelper.html",
+          "hash": "WzXMyDuQGhEL07Uhzu43AQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.TestFramework.Query.IQueryParameter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.TestFramework.Query.IQueryParameter.html",
+          "hash": "eH4b8GTCSslfthpU573MJA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.TestFramework.Query.InMemoryQueryByAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.TestFramework.Query.InMemoryQueryByAttribute.html",
+          "hash": "g3sjCX825EC+nYutkicS+w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.TestFramework.Query.InMemoryQueryExpression.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.TestFramework.Query.InMemoryQueryExpression.html",
+          "hash": "fdFIW4xmdSxH5IEJ7bIm9g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.TestFramework.Query.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.TestFramework.Query.html",
+          "hash": "mT85i86urYrbjJ6D4a/Zgw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.TestFramework.TestBase-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.TestFramework.TestBase-1.html",
+          "hash": "VQnogQiRozOivX64xf+PAw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.TestFramework.TestBase-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.TestFramework.TestBase-2.html",
+          "hash": "F1h8bOLM5RmAi0DveIlm6g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.TestFramework.TestBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.TestFramework.TestBase.html",
+          "hash": "SkvtbRWLB/V9i/mBEQcxGQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.TestFramework.TestHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.TestFramework.TestHelper.html",
+          "hash": "nMqHLNNuHsxbf4fM63/oxg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Niam.XRM.TestFramework.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Niam.XRM.TestFramework.html",
+          "hash": "UK2mCbSwMv6gM/hd04jYRA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "1akY8FC2v6aca/8qTT/fkg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "o0S2GooXXzAuzjm6TPpQyA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "EjGGkwUkVvktcfeSD3ByPQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "SNQp3xL94Eq+Xx+PajrihA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tutorials/commandbase/common_functionality.md",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/commandbase/common_functionality.html",
+          "hash": "1+FgJwHObKZWpizZ+H0jWA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tutorials/commandbase/entity_wrapper.md",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/commandbase/entity_wrapper.html",
+          "hash": "J5Z4XfBf78WVODfXyLY+3A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tutorials/commandbase/initial.md",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/commandbase/initial.html",
+          "hash": "XyBBn6GUYwz8U7XWuD/6nw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tutorials/commandbase/transaction_context.md",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/commandbase/transaction_context.html",
+          "hash": "/dTpyj7vdQfDan6zqM2ACA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tutorials/getting_started.md",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/getting_started.html",
+          "hash": "iCGYc88u5H9iRi8LgD82wg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tutorials/testing/getting_started.md",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/testing/getting_started.html",
+          "hash": "IDMiH2DVlZAwUsatkP+u8Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "tutorials/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/toc.html",
+          "hash": "tfAEWR7/M0GiuF90h6XLvA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build"
+      },
+      "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build"
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build"
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing"
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

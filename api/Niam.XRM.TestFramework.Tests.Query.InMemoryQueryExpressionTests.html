@@ -1,0 +1,1212 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class InMemoryQueryExpressionTests
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class InMemoryQueryExpressionTests
+   ">
+    <meta name="generator" content="docfx 2.32.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests">
+  
+  
+  <h1 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests" class="text-break">Class InMemoryQueryExpressionTests
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="Niam.XRM.TestFramework.TestBase-2.html">TestBase</a>&lt;<span class="xref">Microsoft.Xrm.Sdk.Entity</span>, <a class="xref" href="Niam.XRM.Framework.Interfaces.Plugin.ITransactionContext-1.html">ITransactionContext</a>&lt;<span class="xref">Microsoft.Xrm.Sdk.Entity</span>&gt;&gt;</div>
+    <div class="level2"><a class="xref" href="Niam.XRM.TestFramework.TestBase-1.html">TestBase</a>&lt;<span class="xref">Microsoft.Xrm.Sdk.Entity</span>&gt;</div>
+    <div class="level3"><a class="xref" href="Niam.XRM.TestFramework.TestBase.html">TestBase</a></div>
+    <div class="level4"><span class="xref">InMemoryQueryExpressionTests</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Niam.XRM.TestFramework.TestBase-2.html#Niam_XRM_TestFramework_TestBase_2_Test">TestBase&lt;Entity, ITransactionContext&lt;Entity&gt;&gt;.Test</a>
+    </div>
+    <div>
+      <a class="xref" href="Niam.XRM.TestFramework.TestBase-2.html#Niam_XRM_TestFramework_TestBase_2_Db">TestBase&lt;Entity, ITransactionContext&lt;Entity&gt;&gt;.Db</a>
+    </div>
+    <div>
+      <a class="xref" href="Niam.XRM.TestFramework.TestBase-2.html#Niam_XRM_TestFramework_TestBase_2_Context">TestBase&lt;Entity, ITransactionContext&lt;Entity&gt;&gt;.Context</a>
+    </div>
+    <div>
+      <a class="xref" href="Niam.XRM.TestFramework.TestBase-2.html#Niam_XRM_TestFramework_TestBase_2_CreateTransactionContext">TestBase&lt;Entity, ITransactionContext&lt;Entity&gt;&gt;.CreateTransactionContext()</a>
+    </div>
+    <div>
+      <a class="xref" href="Niam.XRM.TestFramework.TestBase-2.html#Niam_XRM_TestFramework_TestBase_2_Input">TestBase&lt;Entity, ITransactionContext&lt;Entity&gt;&gt;.Input</a>
+    </div>
+    <div>
+      <a class="xref" href="Niam.XRM.TestFramework.TestBase-2.html#Niam_XRM_TestFramework_TestBase_2_Reference">TestBase&lt;Entity, ITransactionContext&lt;Entity&gt;&gt;.Reference</a>
+    </div>
+    <div>
+      <a class="xref" href="Niam.XRM.TestFramework.TestBase-2.html#Niam_XRM_TestFramework_TestBase_2_Configure_Niam_XRM_Framework_Interfaces_Plugin_Configurations_IPluginConfiguration__0__">TestBase&lt;Entity, ITransactionContext&lt;Entity&gt;&gt;.Configure(IPluginConfiguration&lt;Entity&gt;)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Niam.XRM.TestFramework.Tests.Query.html">Niam.XRM.TestFramework.Tests.Query</a></h6>
+  <h6><strong>Assembly</strong>: Niam.XRM.TestFramework.Tests.dll</h6>
+  <h5 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class InMemoryQueryExpressionTests : TestBase</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_between_System_Object_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_between(System.Object%2CSystem.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L619">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_between_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_between*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_between_System_Object_System_Object_System_Object_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_between(System.Object,System.Object,System.Object)">Can_compare_condition_between(Object, Object, Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Theory]
+[MemberData(&quot;GetBetweenData&quot;, new object[]{})]
+public void Can_compare_condition_between(object attributeValue, object lowerBoundary, object upperBoundary)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">attributeValue</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">lowerBoundary</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">upperBoundary</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_equal_Microsoft_Xrm_Sdk_Entity_System_String_System_Object_.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_equal(Microsoft.Xrm.Sdk.Entity%2CSystem.String%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L159">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_equal_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_equal*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_equal_Microsoft_Xrm_Sdk_Entity_System_String_System_Object_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_equal(Microsoft.Xrm.Sdk.Entity,System.String,System.Object)">Can_compare_condition_equal(Entity, String, Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Theory]
+[MemberData(&quot;GetCompareEqualityData&quot;, new object[]{})]
+public void Can_compare_condition_equal(Entity entity, string attributeName, object value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.Xrm.Sdk.Entity</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">attributeName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_equal_businessunitid.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_equal_businessunitid%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L369">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_equal_businessunitid_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_equal_businessunitid*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_equal_businessunitid" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_equal_businessunitid">Can_compare_condition_equal_businessunitid()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void Can_compare_condition_equal_businessunitid()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_equal_userid.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_equal_userid%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L329">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_equal_userid_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_equal_userid*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_equal_userid" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_equal_userid">Can_compare_condition_equal_userid()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void Can_compare_condition_equal_userid()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_greater_equal_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_greater_equal(System.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L549">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_greater_equal_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_greater_equal*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_greater_equal_System_Object_System_Object_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_greater_equal(System.Object,System.Object)">Can_compare_condition_greater_equal(Object, Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Theory]
+[MemberData(&quot;GetGreaterEqualData&quot;, new object[]{})]
+public void Can_compare_condition_greater_equal(object attributeValue, object comparerValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">attributeValue</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">comparerValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_greater_than_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_greater_than(System.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L491">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_greater_than_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_greater_than*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_greater_than_System_Object_System_Object_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_greater_than(System.Object,System.Object)">Can_compare_condition_greater_than(Object, Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Theory]
+[MemberData(&quot;GetGreaterThanData&quot;, new object[]{})]
+public void Can_compare_condition_greater_than(object attributeValue, object comparerValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">attributeValue</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">comparerValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_in_Niam_XRM_TestFramework_Tests_xts_entity_System_String_System_Object___.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_in(Niam.XRM.TestFramework.Tests.xts_entity%2CSystem.String%2CSystem.Object%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L209">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_in_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_in*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_in_Niam_XRM_TestFramework_Tests_xts_entity_System_String_System_Object___" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_in(Niam.XRM.TestFramework.Tests.xts_entity,System.String,System.Object[])">Can_compare_condition_in(xts_entity, String, Object[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Theory]
+[MemberData(&quot;GetCompareInData&quot;, new object[]{})]
+public void Can_compare_condition_in(xts_entity entity, string attributeName, object[] values)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Niam.XRM.TestFramework.Tests.xts_entity.html">xts_entity</a></td>
+        <td><span class="parametername">entity</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">attributeName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span>[]</td>
+        <td><span class="parametername">values</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_less_equal_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_less_equal(System.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L584">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_less_equal_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_less_equal*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_less_equal_System_Object_System_Object_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_less_equal(System.Object,System.Object)">Can_compare_condition_less_equal(Object, Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Theory]
+[MemberData(&quot;GetLessEqualData&quot;, new object[]{})]
+public void Can_compare_condition_less_equal(object attributeValue, object comparerValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">attributeValue</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">comparerValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_less_than_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_less_than(System.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L520">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_less_than_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_less_than*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_less_than_System_Object_System_Object_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_less_than(System.Object,System.Object)">Can_compare_condition_less_than(Object, Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Theory]
+[MemberData(&quot;GetLessThanData&quot;, new object[]{})]
+public void Can_compare_condition_less_than(object attributeValue, object comparerValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">attributeValue</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">comparerValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_not_between_System_Object_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_not_between(System.Object%2CSystem.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L658">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_not_between_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_not_between*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_not_between_System_Object_System_Object_System_Object_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_not_between(System.Object,System.Object,System.Object)">Can_compare_condition_not_between(Object, Object, Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Theory]
+[MemberData(&quot;GetNotBetweenData&quot;, new object[]{})]
+public void Can_compare_condition_not_between(object attributeValue, object lowerBoundary, object upperBoundary)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">attributeValue</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">lowerBoundary</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">upperBoundary</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_not_equal_Microsoft_Xrm_Sdk_Entity_System_String_System_Object_.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_not_equal(Microsoft.Xrm.Sdk.Entity%2CSystem.String%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L174">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_not_equal_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_not_equal*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_not_equal_Microsoft_Xrm_Sdk_Entity_System_String_System_Object_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_not_equal(Microsoft.Xrm.Sdk.Entity,System.String,System.Object)">Can_compare_condition_not_equal(Entity, String, Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Theory]
+[MemberData(&quot;GetCompareEqualityData&quot;, new object[]{})]
+public void Can_compare_condition_not_equal(Entity entity, string attributeName, object value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.Xrm.Sdk.Entity</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">attributeName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_not_equal_businessunitid.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_not_equal_businessunitid%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L389">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_not_equal_businessunitid_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_not_equal_businessunitid*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_not_equal_businessunitid" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_not_equal_businessunitid">Can_compare_condition_not_equal_businessunitid()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void Can_compare_condition_not_equal_businessunitid()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_not_equal_userid.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_not_equal_userid%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L349">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_not_equal_userid_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_not_equal_userid*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_not_equal_userid" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_not_equal_userid">Can_compare_condition_not_equal_userid()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void Can_compare_condition_not_equal_userid()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_not_in_Microsoft_Xrm_Sdk_Entity_System_String_System_Object___.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_not_in(Microsoft.Xrm.Sdk.Entity%2CSystem.String%2CSystem.Object%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L231">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_not_in_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_not_in*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_not_in_Microsoft_Xrm_Sdk_Entity_System_String_System_Object___" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_not_in(Microsoft.Xrm.Sdk.Entity,System.String,System.Object[])">Can_compare_condition_not_in(Entity, String, Object[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Theory]
+[MemberData(&quot;GetCompareInData&quot;, new object[]{})]
+public void Can_compare_condition_not_in(Entity entity, string attributeName, object[] values)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.Xrm.Sdk.Entity</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">attributeName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span>[]</td>
+        <td><span class="parametername">values</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_not_null.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_not_null%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L298">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_not_null_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_not_null*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_not_null" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_not_null">Can_compare_condition_not_null()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void Can_compare_condition_not_null()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_not_on.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_not_on%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L427">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_not_on_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_not_on*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_not_on" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_not_on">Can_compare_condition_not_on()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void Can_compare_condition_not_on()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_null.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_null%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L274">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_null_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_null*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_null" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_null">Can_compare_condition_null()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void Can_compare_condition_null()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_on.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_on%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L409">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_on_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_on*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_on" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_on">Can_compare_condition_on()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void Can_compare_condition_on()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_on_or_after_System_DateTime_.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_on_or_after(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L468">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_on_or_after_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_on_or_after*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_on_or_after_System_DateTime_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_on_or_after(System.DateTime)">Can_compare_condition_on_or_after(DateTime)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Theory]
+[MemberData(&quot;GetOnOrAfterData&quot;, new object[]{})]
+public void Can_compare_condition_on_or_after(DateTime date)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">date</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_on_or_before_System_DateTime_.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_on_or_before(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L445">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_on_or_before_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_on_or_before*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_condition_on_or_before_System_DateTime_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_condition_on_or_before(System.DateTime)">Can_compare_condition_on_or_before(DateTime)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Theory]
+[MemberData(&quot;GetOnOrBeforeData&quot;, new object[]{})]
+public void Can_compare_condition_on_or_before(DateTime date)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">date</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_filter_criteria_and.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_filter_criteria_and%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L693">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_filter_criteria_and_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_filter_criteria_and*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_filter_criteria_and" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_filter_criteria_and">Can_compare_filter_criteria_and()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void Can_compare_filter_criteria_and()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_filter_criteria_or.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_filter_criteria_or%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L730">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_filter_criteria_or_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_filter_criteria_or*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_compare_filter_criteria_or" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_compare_filter_criteria_or">Can_compare_filter_criteria_or()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void Can_compare_filter_criteria_or()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_differentiate_entity.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_differentiate_entity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L43">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_differentiate_entity_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_differentiate_entity*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_differentiate_entity" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_differentiate_entity">Can_differentiate_entity()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void Can_differentiate_entity()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_filter_columns.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_filter_columns%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L14">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_filter_columns_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_filter_columns*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_filter_columns" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_filter_columns">Can_filter_columns()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void Can_filter_columns()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_limit_result_using_topcount.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_limit_result_using_topcount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L73">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_limit_result_using_topcount_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_limit_result_using_topcount*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_limit_result_using_topcount" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_limit_result_using_topcount">Can_limit_result_using_topcount()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void Can_limit_result_using_topcount()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_order_by_date.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_order_by_date%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L777">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_order_by_date_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_order_by_date*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_order_by_date" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_order_by_date">Can_order_by_date()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void Can_order_by_date()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_paging.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_paging%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L109">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_paging_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_paging*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_Can_paging" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.Can_paging">Can_paging()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void Can_paging()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetBetweenData.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetBetweenData%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L639">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetBetweenData_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetBetweenData*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetBetweenData" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetBetweenData">GetBetweenData()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;object[]&gt; GetBetweenData()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Object</span>[]&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetCompareEqualityData.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetCompareEqualityData%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L189">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetCompareEqualityData_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetCompareEqualityData*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetCompareEqualityData" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetCompareEqualityData">GetCompareEqualityData()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;object[]&gt; GetCompareEqualityData()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Object</span>[]&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetCompareInData.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetCompareInData%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L246">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetCompareInData_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetCompareInData*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetCompareInData" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetCompareInData">GetCompareInData()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;object[]&gt; GetCompareInData()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Object</span>[]&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetGreaterEqualData.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetGreaterEqualData%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L569">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetGreaterEqualData_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetGreaterEqualData*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetGreaterEqualData" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetGreaterEqualData">GetGreaterEqualData()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;object[]&gt; GetGreaterEqualData()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Object</span>[]&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetGreaterThanData.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetGreaterThanData%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L511">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetGreaterThanData_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetGreaterThanData*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetGreaterThanData" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetGreaterThanData">GetGreaterThanData()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;object[]&gt; GetGreaterThanData()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Object</span>[]&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetLessEqualData.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetLessEqualData%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L604">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetLessEqualData_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetLessEqualData*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetLessEqualData" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetLessEqualData">GetLessEqualData()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;object[]&gt; GetLessEqualData()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Object</span>[]&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetLessThanData.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetLessThanData%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L540">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetLessThanData_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetLessThanData*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetLessThanData" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetLessThanData">GetLessThanData()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;object[]&gt; GetLessThanData()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Object</span>[]&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetNotBetweenData.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetNotBetweenData%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L678">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetNotBetweenData_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetNotBetweenData*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetNotBetweenData" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetNotBetweenData">GetNotBetweenData()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;object[]&gt; GetNotBetweenData()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Object</span>[]&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetOnOrAfterData.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetOnOrAfterData%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L485">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetOnOrAfterData_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetOnOrAfterData*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetOnOrAfterData" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetOnOrAfterData">GetOnOrAfterData()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;object[]&gt; GetOnOrAfterData()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Object</span>[]&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetOnOrBeforeData.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetOnOrBeforeData%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L462">View Source</a>
+  </span>
+  <a id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetOnOrBeforeData_" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetOnOrBeforeData*"></a>
+  <h4 id="Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests_GetOnOrBeforeData" data-uid="Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests.GetOnOrBeforeData">GetOnOrBeforeData()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;object[]&gt; GetOnOrBeforeData()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Object</span>[]&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Niam.XRM.Framework.Helper.html#Niam_XRM_Framework_Helper_ToJson__1___0_System_Runtime_Serialization_Json_DataContractJsonSerializerSettings_">Helper.ToJson&lt;T&gt;(T, DataContractJsonSerializerSettings)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/new/master/apiSpec/new?filename=Niam_XRM_TestFramework_Tests_Query_InMemoryQueryExpressionTests.md&amp;value=---%0Auid%3A%20Niam.XRM.TestFramework.Tests.Query.InMemoryQueryExpressionTests%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/src/Niam.XRM.TestFramework.Tests/Query/InMemoryQueryExpressionTests.cs/#L12" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
