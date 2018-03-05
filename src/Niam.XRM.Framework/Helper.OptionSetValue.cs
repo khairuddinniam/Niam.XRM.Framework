@@ -5,8 +5,17 @@ namespace Niam.XRM.Framework
 {
     // Use OptionSetValueHelper class name instead partial class Helper
     // because extension method name conflict.
+
+    /// <summary>
+    /// Helper class for working with option set value.
+    /// </summary>
     public static class OptionSetValueHelper
     {
+        /// <summary>
+        /// Convert enum value to option set value.
+        /// </summary>
+        /// <param name="option">Enum value to be converted.</param>
+        /// <returns>Converted option set value.</returns>
         public static OptionSetValue ToOptionSetValue(this Enum option) =>
             option != null ? new OptionSetValue(Convert.ToInt32(option)) : null;
 

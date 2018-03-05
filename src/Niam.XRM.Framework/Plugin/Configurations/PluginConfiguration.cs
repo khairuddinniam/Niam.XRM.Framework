@@ -14,8 +14,8 @@ using Niam.XRM.Framework.Data;
 
 namespace Niam.XRM.Framework.Plugin.Configurations
 {
-    public class PluginConfiguration<T> : IPluginConfiguration<T>
-        where T : Entity
+    public class PluginConfiguration<TEntity> : IPluginConfiguration<TEntity>
+        where TEntity : Entity
     {
         private readonly Lazy<LogConfig> _logConfig;
 
@@ -34,7 +34,7 @@ namespace Niam.XRM.Framework.Plugin.Configurations
 
         public IPluginBase Plugin { get; }
 
-        public ColumnSet<T> ColumnSet { get; set; } = new ColumnSet<T>();
+        public ColumnSet<TEntity> ColumnSet { get; set; } = new ColumnSet<TEntity>();
 
         public PluginConfiguration(_Assembly assembly = null)
         {
@@ -100,7 +100,7 @@ namespace Niam.XRM.Framework.Plugin.Configurations
             private const string LogOptionKey = "pc-log-option";
             private const string LogDirKey = "pc-log-dir";
 
-            public PluginLogOption LogOption { get; } = PluginLogOption.Off;
+            public PluginLogOption LogOption { get; }
             public string LogDirPath { get; }
 
             public LogConfig(PluginLogOption logOption, string logDirPath)
