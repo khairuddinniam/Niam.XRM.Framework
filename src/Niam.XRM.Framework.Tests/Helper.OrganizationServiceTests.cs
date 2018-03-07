@@ -2,9 +2,8 @@
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Metadata;
+using Microsoft.Xrm.Sdk.Query;
 using NSubstitute;
-using Niam.XRM.Framework.Interfaces;
-using Niam.XRM.TestFramework;
 using Xunit;
 
 namespace Niam.XRM.Framework.Tests
@@ -57,29 +56,32 @@ namespace Niam.XRM.Framework.Tests
         [Fact]
         public void Can_get_name_from_entity_reference_query()
         {
-            var test = new TestHelper();
             var entity = new xts_keytest { Id = Guid.NewGuid() };
             entity.Set(e => e.xts_key, "Hello world");
-            test.Db["ENTITY"] = entity;
 
-            var service = test.Service;
+            var service = Substitute.For<IOrganizationService>();
+            service.Retrieve(Arg.Is<string>(name => name == "xts_keytest"), Arg.Any<Guid>(), Arg.Any<ColumnSet>())
+                .Returns(entity);
+            
             Assert.Equal("Hello world", service.GetName<xts_keytest>(entity.ToEntityReference()));
         }
 
         [Fact]
         public void Can_get_name_from_entity_reference_query_using_metadata()
         {
-            var test = new TestHelper();
             var entity = new xts_entity { Id = Guid.NewGuid() };
             entity.Set(e => e.xts_string, "Hello world");
-            test.Db["ENTITY"] = entity;
-            
+
+            var service = Substitute.For<IOrganizationService>();
+            service.Retrieve(Arg.Is<string>(name => name == "xts_entity"), Arg.Any<Guid>(), Arg.Any<ColumnSet>())
+                .Returns(entity);
+
             var metadata = new EntityMetadata
             {
                 LogicalName = "xts_entity"
             };
             typeof(EntityMetadata).GetProperty("PrimaryNameAttribute").SetValue(metadata, "xts_string");
-            test.Service.Execute(Arg.Is<OrganizationRequest>(req => req is RetrieveEntityRequest))
+            service.Execute(Arg.Is<OrganizationRequest>(req => req is RetrieveEntityRequest))
                 .Returns(ci =>
                 {
                     var request = ci.ArgAt<RetrieveEntityRequest>(0);
@@ -90,8 +92,7 @@ namespace Niam.XRM.Framework.Tests
                         ["EntityMetadata"] = metadata
                     };
                 });
-
-            var service = test.Service;
+            
             Assert.Equal("Hello world", service.GetName<xts_entity>(entity.ToEntityReference()));
         }
 
@@ -122,14 +123,15 @@ namespace Niam.XRM.Framework.Tests
         public void Can_get_primary_attribute()
         {
             Helper.EntityCache.Clear();
-
-            var test = new TestHelper();
+            
             var metadata = new EntityMetadata
             {
                 LogicalName = "xts_keytest"
             };
             typeof(EntityMetadata).GetProperty("PrimaryNameAttribute").SetValue(metadata, "primarynameattributekey");
-            test.Service.Execute(Arg.Is<OrganizationRequest>(req => req is RetrieveEntityRequest))
+
+            var service = Substitute.For<IOrganizationService>();
+            service.Execute(Arg.Is<OrganizationRequest>(req => req is RetrieveEntityRequest))
                 .Returns(ci =>
                 {
                     var request = ci.ArgAt<RetrieveEntityRequest>(0);
@@ -140,14 +142,13 @@ namespace Niam.XRM.Framework.Tests
                         ["EntityMetadata"] = metadata
                     };
                 });
-
-            var service = test.Service;
+            
             Assert.Equal("primarynameattributekey", service.GetPrimaryAttribute("xts_keytest"));
-            test.Service.Received(1).Execute(Arg.Any<OrganizationRequest>());
+            service.Received(1).Execute(Arg.Any<OrganizationRequest>());
             
             Helper.EntityCache.GetOrAddInfo(typeof(xts_keytest)); // Cache entity info.
             Assert.Equal("primarynameattributekey", service.GetPrimaryAttribute("xts_keytest"));
-            test.Service.Received(1).Execute(Arg.Any<OrganizationRequest>());
+            service.Received(1).Execute(Arg.Any<OrganizationRequest>());
         }
     }
 }

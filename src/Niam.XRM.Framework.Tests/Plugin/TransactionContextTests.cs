@@ -1,11 +1,11 @@
 ﻿using System;
 using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Query;
 using NSubstitute;
 using Niam.XRM.Framework.Interfaces.Plugin;
 using Niam.XRM.Framework.Plugin;
 using Niam.XRM.Framework.Plugin.Configurations;
 using Xunit;
-using Niam.XRM.TestFramework;
 using Niam.XRM.Framework.Data;
 using Niam.XRM.Framework.Interfaces.Plugin.ServiceProviders;
 
@@ -100,7 +100,8 @@ namespace Niam.XRM.Framework.Tests.Plugin
             };
             dbEntity.Set(e => e.xts_string, "1234");
             dbEntity.FormattedValues["xts_optionsetvalue"] = "Hello";
-            test.Db["INPUT-DB-001"] = dbEntity;
+            test.Service.Retrieve(Arg.Any<string>(), Arg.Any<Guid>(), Arg.Any<ColumnSet>())
+                .Returns(dbEntity);
 
             test.PluginExecutionContext.MessageName.Returns(PluginMessage.Update);
             test.PluginExecutionContext.InputParameters["Target"] = input.ToEntity<Entity>();

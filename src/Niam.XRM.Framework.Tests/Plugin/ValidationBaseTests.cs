@@ -2,7 +2,6 @@
 using Niam.XRM.Framework.Interfaces.Plugin;
 using Niam.XRM.Framework.Plugin;
 using Niam.XRM.Framework.Plugin.Configurations;
-using Niam.XRM.TestFramework;
 using NSubstitute;
 using System;
 using System.Collections.Generic;
@@ -11,7 +10,7 @@ using Xunit.Abstractions;
 
 namespace Niam.XRM.Framework.Tests.Plugin
 {
-    public class ValidationBaseTests : TestBase
+    public class ValidationBaseTests
     {
         private readonly ITestOutputHelper _output;
 
@@ -23,7 +22,8 @@ namespace Niam.XRM.Framework.Tests.Plugin
         [Fact]
         public void Can_execute_validate()
         {
-            var ex = Assert.Throws<InvalidPluginExecutionException>(() => new ValidationTest(Context).Validate());
+            var context = Substitute.For<ITransactionContext<Entity>>();
+            var ex = Assert.Throws<InvalidPluginExecutionException>(() => new ValidationTest(context).Validate());
             Assert.Equal("TEST", ex.Message);
         }
 

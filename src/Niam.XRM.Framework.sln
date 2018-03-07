@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2002
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Niam.XRM.Framework", "Niam.XRM.Framework\Niam.XRM.Framework.csproj", "{C5010FC3-9D52-40A2-9569-B24DD28A6896}"
 EndProject
@@ -22,7 +22,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Niam.XRM.TestFramework", "N
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Niam.XRM.TestFramework.Tests", "Niam.XRM.TestFramework.Tests\Niam.XRM.TestFramework.Tests.csproj", "{E7E89CDF-4816-4EEA-BC77-2FC308CDE2E9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Base", "Base", "{DC679927-4DC5-4579-927C-48E485AEF1CF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{DC679927-4DC5-4579-927C-48E485AEF1CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,8 +87,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{C5010FC3-9D52-40A2-9569-B24DD28A6896} = {DC679927-4DC5-4579-927C-48E485AEF1CF}
-		{07123CF8-5090-4175-ABDA-C1EF67B97879} = {DC679927-4DC5-4579-927C-48E485AEF1CF}
 		{5917BBCD-4035-4EDA-856D-486BD0B91160} = {DC679927-4DC5-4579-927C-48E485AEF1CF}
 		{E7E89CDF-4816-4EEA-BC77-2FC308CDE2E9} = {DC679927-4DC5-4579-927C-48E485AEF1CF}
 	EndGlobalSection

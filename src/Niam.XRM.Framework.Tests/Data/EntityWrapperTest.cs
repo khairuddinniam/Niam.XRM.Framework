@@ -5,7 +5,6 @@ using Microsoft.Xrm.Sdk.Query;
 using NSubstitute;
 using Niam.XRM.Framework.Data;
 using Niam.XRM.Framework.Interfaces.Plugin;
-using Niam.XRM.TestFramework;
 using Xunit;
 
 namespace Niam.XRM.Framework.Tests.Data
@@ -147,12 +146,16 @@ namespace Niam.XRM.Framework.Tests.Data
         [Fact]
         public void Can_get_name()
         {
-            var test = new TestHelper();
             var keyEntity = new xts_keytest { Id = Guid.NewGuid() };
             keyEntity.Set(e => e.xts_key, "Hello world");
-            test.Db["ENTITY"] = keyEntity;
 
-            var context = test.CreateTransactionContext<xts_entity>();
+            var service = Substitute.For<IOrganizationService>();
+            service.Retrieve(Arg.Is<string>(name => name == "xts_keytest"), Arg.Any<Guid>(), Arg.Any<ColumnSet>())
+                .Returns(keyEntity);
+
+            var context = Substitute.For<ITransactionContextBase>();
+            context.Service.Returns(service);
+
             var entity = new xts_entity { Id = Guid.NewGuid() };
             entity.Set(e => e.xts_referenceid, keyEntity.ToEntityReference());
             var wrapper = new EntityWrapper<xts_entity>(entity, context);

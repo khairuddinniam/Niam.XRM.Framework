@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Query;
 using NSubstitute;
 using Niam.XRM.Framework.Interfaces.Plugin;
 using Niam.XRM.Framework.Plugin.ValueProviders.TodayDate;
-using Niam.XRM.TestFramework;
 using Xunit;
 
 namespace Niam.XRM.Framework.Tests.Plugin.ValueProviders.TodayDate
@@ -56,8 +56,8 @@ namespace Niam.XRM.Framework.Tests.Plugin.ValueProviders.TodayDate
         public void Can_get_user_today_date()
         {
             var test = new TestHelper();
-            var db = test.Db;
-            var context = test.CreateTransactionContext<Entity, ITransactionContext<Entity>>();
+            var context = Substitute.For<ITransactionContextBase>();
+            context.Service.Returns(test.Service);
 
             var userId = Guid.NewGuid();
             var initiatingUserId = Guid.NewGuid();
@@ -69,7 +69,8 @@ namespace Niam.XRM.Framework.Tests.Plugin.ValueProviders.TodayDate
             };
             userSettings.Set(e => e.SystemUserId, userId);
             userSettings.Set(e => e.TimeZoneCode, 1234);
-            db["USER-SETTINGS-001"] = userSettings;
+            context.Service.RetrieveMultiple(Arg.Any<QueryBase>())
+                .Returns(new EntityCollection(new List<Entity> { userSettings }));
 
             var utcTime = new DateTime(2017, 1, 25, 9, 45, 0, DateTimeKind.Utc);
             var localTime = new DateTime(2017, 1, 25, 16, 45, 0, DateTimeKind.Unspecified);

@@ -12,7 +12,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Niam.XRM.Framework\Niam.XRM.Framework.csproj" />
-	  <ProjectReference Include="..\Niam.XRM.TestFramework\Niam.XRM.TestFramework.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

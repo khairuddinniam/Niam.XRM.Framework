@@ -5,7 +5,6 @@ using Microsoft.Xrm.Sdk.Query;
 using NSubstitute;
 using Niam.XRM.Framework.Plugin;
 using Niam.XRM.Framework.Plugin.Configurations;
-using Niam.XRM.TestFramework;
 using Xunit;
 using Niam.XRM.Framework.Interfaces.Plugin;
 using Niam.XRM.Framework.Interfaces.Plugin.ServiceProviders;
@@ -89,11 +88,16 @@ namespace Niam.XRM.Framework.Tests.Plugin
             var test = new TestHelper();
             var id = Guid.NewGuid();
             var dbEntity = new Entity("entity") { Id = id };
-            dbEntity.Set("xts_money", new Money(1250m));
-            dbEntity.Set("xts_int", 234);
-            test.Db["DB-ENTITY"] = dbEntity;
+            dbEntity.Set("new_money", new Money(1250m));
+            dbEntity.Set("new_int", 234);
+            test.Service.Retrieve(Arg.Any<string>(), Arg.Any<Guid>(), Arg.Any<ColumnSet>())
+                .Returns(dbEntity);
 
-            var entity = new Entity("entity") { Id = id };
+            var entity = new Entity("entity")
+            {
+                Id = id,
+                ["new_int"] = null
+            };
             test.PluginExecutionContext.Stage.Returns((int) SdkMessageProcessingStepStage.Preoperation);
             test.PluginExecutionContext.MessageName.Returns(PluginMessage.Update);
             test.PluginExecutionContext.InputParameters["Target"] = entity;
@@ -102,14 +106,14 @@ namespace Niam.XRM.Framework.Tests.Plugin
             var container = Substitute.For<IContainer>();
             var config = new PluginConfiguration<Entity>(plugin, container)
             {
-                ColumnSet = new ColumnSet("xts_money")
+                ColumnSet = new ColumnSet("new_money")
             };
             var context = new TransactionContext<Entity>(test.ServiceProvider, config);
 
             var reference = context.Reference.Entity;
             Assert.Equal(dbEntity.ToEntityReference(), reference.ToEntityReference());
-            Assert.Equal(1250m, reference.Get<Money>("xts_money").Value);
-            Assert.Null(reference.Get<int?>("xts_int"));
+            Assert.Equal(1250m, reference.Get<Money>("new_money").Value);
+            Assert.Null(reference.Get<int?>("new_int"));
         }
     }
 }

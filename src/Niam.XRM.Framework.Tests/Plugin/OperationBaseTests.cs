@@ -9,10 +9,8 @@ using Niam.XRM.Framework.Interfaces;
 using Niam.XRM.Framework.Interfaces.Data;
 using Niam.XRM.Framework.Interfaces.Plugin;
 using Niam.XRM.Framework.Plugin;
-using Niam.XRM.TestFramework;
 using Xunit;
 using Niam.XRM.Framework.Plugin.Configurations;
-using Niam.XRM.Framework.Interfaces.Plugin.Configurations;
 using Xunit.Abstractions;
 
 namespace Niam.XRM.Framework.Tests.Plugin
@@ -142,10 +140,10 @@ namespace Niam.XRM.Framework.Tests.Plugin
         [Fact]
         public void Can_execute_methods_in_operation_base()
         {
-            var test = new TestHelper();
             var reference = new xts_entity { Id = Guid.NewGuid() };
-            var context = test.CreateTransactionContext<xts_entity>();
+            var context = Substitute.For<ITransactionContext<xts_entity>>();
             var txReference = new TransactionContextEntity<xts_entity>(reference);
+            context.Input.Returns(txReference);
             context.Reference.Returns(txReference);
 
             new MethodOperation(context).Execute();

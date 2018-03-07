@@ -4,7 +4,6 @@ using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Query;
 using Niam.XRM.Framework.Interfaces.Plugin;
 using Niam.XRM.Framework.Plugin;
-using Niam.XRM.TestFramework;
 using NSubstitute;
 using Xunit;
 
@@ -31,7 +30,8 @@ namespace Niam.XRM.Framework.Tests
                 Id = id,
                 ["subject"] = "Hello World"
             };
-            testHelper.Db["TARGET"] = dbEntity;
+            testHelper.Service.Retrieve(Arg.Is<string>(name => name == "lead"), Arg.Any<Guid>(), Arg.Any<ColumnSet>())
+                .Returns(dbEntity);
 
             testHelper.Service.DidNotReceive().Retrieve(Arg.Any<string>(), Arg.Any<Guid>(), Arg.Any<ColumnSet>());
             var plugin = new TestRetrieveInitial(null, null);

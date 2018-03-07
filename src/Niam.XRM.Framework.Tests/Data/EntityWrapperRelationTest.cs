@@ -1,7 +1,10 @@
 ﻿using System;
+using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Query;
 using Niam.XRM.Framework.Data;
 using Niam.XRM.Framework.Interfaces.Data;
-using Niam.XRM.TestFramework;
+using Niam.XRM.Framework.Interfaces.Plugin;
+using NSubstitute;
 using Xunit;
 
 namespace Niam.XRM.Framework.Tests.Data
@@ -26,18 +29,22 @@ namespace Niam.XRM.Framework.Tests.Data
         [Fact]
         public void Can_use_extensions()
         {
-            var test = new TestHelper();
             var derived = new xts_derivedentity { Id = Guid.NewGuid() };
             derived.Set(e => e.xts_string, "Hello world");
-            test.Db["DERIVED"] = derived;
 
             var related = new xts_relatedentity { Id = Guid.NewGuid() };
             related.Set(e => e.xts_relatedid, derived.ToEntityReference());
-            test.Db["RELATED"] = related;
+            
+            var service = Substitute.For<IOrganizationService>();
+            service.Retrieve(Arg.Any<string>(), Arg.Is<Guid>(id => id == derived.Id), Arg.Any<ColumnSet>())
+                .Returns(derived);
+            service.Retrieve(Arg.Any<string>(), Arg.Is<Guid>(id => id == related.Id), Arg.Any<ColumnSet>())
+                .Returns(related);
 
             var entity = new xts_entity { Id = Guid.NewGuid() };
             entity.Set(e => e.xts_referenceid, related.ToEntityReference());
-            var context = test.CreateTransactionContext<xts_entity>();
+            var context = Substitute.For<ITransactionContextBase>();
+            context.Service.Returns(service);
             var wrapper = new EntityWrapper<xts_entity>(entity, context);
 
             var text = wrapper

@@ -6,9 +6,9 @@ using Niam.XRM.Framework.Data;
 using Niam.XRM.Framework.Interfaces.Plugin;
 using Niam.XRM.Framework.Plugin;
 using Xunit;
-using Niam.XRM.TestFramework;
 using System.Linq;
 using System.Linq.Expressions;
+using Microsoft.Xrm.Sdk.Query;
 using Niam.XRM.Framework.Interfaces.Data;
 using Xunit.Abstractions;
 
@@ -75,13 +75,11 @@ namespace Niam.XRM.Framework.Tests.Plugin
         public void Can_execute_command_methods()
         {
             var test = new TestHelper();
-            var db = test.Db;
 
-            var related = new xts_relatedentity {Id = Guid.NewGuid()};
+            var related = new xts_relatedentity { Id = Guid.NewGuid() };
             related.Set(e => e.xts_name, "RELATED");
-            db["RELATED-001"] = related;
 
-            var reference = new xts_entity {Id = Guid.NewGuid()};
+            var reference = new xts_entity { Id = Guid.NewGuid() };
             reference.Set(e => e.xts_optionsetvalue, 12);
             reference.Set(e => e.xts_int, 345);
             reference.Set(e => e.xts_string, "PARENT");
@@ -91,12 +89,18 @@ namespace Niam.XRM.Framework.Tests.Plugin
             reference.SetFormattedValue(e => e.xts_attribute, "Hello Formatted Value");
             reference.SetFormattedValue("xts_anotherattribute", "1234-another-fv");
 
-            var child = new xts_relatedentity {Id = Guid.NewGuid()};
+            var child = new xts_relatedentity { Id = Guid.NewGuid() };
             child.Set(e => e.xts_name, "CHILD");
             child.Set(e => e.xts_relatedid, reference.ToEntityReference());
-            db["CHILD-001"] = child;
 
-            var context = test.CreateTransactionContext<xts_entity>();
+            test.Service.Retrieve(Arg.Any<string>(), Arg.Is<Guid>(id => id == related.Id), Arg.Any<ColumnSet>())
+                .Returns(related);
+            test.Service.Retrieve(Arg.Any<string>(), Arg.Is<Guid>(id => id == child.Id), Arg.Any<ColumnSet>())
+                .Returns(child);
+            test.Service.RetrieveMultiple(Arg.Any<QueryBase>()).Returns(new EntityCollection(new List<Entity> { child }));
+
+            var context = Substitute.For<ITransactionContext<xts_entity>>();
+            context.Service.Returns(test.Service);
             var txReference = new TransactionContextEntity<xts_entity>(reference);
             context.Reference.Returns(txReference);
 
@@ -150,7 +154,7 @@ namespace Niam.XRM.Framework.Tests.Plugin
             var reference = new xts_entity { Id = id };
             reference.Set(e => e.xts_money, 250m);
 
-            var context = test.CreateTransactionContext<xts_entity>();
+            var context = Substitute.For<ITransactionContext<xts_entity>>();
             context.Initial.Returns(initial.ToEntityAccessor());
             context.Reference.Returns(new TransactionContextEntity<xts_entity>(reference));
 
@@ -197,7 +201,7 @@ namespace Niam.XRM.Framework.Tests.Plugin
             var reference = new xts_entity { Id = id };
             reference.Set(e => e.xts_money, 250m);
 
-            var context = test.CreateTransactionContext<xts_entity>();
+            var context = Substitute.For<ITransactionContext<xts_entity>>();
             context.Initial.Returns(initial.ToEntityAccessor());
             context.Reference.Returns(new TransactionContextEntity<xts_entity>(reference));
 
@@ -242,7 +246,7 @@ namespace Niam.XRM.Framework.Tests.Plugin
             var reference = new xts_entity { Id = id };
             reference.Set(e => e.xts_optionsetvalue, new OptionSetValue(3));
 
-            var context = test.CreateTransactionContext<xts_entity>();
+            var context = Substitute.For<ITransactionContext<xts_entity>>();
             context.Initial.Returns(initial.ToEntityAccessor());
             context.Reference.Returns(new TransactionContextEntity<xts_entity>(reference));
 
@@ -269,7 +273,7 @@ namespace Niam.XRM.Framework.Tests.Plugin
             var reference = new xts_entity { Id = id };
             reference.Set(e => e.xts_optionsetvalue, CommandEnumTest.Thirteen);
 
-            var context = test.CreateTransactionContext<xts_entity>();
+            var context = Substitute.For<ITransactionContext<xts_entity>>();
             context.Initial.Returns(initial.ToEntityAccessor());
             context.Reference.Returns(new TransactionContextEntity<xts_entity>(reference));
 
@@ -319,7 +323,7 @@ namespace Niam.XRM.Framework.Tests.Plugin
             var reference = new xts_entity { Id = id };
             reference.Set(e => e.xts_attribute, expectedTo);
 
-            var context = test.CreateTransactionContext<xts_entity>();
+            var context = Substitute.For<ITransactionContext<xts_entity>>();
             context.Initial.Returns(initial.ToEntityAccessor());
             context.Reference.Returns(new TransactionContextEntity<xts_entity>(reference));
 
@@ -336,11 +340,13 @@ namespace Niam.XRM.Framework.Tests.Plugin
             var test = new TestHelper();
             var keyEntity = new xts_keytest { Id = Guid.NewGuid() };
             keyEntity.Set(e => e.xts_key, "Hello world");
-            test.Db["ENTITY"] = keyEntity;
-
-            var context = test.CreateTransactionContext<xts_entity>();
+            test.Service.Retrieve(Arg.Is<string>(name => name == "xts_keytest"), Arg.Any<Guid>(), Arg.Any<ColumnSet>())
+                .Returns(keyEntity);
+            
             var entity = new xts_entity { Id = Guid.NewGuid() };
             entity.Set(e => e.xts_referenceid, keyEntity.ToEntityReference());
+            var context = Substitute.For<ITransactionContext<xts_entity>>();
+            context.Service.Returns(test.Service);
             context.Reference.Returns(new TransactionContextEntity<xts_entity>(entity));
 
             var command = new CommandTest(context);

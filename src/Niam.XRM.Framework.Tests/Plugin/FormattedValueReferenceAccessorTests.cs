@@ -6,7 +6,6 @@ using Microsoft.Xrm.Sdk.Query;
 using NSubstitute;
 using Niam.XRM.Framework.Interfaces.Plugin;
 using Niam.XRM.Framework.Plugin;
-using Niam.XRM.TestFramework;
 using Xunit;
 
 namespace Niam.XRM.Framework.Tests.Plugin
@@ -131,7 +130,8 @@ namespace Niam.XRM.Framework.Tests.Plugin
             {
                 ["xts_name"] = "Related Name"
             };
-            test.Db["RELATED-001"] = related;
+            test.Service.Retrieve(Arg.Is<string>(name => name == "xts_related"), Arg.Any<Guid>(), Arg.Any<ColumnSet>())
+                .Returns(related);
 
             var input = new Entity("entity");
             var reference = new Entity("entity")
