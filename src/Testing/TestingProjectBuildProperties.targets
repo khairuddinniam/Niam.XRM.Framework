@@ -7,6 +7,7 @@
   </PropertyGroup>
   
   <PropertyGroup>
+    <Version>1.0.0.0</Version>
     <PackageId>$(AssemblyName)</PackageId>
     <Title>$(AssemblyName)</Title>
     <Company>Khairuddin Ni'am</Company>

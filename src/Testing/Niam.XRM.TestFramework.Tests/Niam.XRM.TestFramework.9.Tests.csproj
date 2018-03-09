@@ -1,10 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="..\ProjectBuildProperties.targets" />
+  <Import Project="..\..\ProjectBuildProperties.targets" />
   <PropertyGroup>
     <TargetFramework>net452</TargetFramework>
-    <AssemblyOriginatorKeyFile>..\open-source.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\..\open-source.snk</AssemblyOriginatorKeyFile>
+    <RootNamespace>Niam.XRM.TestFramework.Tests</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutputPath>bin\$(Configuration)\9\</OutputPath>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Include="..\..\TestEntities.cs" Link="TestEntities.cs" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0" />
     <PackageReference Include="NSubstitute" Version="2.0.3" />
@@ -12,11 +19,8 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.3.0" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\DefaultOrganizationCrmSdkTypes.cs" Link="DefaultOrganizationCrmSdkTypes.cs" />
-    <Compile Include="..\TestEntities.cs" Link="TestEntities.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Niam.XRM.Framework\Niam.XRM.Framework.csproj" />
+    <ProjectReference Include="..\..\Niam.XRM.Framework\Niam.XRM.Framework.csproj" />
+    <ProjectReference Include="..\Niam.XRM.TestFramework\Niam.XRM.TestFramework.9.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

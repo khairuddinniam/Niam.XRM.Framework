@@ -6,14 +6,14 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Version>7.1.0.1-rc2</Version>
+    <TargetFramework>net452</TargetFramework>
+    <AssemblyOriginatorKeyFile>..\open-source.snk</AssemblyOriginatorKeyFile>
+    <Version>7.1.0.2</Version>
     <Description>Dynamics 365 Plugin Framework</Description>
-    <PackageReleaseNotes>
-    </PackageReleaseNotes>
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="7.1.1" />
+    <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="7.1.0" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

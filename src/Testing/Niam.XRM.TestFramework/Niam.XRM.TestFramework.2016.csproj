@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\TestingProjectBuildProperties.targets" />
+  <!-- NuSpec -->
+  <PropertyGroup>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net452</TargetFramework>
+    <AssemblyOriginatorKeyFile>..\..\open-source.snk</AssemblyOriginatorKeyFile>
+    <Description>Dynamics CRM 2015 Plugin Test Framework</Description>
+    <AssemblyName>Niam.XRM.TestFramework</AssemblyName>
+    <RootNamespace>Niam.XRM.TestFramework</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>    
+    <DefineConstants>TRACE;DEBUG;NET452;CRM_2016</DefineConstants>
+    <OutputPath>bin\$(Configuration)\2016\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FakeXrmEasy.2016" Version="1.40.0" />
+    <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="[8.0.0,8.2.0)" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Niam.XRM.Framework\Niam.XRM.Framework.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+  </ItemGroup>
+</Project>
