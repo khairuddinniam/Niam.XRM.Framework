@@ -9,12 +9,11 @@ using Niam.XRM.Framework.Plugin;
 
 namespace Niam.XRM.TestFramework
 {
-    public abstract class TestEventBase : TestEventBase<Entity>
+    public class TestEvent : TestEvent<Entity>
     {
     }
 
-    public abstract class TestEventBase<TE>
-        where TE : Entity
+    public class TestEvent<TE> where TE : Entity
     {
         private readonly InternalXrmFakedContext _xrmFakedContext;
 
@@ -28,28 +27,37 @@ namespace Niam.XRM.TestFramework
 
         public List<Entity> Db { get; }
 
-        protected TestEventBase()
+        public TestEvent()
         {
             _xrmFakedContext = new InternalXrmFakedContext();
+
             Plugin = new TestPlugin<TE>();
+
             PluginExecutionContext = FakedContext.GetDefaultPluginContext();
+
             TracingService = FakedContext.GetFakeTracingService();
+
             Db = new List<Entity>();
         }
 
-        protected abstract void Apply();
-
+        public void ForRequest(OrganizationRequest request, int? stage = null)
+        {
+            PluginExecutionContext.SetRequest(request);
+            PluginExecutionContext.Stage = stage ?? 20;
+        }
+        
         public ITransactionContext<TE> CreateTransactionContext()
         {
-            Apply();
-            var plugin = new TestPlugin(Plugin.Configure, Plugin.UnsecureConfig, Plugin.SecureConfig);
-            FakedContext.ExecutePluginWith(PluginExecutionContext, plugin);
+            var plugin = ExecutePlugin(CreateTestPlugin);
             return plugin.TransactionContext;
         }
 
+        private TestPlugin CreateTestPlugin()
+           => new TestPlugin(Plugin.Configure, Plugin.UnsecureConfig, Plugin.SecureConfig);
+
         public TP ExecutePlugin<TP>(Func<TP> pluginFactory = null) where TP : IPlugin
         {
-            Apply();
+            FakedContext.Initialize(Db);
             var plugin = (pluginFactory ?? CreatePlugin<TP>).Invoke();
             var serviceProvider = _xrmFakedContext.CreateServiceProvider(PluginExecutionContext);
             plugin.Execute(serviceProvider);
@@ -80,11 +88,7 @@ namespace Niam.XRM.TestFramework
             private readonly Action<IPluginConfiguration<TE>> _configurePlugin;
 
             public ITransactionContext<TE> TransactionContext { get; private set; }
-
-            public TestPlugin() : base(null, null)
-            {
-            }
-
+            
             public TestPlugin(
                 Action<IPluginConfiguration<TE>> configurePlugin,
                 string unsecure, string secure) : base(unsecure, secure)

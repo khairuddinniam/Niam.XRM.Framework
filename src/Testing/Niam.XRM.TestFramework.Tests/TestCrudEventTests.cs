@@ -11,66 +11,9 @@ namespace Niam.XRM.TestFramework.Tests
     public class TestCrudEventTests
     {
         [Fact]
-        public void Validate_failed_on_target_is_null()
-        {
-            var testEvent = new TestCrudEvent
-            {
-                Target = null
-            };
-
-            var ex = Assert.Throws<TestException>(() => testEvent.CreateTransactionContext());
-            Assert.Equal("Target property must not null.", ex.Message);
-        }
-
-        [Theory]
-        [InlineData("Create", 40)]
-        [InlineData("Update", 10)]
-        [InlineData("Update", 20)]
-        [InlineData("Update", 40)]
-        [InlineData("Delete", 10)]
-        [InlineData("Delete", 20)]
-        public void Validate_failed_on_initial_is_null(string messageName, int stage)
-        {
-            var testEvent = new TestCrudEvent
-            {
-                Initial = null
-            };
-            testEvent.PluginExecutionContext.MessageName = messageName;
-            testEvent.PluginExecutionContext.Stage = stage;
-
-            var ex = Assert.Throws<TestException>(() => testEvent.CreateTransactionContext());
-            Assert.Equal("Initial property must not null.", ex.Message);
-        }
-
-        [Theory]
-        [InlineData("Create", 40)]
-        [InlineData("Update", 10)]
-        [InlineData("Update", 20)]
-        [InlineData("Update", 40)]
-        [InlineData("Delete", 10)]
-        [InlineData("Delete", 20)]
-        public void Validate_failed_on_target_and_initial_are_not_same(string messageName, int stage)
-        {
-            var testEvent = new TestCrudEvent
-            {
-                Initial = new Entity("lead", Guid.NewGuid())
-            };
-            testEvent.PluginExecutionContext.MessageName = messageName;
-            testEvent.PluginExecutionContext.Stage = stage;
-
-            var ex = Assert.Throws<TestException>(() => testEvent.CreateTransactionContext());
-            Assert.Equal("Target entity name and id is not same as Initial entity name and id.", ex.Message);
-        }
-
-        [Fact]
         public void Can_execute()
         {
             var id = Guid.NewGuid();
-            var target = new Entity("lead")
-            {
-                Id = id,
-                ["new_baseprice"] = new Money(1500m)
-            };
 
             var tax = new Entity("tax")
             {
@@ -84,15 +27,19 @@ namespace Niam.XRM.TestFramework.Tests
                 ["new_baseprice"] = new Money(100m),
                 ["new_taxid"] = tax.ToEntityReference()
             };
+            
+            var target = new Entity("lead")
+            {
+                Id = id,
+                ["new_baseprice"] = new Money(1500m)
+            };
 
-            // Default is "Update" and stage "20" (Pre)
-            var testEvent = new TestCrudEvent
+            var testEvent = new TestEvent
             {
                 Plugin = { Configure = ConfigurePlugin },
-                Target = target,
-                Initial = initial,
-                Db = { tax }
+                Db = { initial, tax }
             };
+            testEvent.ForUpdate(target);
 
             var context = testEvent.CreateTransactionContext();
             new TestOperation(context).Execute();

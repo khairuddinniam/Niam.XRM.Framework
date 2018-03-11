@@ -22,7 +22,11 @@ namespace Niam.XRM.Framework
 
         public static T GetService<T>(this IServiceProvider serviceProvider) => 
             (T) serviceProvider.GetService(typeof (T));
-        
+
+        public static T GetRequest<T>(this ITransactionContextBase context)
+            where T : OrganizationRequest
+            => context.PluginExecutionContext.GetRequest<T>();
+
         public static T GetRequest<T>(this IPluginExecutionContext context)
             where T : OrganizationRequest
         {

@@ -1,15 +1,25 @@
 ﻿using System;
 using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Messages;
 using Niam.XRM.Framework.Interfaces.Plugin;
 using Niam.XRM.Framework.Plugin;
 using Xunit;
 
 namespace Niam.XRM.TestFramework.Tests
 {
-    public class TestEventBaseTests
+    public class TestEventTests
     {
         [Fact]
-        public void Can_execute_test_event()
+        public void Can_set_for_request()
+        {
+            var testEvent = new TestEvent();
+            testEvent.ForRequest(new UpdateRequest(), 50);
+            Assert.Equal("Update", testEvent.PluginExecutionContext.MessageName);
+            Assert.Equal(50, testEvent.PluginExecutionContext.Stage);
+        }
+
+        [Fact]
+        public void Can_create_transaction_context()
         {
             var testEvent = new TestEvent
             {
@@ -20,23 +30,14 @@ namespace Niam.XRM.TestFramework.Tests
                 }
             };
             var context = testEvent.CreateTransactionContext();
-            Assert.Equal("world", context.PluginExecutionContext.SharedVariables["hello"]);
             Assert.Equal("unsecure", context.Plugin.UnsecureConfig);
             Assert.Equal("secure", context.Plugin.SecureConfig);
-        }
-
-        private class TestEvent : TestEventBase
-        {
-            protected override void Apply()
-            {
-                PluginExecutionContext.SharedVariables["hello"] = "world";
-            }
         }
         
         [Fact]
         public void Can_execute_plugin_with_default_constructor()
         {
-            var plugin = new TestCrudEvent().ExecutePlugin<TestPluginDefaultConstructor>();
+            var plugin = new TestEvent().ExecutePlugin<TestPluginDefaultConstructor>();
 
             Assert.Equal("execute-crm-plugin", plugin.Value);
         }
