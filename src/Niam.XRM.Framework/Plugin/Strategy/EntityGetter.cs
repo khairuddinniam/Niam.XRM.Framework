@@ -36,7 +36,7 @@ namespace Niam.XRM.Framework.Plugin.Strategy
             {
                 var stage = context.PluginExecutionContext.Stage;
                 return stage != (int) SdkMessageProcessingStepStage.Postoperation
-                    ? new Entity(context.Input.LogicalName, context.Input.Id)
+                    ? new Entity(context.Target.LogicalName, context.Target.Id)
                     : CommonHandler.Get(context, config);
             }
         }
@@ -55,8 +55,8 @@ namespace Niam.XRM.Framework.Plugin.Strategy
             private static Entity GetEntityFromDatabase<T>(ITransactionContext<T> context, ITransactionContextConfiguration<T> config)
                 where T : Entity
             {
-                var logicalName = context.Input.LogicalName;
-                var id = context.Input.Id;
+                var logicalName = context.Target.LogicalName;
+                var id = context.Target.Id;
                 return context.Service.Retrieve(logicalName, id, config.ColumnSet);
             }
         }

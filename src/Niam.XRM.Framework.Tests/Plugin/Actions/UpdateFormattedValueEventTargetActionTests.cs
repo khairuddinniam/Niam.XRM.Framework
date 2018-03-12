@@ -8,7 +8,7 @@ using Xunit;
 
 namespace Niam.XRM.Framework.Tests.Plugin.Actions
 {
-    public class UpdateFormattedValueEventInputActionTests
+    public class UpdateFormattedValueEventTargetActionTests
     {
         [Fact]
         public void Update_formatted_value_when_set_attribute_value()
@@ -25,9 +25,9 @@ namespace Niam.XRM.Framework.Tests.Plugin.Actions
             };
 
             var txEntity = new TransactionContextEntity<Entity>(input);
-            var context = Substitute.For<IInputActionContext>();
-            context.Input.Returns(txEntity);
-            var action = new UpdateFormattedValueEventInputAction();
+            var context = Substitute.For<ITargetActionContext>();
+            context.Target.Returns(txEntity);
+            var action = new UpdateFormattedValueEventTargetAction();
             action.Execute(context);
 
             txEntity.Set("xts_optionsetvalue", new OptionSetValue(2));

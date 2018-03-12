@@ -9,8 +9,8 @@ namespace Niam.XRM.Framework.Interfaces.Plugin.Configurations
     public interface ITransactionContextConfiguration<T>
         where T : Entity
     {
-        IList<IInputAction> InputActions { get; }
-        IList<IReferenceAction> ReferenceActions { get; }
+        IList<ITargetAction> TargetActions { get; }
+        IList<ICurrentAction> CurrentActions { get; }
         IPluginBase Plugin { get; }
         ColumnSet<T> ColumnSet { get; set; }
         PluginLogOption LogOption { get; }

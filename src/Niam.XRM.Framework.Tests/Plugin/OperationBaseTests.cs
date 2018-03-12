@@ -36,7 +36,7 @@ namespace Niam.XRM.Framework.Tests.Plugin
             var reference = new TransactionContextEntity<Entity>(referenceEntity);
             var context = Substitute.For<ITransactionContext<Entity>>();
             context.PluginExecutionContext.Returns(pluginContext);
-            context.Reference.Returns(reference);
+            context.Current.Returns(reference);
 
             var operation = new Operation(context);
             Assert.Equal(referenceEntity, operation.PublicWrapper.Entity);
@@ -54,12 +54,12 @@ namespace Niam.XRM.Framework.Tests.Plugin
             var input = new TransactionContextEntity<Entity>(inputEntity);
             var context = Substitute.For<ITransactionContext<Entity>>();
             context.PluginExecutionContext.Returns(pluginContext);
-            context.Input.Returns(input);
+            context.Target.Returns(input);
 
             var operation = new Operation(context);
             Assert.Equal(input, operation.PublicInput);
             var update = operation.PublicInput; // other retrieve.
-            var temp = context.Received(2).Input;
+            var temp = context.Received(2).Target;
         }
 
         [Theory]
@@ -74,9 +74,9 @@ namespace Niam.XRM.Framework.Tests.Plugin
             var reference = new TransactionContextEntity<xts_entity>(referenceEntity);
             var context = Substitute.For<ITransactionContext<xts_entity>>();
             context.PluginExecutionContext.Returns(pluginContext);
-            context.Reference.Returns(reference);
+            context.Current.Returns(reference);
 
-            Assert.Equal(referenceEntity.ToEntityReference(), ((ITransactionContext<Entity>) context).Reference.Entity.ToEntityReference());
+            Assert.Equal(referenceEntity.ToEntityReference(), ((ITransactionContext<Entity>) context).Current.Entity.ToEntityReference());
             
             var operation = new WrapperOperation(context);
             Assert.Equal(referenceEntity.ToEntityReference(), operation.PublicWrapper.Entity.ToEntityReference());
@@ -104,7 +104,7 @@ namespace Niam.XRM.Framework.Tests.Plugin
         private class Operation : OperationBase
         {
             public IEntityWrapper<Entity> PublicWrapper => Wrapper;
-            public ITransactionContextEntity<Entity> PublicInput => Context.Input;
+            public ITransactionContextEntity<Entity> PublicInput => Context.Target;
 
             public Operation(ITransactionContext<Entity> context) : base(context)
             {
@@ -143,11 +143,11 @@ namespace Niam.XRM.Framework.Tests.Plugin
             var reference = new xts_entity { Id = Guid.NewGuid() };
             var context = Substitute.For<ITransactionContext<xts_entity>>();
             var txReference = new TransactionContextEntity<xts_entity>(reference);
-            context.Input.Returns(txReference);
-            context.Reference.Returns(txReference);
+            context.Target.Returns(txReference);
+            context.Current.Returns(txReference);
 
             new MethodOperation(context).Execute();
-            var input = context.Input;
+            var input = context.Target;
             Assert.Equal(1234m, input.Get(e => e.xts_money).Value);
             Assert.Equal(3000m, input.Get(e => e.xts_othermoney).Value);
             Assert.Equal(11, input.Get(e => e.xts_optionsetvalue).Value);

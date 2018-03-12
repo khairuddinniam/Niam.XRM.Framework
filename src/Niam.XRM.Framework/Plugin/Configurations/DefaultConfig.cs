@@ -10,15 +10,15 @@ namespace Niam.XRM.Framework.Plugin.Configurations
 {
     internal static class DefaultConfig
     {
-        public static IList<IInputAction> InputActions { get; } = new List<IInputAction>
+        public static IList<ITargetAction> TargetActions { get; } = new List<ITargetAction>
         {
-            new UpdateFormattedValueEventInputAction()
+            new UpdateFormattedValueEventTargetAction()
         };
 
-        public static IList<IReferenceAction> ReferenceActions { get; } = new List<IReferenceAction>
+        public static IList<ICurrentAction> CurrentActions { get; } = new List<ICurrentAction>
         {
-            new CopyToReferenceAction(),
-            new CopyValueEventReferenceAction()
+            new CopyToCurrentAction(),
+            new CopyValueEventCurrentAction()
         };
 
         public static void PluginConfigureServiceFactory<T>(IPluginConfiguration<T> config)

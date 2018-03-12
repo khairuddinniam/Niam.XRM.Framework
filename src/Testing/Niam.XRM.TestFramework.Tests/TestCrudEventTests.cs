@@ -44,7 +44,7 @@ namespace Niam.XRM.TestFramework.Tests
             var context = testEvent.CreateTransactionContext();
             new TestOperation(context).Execute();
 
-            Assert.Equal(1700m, context.Input.Get<Money>("new_totalprice").Value);
+            Assert.Equal(1700m, context.Target.Get<Money>("new_totalprice").Value);
         }
 
         private void ConfigurePlugin(IPluginConfiguration<Entity> config)

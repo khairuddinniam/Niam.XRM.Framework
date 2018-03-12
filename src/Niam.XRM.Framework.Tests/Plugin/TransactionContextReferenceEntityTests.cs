@@ -44,10 +44,10 @@ namespace Niam.XRM.Framework.Tests.Plugin
             _pluginContext.MessageName.Returns(PluginMessage.Create);
             _pluginContext.InputParameters["Target"] = entity;
             var context = new TransactionContext<Entity>(_serviceProvider);
-            Assert.NotSame(context.Initial, context.Reference);
-            Assert.NotSame(entity, context.Reference.Entity);
-            Assert.Equal(entity.ToEntityReference(), context.Reference.Entity.ToEntityReference());
-            Assert.Equal(12345m, context.Reference.Entity.GetAttributeValue<Money>("xts_attribute").Value);
+            Assert.NotSame(context.Initial, context.Current);
+            Assert.NotSame(entity, context.Current.Entity);
+            Assert.Equal(entity.ToEntityReference(), context.Current.Entity.ToEntityReference());
+            Assert.Equal(12345m, context.Current.Entity.GetAttributeValue<Money>("xts_attribute").Value);
         }
 
         [Theory]
@@ -65,10 +65,10 @@ namespace Niam.XRM.Framework.Tests.Plugin
             _pluginContext.InputParameters[inputKey] = isReference ? (object)entity.ToEntityReference() : entity;
 
             var context = new TransactionContext<Entity>(_serviceProvider);
-            Assert.NotSame(context.Initial, context.Reference);
-            Assert.NotSame(entity, context.Reference.Entity);
-            Assert.Equal(entity.ToEntityReference(), context.Reference.Entity.ToEntityReference());
-            Assert.Equal(1250m, context.Reference.Entity.GetAttributeValue<Money>("xts_attribute").Value);
+            Assert.NotSame(context.Initial, context.Current);
+            Assert.NotSame(entity, context.Current.Entity);
+            Assert.Equal(entity.ToEntityReference(), context.Current.Entity.ToEntityReference());
+            Assert.Equal(1250m, context.Current.Entity.GetAttributeValue<Money>("xts_attribute").Value);
 
             _service.Received(1).Retrieve(Arg.Is("entity"), Arg.Is(id), Arg.Any<ColumnSet>());
         }
@@ -110,7 +110,7 @@ namespace Niam.XRM.Framework.Tests.Plugin
             };
             var context = new TransactionContext<Entity>(test.ServiceProvider, config);
 
-            var reference = context.Reference.Entity;
+            var reference = context.Current.Entity;
             Assert.Equal(dbEntity.ToEntityReference(), reference.ToEntityReference());
             Assert.Equal(1250m, reference.Get<Money>("new_money").Value);
             Assert.Null(reference.Get<int?>("new_int"));

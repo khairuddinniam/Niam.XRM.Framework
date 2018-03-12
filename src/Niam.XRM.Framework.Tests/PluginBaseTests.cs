@@ -78,7 +78,7 @@ namespace Niam.XRM.Framework.Tests
 
             protected override void ExecuteCrmPlugin(ITransactionContext<Entity> context)
             {
-                EntityId = context.Reference.Id;
+                EntityId = context.Current.Id;
             }
         }
     }

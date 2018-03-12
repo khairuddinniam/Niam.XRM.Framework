@@ -28,7 +28,7 @@ namespace Niam.XRM.Framework.Tests.Plugin
             _pluginContext.MessageName.Returns(PluginMessage.Create);
             _pluginContext.InputParameters["Target"] = entity;
             var context = new TransactionContext<Entity>(_serviceProvider);
-            var inputEntity = context.Input.Entity;
+            var inputEntity = context.Target.Entity;
             entity["xts_attr"] = new Money(200m);
             Assert.Equal(new Money(200m), inputEntity["xts_attr"]);
         }
@@ -40,7 +40,7 @@ namespace Niam.XRM.Framework.Tests.Plugin
             _pluginContext.MessageName.Returns(PluginMessage.Update);
             _pluginContext.InputParameters["Target"] = entity;
             var context = new TransactionContext<Entity>(_serviceProvider);
-            var inputEntity = context.Input.Entity;
+            var inputEntity = context.Target.Entity;
             entity["xts_attr"] = new Money(200m);
             Assert.Equal(new Money(200m), inputEntity["xts_attr"]);
         }
@@ -52,7 +52,7 @@ namespace Niam.XRM.Framework.Tests.Plugin
             _pluginContext.MessageName.Returns(PluginMessage.Delete);
             _pluginContext.InputParameters["Target"] = reference;
             var context = new TransactionContext<Entity>(_serviceProvider);
-            Assert.Equal(reference, context.Input.Entity.ToEntityReference());
+            Assert.Equal(reference, context.Target.Entity.ToEntityReference());
         }
 
         [Fact]
@@ -62,7 +62,7 @@ namespace Niam.XRM.Framework.Tests.Plugin
             _pluginContext.MessageName.Returns(PluginMessage.Assign);
             _pluginContext.InputParameters["Target"] = reference;
             var context = new TransactionContext<Entity>(_serviceProvider);
-            Assert.Equal(reference, context.Input.Entity.ToEntityReference());
+            Assert.Equal(reference, context.Target.Entity.ToEntityReference());
         }
 
         [Theory]
@@ -73,7 +73,7 @@ namespace Niam.XRM.Framework.Tests.Plugin
             _pluginContext.MessageName.Returns(messageName);
             _pluginContext.InputParameters["EntityMoniker"] = reference;
             var context = new TransactionContext<Entity>(_serviceProvider);
-            Assert.Equal(reference, context.Input.Entity.ToEntityReference());
+            Assert.Equal(reference, context.Target.Entity.ToEntityReference());
         }
 
         public static IEnumerable<object[]> GetInputMessageSetStateData()

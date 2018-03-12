@@ -28,9 +28,9 @@ namespace Niam.XRM.Framework.Plugin.Configurations
 
         public string LogDirPath => _logConfig.Value.LogDirPath;
 
-        public IList<IInputAction> InputActions { get; } = new List<IInputAction>(DefaultConfig.InputActions);
+        public IList<ITargetAction> TargetActions { get; } = new List<ITargetAction>(DefaultConfig.TargetActions);
 
-        public IList<IReferenceAction> ReferenceActions { get; } = new List<IReferenceAction>(DefaultConfig.ReferenceActions);
+        public IList<ICurrentAction> CurrentActions { get; } = new List<ICurrentAction>(DefaultConfig.CurrentActions);
 
         public IPluginBase Plugin { get; }
 

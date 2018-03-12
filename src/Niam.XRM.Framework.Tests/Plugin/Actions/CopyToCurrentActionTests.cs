@@ -8,7 +8,7 @@ using Xunit;
 
 namespace Niam.XRM.Framework.Tests.Plugin.Actions
 {
-    public class CopyToReferenceActionTests
+    public class CopyToCurrentActionTests
     {
         [Fact]
         public void Can_copy_attribute_values()
@@ -45,12 +45,12 @@ namespace Niam.XRM.Framework.Tests.Plugin.Actions
             };
             var txTarget = new TransactionContextEntity<Entity>(target);
 
-            var context = Substitute.For<IReferenceActionContext>();
+            var context = Substitute.For<ICurrentActionContext>();
             context.TransactionContext.PluginExecutionContext.Stage
                 .Returns((int) SdkMessageProcessingStepStage.Preoperation);
-            context.Input.Returns(txSource);
-            context.Reference.Returns(txTarget);
-            var action = new CopyToReferenceAction();
+            context.Target.Returns(txSource);
+            context.Current.Returns(txTarget);
+            var action = new CopyToCurrentAction();
             action.Execute(context);
 
             Assert.Equal(6, txTarget.Attributes.Count);

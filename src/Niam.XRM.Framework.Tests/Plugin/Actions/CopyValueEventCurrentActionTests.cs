@@ -6,7 +6,7 @@ using Xunit;
 
 namespace Niam.XRM.Framework.Tests.Plugin.Actions
 {
-    public class CopyValueEventReferenceActionTests
+    public class CopyValueEventCurrentActionTests
     {
         [Fact]
         public void Can_copy_attribute_value()
@@ -22,7 +22,7 @@ namespace Niam.XRM.Framework.Tests.Plugin.Actions
             };
             var source = new TransactionContextEntity<Entity>(sourceEntity);
 
-            var targetEntity = new Entity("entity")
+            var currentEntity = new Entity("entity")
             {
                 Id = id,
                 FormattedValues =
@@ -30,25 +30,25 @@ namespace Niam.XRM.Framework.Tests.Plugin.Actions
                     ["xts_optionsetvalue"] = "Release"
                 }
             };
-            var target = new TransactionContextEntity<Entity>(targetEntity);
+            var current = new TransactionContextEntity<Entity>(currentEntity);
 
-            var actionContext = new ReferenceActionContext
+            var actionContext = new CurrentActionContext
             {
                 TransactionContext = null,
-                Input = source,
-                Reference = target
+                Target = source,
+                Current = current
             };
-            var action = new CopyValueEventReferenceAction();
+            var action = new CopyValueEventCurrentAction();
             action.Execute(actionContext);
             source["xts_attribute"] = new Money(100m);
-            Assert.Equal(100m, target.Get<Money>("xts_attribute").Value);
-            Assert.Equal("$100.00", target.Entity.FormattedValues["xts_attribute"]);
-            Assert.Equal("Release", target.Entity.FormattedValues["xts_optionsetvalue"]);
+            Assert.Equal(100m, current.Get<Money>("xts_attribute").Value);
+            Assert.Equal("$100.00", current.Entity.FormattedValues["xts_attribute"]);
+            Assert.Equal("Release", current.Entity.FormattedValues["xts_optionsetvalue"]);
 
             source["xts_optionsetvalue"] = new OptionSetValue(12);
-            Assert.Equal(12, target.Get<OptionSetValue>("xts_optionsetvalue").Value);
-            Assert.Equal("$100.00", target.Entity.FormattedValues["xts_attribute"]);
-            Assert.Null(target.Entity.FormattedValues["xts_optionsetvalue"]);
+            Assert.Equal(12, current.Get<OptionSetValue>("xts_optionsetvalue").Value);
+            Assert.Equal("$100.00", current.Entity.FormattedValues["xts_attribute"]);
+            Assert.Null(current.Entity.FormattedValues["xts_optionsetvalue"]);
         }
 
         [Fact]
@@ -65,7 +65,7 @@ namespace Niam.XRM.Framework.Tests.Plugin.Actions
             };
             var source = new TransactionContextEntity<MsGenerated.Account>(sourceEntity);
 
-            var targetEntity = new MsGenerated.Account
+            var currentEntity = new MsGenerated.Account
             {
                 Id = id,
                 FormattedValues =
@@ -73,25 +73,25 @@ namespace Niam.XRM.Framework.Tests.Plugin.Actions
                     ["accountratingcode"] = "Release"
                 }
             };
-            var target = new TransactionContextEntity<MsGenerated.Account>(targetEntity);
+            var current = new TransactionContextEntity<MsGenerated.Account>(currentEntity);
 
-            var actionContext = new ReferenceActionContext
+            var actionContext = new CurrentActionContext
             {
                 TransactionContext = null,
-                Input = source,
-                Reference = target
+                Target = source,
+                Current = current
             };
-            var action = new CopyValueEventReferenceAction();
+            var action = new CopyValueEventCurrentAction();
             action.Execute(actionContext);
             source.Set(e => e.CreditLimit, new Money(100m));
-            Assert.Equal(100m, target.Get<Money>("creditlimit").Value);
-            Assert.Equal("$100.00", target.Entity.FormattedValues["creditlimit"]);
-            Assert.Equal("Release", target.Entity.FormattedValues["accountratingcode"]);
+            Assert.Equal(100m, current.Get<Money>("creditlimit").Value);
+            Assert.Equal("$100.00", current.Entity.FormattedValues["creditlimit"]);
+            Assert.Equal("Release", current.Entity.FormattedValues["accountratingcode"]);
 
             source.Entity.AccountRatingCode = new OptionSetValue(12);
-            Assert.Equal(12, target.Get<OptionSetValue>("accountratingcode").Value);
-            Assert.Equal("$100.00", target.Entity.FormattedValues["creditlimit"]);
-            Assert.Null(target.Entity.FormattedValues["accountratingcode"]);
+            Assert.Equal(12, current.Get<OptionSetValue>("accountratingcode").Value);
+            Assert.Equal("$100.00", current.Entity.FormattedValues["creditlimit"]);
+            Assert.Null(current.Entity.FormattedValues["accountratingcode"]);
         }
     }
 }

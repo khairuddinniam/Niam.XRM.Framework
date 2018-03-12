@@ -24,7 +24,7 @@ namespace Niam.XRM.Framework.Plugin
         
         protected virtual TW Wrapper => _wrapper.Value;
         
-        private TW GetWrapper() => InstanceEntityWrapper<TE, TW>.Create(Context.Reference.Entity, Context);
+        private TW GetWrapper() => InstanceEntityWrapper<TE, TW>.Create(Context.Current.Entity, Context);
 
         protected event Action OnExecuting;
 

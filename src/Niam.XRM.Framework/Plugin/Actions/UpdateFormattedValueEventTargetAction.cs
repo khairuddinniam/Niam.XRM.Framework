@@ -1,17 +1,16 @@
-﻿using System.ComponentModel;
-using Microsoft.Xrm.Sdk;
+﻿using Microsoft.Xrm.Sdk;
 using Niam.XRM.Framework.Interfaces.Plugin.Actions;
 
 namespace Niam.XRM.Framework.Plugin.Actions
 {
-    public class UpdateFormattedValueEventInputAction : IInputAction
+    public class UpdateFormattedValueEventTargetAction : ITargetAction
     {
-        public bool CanExecute(IInputActionContext context) => true;
+        public bool CanExecute(ITargetActionContext context) => true;
 
-        public void Execute(IInputActionContext context)
+        public void Execute(ITargetActionContext context)
         {
-            context.Input.AttributeChanging += RemoveFormattedValue;
-            context.Input.AttributeChanged += UpdateFormattedValue;
+            context.Target.AttributeChanging += RemoveFormattedValue;
+            context.Target.AttributeChanged += UpdateFormattedValue;
         }
 
         private static void RemoveFormattedValue(object entity, AttributeChangingEventArgs e)

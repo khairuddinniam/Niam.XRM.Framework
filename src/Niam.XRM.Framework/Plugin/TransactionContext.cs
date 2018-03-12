@@ -11,70 +11,73 @@ namespace Niam.XRM.Framework.Plugin
     internal class TransactionContext<T> : TransactionContextBase<T>, ITransactionContext<T>, IDisposable
         where T : Entity
     {
-        private TransactionContextEntity<T> _input;
-        private TransactionContextEntity<T> _reference;
-        private EntityAccessor<T> _initialEntity;
+        private readonly Lazy<TransactionContextEntity<T>> _target;
+        private readonly Lazy<TransactionContextEntity<T>> _current;
+        private readonly Lazy<EntityAccessor<T>> _initialEntity;
         
-        public ITransactionContextEntity<T> Input => _input ?? (_input = GetInputContextEntity());
+        public ITransactionContextEntity<T> Target => _target.Value;
 
-        public ITransactionContextEntity<T> Reference => _reference ?? (_reference = GetReferenceContextEntity());
+        public ITransactionContextEntity<T> Current => _current.Value;
 
-        internal EntityAccessor<T> Initial => _initialEntity ?? (_initialEntity = GetInitialEntity());
+        internal EntityAccessor<T> Initial => _initialEntity.Value;
 
         IEntityGetter<T> ITransactionContext<T>.Initial => Initial;
 
         public TransactionContext(IServiceProvider serviceProvider, ITransactionContextConfiguration<T> config = null)
             : base(serviceProvider, config)
         {
+            _target = new Lazy<TransactionContextEntity<T>>(GetTargetContextEntity);
+            _current = new Lazy<TransactionContextEntity<T>>(GetCurrentContextEntity);
+            _initialEntity = new Lazy<EntityAccessor<T>>(GetInitialEntity);
         }
         
-        private TransactionContextEntity<T> GetInputContextEntity()
+        private TransactionContextEntity<T> GetTargetContextEntity()
         {
-            var input = GetInputEntity().ToEntity<T>();
-            var txInput = new TransactionContextEntity<T>(input);
+            var target = GetTargetEntity().ToEntity<T>();
+            var txTarget = new TransactionContextEntity<T>(target);
 
-            var actionContext = new InputActionContext
+            var actionContext = new TargetActionContext
             {
                 TransactionContext = this,
-                Input = txInput
+                Target = txTarget
             };
 
-            foreach (var action in Config.InputActions)
+            foreach (var action in Config.TargetActions)
             {
                 if (action.CanExecute(actionContext))
                     action.Execute(actionContext);
             }
 
-            return txInput;
+            return txTarget;
         }
 
-        private Entity GetInputEntity()
+        private Entity GetTargetEntity()
         {
             var message = PluginExecutionContext.MessageName;
             var handler = TargetEntityGetter.GetHandler(message);
             return handler.Get(PluginExecutionContext);
         }
 
-        private TransactionContextEntity<T> GetReferenceContextEntity()
+        private TransactionContextEntity<T> GetCurrentContextEntity()
         {
-            var reference = Initial.Entity.Copy();
-            var referenceAccessor = new FormattedValueReferenceAccessor<T>(Input.Entity, reference, this);
-            var txReference = new TransactionContextEntity<T>(referenceAccessor);
+            var current = Initial.Entity.Copy();
+            var currentAccessor = new FormattedValueReferenceAccessor<T>(Target.Entity, current, this);
+            var txCurrent = new TransactionContextEntity<T>(currentAccessor);
 
-            var actionContext = new ReferenceActionContext
+            var actionContext = new CurrentActionContext
             {
                 TransactionContext = this,
-                Input = Input,
-                Reference = txReference
+                Target = Target,
+                Current = txCurrent
             };
 
-            foreach (var action in Config.ReferenceActions)
+            foreach (var action in Config.CurrentActions)
             {
                 if (action.CanExecute(actionContext))
                     action.Execute(actionContext);
             }
 
-            return txReference;
+            return txCurrent;
         }
 
         private EntityAccessor<T> GetInitialEntity()

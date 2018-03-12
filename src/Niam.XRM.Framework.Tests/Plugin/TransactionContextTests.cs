@@ -34,8 +34,8 @@ namespace Niam.XRM.Framework.Tests.Plugin
             });
 
             var context = serviceProvider.ToTransactionContext<xts_entity>();
-            var input = context.Input;
-            var reference = context.Reference;
+            var input = context.Target;
+            var reference = context.Current;
 
             // Copy from input to reference.
             input.Set(e => e.xts_money, new Money(120m));
