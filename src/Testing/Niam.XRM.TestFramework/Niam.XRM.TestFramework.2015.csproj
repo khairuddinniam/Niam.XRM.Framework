@@ -6,10 +6,8 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
   <PropertyGroup>
-    <TargetFramework>net452</TargetFramework>
-    <AssemblyOriginatorKeyFile>..\..\open-source.snk</AssemblyOriginatorKeyFile>
-    <Description>Dynamics CRM 2015 Plugin Test Framework</Description>
-    <AssemblyName>Niam.XRM.TestFramework</AssemblyName>
+    <TargetFramework>net452</TargetFramework><Description>Dynamics CRM 2015 Plugin Test Framework</Description>
+    <AssemblyName>Niam.XRM.TestFramework.2015</AssemblyName>
     <RootNamespace>Niam.XRM.TestFramework</RootNamespace>
   </PropertyGroup>
   <PropertyGroup>    

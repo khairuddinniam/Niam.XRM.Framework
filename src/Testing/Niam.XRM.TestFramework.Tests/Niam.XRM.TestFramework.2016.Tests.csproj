@@ -1,8 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="..\..\ProjectBuildProperties.targets" />
   <PropertyGroup>
     <TargetFramework>net452</TargetFramework>
-    <AssemblyOriginatorKeyFile>..\..\open-source.snk</AssemblyOriginatorKeyFile>
+    <LangVersion>7</LangVersion>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <AssemblyName>Niam.XRM.TestFramework.Tests.2016</AssemblyName>
     <RootNamespace>Niam.XRM.TestFramework.Tests</RootNamespace>
   </PropertyGroup>
   <PropertyGroup>

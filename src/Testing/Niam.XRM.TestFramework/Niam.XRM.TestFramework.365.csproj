@@ -7,9 +7,8 @@
   </PropertyGroup>
   <PropertyGroup>
     <TargetFramework>net452</TargetFramework>
-    <AssemblyOriginatorKeyFile>..\..\open-source.snk</AssemblyOriginatorKeyFile>
     <Description>Dynamics 365 Plugin Test Framework</Description>
-    <AssemblyName>Niam.XRM.TestFramework</AssemblyName>
+    <AssemblyName>Niam.XRM.TestFramework.365</AssemblyName>
     <RootNamespace>Niam.XRM.TestFramework</RootNamespace>
   </PropertyGroup>
   <PropertyGroup>    

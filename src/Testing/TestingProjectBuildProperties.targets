@@ -1,8 +1,6 @@
 ﻿<Project>
   <PropertyGroup>
     <LangVersion>7</LangVersion>
-    <SignAssembly>True</SignAssembly>
-    <DelaySign>False</DelaySign>
     <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
   </PropertyGroup>
   
