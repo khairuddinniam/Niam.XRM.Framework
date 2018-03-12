@@ -5,10 +5,10 @@ using Microsoft.Xrm.Sdk.Messages;
 
 namespace Niam.XRM.Framework.Plugin.Strategy
 {
-    internal static class InputEntityGetter
+    internal abstract class TargetEntityGetter
     {
         private static readonly SetState SetStateHandler = new SetState();
-        private static readonly IDictionary<string, InputEntityGetterBase> Handlers = new Dictionary<string, InputEntityGetterBase>
+        private static readonly IDictionary<string, TargetEntityGetter> Handlers = new Dictionary<string, TargetEntityGetter>
         {
             [PluginMessage.Create] = new Create(),
             [PluginMessage.Update] = new Update(),
@@ -18,39 +18,41 @@ namespace Niam.XRM.Framework.Plugin.Strategy
             [PluginMessage.SetStateDynamicEntity] = SetStateHandler
         };
         
-        public static InputEntityGetterBase GetHandler(string message)
+        public static TargetEntityGetter GetHandler(string message)
         {
             if (Handlers.TryGetValue(message, out var handler))
                 return handler;
 
-            throw new InvalidPluginExecutionException($"Message '{message}' doesn't have {nameof(InputEntityGetterBase)} handler.");
+            throw new InvalidPluginExecutionException($"Message '{message}' doesn't have {nameof(TargetEntityGetter)} handler.");
         }
 
-        private class Create : InputEntityGetterBase
+        public abstract Entity Get(IPluginExecutionContext context);
+
+        private class Create : TargetEntityGetter
         {
             public override Entity Get(IPluginExecutionContext context)
                 => context.GetRequest<CreateRequest>().Target;
         }
 
-        private class Update : InputEntityGetterBase
+        private class Update : TargetEntityGetter
         {
             public override Entity Get(IPluginExecutionContext context)
                 => context.GetRequest<UpdateRequest>().Target;
         }
 
-        private class Delete : InputEntityGetterBase
+        private class Delete : TargetEntityGetter
         {
             public override Entity Get(IPluginExecutionContext context)
                 => context.GetRequest<DeleteRequest>().Target.ToEntity();
         }
 
-        private class Assign : InputEntityGetterBase
+        private class Assign : TargetEntityGetter
         {
             public override Entity Get(IPluginExecutionContext context)
                 => context.GetRequest<AssignRequest>().Target.ToEntity();
         }
 
-        private class SetState : InputEntityGetterBase
+        private class SetState : TargetEntityGetter
         {
             public override Entity Get(IPluginExecutionContext context)
                 => context.GetRequest<SetStateRequest>().EntityMoniker.ToEntity();

@@ -6,10 +6,10 @@ using Niam.XRM.Framework.Interfaces.Plugin.Configurations;
 
 namespace Niam.XRM.Framework.Plugin.Strategy
 {
-    internal static class InternalEntityGetter
+    internal abstract class EntityGetter
     {
-        private static readonly Common CommonHandler = new Common(ImageEntityGetter.Default);
-        private static readonly IDictionary<string, InternalEntityGetterBase> Handlers = new Dictionary<string, InternalEntityGetterBase>
+        private static readonly Common CommonHandler = new Common();
+        private static readonly IDictionary<string, EntityGetter> Handlers = new Dictionary<string, EntityGetter>
         {
             [PluginMessage.Create] = new Create(),
             [PluginMessage.Update] = CommonHandler,
@@ -19,15 +19,18 @@ namespace Niam.XRM.Framework.Plugin.Strategy
             [PluginMessage.SetStateDynamicEntity] = CommonHandler
         };
 
-        public static InternalEntityGetterBase GetHandler(string message)
+        public static EntityGetter GetHandler(string message)
         {
             if (Handlers.TryGetValue(message, out var handler))
                 return handler;
 
-            throw new InvalidPluginExecutionException($"Message '{message}' doesn't have {nameof(InternalEntityGetterBase)} handler.");
+            throw new InvalidPluginExecutionException($"Message '{message}' doesn't have {nameof(EntityGetter)} handler.");
         }
 
-        private class Create : InternalEntityGetterBase
+        public abstract Entity Get<T>(ITransactionContext<T> context, ITransactionContextConfiguration<T> config)
+            where T : Entity;
+
+        private class Create : EntityGetter
         {
             public override Entity Get<T>(ITransactionContext<T> context, ITransactionContextConfiguration<T> config)
             {
@@ -38,27 +41,18 @@ namespace Niam.XRM.Framework.Plugin.Strategy
             }
         }
 
-        private class Common : InternalEntityGetterBase
+        private class Common : EntityGetter
         {
-            private readonly IImageEntityGetter _imageEntityGetter;
-
-            public Common(IImageEntityGetter imageEntityGetter)
-            {
-                _imageEntityGetter = imageEntityGetter ?? throw new ArgumentNullException(nameof(imageEntityGetter));
-            }
-
-            public override Entity Get<T>(ITransactionContext<T> context,
-                ITransactionContextConfiguration<T> config)
+            public override Entity Get<T>(ITransactionContext<T> context, ITransactionContextConfiguration<T> config)
                 => GetEntityFromImage(context) ?? GetEntityFromDatabase(context, config);
 
             private Entity GetEntityFromImage(IContextBase context)
             {
-                var handler = _imageEntityGetter.GetHandler(context.PluginExecutionContext.Stage);
+                var handler = ImageEntityGetter.GetHandler(context.PluginExecutionContext.Stage);
                 return handler.Get(context.PluginExecutionContext);
             }
 
-            private static Entity GetEntityFromDatabase<T>(ITransactionContext<T> context,
-                ITransactionContextConfiguration<T> config)
+            private static Entity GetEntityFromDatabase<T>(ITransactionContext<T> context, ITransactionContextConfiguration<T> config)
                 where T : Entity
             {
                 var logicalName = context.Input.LogicalName;

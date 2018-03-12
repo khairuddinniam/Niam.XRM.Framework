@@ -3,19 +3,17 @@ using Microsoft.Xrm.Sdk;
 
 namespace Niam.XRM.Framework.Plugin.Strategy
 {
-    internal class ImageEntityGetter : IImageEntityGetter
+    internal abstract class ImageEntityGetter
     {
         public static string ImageKey => "EntityImage";
 
-        public static IImageEntityGetter Default { get; } = new ImageEntityGetter();
+        private static readonly IDictionary<int, ImageEntityGetter> Handlers;
 
-        private readonly IDictionary<int, ImageEntityGetterBase> _handlers;
-
-        private ImageEntityGetter()
+        static ImageEntityGetter()
         {
             var preImageHandler = new PreImage();
             var postImageHandler = new PostImage();
-            _handlers = new Dictionary<int, ImageEntityGetterBase>
+            Handlers = new Dictionary<int, ImageEntityGetter>
             {
                 [(int) SdkMessageProcessingStepStage.Prevalidation] = preImageHandler,
                 [(int) SdkMessageProcessingStepStage.Preoperation] = preImageHandler,
@@ -23,21 +21,23 @@ namespace Niam.XRM.Framework.Plugin.Strategy
             };
         }
 
-        ImageEntityGetterBase IImageEntityGetter.GetHandler(int stage)
+        public static ImageEntityGetter GetHandler(int stage)
         {
-            if (_handlers.TryGetValue(stage, out var handler))
+            if (Handlers.TryGetValue(stage, out var handler))
                 return handler;
 
-            throw new InvalidPluginExecutionException($"Stage '{stage}' doesn't have {nameof(ImageEntityGetterBase)} handler.");
+            throw new InvalidPluginExecutionException($"Stage '{stage}' doesn't have {nameof(ImageEntityGetter)} handler.");
         }
+
+        public abstract Entity Get(IPluginExecutionContext context);
         
-        private class PreImage : ImageEntityGetterBase
+        private class PreImage : ImageEntityGetter
         {
             public override Entity Get(IPluginExecutionContext context)
                 => context.PreEntityImages.GetImage(ImageKey);
         }
 
-        private class PostImage : ImageEntityGetterBase
+        private class PostImage : ImageEntityGetter
         {
             public override Entity Get(IPluginExecutionContext context)
                 => context.PostEntityImages.GetImage(ImageKey);

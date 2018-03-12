@@ -7,7 +7,7 @@ using Xunit;
 
 namespace Niam.XRM.Framework.Tests.Plugin.Strategy
 {
-    public class InputEntityGetterTests
+    public class TargetEntityGetterTests
     {
         [Fact]
         public void Can_get_input_entity_create()
@@ -19,7 +19,7 @@ namespace Niam.XRM.Framework.Tests.Plugin.Strategy
                 ["Target"] = entity
             });
 
-            var handler = InputEntityGetter.GetHandler(PluginMessage.Create);
+            var handler = TargetEntityGetter.GetHandler(PluginMessage.Create);
             Assert.Same(entity, handler.Get(context));
         }
 
@@ -33,7 +33,7 @@ namespace Niam.XRM.Framework.Tests.Plugin.Strategy
                 ["Target"] = entity
             });
 
-            var handler = InputEntityGetter.GetHandler(PluginMessage.Update);
+            var handler = TargetEntityGetter.GetHandler(PluginMessage.Update);
             Assert.Same(entity, handler.Get(context));
         }
 
@@ -47,7 +47,7 @@ namespace Niam.XRM.Framework.Tests.Plugin.Strategy
                 ["Target"] = reference
             });
 
-            var handler = InputEntityGetter.GetHandler(PluginMessage.Delete);
+            var handler = TargetEntityGetter.GetHandler(PluginMessage.Delete);
             Assert.Equal(reference, handler.Get(context).ToEntityReference());
         }
 
@@ -61,7 +61,7 @@ namespace Niam.XRM.Framework.Tests.Plugin.Strategy
                 ["Target"] = reference
             });
 
-            var handler = InputEntityGetter.GetHandler(PluginMessage.Assign);
+            var handler = TargetEntityGetter.GetHandler(PluginMessage.Assign);
             Assert.Equal(reference, handler.Get(context).ToEntityReference());
         }
 
@@ -76,7 +76,7 @@ namespace Niam.XRM.Framework.Tests.Plugin.Strategy
                 ["EntityMoniker"] = reference
             });
 
-            var handler = InputEntityGetter.GetHandler(message);
+            var handler = TargetEntityGetter.GetHandler(message);
             Assert.Equal(reference, handler.Get(context).ToEntityReference());
         }
 

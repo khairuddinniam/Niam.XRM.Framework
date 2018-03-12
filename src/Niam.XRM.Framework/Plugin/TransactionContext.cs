@@ -51,7 +51,7 @@ namespace Niam.XRM.Framework.Plugin
         private Entity GetInputEntity()
         {
             var message = PluginExecutionContext.MessageName;
-            var handler = InputEntityGetter.GetHandler(message);
+            var handler = TargetEntityGetter.GetHandler(message);
             return handler.Get(PluginExecutionContext);
         }
 
@@ -80,7 +80,7 @@ namespace Niam.XRM.Framework.Plugin
         private EntityAccessor<T> GetInitialEntity()
         {
             var message = PluginExecutionContext.MessageName;
-            var handler = InternalEntityGetter.GetHandler(message);
+            var handler = EntityGetter.GetHandler(message);
             return handler.Get(this, Config).ToEntityAccessor<T>();
         }
 

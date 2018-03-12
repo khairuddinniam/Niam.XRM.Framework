@@ -20,7 +20,7 @@ namespace Niam.XRM.Framework.Tests.Plugin.Strategy
                 [ImageEntityGetter.ImageKey] = entity
             });
 
-            var handler = ImageEntityGetter.Default.GetHandler(context.Stage);
+            var handler = ImageEntityGetter.GetHandler(context.Stage);
             Assert.Equal(entity, handler.Get(context));
         }
 
@@ -35,7 +35,7 @@ namespace Niam.XRM.Framework.Tests.Plugin.Strategy
                 [ImageEntityGetter.ImageKey] = entity
             });
 
-            var handler = ImageEntityGetter.Default.GetHandler(context.Stage);
+            var handler = ImageEntityGetter.GetHandler(context.Stage);
             Assert.Equal(entity, handler.Get(context));
         }
 
@@ -50,7 +50,7 @@ namespace Niam.XRM.Framework.Tests.Plugin.Strategy
                 [ImageEntityGetter.ImageKey] = entity
             });
 
-            var handler = ImageEntityGetter.Default.GetHandler(context.Stage);
+            var handler = ImageEntityGetter.GetHandler(context.Stage);
             Assert.Equal(entity, handler.Get(context));
         }
 
@@ -65,7 +65,7 @@ namespace Niam.XRM.Framework.Tests.Plugin.Strategy
             context.PostEntityImages.Returns(new EntityImageCollection());
             context.Stage.Returns(stage);
 
-            var handler = ImageEntityGetter.Default.GetHandler(context.Stage);
+            var handler = ImageEntityGetter.GetHandler(context.Stage);
             Assert.Null(handler.Get(context));
         }
     }
