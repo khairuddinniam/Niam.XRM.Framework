@@ -1,5 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <Import Project="..\Niam.XRM.TestFramework.Shared\Niam.XRM.TestFramework.Shared.projitems" Label="Shared" />
+
   <Import Project="..\TestingProjectBuildProperties.targets" />
   <!-- NuSpec -->
   <PropertyGroup>
@@ -13,7 +15,6 @@
   </PropertyGroup>
   <PropertyGroup>    
     <DefineConstants>TRACE;DEBUG;NET452;CRM_365</DefineConstants>
-    <OutputPath>bin\$(Configuration)\365\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>

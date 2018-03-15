@@ -55,8 +55,11 @@ namespace Niam.XRM.Framework.Tests.Plugin
         public void Can_get_reference_on_message_non_create(string message, string inputKey, bool isReference)
         {
             var id = Guid.NewGuid();
-            var dbEntity = new Entity("entity") { Id = id };
-            dbEntity["xts_attribute"] = new Money(1250m);
+            var dbEntity = new Entity("entity")
+            {
+                Id = id,
+                ["xts_attribute"] = new Money(1250m)
+            };
             _service.Retrieve(Arg.Is("entity"), Arg.Is(id), Arg.Any<ColumnSet>()).Returns(dbEntity);
 
             var entity = new Entity("entity") { Id = id };
@@ -64,7 +67,11 @@ namespace Niam.XRM.Framework.Tests.Plugin
             _pluginContext.MessageName.Returns(message);
             _pluginContext.InputParameters[inputKey] = isReference ? (object)entity.ToEntityReference() : entity;
 
-            var context = new TransactionContext<Entity>(_serviceProvider);
+            var config = new PluginConfiguration<Entity>
+            {
+                ColumnSet = new ColumnSet("xts_attribute")
+            };
+            var context = new TransactionContext<Entity>(_serviceProvider, config);
             Assert.NotSame(context.Initial, context.Current);
             Assert.NotSame(entity, context.Current.Entity);
             Assert.Equal(entity.ToEntityReference(), context.Current.Entity.ToEntityReference());

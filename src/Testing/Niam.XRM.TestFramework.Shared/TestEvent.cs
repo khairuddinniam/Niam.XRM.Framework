@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Reflection;
 using FakeXrmEasy;
 using Microsoft.Xrm.Sdk;
 using Niam.XRM.Framework.Interfaces.Plugin;
@@ -57,11 +59,19 @@ namespace Niam.XRM.TestFramework
 
         public TP ExecutePlugin<TP>(Func<TP> pluginFactory = null) where TP : IPlugin
         {
-            FakedContext.Initialize(Db);
+            PrepareXrmFakedContext();
             var plugin = (pluginFactory ?? CreatePlugin<TP>).Invoke();
             var serviceProvider = _xrmFakedContext.CreateServiceProvider(PluginExecutionContext);
             plugin.Execute(serviceProvider);
             return plugin;
+        }
+
+        private void PrepareXrmFakedContext()
+        {
+            FakedContext.Initialize(Db);
+            var isCustomEarlyBound = typeof(TE).GetProperty("Id")?.GetCustomAttribute<ColumnAttribute>() != null;
+            if (isCustomEarlyBound)
+                FakedContext.ProxyTypesAssembly = null;
         }
 
         private TP CreatePlugin<TP>() where TP : IPlugin

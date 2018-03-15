@@ -10,8 +10,11 @@ namespace Niam.XRM.Framework.Tests.Plugin.Actions
 {
     public class CopyToCurrentActionTests
     {
-        [Fact]
-        public void Can_copy_attribute_values()
+        [Theory]
+        [InlineData((int) SdkMessageProcessingStepStage.Prevalidation)]
+        [InlineData((int) SdkMessageProcessingStepStage.Preoperation)]
+        [InlineData((int) SdkMessageProcessingStepStage.Postoperation)]
+        public void Can_copy_attribute_values(int stage)
         {
             var id = Guid.NewGuid();
             var reference = new EntityReference("entity", Guid.NewGuid()) { Name = "name" };
@@ -46,8 +49,7 @@ namespace Niam.XRM.Framework.Tests.Plugin.Actions
             var txTarget = new TransactionContextEntity<Entity>(target);
 
             var context = Substitute.For<ICurrentActionContext>();
-            context.TransactionContext.PluginExecutionContext.Stage
-                .Returns((int) SdkMessageProcessingStepStage.Preoperation);
+            context.TransactionContext.PluginExecutionContext.Stage.Returns(stage);
             context.Target.Returns(txSource);
             context.Current.Returns(txTarget);
             var action = new CopyToCurrentAction();

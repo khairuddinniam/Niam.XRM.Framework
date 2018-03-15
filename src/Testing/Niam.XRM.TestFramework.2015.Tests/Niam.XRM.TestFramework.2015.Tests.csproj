@@ -1,18 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\Niam.XRM.TestFramework.Tests.Shared\Niam.XRM.TestFramework.Tests.Shared.projitems" Label="Shared" />
+
   <PropertyGroup>
     <TargetFramework>net452</TargetFramework>
     <LangVersion>7</LangVersion>
     <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
-    <AssemblyName>Niam.XRM.TestFramework.Tests.365</AssemblyName>
+    <AssemblyName>Niam.XRM.TestFramework.Tests.2015</AssemblyName>
     <RootNamespace>Niam.XRM.TestFramework.Tests</RootNamespace>
   </PropertyGroup>
-  <PropertyGroup>
-    <OutputPath>bin\$(Configuration)\365\</OutputPath>
-  </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Include="..\..\TestEntities.cs" Link="TestEntities.cs" />
-  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0" />
     <PackageReference Include="NSubstitute" Version="2.0.3" />
@@ -21,7 +17,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Niam.XRM.Framework\Niam.XRM.Framework.csproj" />
-    <ProjectReference Include="..\Niam.XRM.TestFramework\Niam.XRM.TestFramework.365.csproj" />
+    <ProjectReference Include="..\Niam.XRM.TestFramework.2015\Niam.XRM.TestFramework.2015.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -30,4 +26,9 @@
   <ItemGroup>
     <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" /> <!-- Test project tag. -->
   </ItemGroup>
+  <!--<ItemGroup>
+    <Compile Include="..\Niam.XRM.TestFramework.Tests.Shared\**\*.cs">
+      <Link>%(RecursiveDir)%(FileName)%(Extension)</Link>
+    </Compile>
+  </ItemGroup>-->
 </Project>

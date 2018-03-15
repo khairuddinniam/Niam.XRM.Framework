@@ -2,7 +2,9 @@
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Query;
+using Niam.XRM.Framework.Data;
 using Niam.XRM.Framework.Interfaces.Plugin;
+using Niam.XRM.Framework.Interfaces.Plugin.Configurations;
 using Niam.XRM.Framework.Plugin;
 using NSubstitute;
 using Xunit;
@@ -74,6 +76,11 @@ namespace Niam.XRM.Framework.Tests
 
             public TestRetrieveInitial(string unsecure, string secure) : base(unsecure, secure)
             {
+            }
+
+            protected override void Configure(IPluginConfiguration<Entity> config)
+            {
+                config.ColumnSet = new ColumnSet("subject");
             }
 
             protected override void ExecuteCrmPlugin(ITransactionContext<Entity> context)

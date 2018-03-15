@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Query;
+using Niam.XRM.Framework.Data;
 using Niam.XRM.Framework.Interfaces;
 using Niam.XRM.Framework.Interfaces.Plugin;
 using Niam.XRM.Framework.Interfaces.Plugin.Configurations;
@@ -60,7 +63,7 @@ namespace Niam.XRM.Framework.Plugin
 
         private TransactionContextEntity<T> GetCurrentContextEntity()
         {
-            var current = Initial.Entity.Copy();
+            var current = GetCurrentEntity();
             var currentAccessor = new FormattedValueReferenceAccessor<T>(Target.Entity, current, this);
             var txCurrent = new TransactionContextEntity<T>(currentAccessor);
 
@@ -78,6 +81,17 @@ namespace Niam.XRM.Framework.Plugin
             }
 
             return txCurrent;
+        }
+
+        private T GetCurrentEntity()
+        {
+            ColumnSet columnSet = Config.ColumnSet ?? new ColumnSet();
+            if (columnSet.AllColumns) return Initial.Entity.Copy();
+            if (!columnSet.Columns.Any()) return Target.Entity.Copy();
+            
+            var pairs = Target.Attributes.Keys.FullOuterJoin(columnSet.Columns, target => target, column => column,
+                (target, column, key) => new { Target = target, Column = column });
+            return pairs.Any(p => p.Target == null && p.Column != null) ? Initial.Entity.Copy() : Target.Entity.Copy();
         }
 
         private EntityAccessor<T> GetInitialEntity()

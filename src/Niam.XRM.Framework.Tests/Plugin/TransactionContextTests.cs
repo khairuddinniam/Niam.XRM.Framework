@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 using NSubstitute;
@@ -14,7 +15,7 @@ namespace Niam.XRM.Framework.Tests.Plugin
     public class TransactionContextTests
     {
         [Fact]
-        public void Register_input_reference_events()
+        public void Register_target_current_events()
         {
             var pluginContext = Substitute.For<IPluginExecutionContext>();
             pluginContext.MessageName.Returns(PluginMessage.Create);
@@ -115,6 +116,89 @@ namespace Niam.XRM.Framework.Tests.Plugin
 
             ITransactionContext<xts_entity> context = new TransactionContext<xts_entity>(test.ServiceProvider, config);
             Assert.Equal("Hello", context.Initial.GetFormattedValue("xts_optionsetvalue"));
+        }
+
+        [Theory]
+        [MemberData(nameof(GetContextCurrentOnlyFromTargetTestData))]
+        public void Context_current_only_from_target(ColumnSet columnSet)
+        {
+            var testHelper = new TestHelper();
+            var pluginContext = testHelper.PluginExecutionContext;
+            pluginContext.MessageName.Returns(PluginMessage.Update);
+            pluginContext.Stage.Returns((int) SdkMessageProcessingStepStage.Preoperation);
+
+            var target = new Entity("lead")
+            {
+                Id = Guid.NewGuid(),
+                ["new_number"] = 1,
+                ["new_optionset"] = new OptionSetValue(12),
+                ["new_money"] = new Money(1234m)
+            };
+            pluginContext.InputParameters.Returns(new ParameterCollection());
+            pluginContext.InputParameters["Target"] = target;
+
+            var config = new PluginConfiguration<Entity>
+            {
+                ColumnSet = columnSet
+            };
+            var context = testHelper.ServiceProvider.ToTransactionContext(config);
+
+            testHelper.Service.DidNotReceive().Retrieve(Arg.Any<string>(), Arg.Any<Guid>(), Arg.Any<ColumnSet>());
+            Assert.Equal(target.Id, context.Current.Id);
+            Assert.Equal(target["new_number"], context.Current["new_number"]);
+            Assert.Equal(target["new_optionset"], context.Current["new_optionset"]);
+            Assert.Equal(target["new_money"], context.Current["new_money"]);
+        }
+        
+        public static IEnumerable<object[]> GetContextCurrentOnlyFromTargetTestData()
+        {
+            yield return new object[] { new ColumnSet() };
+            yield return new object[] { new ColumnSet("new_optionset", "new_money") };
+            yield return new object[] { new ColumnSet("new_optionset", "new_money", "new_number") };
+        }
+
+        [Fact]
+        public void Context_current_is_initial_merged_with_target()
+        {
+            var testHelper = new TestHelper();
+            var pluginContext = testHelper.PluginExecutionContext;
+            pluginContext.MessageName.Returns(PluginMessage.Update);
+            pluginContext.Stage.Returns((int) SdkMessageProcessingStepStage.Preoperation);
+
+            var id = Guid.NewGuid();
+            var target = new Entity("lead")
+            {
+                Id = id,
+                ["new_number"] = 1
+            };
+            pluginContext.InputParameters.Returns(new ParameterCollection());
+            pluginContext.InputParameters["Target"] = target;
+
+            var initial = new Entity("lead")
+            {
+                Id = id,
+                ["new_number"] = 15,
+                ["new_optionset"] = new OptionSetValue(12),
+                ["new_money"] = new Money(1234m)
+            };
+            testHelper.Service.Retrieve(Arg.Any<string>(), Arg.Any<Guid>(), Arg.Any<ColumnSet>()).Returns(initial);
+
+            var config = new PluginConfiguration<Entity>
+            {
+                ColumnSet = new ColumnSet("new_optionset", "new_money", "new_number")
+            };
+            var context = testHelper.ServiceProvider.ToTransactionContext(config);
+
+            Assert.Equal(target.Id, context.Current.Id);
+            Assert.Equal(target["new_number"], context.Current["new_number"]);
+            Assert.Equal(initial["new_optionset"], context.Current["new_optionset"]);
+            Assert.Equal(initial["new_money"], context.Current["new_money"]);
+        }
+
+        public static IEnumerable<object[]> GetContextCurrentIsInitialMergedWithTargetTestData()
+        {
+            yield return new object[] { new ColumnSet(true) };
+            yield return new object[] { new ColumnSet("new_optionset", "new_money", "new_number") };
         }
     }
 }

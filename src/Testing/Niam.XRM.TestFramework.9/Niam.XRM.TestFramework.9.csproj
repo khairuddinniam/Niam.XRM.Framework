@@ -1,23 +1,24 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
+  <Import Project="..\Niam.XRM.TestFramework.Shared\Niam.XRM.TestFramework.Shared.projitems" Label="Shared" />
+  
   <Import Project="..\TestingProjectBuildProperties.targets" />
   <!-- NuSpec -->
   <PropertyGroup>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
   <PropertyGroup>
-    <TargetFramework>net452</TargetFramework><Description>Dynamics CRM 2015 Plugin Test Framework</Description>
-    <AssemblyName>Niam.XRM.TestFramework.2015</AssemblyName>
+    <TargetFramework>net452</TargetFramework>
+    <Description>Dynamics 365 Plugin Test Framework</Description>
+    <AssemblyName>Niam.XRM.TestFramework.9</AssemblyName>
     <RootNamespace>Niam.XRM.TestFramework</RootNamespace>
   </PropertyGroup>
   <PropertyGroup>    
-    <DefineConstants>TRACE;DEBUG;NET452;CRM_2015</DefineConstants>
-    <OutputPath>bin\$(Configuration)\2015\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET452;CRM_9</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FakeXrmEasy.2015" Version="1.40.0" />
-    <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="[7.1.0,8.0.0)" />
+    <PackageReference Include="FakeXrmEasy.9" Version="1.40.0" />
+    <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="9.0.0.5" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Niam.XRM.Framework\Niam.XRM.Framework.csproj" />

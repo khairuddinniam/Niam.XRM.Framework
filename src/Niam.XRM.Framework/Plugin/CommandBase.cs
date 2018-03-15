@@ -152,5 +152,20 @@ namespace Niam.XRM.Framework.Plugin
         // Explicit IEntityWrapperRelation<TE> interface implementation
         IEntityWrapper<TR> IEntityWrapperRelation<TE>.GetRelated<TR>(Expression<Func<TE, EntityReference>> relatedAttribute, IColumnSet<TR> relatedColumnSet)
             => GetRelated(relatedAttribute, relatedColumnSet);
+
+        TWrapper IEntityWrapperRelation<TE>.GetRelated<TR, TWrapper>(Expression<Func<TE, EntityReference>> relatedReference, IColumnSet<TR> relatedColumnSet) 
+            => GetRelated<TR, TWrapper>(relatedReference, relatedColumnSet);
+
+        IEntityWrapper<Entity> IEntityWrapperRelation<TE>.GetRelated(string relatedAttribute, ColumnSet relatedColumnSet)
+            => GetRelated(relatedAttribute, relatedColumnSet);
+
+        IEnumerable<IEntityWrapper<TR>> IEntityWrapperRelation<TE>.GetAllRelated<TR>(Expression<Func<TR, EntityReference>> relatedToParentAttribute, IColumnSet<TR> relatedColumnSet)
+            => GetAllRelated(relatedToParentAttribute, relatedColumnSet);
+
+        IEnumerable<TWrapper> IEntityWrapperRelation<TE>.GetAllRelated<TR, TWrapper>(Expression<Func<TR, EntityReference>> relatedToParentAttribute, IColumnSet<TR> relatedColumnSet)
+            => GetAllRelated<TR, TWrapper>(relatedToParentAttribute, relatedColumnSet);
+
+        IEnumerable<IEntityWrapper<Entity>> IEntityWrapperRelation<TE>.GetAllRelated(string relatedEntityName, string relatedToParentAttribute, ColumnSet relatedColumnSet)
+            => GetAllRelated(relatedEntityName, relatedToParentAttribute, relatedColumnSet);
     }
 }

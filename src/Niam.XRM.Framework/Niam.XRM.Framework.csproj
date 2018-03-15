@@ -8,7 +8,7 @@
   <PropertyGroup>
     <TargetFramework>net452</TargetFramework>
     <AssemblyOriginatorKeyFile>..\open-source.snk</AssemblyOriginatorKeyFile>
-    <Version>7.1.0.2</Version>
+    <Version>7.1.0.3-rc1</Version>
     <Description>Dynamics 365 Plugin Framework</Description>
   </PropertyGroup>
   

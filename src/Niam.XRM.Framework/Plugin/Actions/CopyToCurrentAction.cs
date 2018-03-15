@@ -10,14 +10,10 @@ namespace Niam.XRM.Framework.Plugin.Actions
 
         public void Execute(ICurrentActionContext context)
         {
-            var pluginContext = context.TransactionContext.PluginExecutionContext;
             var target = context.Target;
             var current = context.Current;
-            if (pluginContext.Stage != (int) SdkMessageProcessingStepStage.Postoperation)
-            {
-                CopyAttributes(target.Attributes, current.Attributes);
-                CopyFormattedValues(target.Entity.FormattedValues, current.Entity.FormattedValues);
-            }
+            CopyAttributes(target.Attributes, current.Attributes);
+            CopyFormattedValues(target.Entity.FormattedValues, current.Entity.FormattedValues);
         }
 
         private static void CopyAttributes(AttributeCollection fromCollection, AttributeCollection toCollection)
