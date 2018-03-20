@@ -11,13 +11,13 @@ using Niam.XRM.Framework.Interfaces.Plugin.ServiceProviders;
 
 namespace Niam.XRM.Framework.Tests.Plugin
 {
-    public class TransactionContextReferenceEntityTests
+    public class TransactionContextCurrentEntityTests
     {
         private readonly IServiceProvider _serviceProvider;
         private readonly IPluginExecutionContext _pluginContext;
         private readonly IOrganizationService _service;
 
-        public TransactionContextReferenceEntityTests()
+        public TransactionContextCurrentEntityTests()
         {
             _pluginContext = Substitute.For<IPluginExecutionContext>();
             _pluginContext.InputParameters.Returns(new ParameterCollection());
@@ -33,7 +33,7 @@ namespace Niam.XRM.Framework.Tests.Plugin
         }
 
         [Fact]
-        public void Can_get_reference_message_on_create()
+        public void Can_get_current_message_on_create()
         {
             var entity = new Entity("entity")
             {
@@ -51,8 +51,8 @@ namespace Niam.XRM.Framework.Tests.Plugin
         }
 
         [Theory]
-        [MemberData(nameof(GetReferenceNonCreateData))]
-        public void Can_get_reference_on_message_non_create(string message, string inputKey, bool isReference)
+        [MemberData(nameof(GetCurrentNonCreateData))]
+        public void Can_get_current_on_message_non_create(string message, string inputKey, bool isReference)
         {
             var id = Guid.NewGuid();
             var dbEntity = new Entity("entity")
@@ -80,7 +80,7 @@ namespace Niam.XRM.Framework.Tests.Plugin
             _service.Received(1).Retrieve(Arg.Is("entity"), Arg.Is(id), Arg.Any<ColumnSet>());
         }
 
-        public static IEnumerable<object[]> GetReferenceNonCreateData()
+        public static IEnumerable<object[]> GetCurrentNonCreateData()
         {
             yield return new object[] { PluginMessage.Update, "Target", false };
             yield return new object[] { PluginMessage.Delete, "Target", true };
@@ -90,7 +90,7 @@ namespace Niam.XRM.Framework.Tests.Plugin
         }
 
         [Fact]
-        public void Can_get_reference_on_update()
+        public void Can_get_current_on_update()
         {
             var test = new TestHelper();
             var id = Guid.NewGuid();

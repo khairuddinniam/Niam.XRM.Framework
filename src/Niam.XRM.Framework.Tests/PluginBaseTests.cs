@@ -83,7 +83,7 @@ namespace Niam.XRM.Framework.Tests
                 config.ColumnSet = new ColumnSet("subject");
             }
 
-            protected override void ExecuteCrmPlugin(ITransactionContext<Entity> context)
+            protected override void ExecuteCrmPlugin(IPluginContext<Entity> context)
             {
                 EntityId = context.Current.Id;
             }

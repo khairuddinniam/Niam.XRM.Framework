@@ -1,6 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="..\ProjectBuildProperties.targets" />
   <PropertyGroup>
+    <LangVersion>7</LangVersion>
+    <SignAssembly>True</SignAssembly>
+    <DelaySign>False</DelaySign>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
     <TargetFramework>net452</TargetFramework>
     <AssemblyOriginatorKeyFile>..\open-source.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>

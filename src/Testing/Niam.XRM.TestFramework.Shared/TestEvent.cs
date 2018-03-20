@@ -48,10 +48,10 @@ namespace Niam.XRM.TestFramework
             PluginExecutionContext.Stage = stage ?? 20;
         }
         
-        public ITransactionContext<TE> CreateTransactionContext()
+        public IPluginContext<TE> CreatePluginContext()
         {
             var plugin = ExecutePlugin(CreateTestPlugin);
-            return plugin.TransactionContext;
+            return plugin.PluginContext;
         }
 
         private TestPlugin CreateTestPlugin()
@@ -97,7 +97,7 @@ namespace Niam.XRM.TestFramework
         {
             private readonly Action<IPluginConfiguration<TE>> _configurePlugin;
 
-            public ITransactionContext<TE> TransactionContext { get; private set; }
+            public IPluginContext<TE> PluginContext { get; private set; }
             
             public TestPlugin(
                 Action<IPluginConfiguration<TE>> configurePlugin,
@@ -106,14 +106,14 @@ namespace Niam.XRM.TestFramework
                 _configurePlugin = configurePlugin;
             }
 
-            protected override void ExecuteCrmPlugin(ITransactionContext<TE> context)
-            {
-                TransactionContext = context;
-            }
-
             protected override void Configure(IPluginConfiguration<TE> config)
             {
                 _configurePlugin?.Invoke(config);
+            }
+
+            protected override void ExecuteCrmPlugin(IPluginContext<TE> context)
+            {
+                PluginContext = context;
             }
         }
 

@@ -15,8 +15,8 @@ namespace Niam.XRM.Framework.Plugin
         }
     }
 
-    public abstract class PluginBase<T> : PluginCoreBase
-        where T : Entity
+    public abstract class PluginBase<TE> : PluginCoreBase
+        where TE : Entity
     {
         protected PluginBase(string unsecure, string secure) 
             : base(unsecure, secure)
@@ -28,12 +28,13 @@ namespace Niam.XRM.Framework.Plugin
             if (serviceProvider == null) throw new ArgumentNullException(nameof(serviceProvider));
 
             var container = new Container(serviceProvider);
-            var config = new PluginConfiguration<T>(this, container);
+            var config = new PluginConfiguration<TE>(this, container);
             PluginConfigure(config);
-            var context = container.ToTransactionContext<T>(config);
+            var context = container.ToTransactionContext<TE>(config);
+            var pluginContext = new PluginContext<TE>(context);
             try
             {
-                ExecuteCrmPlugin(context);
+                ExecuteCrmPlugin(pluginContext);
             }
             finally
             {
@@ -41,7 +42,7 @@ namespace Niam.XRM.Framework.Plugin
             }
         }
 
-        private void PluginConfigure(IPluginConfiguration<T> config)
+        private void PluginConfigure(IPluginConfiguration<TE> config)
         {
             PrePluginConfigure(config);
             Configure(config);
@@ -49,16 +50,16 @@ namespace Niam.XRM.Framework.Plugin
             //PostPluginConfigure(config);
         }
 
-        private void PrePluginConfigure(IPluginConfiguration<T> config)
+        private void PrePluginConfigure(IPluginConfiguration<TE> config)
         {
             DefaultConfig.PluginConfigureServiceFactory(config);
             DefaultConfig.PluginConfigureLogging(config);
         }
 
-        protected virtual void Configure(IPluginConfiguration<T> config)
+        protected virtual void Configure(IPluginConfiguration<TE> config)
         {
         }
         
-        protected abstract void ExecuteCrmPlugin(ITransactionContext<T> context);
+        protected abstract void ExecuteCrmPlugin(IPluginContext<TE> context);
     }
 }

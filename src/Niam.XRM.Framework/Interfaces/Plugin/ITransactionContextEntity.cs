@@ -9,7 +9,9 @@ namespace Niam.XRM.Framework.Interfaces.Plugin
     {
         event AttributeChangingEventHandler AttributeChanging;
         event AttributeChangedEventHandler AttributeChanged;
-        
+        event AttributeChangingEventHandler FormattedValueChanging;
+        event AttributeChangedEventHandler FormattedValueChanged;
+
         Guid Id { get; set; }
         string LogicalName { get; set; }
         AttributeCollection Attributes { get; set; }

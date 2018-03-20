@@ -18,6 +18,13 @@ namespace Niam.XRM.Framework.Plugin.Actions
                 var sourceFormattedValue = source.GetFormattedValue(e.AttributeName);
                 current.SetFormattedValue(e.AttributeName, sourceFormattedValue);
             };
+
+            target.FormattedValueChanged += (entity, e) =>
+            {
+                var source = (Entity) entity;
+                var sourceFormattedValue = source.GetFormattedValue(e.AttributeName);
+                current.SetFormattedValue(e.AttributeName, sourceFormattedValue);
+            };
         }
     }
 }

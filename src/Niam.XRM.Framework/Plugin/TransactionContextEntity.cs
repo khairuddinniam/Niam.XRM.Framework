@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Reflection;
 using Microsoft.Xrm.Sdk;
@@ -35,6 +34,10 @@ namespace Niam.XRM.Framework.Plugin
         public event AttributeChangingEventHandler AttributeChanging;
 
         public event AttributeChangedEventHandler AttributeChanged;
+
+        public event AttributeChangingEventHandler FormattedValueChanging;
+
+        public event AttributeChangedEventHandler FormattedValueChanged;
 
         public object this[string attributeName]
         {
@@ -72,7 +75,6 @@ namespace Niam.XRM.Framework.Plugin
                 base.Set(memberInfo, value);
             else
                 Set(EntityInfo.GetAttributeName(memberInfo.Name), value);
-            
         }
 
         public override void Set(string attributeName, object value)
@@ -80,6 +82,13 @@ namespace Niam.XRM.Framework.Plugin
             AttributeChanging?.Invoke(Entity, new AttributeChangingEventArgs<T>(attributeName));
             base.Set(attributeName, value);
             AttributeChanged?.Invoke(Entity, new AttributeChangedEventArgs<T>(attributeName));
+        }
+
+        public override void SetFormattedValue(string attributeName, string formattedValue)
+        {
+            FormattedValueChanging?.Invoke(Entity, new AttributeChangingEventArgs<T>(attributeName));
+            base.SetFormattedValue(attributeName, formattedValue);
+            FormattedValueChanged?.Invoke(Entity, new AttributeChangedEventArgs<T>(attributeName));
         }
     }
 }

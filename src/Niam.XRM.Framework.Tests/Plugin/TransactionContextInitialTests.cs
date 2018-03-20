@@ -8,13 +8,13 @@ using Xunit;
 
 namespace Niam.XRM.Framework.Tests.Plugin
 {
-    public class TransactionContextOriginalEntityTests
+    public class TransactionContextInitialTests
     {
         private readonly IServiceProvider _serviceProvider;
         private readonly IPluginExecutionContext _pluginContext;
         private readonly IOrganizationService _service;
 
-        public TransactionContextOriginalEntityTests()
+        public TransactionContextInitialTests()
         {
             _pluginContext = Substitute.For<IPluginExecutionContext>();
             _pluginContext.InputParameters.Returns(new ParameterCollection());
@@ -30,7 +30,7 @@ namespace Niam.XRM.Framework.Tests.Plugin
         }
 
         [Fact]
-        public void Can_get_original_entity_message_create()
+        public void Can_get_initial_message_create()
         {
             var entity = new Entity("entity") { Id = Guid.NewGuid() };
             _pluginContext.MessageName.Returns(PluginMessage.Create);
@@ -41,8 +41,8 @@ namespace Niam.XRM.Framework.Tests.Plugin
         }
 
         [Theory]
-        [MemberData(nameof(GetOriginalEntityNonCreateData))]
-        public void Can_get_original_entity_message_non_create(string message, string inputKey, bool isReference)
+        [MemberData(nameof(GetInitialNonCreateData))]
+        public void Can_get_initial_message_non_create(string message, string inputKey, bool isReference)
         {
             var id = Guid.NewGuid();
             var dbEntity = new Entity("entity")
@@ -66,7 +66,7 @@ namespace Niam.XRM.Framework.Tests.Plugin
             _service.Received(1).Retrieve(Arg.Is("entity"), Arg.Is(id), Arg.Any<ColumnSet>());
         }
 
-        public static IEnumerable<object[]> GetOriginalEntityNonCreateData()
+        public static IEnumerable<object[]> GetInitialNonCreateData()
         {
             yield return new object[] { PluginMessage.Update, "Target", false };
             yield return new object[] { PluginMessage.Delete, "Target", true };

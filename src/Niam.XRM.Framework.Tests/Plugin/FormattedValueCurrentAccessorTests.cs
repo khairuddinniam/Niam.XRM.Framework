@@ -10,14 +10,14 @@ using Xunit;
 
 namespace Niam.XRM.Framework.Tests.Plugin
 {
-    public class FormattedValueReferenceAccessorTests
+    public class FormattedValueCurrentAccessorTests
     {
         [Fact]
         public void Can_get_existing_formatted_value()
         {
             var test = new TestHelper();
-            var input = new Entity();
-            var reference = new Entity
+            var target = new Entity();
+            var current = new Entity
             {
                 ["xts_optionsetvalue"] = new OptionSetValue(123),
                 FormattedValues =
@@ -28,7 +28,7 @@ namespace Niam.XRM.Framework.Tests.Plugin
             var context = Substitute.For<ITransactionContextBase>();
             context.Service.Returns(test.Service);
 
-            var accessor = new FormattedValueReferenceAccessor<Entity>(input, reference, context);
+            var accessor = new FormattedValueCurrentAccessor<Entity>(target, current, context);
             Assert.Equal("Release", accessor.GetFormattedValue("xts_optionsetvalue"));
             test.Service.DidNotReceive().Execute(Arg.Any<OrganizationRequest>());
         }
@@ -37,12 +37,12 @@ namespace Niam.XRM.Framework.Tests.Plugin
         public void Can_get_empty_formatted_value()
         {
             var test = new TestHelper();
-            var input = new Entity();
-            var reference = new Entity();
+            var target = new Entity();
+            var current = new Entity();
             var context = Substitute.For<ITransactionContextBase>();
             context.Service.Returns(test.Service);
 
-            var accessor = new FormattedValueReferenceAccessor<Entity>(input, reference, context);
+            var accessor = new FormattedValueCurrentAccessor<Entity>(target, current, context);
             Assert.Null(accessor.GetFormattedValue("xts_optionsetvalue"));
             test.Service.DidNotReceive().Execute(Arg.Any<OrganizationRequest>());
         }
@@ -87,17 +87,17 @@ namespace Niam.XRM.Framework.Tests.Plugin
                         ["AttributeMetadata"] = metadata
                     };
                 });
-            var input = new Entity("entity");
-            var reference = new Entity("entity")
+            var target = new Entity("entity");
+            var current = new Entity("entity")
             {
                 ["xts_optionsetvalue"] = new OptionSetValue(123)
             };
             var context = Substitute.For<ITransactionContextBase>();
             context.Service.Returns(test.Service);
 
-            var accessor = new FormattedValueReferenceAccessor<Entity>(input, reference, context);
+            var accessor = new FormattedValueCurrentAccessor<Entity>(target, current, context);
             Assert.Equal("Release", accessor.GetFormattedValue("xts_optionsetvalue"));
-            Assert.Equal("Release", input.GetFormattedValue("xts_optionsetvalue"));
+            Assert.Equal("Release", target.GetFormattedValue("xts_optionsetvalue"));
             test.Service.Received(1).Execute(Arg.Any<OrganizationRequest>());
             // Retrieve again, should not get from server again.
             Assert.Equal("Release", accessor.GetFormattedValue("xts_optionsetvalue"));
@@ -133,15 +133,15 @@ namespace Niam.XRM.Framework.Tests.Plugin
             test.Service.Retrieve(Arg.Is<string>(name => name == "xts_related"), Arg.Any<Guid>(), Arg.Any<ColumnSet>())
                 .Returns(related);
 
-            var input = new Entity("entity");
-            var reference = new Entity("entity")
+            var target = new Entity("entity");
+            var current = new Entity("entity")
             {
                 ["xts_referenceid"] = related.ToEntityReference()
             };
             var context = Substitute.For<ITransactionContextBase>();
             context.Service.Returns(test.Service);
 
-            var accessor = new FormattedValueReferenceAccessor<Entity>(input, reference, context);
+            var accessor = new FormattedValueCurrentAccessor<Entity>(target, current, context);
             Assert.Equal("Related Name", accessor.GetFormattedValue("xts_referenceid"));
             test.Service.Received(1).Execute(Arg.Any<OrganizationRequest>());
             test.Service.Received(1).Retrieve(Arg.Any<string>(), Arg.Any<Guid>(), Arg.Any<ColumnSet>());
@@ -156,15 +156,15 @@ namespace Niam.XRM.Framework.Tests.Plugin
         public void Skip_retrieve_on_not_supported_formatted_value()
         {
             var test = new TestHelper();
-            var input = new Entity("entity");
-            var reference = new Entity("entity")
+            var target = new Entity("entity");
+            var current = new Entity("entity")
             {
                 ["xts_int"] = 234
             };
             var context = Substitute.For<ITransactionContextBase>();
             context.Service.Returns(test.Service);
 
-            var accessor = new FormattedValueReferenceAccessor<Entity>(input, reference, context);
+            var accessor = new FormattedValueCurrentAccessor<Entity>(target, current, context);
             Assert.Null(accessor.GetFormattedValue("xts_int"));
             Assert.False(accessor.Entity.FormattedValues.Contains("xts_int"));
             test.Service.DidNotReceive().Execute(Arg.Any<OrganizationRequest>());

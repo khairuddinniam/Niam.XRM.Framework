@@ -29,7 +29,7 @@ namespace Niam.XRM.TestFramework.Tests
                     SecureConfig = "secure"
                 }
             };
-            var context = testEvent.CreateTransactionContext();
+            var context = testEvent.CreatePluginContext();
             Assert.Equal("unsecure", context.Plugin.UnsecureConfig);
             Assert.Equal("secure", context.Plugin.SecureConfig);
         }
@@ -50,7 +50,7 @@ namespace Niam.XRM.TestFramework.Tests
             {
             }
 
-            protected override void ExecuteCrmPlugin(ITransactionContext<Entity> context)
+            protected override void ExecuteCrmPlugin(IPluginContext<Entity> context)
             {
                 Value = "execute-crm-plugin";
             }
@@ -79,7 +79,7 @@ namespace Niam.XRM.TestFramework.Tests
             {
             }
 
-            protected override void ExecuteCrmPlugin(ITransactionContext<Entity> context)
+            protected override void ExecuteCrmPlugin(IPluginContext<Entity> context)
             {
             }
         }

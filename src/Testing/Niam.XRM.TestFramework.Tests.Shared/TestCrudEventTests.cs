@@ -43,7 +43,7 @@ namespace Niam.XRM.TestFramework.Tests
             };
             testEvent.ForUpdate(target);
 
-            var context = testEvent.CreateTransactionContext();
+            var context = testEvent.CreatePluginContext();
             new TestOperation(context).Execute();
 
             Assert.Equal(1700m, context.Target.Get<Money>("new_totalprice").Value);
@@ -101,7 +101,7 @@ namespace Niam.XRM.TestFramework.Tests
             };
             testEvent.ForUpdate(target);
 
-            var context = testEvent.CreateTransactionContext();
+            var context = testEvent.CreatePluginContext();
             new EarlyBoundTestOperation(context).Execute();
 
             Assert.Equal(1700m, context.Target.Get(e => e.new_totalprice).Value);

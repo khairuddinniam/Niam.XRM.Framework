@@ -8,16 +8,16 @@ using Niam.XRM.Framework.Interfaces.Plugin;
 
 namespace Niam.XRM.Framework.Plugin
 {
-    internal class FormattedValueReferenceAccessor<T> : EntityAccessor<T>
+    internal class FormattedValueCurrentAccessor<T> : EntityAccessor<T>
         where T : Entity
     {
         private readonly T _input;
         private readonly ITransactionContextBase _context;
 
-        public FormattedValueReferenceAccessor(T input, T reference, ITransactionContextBase context) 
-            : base(reference)
+        public FormattedValueCurrentAccessor(T target, T current, ITransactionContextBase context) 
+            : base(current)
         {
-            _input = input ?? throw new ArgumentNullException(nameof(input));
+            _input = target ?? throw new ArgumentNullException(nameof(target));
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 

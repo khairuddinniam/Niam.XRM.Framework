@@ -17,7 +17,7 @@ namespace Niam.XRM.Framework.Tests.Plugin.Actions
                 Id = id,
                 FormattedValues =
                 {
-                    ["xts_attribute"] = "$100.00"
+                    ["attribute"] = "$100.00"
                 }
             };
             var source = new TransactionContextEntity<Entity>(sourceEntity);
@@ -27,7 +27,7 @@ namespace Niam.XRM.Framework.Tests.Plugin.Actions
                 Id = id,
                 FormattedValues =
                 {
-                    ["xts_optionsetvalue"] = "Release"
+                    ["optionsetvalue"] = "Release"
                 }
             };
             var current = new TransactionContextEntity<Entity>(currentEntity);
@@ -40,15 +40,18 @@ namespace Niam.XRM.Framework.Tests.Plugin.Actions
             };
             var action = new CopyValueEventCurrentAction();
             action.Execute(actionContext);
-            source["xts_attribute"] = new Money(100m);
-            Assert.Equal(100m, current.Get<Money>("xts_attribute").Value);
-            Assert.Equal("$100.00", current.Entity.FormattedValues["xts_attribute"]);
-            Assert.Equal("Release", current.Entity.FormattedValues["xts_optionsetvalue"]);
+            source["attribute"] = new Money(100m);
+            Assert.Equal(100m, current.Get<Money>("attribute").Value);
+            Assert.Equal("$100.00", current.Entity.FormattedValues["attribute"]);
+            Assert.Equal("Release", current.Entity.FormattedValues["optionsetvalue"]);
 
-            source["xts_optionsetvalue"] = new OptionSetValue(12);
-            Assert.Equal(12, current.Get<OptionSetValue>("xts_optionsetvalue").Value);
-            Assert.Equal("$100.00", current.Entity.FormattedValues["xts_attribute"]);
-            Assert.Null(current.Entity.FormattedValues["xts_optionsetvalue"]);
+            source["optionsetvalue"] = new OptionSetValue(12);
+            Assert.Equal(12, current.Get<OptionSetValue>("optionsetvalue").Value);
+            Assert.Equal("$100.00", current.Entity.FormattedValues["attribute"]);
+            Assert.Null(current.Entity.FormattedValues["optionsetvalue"]);
+
+            source.SetFormattedValue("new_format", "Formatted-Value");
+            Assert.Equal("Formatted-Value", current.Entity.FormattedValues["new_format"]);
         }
 
         [Fact]

@@ -64,7 +64,7 @@ namespace Niam.XRM.Framework.Plugin
         private TransactionContextEntity<T> GetCurrentContextEntity()
         {
             var current = GetCurrentEntity();
-            var currentAccessor = new FormattedValueReferenceAccessor<T>(Target.Entity, current, this);
+            var currentAccessor = new FormattedValueCurrentAccessor<T>(Target.Entity, current, this);
             var txCurrent = new TransactionContextEntity<T>(currentAccessor);
 
             var actionContext = new CurrentActionContext
