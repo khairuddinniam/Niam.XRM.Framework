@@ -6,6 +6,12 @@
     <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
   </PropertyGroup>
 
+  <!-- NuSpec -->
+  <PropertyGroup>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Version>7.1.0.4</Version>
+  </PropertyGroup>
+
   <PropertyGroup>
     <PackageId>$(AssemblyName)</PackageId>
     <Title>$(AssemblyName)</Title>
@@ -20,16 +26,10 @@
     <PackageOutputPath>$(SolutionDir)build\packages</PackageOutputPath>
   </PropertyGroup>
 
-  <!-- NuSpec -->
-  <PropertyGroup>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>7.1.0.3-rc2</Version>
-  </PropertyGroup>
-
   <PropertyGroup>
     <TargetFramework>net452</TargetFramework>
     <AssemblyOriginatorKeyFile>..\open-source.snk</AssemblyOriginatorKeyFile>
-    <Description>Dynamics 365 Plugin Framework</Description>
+    <Description>Fast, easy and lightweight Microsoft Dynamics CRM Plugin Framework that support premise and online edition. One framework to rule them all.</Description>
   </PropertyGroup>
   
   <ItemGroup>

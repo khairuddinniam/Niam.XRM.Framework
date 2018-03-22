@@ -296,5 +296,19 @@ namespace Niam.XRM.Framework.Tests
             Assert.Equal(equipmentReference, collection.Entities[0].ToEntity<ActivityParty>().Get(e => e.PartyId));
             Assert.Equal(leadReference, collection.Entities[1].ToEntity<ActivityParty>().Get(e => e.PartyId));
         }
+
+        [Fact]
+        public void Can_get_aliased_value()
+        {
+            var entity = new Entity("lead")
+            {
+                Id = Guid.NewGuid(),
+                ["aliased"] = new AliasedValue(null, null, new Money(1234m))
+            };
+
+            var accessor = new EntityAccessor<Entity>(entity);
+            Assert.Equal(1234m, accessor.GetAliasedValue<Money>("aliased").Value);
+            Assert.Null(accessor.GetAliasedValue<EntityReference>("not_exists"));
+        }
     }
 }

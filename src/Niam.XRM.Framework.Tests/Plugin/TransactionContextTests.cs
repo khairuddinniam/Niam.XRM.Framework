@@ -157,8 +157,9 @@ namespace Niam.XRM.Framework.Tests.Plugin
             yield return new object[] { new ColumnSet("new_optionset", "new_money", "new_number") };
         }
 
-        [Fact]
-        public void Context_current_is_initial_merged_with_target()
+        [Theory]
+        [MemberData(nameof(Get_context_current_is_initial_merged_with_target_TestData))]
+        public void Context_current_is_initial_merged_with_target(ColumnSet configColumnSet)
         {
             var testHelper = new TestHelper();
             var pluginContext = testHelper.PluginExecutionContext;
@@ -185,7 +186,7 @@ namespace Niam.XRM.Framework.Tests.Plugin
 
             var config = new PluginConfiguration<Entity>
             {
-                ColumnSet = new ColumnSet("new_optionset", "new_money", "new_number")
+                ColumnSet = configColumnSet
             };
             var context = testHelper.ServiceProvider.ToTransactionContext(config);
 
@@ -195,7 +196,7 @@ namespace Niam.XRM.Framework.Tests.Plugin
             Assert.Equal(initial["new_money"], context.Current["new_money"]);
         }
 
-        public static IEnumerable<object[]> GetContextCurrentIsInitialMergedWithTargetTestData()
+        public static IEnumerable<object[]> Get_context_current_is_initial_merged_with_target_TestData()
         {
             yield return new object[] { new ColumnSet(true) };
             yield return new object[] { new ColumnSet("new_optionset", "new_money", "new_number") };

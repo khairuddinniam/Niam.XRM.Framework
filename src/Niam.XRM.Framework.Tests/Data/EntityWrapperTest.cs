@@ -160,7 +160,7 @@ namespace Niam.XRM.Framework.Tests.Data
             entity.Set(e => e.xts_referenceid, keyEntity.ToEntityReference());
             var wrapper = new EntityWrapper<xts_entity>(entity, context);
 
-            Assert.Equal("Hello world", wrapper.GetName<xts_keytest>(e => e.xts_referenceid));
+            Assert.Equal("Hello world", wrapper.GetReferenceName<xts_keytest>(e => e.xts_referenceid));
         }
     }
 }

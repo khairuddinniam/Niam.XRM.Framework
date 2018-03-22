@@ -33,6 +33,9 @@ namespace Niam.XRM.Framework
             where TV : struct
             => Get(entity, attribute).GetValueOrDefault(defaultValue);
 
+        public static TV GetAliasedValue<TV>(this Entity entity, string attributeName)
+            => (TV) Get<AliasedValue>(entity, attributeName)?.Value;
+
         public static string GetFormattedValue(this Entity entity, string attributeName)
             => entity.FormattedValues.TryGetValue(attributeName, out string value) ? value : null;
 

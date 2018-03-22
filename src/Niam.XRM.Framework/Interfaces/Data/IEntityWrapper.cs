@@ -7,7 +7,7 @@ namespace Niam.XRM.Framework.Interfaces.Data
     public interface IEntityWrapperBase<T> : IEntityWrapperRelation<T>
         where T : Entity
     {
-        string GetName<TR>(Expression<Func<T, EntityReference>> relatedReference)
+        string GetReferenceName<TR>(Expression<Func<T, EntityReference>> relatedReference)
             where TR : Entity;
 
         IEntityWrapper<TE> ToWrapper<TE>() where TE : Entity;

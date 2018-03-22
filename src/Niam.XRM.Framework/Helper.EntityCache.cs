@@ -39,6 +39,7 @@ namespace Niam.XRM.Framework
                 const BindingFlags bindingFlags = BindingFlags.Public | BindingFlags.Instance;
                 var memberInfos = entityType.GetMembers(bindingFlags)
                     .Where(mi => mi.MemberType == MemberTypes.Field || mi.MemberType == MemberTypes.Property)
+                    .Where(mi => mi.GetCustomAttribute<RelationshipSchemaNameAttribute>() == null)
                     .ToArray();
 
                 foreach (var mi in memberInfos)

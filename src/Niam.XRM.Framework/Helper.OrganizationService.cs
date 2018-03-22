@@ -15,10 +15,13 @@ namespace Niam.XRM.Framework
             service.Delete(reference.LogicalName, reference.Id);
         }
 
+        public static EntityCollection RetrieveMultiple(this IOrganizationService service, string fetchXml)
+            => service.RetrieveMultiple(new FetchExpression(fetchXml));
+
         public static T Execute<T>(this IOrganizationService service, OrganizationRequest request)
             where T : OrganizationResponse => (T) service.Execute(request);
 
-        public static string GetName<T>(this IOrganizationService service, EntityReference reference)
+        public static string GetReferenceName<T>(this IOrganizationService service, EntityReference reference)
             where T : Entity
         {
             if (reference == null) return null;
@@ -28,11 +31,11 @@ namespace Niam.XRM.Framework
                 throw new InvalidOperationException($"Logical name from EntityReference: '{reference.LogicalName}' is not same as T: '{entityName}'.");
 
             return String.IsNullOrWhiteSpace(reference.Name) 
-                ? GetName<T>(service, reference.Id) 
+                ? GetReferenceName<T>(service, reference.Id) 
                 : reference.Name;
         }
 
-        public static string GetName<T>(this IOrganizationService service, Guid id)
+        public static string GetReferenceName<T>(this IOrganizationService service, Guid id)
             where T : Entity
         {
             var entityInfo = Info<T>();

@@ -20,6 +20,9 @@ namespace Niam.XRM.Framework
             where TV : struct
             => Get(accessor, attribute).GetValueOrDefault(defaultValue);
 
+        public static TV GetAliasedValue<TV>(this IEntityGetter<Entity> accessor, string attributeName)
+            => (TV) accessor.Get<AliasedValue>(attributeName)?.Value;
+
         public static string GetFormattedValue<T>(this IEntityGetter<T> accessor, Expression<Func<T, object>> attribute)
             where T : Entity
             => accessor.GetFormattedValue(Name(attribute));

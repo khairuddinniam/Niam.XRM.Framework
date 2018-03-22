@@ -50,7 +50,7 @@ namespace Niam.XRM.Framework.Tests
         public void Null_get_name_on_null_entity_reference()
         {
             var service = Substitute.For<IOrganizationService>();
-            Assert.Null(service.GetName<xts_keytest>(null));
+            Assert.Null(service.GetReferenceName<xts_keytest>(null));
         }
 
         [Fact]
@@ -63,7 +63,7 @@ namespace Niam.XRM.Framework.Tests
             service.Retrieve(Arg.Is<string>(name => name == "xts_keytest"), Arg.Any<Guid>(), Arg.Any<ColumnSet>())
                 .Returns(entity);
             
-            Assert.Equal("Hello world", service.GetName<xts_keytest>(entity.ToEntityReference()));
+            Assert.Equal("Hello world", service.GetReferenceName<xts_keytest>(entity.ToEntityReference()));
         }
 
         [Fact]
@@ -93,7 +93,7 @@ namespace Niam.XRM.Framework.Tests
                     };
                 });
             
-            Assert.Equal("Hello world", service.GetName<xts_entity>(entity.ToEntityReference()));
+            Assert.Equal("Hello world", service.GetReferenceName<xts_entity>(entity.ToEntityReference()));
         }
 
         [Fact]
@@ -104,7 +104,7 @@ namespace Niam.XRM.Framework.Tests
             {
                 Name = "Hello world"
             };
-            Assert.Equal("Hello world", service.GetName<xts_keytest>(reference));
+            Assert.Equal("Hello world", service.GetReferenceName<xts_keytest>(reference));
         }
 
         [Fact]
@@ -115,7 +115,7 @@ namespace Niam.XRM.Framework.Tests
             {
                 Name = "Hello world"
             };
-            var ex = Assert.Throws<InvalidOperationException>(() => service.GetName<xts_entity>(reference));
+            var ex = Assert.Throws<InvalidOperationException>(() => service.GetReferenceName<xts_entity>(reference));
             Assert.Equal("Logical name from EntityReference: 'xts_keytest' is not same as T: 'xts_entity'.", ex.Message);
         }
 
@@ -149,6 +149,21 @@ namespace Niam.XRM.Framework.Tests
             Helper.EntityCache.GetOrAddInfo(typeof(xts_keytest)); // Cache entity info.
             Assert.Equal("primarynameattributekey", service.GetPrimaryAttribute("xts_keytest"));
             service.Received(1).Execute(Arg.Any<OrganizationRequest>());
+        }
+
+        [Fact]
+        public void Can_retrieve_multiple_fetch_xml()
+        {
+            var service = Substitute.For<IOrganizationService>();
+            string fetchXml = null;
+            service.RetrieveMultiple(Arg.Any<QueryBase>()).Returns(ci =>
+            {
+                fetchXml = ci.ArgAt<FetchExpression>(0).Query;
+                return new EntityCollection();
+            });
+
+            service.RetrieveMultiple("this-is-fetch-xml");
+            Assert.Equal("this-is-fetch-xml", fetchXml);
         }
     }
 }

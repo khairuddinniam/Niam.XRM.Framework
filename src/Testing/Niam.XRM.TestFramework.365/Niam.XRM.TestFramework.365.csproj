@@ -9,7 +9,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <TargetFramework>net452</TargetFramework>
-    <Description>Dynamics 365 Plugin Test Framework</Description>
     <AssemblyName>Niam.XRM.TestFramework.365</AssemblyName>
     <RootNamespace>Niam.XRM.TestFramework</RootNamespace>
   </PropertyGroup>

@@ -19,10 +19,16 @@ namespace Niam.XRM.Framework.Plugin
         private readonly Lazy<TW> _wrapper;
 
         protected ITransactionContext<TE> Context { get; }
+
         protected IOrganizationService Service => Context.Service;
+
         protected IEntityGetter<TE> Initial => Context.Initial;
         
         protected virtual TW Wrapper => _wrapper.Value;
+
+        protected Guid Id => Wrapper.Id;
+
+        protected string EntityName => Wrapper.LogicalName;
         
         private TW GetWrapper() => InstanceEntityWrapper<TE, TW>.Create(Context.Current.Entity, Context);
 
@@ -94,9 +100,11 @@ namespace Niam.XRM.Framework.Plugin
         protected bool Changed(Expression<Func<TE, OptionSetValue>> optionAttribute, Enum from, Enum to)
             => Changed(optionAttribute, from.ToOptionSetValue(), to.ToOptionSetValue());
 
-        protected string GetName<TR>(Expression<Func<TE, EntityReference>> relatedAttribute)
+        protected string Name(Expression<Func<TE, object>> attribute) => Helper.Name(attribute);
+
+        protected string GetReferenceName<TR>(Expression<Func<TE, EntityReference>> relatedAttribute)
             where TR : Entity
-            => Wrapper.GetName<TR>(relatedAttribute);
+            => Wrapper.GetReferenceName<TR>(relatedAttribute);
 
         protected TV Get<TV>(Expression<Func<TE, TV>> attribute) => Wrapper.Get(attribute);
 

@@ -5,7 +5,7 @@
   </PropertyGroup>
   
   <PropertyGroup>
-    <Version>1.0.0.1-rc3</Version>
+    <Version>1.0.0.1</Version>
     <PackageId>$(AssemblyName)</PackageId>
     <Title>$(AssemblyName)</Title>
     <Company>Khairuddin Ni'am</Company>
@@ -15,6 +15,7 @@
     <PackageLicenseUrl>https://github.com/khairuddinniam/Niam.XRM.Framework/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/khairuddinniam/Niam.XRM.Framework</PackageProjectUrl>
     <PackageTags>Dynamics CRM 2015 2016 365 XRM D365 Dynamics365</PackageTags>
+    <Description>Simple library to help testing the dynamics CRM project that use Niam.XRM.Framework.</Description>
 
     <PackageOutputPath>$(SolutionDir)build\packages</PackageOutputPath>
   </PropertyGroup>

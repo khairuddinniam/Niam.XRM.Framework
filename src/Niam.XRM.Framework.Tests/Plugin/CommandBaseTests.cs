@@ -488,7 +488,7 @@ namespace Niam.XRM.Framework.Tests.Plugin
 
             public string GetNameTest<TR>(Expression<Func<xts_entity, EntityReference>> relatedAttribute)
                 where TR : Entity
-                => GetName<TR>(relatedAttribute);
+                => GetReferenceName<TR>(relatedAttribute);
         }
     }
 }

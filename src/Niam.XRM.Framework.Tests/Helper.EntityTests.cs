@@ -49,6 +49,8 @@ namespace Niam.XRM.Framework.Tests
             var account = new MsGenerated.Account();
             Assert.Equal("accountid", Helper.Name<MsGenerated.Account>(e => e.Id));
             Assert.Equal("accountid", account.Name(e => e.Id));
+            Assert.Equal("parentaccountid", Helper.Name<MsGenerated.Account>(e => e.parentaccountid));
+            Assert.Equal("parentaccountid", account.Name(e => e.parentaccountid));
         }
 
         [Fact]
@@ -529,6 +531,18 @@ namespace Niam.XRM.Framework.Tests
             var info = Helper.Info(typeof(xts_relatedentity));
             Assert.Equal("xts_entityid", info.GetAttributeName("Id"));
             Assert.Equal("xts_entityid", Helper.Name<xts_relatedentity>(e => e.Id));
+        }
+
+        [Fact]
+        public void Can_get_aliased_value()
+        {
+            var entity = new Entity("lead")
+            {
+                Id = Guid.NewGuid(),
+                ["aliased"] = new AliasedValue(null, null, new Money(1234m))
+            };
+            Assert.Equal(1234m, entity.GetAliasedValue<Money>("aliased").Value);
+            Assert.Null(entity.GetAliasedValue<EntityReference>("not_exists"));
         }
     }
 }

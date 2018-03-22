@@ -92,8 +92,8 @@ namespace Niam.XRM.Framework.Plugin
         public IEnumerable<IEntityWrapper<Entity>> GetAllRelated(string relatedEntityName, string relatedToParentAttribute, ColumnSet relatedColumnSet)
             => _currentWrapper.Value.GetAllRelated(relatedEntityName, relatedToParentAttribute, relatedColumnSet);
 
-        public string GetName<TR>(Expression<Func<TE, EntityReference>> relatedReference) 
-            where TR : Entity => _currentWrapper.Value.GetName<TR>(relatedReference);
+        public string GetReferenceName<TR>(Expression<Func<TE, EntityReference>> relatedReference) 
+            where TR : Entity => _currentWrapper.Value.GetReferenceName<TR>(relatedReference);
 
         public IEntityWrapper<T> ToWrapper<T>() 
             where T : Entity => _currentWrapper.Value.ToWrapper<T>();

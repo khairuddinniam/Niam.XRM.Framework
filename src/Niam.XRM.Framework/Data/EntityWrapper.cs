@@ -72,12 +72,12 @@ namespace Niam.XRM.Framework.Data
 
         public void Delete() => Service.Delete(Entity.LogicalName, Entity.Id);
 
-        public string GetName<TR>(Expression<Func<T, EntityReference>> relatedReference) 
+        public string GetReferenceName<TR>(Expression<Func<T, EntityReference>> relatedReference) 
             where TR : Entity
         {
             var attributeName = Helper.Name(relatedReference);
             var reference = Get<EntityReference>(attributeName);
-            return Service.GetName<TR>(reference);
+            return Service.GetReferenceName<TR>(reference);
         }
 
         public IEntityWrapper<TE> ToWrapper<TE>()
