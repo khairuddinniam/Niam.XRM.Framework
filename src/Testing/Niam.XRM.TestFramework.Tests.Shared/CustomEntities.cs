@@ -54,4 +54,27 @@ namespace Niam.XRM.TestFramework.Tests
 
         public readonly Money new_taxamount = null;
     }
+
+    [System.Runtime.Serialization.DataContractAttribute]
+    [EntityLogicalName("lead")]
+    public partial class Lead : Entity
+    {
+        public const string EntityLogicalName = "lead";
+        public Lead() : base(EntityLogicalName)
+        {
+        }
+
+        [Column("leadid")]
+        public override Guid Id
+        {
+            get { return base.Id; }
+            set
+            {
+                base.Id = value;
+                this["leadid"] = value;
+            }
+        }
+
+        public readonly string Subject = null;
+    }
 }

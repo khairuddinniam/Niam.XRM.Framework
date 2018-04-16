@@ -71,7 +71,10 @@ namespace Niam.XRM.TestFramework
             FakedContext.Initialize(Db);
             var isCustomEarlyBound = typeof(TE).GetProperty("Id")?.GetCustomAttribute<ColumnAttribute>() != null;
             if (isCustomEarlyBound)
+            {
+                _xrmFakedContext.IsCustomEarlyBound = true;
                 FakedContext.ProxyTypesAssembly = null;
+            }
         }
 
         private TP CreatePlugin<TP>() where TP : IPlugin
@@ -119,8 +122,18 @@ namespace Niam.XRM.TestFramework
 
         private class InternalXrmFakedContext : XrmFakedContext
         {
+            public bool IsCustomEarlyBound { get; set; }
+
             public IServiceProvider CreateServiceProvider(XrmFakedPluginExecutionContext plugCtx)
                 => GetFakedServiceProvider(plugCtx);
+
+            public override IOrganizationService GetOrganizationService()
+            {
+                var service = base.GetOrganizationService();
+                return IsCustomEarlyBound 
+                    ? new ClearProxyOrganizationService(service, this)
+                    : service;
+            }
         }
     }
 }

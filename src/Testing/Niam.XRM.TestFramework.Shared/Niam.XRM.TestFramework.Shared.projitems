@@ -13,6 +13,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)TestEvent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TestException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TestExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ClearProxyOrganizationService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TestPlugin.cs" />
   </ItemGroup>
 </Project>

@@ -125,6 +125,19 @@ namespace Niam.XRM.TestFramework.Tests
                 var taxAmount = tax.Get(e => e.new_taxamount);
 
                 Set(e => e.new_totalprice, new Money(basePrice.Value + taxAmount.Value));
+
+                CreateLeads();
+            }
+
+            private void CreateLeads()
+            {
+                var lead = new Lead();
+                lead.Set(e => e.Subject, "Hello World");
+                Service.Create(lead);
+
+                var query = new QueryExpression("lead");
+                query.Criteria.AddCondition("subject", ConditionOperator.Equal, "Hello World");
+                var result = Service.RetrieveMultiple(query);
             }
         }
     }
