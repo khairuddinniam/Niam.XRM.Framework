@@ -17,7 +17,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FakeXrmEasy.365" Version="1.40.0" />
+    <PackageReference Include="FakeXrmEasy.365" Version="1.41.1" />
     <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="[8.2.0.1,9.0.0)" />
   </ItemGroup>
   <ItemGroup>
