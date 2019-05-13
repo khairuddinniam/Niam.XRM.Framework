@@ -13,6 +13,14 @@ ProjectSection(SolutionItems) = preProject
 	asset\open-source.snk = asset\open-source.snk
 EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{A1D3319E-EE23-42A3-AD4D-7A6A2EC4F517}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "plugin", "plugin", "{A872821C-ADFC-45D5-A0F5-29C21CA8FEC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LateBound.Example.Plugins", "examples\plugin\LateBound.Example.Plugins\LateBound.Example.Plugins.csproj", "{143F087B-C3B1-4CFE-AB46-32C9E8AE017B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LateBound.Example.Plugins.Tests", "examples\plugin\LateBound.Example.Plugins.Tests\LateBound.Example.Plugins.Tests.csproj", "{1AC0A02D-F877-4406-BF2B-E03B8B3FB347}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +35,20 @@ Global
 		{443EBC54-2B3C-444D-B8A8-57A7CF316F2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{443EBC54-2B3C-444D-B8A8-57A7CF316F2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{443EBC54-2B3C-444D-B8A8-57A7CF316F2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{143F087B-C3B1-4CFE-AB46-32C9E8AE017B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{143F087B-C3B1-4CFE-AB46-32C9E8AE017B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{143F087B-C3B1-4CFE-AB46-32C9E8AE017B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{143F087B-C3B1-4CFE-AB46-32C9E8AE017B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AC0A02D-F877-4406-BF2B-E03B8B3FB347}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AC0A02D-F877-4406-BF2B-E03B8B3FB347}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AC0A02D-F877-4406-BF2B-E03B8B3FB347}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AC0A02D-F877-4406-BF2B-E03B8B3FB347}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{369FC825-A3A1-4A8D-9585-CE02D78F3FD5} = {E36662B0-02EB-4F57-B701-8E8CA9ED2815}
 		{443EBC54-2B3C-444D-B8A8-57A7CF316F2B} = {296FAB6D-E952-4B02-A327-0C3E6BE3D2CF}
+		{A872821C-ADFC-45D5-A0F5-29C21CA8FEC1} = {A1D3319E-EE23-42A3-AD4D-7A6A2EC4F517}
+		{143F087B-C3B1-4CFE-AB46-32C9E8AE017B} = {A872821C-ADFC-45D5-A0F5-29C21CA8FEC1}
+		{1AC0A02D-F877-4406-BF2B-E03B8B3FB347} = {A872821C-ADFC-45D5-A0F5-29C21CA8FEC1}
 	EndGlobalSection
 EndGlobal
