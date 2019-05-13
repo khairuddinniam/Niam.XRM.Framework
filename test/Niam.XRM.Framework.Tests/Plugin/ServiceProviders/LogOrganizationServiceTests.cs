@@ -5,7 +5,6 @@ using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 using Niam.XRM.Framework.Plugin.ServiceProviders;
 using NSubstitute;
-using NSubstitute.Core;
 using Xunit;
 using Xunit.Abstractions;
 using System.ServiceModel;
@@ -176,7 +175,7 @@ namespace Niam.XRM.Framework.Tests.Plugin.ServiceProviders
 
         public static IEnumerable<object[]> GetLogRetrieveMultipleTestData()
         {
-            var fetchXml = new[]
+            var fetchXml = String.Join("", new[]
             {
                 "<fetch mapping='logical'>",
                     "<entity name='account'>",
@@ -184,7 +183,7 @@ namespace Niam.XRM.Framework.Tests.Plugin.ServiceProviders
                         "<attribute name='name'/>",
                     "</entity>",
                 "</fetch>"
-            }.Join("");
+            });
 
             yield return new object[] { new FetchExpression(fetchXml) };
 

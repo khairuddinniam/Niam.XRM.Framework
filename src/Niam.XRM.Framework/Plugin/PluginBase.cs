@@ -29,7 +29,7 @@ namespace Niam.XRM.Framework.Plugin
 
             var container = new Container(serviceProvider);
             var config = new PluginConfiguration<TE>(this, container);
-            PluginConfigure(config);
+            ConfigurePlugin(config);
             var context = container.ToTransactionContext<TE>(config);
             var pluginContext = new PluginContext<TE>(context);
             try
@@ -42,15 +42,15 @@ namespace Niam.XRM.Framework.Plugin
             }
         }
 
-        private void PluginConfigure(IPluginConfiguration<TE> config)
+        private void ConfigurePlugin(IPluginConfiguration<TE> config)
         {
-            PrePluginConfigure(config);
+            PreConfigurePlugin(config);
             Configure(config);
             // Preserved for future use. 
             //PostPluginConfigure(config);
         }
 
-        private void PrePluginConfigure(IPluginConfiguration<TE> config)
+        private void PreConfigurePlugin(IPluginConfiguration<TE> config)
         {
             DefaultConfig.PluginConfigureServiceFactory(config);
             DefaultConfig.PluginConfigureLogging(config);

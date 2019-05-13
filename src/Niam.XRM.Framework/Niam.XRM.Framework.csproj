@@ -13,7 +13,7 @@
   <!-- NuSpec -->
   <PropertyGroup>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>7.1.0.4</Version>
+    <Version>9.0.2.5</Version>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -31,11 +31,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="License.txt" Pack="true" Visible="false" PackagePath=""/>
+    <None Include="License.txt" Pack="true" Visible="false" PackagePath="" />
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="7.1.0" />
+    <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="9.0.2.5" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.ComponentModel.DataAnnotations" />
