@@ -1,11 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <LangVersion>7</LangVersion>
     <SignAssembly>True</SignAssembly>
     <DelaySign>False</DelaySign>
-    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
     <TargetFramework>net452</TargetFramework>
-    <AssemblyOriginatorKeyFile>..\open-source.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\..\asset\open-source.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,11 +13,7 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\DefaultOrganizationCrmSdkTypes.cs" Link="DefaultOrganizationCrmSdkTypes.cs" />
-    <Compile Include="..\TestEntities.cs" Link="TestEntities.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Niam.XRM.Framework\Niam.XRM.Framework.csproj" />
+    <ProjectReference Include="..\..\src\Niam.XRM.Framework\Niam.XRM.Framework.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

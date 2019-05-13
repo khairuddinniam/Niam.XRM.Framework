@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E36662B0-02EB-4F57-B701-8E8CA9ED2815}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niam.XRM.Framework", "src\Niam.XRM.Framework\Niam.XRM.Framework.csproj", "{369FC825-A3A1-4A8D-9585-CE02D78F3FD5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{296FAB6D-E952-4B02-A327-0C3E6BE3D2CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niam.XRM.Framework.Tests", "test\Niam.XRM.Framework.Tests\Niam.XRM.Framework.Tests.csproj", "{443EBC54-2B3C-444D-B8A8-57A7CF316F2B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "asset", "asset", "{70C62F6A-7C7E-42E0-98AC-8CC9583BD6FC}"
+ProjectSection(SolutionItems) = preProject
+	asset\open-source.snk = asset\open-source.snk
+EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{369FC825-A3A1-4A8D-9585-CE02D78F3FD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{369FC825-A3A1-4A8D-9585-CE02D78F3FD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{369FC825-A3A1-4A8D-9585-CE02D78F3FD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{369FC825-A3A1-4A8D-9585-CE02D78F3FD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{443EBC54-2B3C-444D-B8A8-57A7CF316F2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{443EBC54-2B3C-444D-B8A8-57A7CF316F2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{443EBC54-2B3C-444D-B8A8-57A7CF316F2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{443EBC54-2B3C-444D-B8A8-57A7CF316F2B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{369FC825-A3A1-4A8D-9585-CE02D78F3FD5} = {E36662B0-02EB-4F57-B701-8E8CA9ED2815}
+		{443EBC54-2B3C-444D-B8A8-57A7CF316F2B} = {296FAB6D-E952-4B02-A327-0C3E6BE3D2CF}
+	EndGlobalSection
+EndGlobal
