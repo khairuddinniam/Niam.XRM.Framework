@@ -1,14 +1,16 @@
 using System;
 using Microsoft.Xrm.Sdk;
-using Niam.XRM.Framework.TestHelper.Tests.EarlyBound.Commands;
+using Niam.XRM.Framework.Interfaces.Plugin;
+using Niam.XRM.Framework.Plugin;
+using Niam.XRM.Framework.TestHelper.Tests.LateBound.Commands;
 using Xunit;
 
-namespace Niam.XRM.Framework.TestHelper.Tests.EarlyBound
+namespace Niam.XRM.Framework.TestHelper.Tests.LateBound
 {
-    public class CommandTests
+    public class PluginOnCRUDTests
     {
         [Fact]
-        public void Can_execute_command_on_create()
+        public void Can_execute_plugin_on_create()
         {
             var order = new Entity("new_order")
             {
@@ -24,7 +26,7 @@ namespace Niam.XRM.Framework.TestHelper.Tests.EarlyBound
             };
 
             var test = new TestEvent(order);
-            test.CreateEventCommand<CalculateTotalPrice>(target);
+            test.CreateEvent<Plugin>(target);
             var summaryRef = target.Get<EntityReference>("new_orderdetailsummaryid");
             Assert.NotNull(summaryRef);
             var summary = test.Db.Event.Created[0];
@@ -32,7 +34,7 @@ namespace Niam.XRM.Framework.TestHelper.Tests.EarlyBound
         }
         
         [Fact]
-        public void Can_execute_command_on_update()
+        public void Can_execute_plugin_on_update()
         {
             var order = new Entity("new_order")
             {
@@ -64,13 +66,13 @@ namespace Niam.XRM.Framework.TestHelper.Tests.EarlyBound
             };
             
             var test = new TestEvent(order, orderDetail, orderDetailSummary);
-            test.UpdateEventCommand<CalculateTotalPrice>(target);
+            test.UpdateEvent<Plugin>(target);
             var summary = test.Db.Event.Updated[0];
             Assert.Equal(4500m, summary.Get<Money>("new_totalprice").Value);
         }
         
         [Fact]
-        public void Can_execute_command_on_delete()
+        public void Can_execute_plugin_on_delete()
         {
             var order = new Entity("new_order")
             {
@@ -90,8 +92,28 @@ namespace Niam.XRM.Framework.TestHelper.Tests.EarlyBound
             };
             
             var test = new TestEvent(order, orderDetail, orderDetailSummary);
-            test.DeleteEventCommand<DeleteOrderDetailSummary>(orderDetail.ToEntityReference());
+            test.DeleteEvent<Plugin>(orderDetail.ToEntityReference());
             Assert.Equal(orderDetailSummary.ToEntityReference(), test.Db.Event.Deleted[0]);
+        }
+        
+        private class Plugin : PluginBase, IPlugin
+        {
+            public Plugin(string unsecure, string secure) : base(unsecure, secure)
+            {
+            }
+
+            protected override void ExecuteCrmPlugin(IPluginContext<Entity> context)
+            {
+                if (context.Current.ContainsAny("new_quantity", "new_priceperitem"))
+                {
+                    new CalculateTotalPrice(context).Execute();
+                }
+
+                if (context.PluginExecutionContext.MessageName == "Delete")
+                {
+                    new DeleteOrderDetailSummary(context).Execute();
+                }
+            }
         }
     }
 }

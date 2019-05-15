@@ -2,7 +2,7 @@ using Microsoft.Xrm.Sdk;
 using Niam.XRM.Framework.Interfaces.Plugin;
 using Niam.XRM.Framework.Plugin;
 
-namespace Niam.XRM.Framework.TestHelper.Tests.EarlyBound.Commands
+namespace Niam.XRM.Framework.TestHelper.Tests.LateBound.Commands
 {
     public class DeleteOrderDetailSummary : OperationBase
     {

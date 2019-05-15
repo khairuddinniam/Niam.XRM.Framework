@@ -51,39 +51,39 @@ namespace Niam.XRM.Framework
             where T : Entity
             => SetFormattedValue(entity, Name(attribute), formattedValue);
 
-        public static void Set<T, TV>(this T entity, Expression<Func<T, TV>> attribute, IAttributeValueProvider<T, TV> attributeValueProvider)
+        public static T Set<T, TV>(this T entity, Expression<Func<T, TV>> attribute, IAttributeValueProvider<T, TV> attributeValueProvider)
             where T : Entity => Set(entity, attribute, attributeValueProvider.GetValueFor(attribute));
 
-        public static void Set<T, TV>(this T entity, Expression<Func<T, TV>> attribute, IValueProvider<TV> valueProvider)
+        public static T Set<T, TV>(this T entity, Expression<Func<T, TV>> attribute, IValueProvider<TV> valueProvider)
             where T : Entity => Set(entity, attribute, valueProvider.GetValue());
 
-        public static void Set<T, TV>(this T entity, Expression<Func<T, TV>> attribute, IAttributeValueProvider valueProvider)
+        public static T Set<T, TV>(this T entity, Expression<Func<T, TV>> attribute, IAttributeValueProvider valueProvider)
             where T : Entity => Set(entity, attribute, (TV) valueProvider.GetValueFor(Name<T>(), Name(attribute)));
 
-        public static void Set<T, TV>(this T entity, Expression<Func<T, TV?>> attribute, IValueProvider<TV> valueProvider)
+        public static T Set<T, TV>(this T entity, Expression<Func<T, TV?>> attribute, IValueProvider<TV> valueProvider)
             where T : Entity
             where TV : struct => Set(entity, attribute, valueProvider.GetValue());
 
-        public static void Set<T, TV>(this T entity, Expression<Func<T, TV>> attribute, TV value)
-            where T : Entity => Set(entity, GetMemberInfo(attribute), value);
+        public static T Set<T, TV>(this T entity, Expression<Func<T, TV>> attribute, TV value)
+            where T : Entity => (T) Set(entity, GetMemberInfo(attribute), value);
 
-        public static void Set<T>(this T entity, Expression<Func<T, OptionSetValue>> attribute, Enum value)
+        public static T Set<T>(this T entity, Expression<Func<T, OptionSetValue>> attribute, Enum value)
             where T : Entity => Set(entity, attribute, value.ToOptionSetValue());
 
-        public static void Set<T>(this T entity, Expression<Func<T, OptionSetValue>> attribute, int? value)
+        public static T Set<T>(this T entity, Expression<Func<T, OptionSetValue>> attribute, int? value)
             where T : Entity => Set(entity, attribute, value.HasValue ? new OptionSetValue(value.Value) : null);
 
-        public static void Set<T>(this T entity, Expression<Func<T, Money>> attribute, decimal value)
+        public static T Set<T>(this T entity, Expression<Func<T, Money>> attribute, decimal value)
             where T : Entity => Set(entity, attribute, new Money(value));
 
-        public static void Set<T>(this T entity, Expression<Func<T, Money>> attribute, IValueProvider<decimal> valueProvider)
+        public static T Set<T>(this T entity, Expression<Func<T, Money>> attribute, IValueProvider<decimal> valueProvider)
             where T : Entity => Set(entity, attribute, valueProvider.GetValue());
 
-        public static void Set<T>(this T entity, Expression<Func<T, EntityCollection>> attribute,
+        public static T Set<T>(this T entity, Expression<Func<T, EntityCollection>> attribute,
             EntityReference valueRef, params EntityReference[] otherValueRefs)
             where T : Entity => Set(entity, attribute, new[] { valueRef }.Concat(otherValueRefs));
 
-        public static void Set<T>(this T entity, Expression<Func<T, EntityCollection>> attribute,
+        public static T Set<T>(this T entity, Expression<Func<T, EntityCollection>> attribute,
             IEnumerable<EntityReference> valueRefs)
             where T : Entity
         {
@@ -92,9 +92,11 @@ namespace Niam.XRM.Framework
                 .ToList();
             var collection = new EntityCollection(activityParties);
             entity.Set(attribute, collection);
+
+            return entity;
         }
 
-        public static void Set(this Entity entity, MemberInfo memberInfo, object value)
+        public static Entity Set(this Entity entity, MemberInfo memberInfo, object value)
         {
             var info = Info(entity.GetType());
             if (info.IsCrmSvcUtilGenerated)
@@ -106,24 +108,28 @@ namespace Niam.XRM.Framework
                 var attributeName = info.GetAttributeName(memberInfo.Name);
                 Set(entity, attributeName, value);
             }
+
+            return entity;
         }
 
-        public static void Set(this Entity entity, string attributeName, object value)
+        public static Entity Set(this Entity entity, string attributeName, object value)
         {
             entity[attributeName] = value;
 
             var isPrimaryField = (entity.LogicalName + "id") == attributeName;
             if (isPrimaryField)
                 entity.Id = (Guid) value;
+                
+            return entity;
         }
 
-        public static void Set(this Entity entity, string attributeName, IAttributeValueProvider attributeValueProvider)
+        public static Entity Set(this Entity entity, string attributeName, IAttributeValueProvider attributeValueProvider)
             => Set(entity, attributeName, attributeValueProvider.GetValueFor(entity.LogicalName, attributeName));
 
-        public static void Set(this Entity entity, string attributeName, IValueProvider valueProvider)
+        public static Entity Set(this Entity entity, string attributeName, IValueProvider valueProvider)
             => Set(entity, attributeName, valueProvider.GetValue());
 
-        public static void Set<TV>(this Entity entity, string attributeName, IValueProvider<TV> valueProvider)
+        public static Entity Set<TV>(this Entity entity, string attributeName, IValueProvider<TV> valueProvider)
             => Set(entity, attributeName, valueProvider.GetValue());
 
         public static bool Remove<T>(this T entity, Expression<Func<T, object>> attribute)
