@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Client;
 
-namespace Niam.XRM.Framework.TestHelper.Tests
+namespace Niam.XRM.Framework.TestHelper.Tests.EarlyBound
 {
     [System.Runtime.Serialization.DataContractAttribute]
     [EntityLogicalName("new_order")]
