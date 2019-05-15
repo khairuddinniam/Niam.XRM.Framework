@@ -10,14 +10,10 @@ namespace Niam.XRM.Framework.TestHelper.Tests.LateBound
         [Fact]
         public void Can_execute_command_on_create()
         {
-            var order = new Entity("new_order")
-            {
-                Id = Guid.NewGuid()
-            };
+            var order = new Entity("new_order", Guid.NewGuid());
             
-            var target = new Entity("new_orderdetail")
+            var target = new Entity("new_orderdetail", Guid.NewGuid())
             {
-                Id = Guid.NewGuid(),
                 ["new_orderid"] = order.ToEntityReference(),
                 ["new_quantity"] = 2,
                 ["new_priceperitem"] = new Money(1500)
@@ -34,32 +30,25 @@ namespace Niam.XRM.Framework.TestHelper.Tests.LateBound
         [Fact]
         public void Can_execute_command_on_update()
         {
-            var order = new Entity("new_order")
-            {
-                Id = Guid.NewGuid()
-            };
-
+            var order = new Entity("new_order", Guid.NewGuid());
             var orderDetailId = Guid.NewGuid();
-            var orderDetailSummary = new Entity("new_orderdetailsummary")
+            var orderDetailSummary = new Entity("new_orderdetailsummary", Guid.NewGuid())
             {
-                Id = Guid.NewGuid(),
                 ["new_orderid"] = order.ToEntityReference(),
                 ["new_orderdetailid"] = new EntityReference("new_orderdetail", orderDetailId),
                 ["new_totalprice"] = new Money(3000)
             };
             
-            var orderDetail = new Entity("new_orderdetail")
+            var orderDetail = new Entity("new_orderdetail", orderDetailId)
             {
-                Id = orderDetailId,
-                ["new_orderid"] =order.ToEntityReference(),
+                ["new_orderid"] = order.ToEntityReference(),
                 ["new_orderdetailsummaryid"] = orderDetailSummary.ToEntityReference(),
                 ["new_quantity"] = 2,
                 ["new_priceperitem"] = new Money(1500)
             };
             
-            var target = new Entity("new_orderdetail")
+            var target = new Entity("new_orderdetail", orderDetailId)
             {
-                Id = orderDetailId,
                 ["new_quantity"] = 3 
             };
             
@@ -72,19 +61,12 @@ namespace Niam.XRM.Framework.TestHelper.Tests.LateBound
         [Fact]
         public void Can_execute_command_on_delete()
         {
-            var order = new Entity("new_order")
-            {
-                Id = Guid.NewGuid()
-            };
+            var order = new Entity("new_order", Guid.NewGuid());
 
-            var orderDetailSummary = new Entity("new_orderdetailsummary")
-            {
-                Id = Guid.NewGuid()
-            };
+            var orderDetailSummary = new Entity("new_orderdetailsummary", Guid.NewGuid());
             
-            var orderDetail = new Entity("new_orderdetail")
+            var orderDetail = new Entity("new_orderdetail",Guid.NewGuid())
             {
-                Id = Guid.NewGuid(),
                 ["new_orderid"] = order.ToEntityReference(),
                 ["new_orderdetailsummaryid"] = orderDetailSummary.ToEntityReference()
             };
