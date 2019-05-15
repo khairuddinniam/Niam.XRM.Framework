@@ -1,13 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <SignAssembly>True</SignAssembly>
-    <DelaySign>False</DelaySign>
-    <TargetFramework>net452</TargetFramework>
-  </PropertyGroup>
 
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>..\..\asset\open-source.snk</AssemblyOriginatorKeyFile>
-    <Description>Fast, easy and lightweight Microsoft Dynamics CRM Plugin Framework that support premise and online edition. One framework to rule them all.</Description>
+    <TargetFramework>net452</TargetFramework>
   </PropertyGroup>
 
   <!-- NuSpec -->
@@ -33,11 +27,17 @@
   <ItemGroup>
     <None Include="License.txt" Pack="true" Visible="false" PackagePath="" />
   </ItemGroup>
-  
+
   <ItemGroup>
-    <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="9.0.2.5" />
+    <ProjectReference Include="..\Niam.XRM.Framework\Niam.XRM.Framework.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FakeXrmEasy.9" Version="1.52.0" />
+  </ItemGroup>
+
   <ItemGroup>
     <Reference Include="System.ComponentModel.DataAnnotations" />
   </ItemGroup>
+
 </Project>

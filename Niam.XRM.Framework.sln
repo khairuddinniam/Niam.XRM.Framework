@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LateBound.Example.Plugins",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LateBound.Example.Plugins.Tests", "examples\plugin\LateBound.Example.Plugins.Tests\LateBound.Example.Plugins.Tests.csproj", "{1AC0A02D-F877-4406-BF2B-E03B8B3FB347}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niam.XRM.Framework.TestHelper", "src\Niam.XRM.Framework.TestHelper\Niam.XRM.Framework.TestHelper.csproj", "{2A801E18-4840-4D79-97FD-904C1A5C3E11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niam.XRM.Framework.TestHelper.Tests", "test\Niam.XRM.Framework.TestHelper.Tests\Niam.XRM.Framework.TestHelper.Tests.csproj", "{B0C979BF-B478-4159-82AD-89A7088300B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +47,14 @@ Global
 		{1AC0A02D-F877-4406-BF2B-E03B8B3FB347}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AC0A02D-F877-4406-BF2B-E03B8B3FB347}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AC0A02D-F877-4406-BF2B-E03B8B3FB347}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A801E18-4840-4D79-97FD-904C1A5C3E11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A801E18-4840-4D79-97FD-904C1A5C3E11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A801E18-4840-4D79-97FD-904C1A5C3E11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A801E18-4840-4D79-97FD-904C1A5C3E11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0C979BF-B478-4159-82AD-89A7088300B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0C979BF-B478-4159-82AD-89A7088300B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0C979BF-B478-4159-82AD-89A7088300B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0C979BF-B478-4159-82AD-89A7088300B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{369FC825-A3A1-4A8D-9585-CE02D78F3FD5} = {E36662B0-02EB-4F57-B701-8E8CA9ED2815}
@@ -50,5 +62,7 @@ Global
 		{A872821C-ADFC-45D5-A0F5-29C21CA8FEC1} = {A1D3319E-EE23-42A3-AD4D-7A6A2EC4F517}
 		{143F087B-C3B1-4CFE-AB46-32C9E8AE017B} = {A872821C-ADFC-45D5-A0F5-29C21CA8FEC1}
 		{1AC0A02D-F877-4406-BF2B-E03B8B3FB347} = {A872821C-ADFC-45D5-A0F5-29C21CA8FEC1}
+		{2A801E18-4840-4D79-97FD-904C1A5C3E11} = {E36662B0-02EB-4F57-B701-8E8CA9ED2815}
+		{B0C979BF-B478-4159-82AD-89A7088300B8} = {296FAB6D-E952-4B02-A327-0C3E6BE3D2CF}
 	EndGlobalSection
 EndGlobal

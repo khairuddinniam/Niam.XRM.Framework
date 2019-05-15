@@ -84,6 +84,8 @@ namespace Niam.XRM.Framework.Plugin
 
         protected abstract void HandleExecuteCore();
 
+        protected EntityReference ToEntityReference() => Wrapper.ToEntityReference();
+
         protected bool Changed<TV>(Expression<Func<TE, TV>> attribute, TV from, TV to)
             => Changed(Helper.Name(attribute), from, to);
 

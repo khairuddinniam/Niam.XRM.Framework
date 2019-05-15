@@ -1,6 +1,6 @@
 ﻿namespace Niam.XRM.Framework.Interfaces.Plugin
 {
-    public interface IValidation
+    public interface IValidation : ICommand
     {
         void Validate();
     }

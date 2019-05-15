@@ -34,7 +34,7 @@ namespace Niam.XRM.Framework.Plugin.Configurations
 
         public IPluginBase Plugin { get; }
 
-        public ColumnSet<TEntity> ColumnSet { get; set; } = new ColumnSet<TEntity>();
+        public ColumnSet<TEntity> ColumnSet { get; set; } = new ColumnSet<TEntity>(true);
 
         public PluginConfiguration(_Assembly assembly = null)
         {

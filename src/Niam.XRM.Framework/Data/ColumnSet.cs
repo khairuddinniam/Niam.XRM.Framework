@@ -16,6 +16,16 @@ namespace Niam.XRM.Framework.Data
         where TEntity : Entity
     {
         /// <summary>
+        /// Gets or sets whether to retrieve all the attributes of a record.
+        /// </summary>
+        /// <returns>true to specify to retrieve all attributes; false to to retrieve only specified attributes.</returns>
+        public bool AllColumns
+        {
+            get => XrmColumnSet.AllColumns;
+            set => XrmColumnSet.AllColumns = value;
+        }
+        
+        /// <summary>
         /// Get instance of the Microsoft.Xrm.Sdk.Query.ColumnSet which have the equivalent data.
         /// </summary>
         /// <returns>The instance of the Microsoft.Xrm.Sdk.Query.ColumnSet </returns>
@@ -26,7 +36,16 @@ namespace Niam.XRM.Framework.Data
         /// </summary>
         /// <returns>The collection of attribute names to return from a query.</returns>
         public IEnumerable<string> Columns => XrmColumnSet.Columns;
-
+        
+        /// <summary>
+        /// Initializes a new instance of the Niam.XRM.Framework.Data.ColumnSet`1 class with an array of attribute name expressions.
+        /// </summary>
+        /// <param name="allColumns">A Boolean that specifies whether to retrieve all attributes of a record.</param>
+        public ColumnSet(bool allColumns)
+        {
+            XrmColumnSet = new ColumnSet(allColumns);
+        }
+        
         /// <summary>
         /// Initializes a new instance of the Niam.XRM.Framework.Data.ColumnSet`1 class with an array of attribute name expressions.
         /// </summary>
