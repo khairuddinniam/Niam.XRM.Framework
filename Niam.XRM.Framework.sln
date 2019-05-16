@@ -1,29 +1,36 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E36662B0-02EB-4F57-B701-8E8CA9ED2815}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niam.XRM.Framework", "src\Niam.XRM.Framework\Niam.XRM.Framework.csproj", "{369FC825-A3A1-4A8D-9585-CE02D78F3FD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Niam.XRM.Framework", "src\Niam.XRM.Framework\Niam.XRM.Framework.csproj", "{369FC825-A3A1-4A8D-9585-CE02D78F3FD5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{296FAB6D-E952-4B02-A327-0C3E6BE3D2CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niam.XRM.Framework.Tests", "test\Niam.XRM.Framework.Tests\Niam.XRM.Framework.Tests.csproj", "{443EBC54-2B3C-444D-B8A8-57A7CF316F2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Niam.XRM.Framework.Tests", "test\Niam.XRM.Framework.Tests\Niam.XRM.Framework.Tests.csproj", "{443EBC54-2B3C-444D-B8A8-57A7CF316F2B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "asset", "asset", "{70C62F6A-7C7E-42E0-98AC-8CC9583BD6FC}"
-ProjectSection(SolutionItems) = preProject
-	asset\open-source.snk = asset\open-source.snk
-EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		asset\open-source.snk = asset\open-source.snk
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{A1D3319E-EE23-42A3-AD4D-7A6A2EC4F517}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "plugin", "plugin", "{A872821C-ADFC-45D5-A0F5-29C21CA8FEC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LateBound.Example.Plugins", "examples\plugin\LateBound.Example.Plugins\LateBound.Example.Plugins.csproj", "{143F087B-C3B1-4CFE-AB46-32C9E8AE017B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LateBound.Example.Plugins", "examples\plugin\LateBound.Example.Plugins\LateBound.Example.Plugins.csproj", "{143F087B-C3B1-4CFE-AB46-32C9E8AE017B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LateBound.Example.Plugins.Tests", "examples\plugin\LateBound.Example.Plugins.Tests\LateBound.Example.Plugins.Tests.csproj", "{1AC0A02D-F877-4406-BF2B-E03B8B3FB347}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LateBound.Example.Plugins.Tests", "examples\plugin\LateBound.Example.Plugins.Tests\LateBound.Example.Plugins.Tests.csproj", "{1AC0A02D-F877-4406-BF2B-E03B8B3FB347}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niam.XRM.Framework.TestHelper", "src\Niam.XRM.Framework.TestHelper\Niam.XRM.Framework.TestHelper.csproj", "{2A801E18-4840-4D79-97FD-904C1A5C3E11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Niam.XRM.Framework.TestHelper", "src\Niam.XRM.Framework.TestHelper\Niam.XRM.Framework.TestHelper.csproj", "{2A801E18-4840-4D79-97FD-904C1A5C3E11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Niam.XRM.Framework.TestHelper.Tests", "test\Niam.XRM.Framework.TestHelper.Tests\Niam.XRM.Framework.TestHelper.Tests.csproj", "{B0C979BF-B478-4159-82AD-89A7088300B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Niam.XRM.Framework.TestHelper.Tests", "test\Niam.XRM.Framework.TestHelper.Tests\Niam.XRM.Framework.TestHelper.Tests.csproj", "{B0C979BF-B478-4159-82AD-89A7088300B8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EarlyBound.Example.Plugins", "examples\plugin\EarlyBound.Example.Plugins\EarlyBound.Example.Plugins.csproj", "{AF3C864A-8F1E-4E72-A8BD-A7EE38E8699E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EarlyBound.Example.Plugins.Tests", "examples\plugin\EarlyBound.Example.Plugins.Tests\EarlyBound.Example.Plugins.Tests.csproj", "{818105A4-C15F-4FA1-9236-B649F419CA97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +62,17 @@ Global
 		{B0C979BF-B478-4159-82AD-89A7088300B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0C979BF-B478-4159-82AD-89A7088300B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0C979BF-B478-4159-82AD-89A7088300B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF3C864A-8F1E-4E72-A8BD-A7EE38E8699E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF3C864A-8F1E-4E72-A8BD-A7EE38E8699E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF3C864A-8F1E-4E72-A8BD-A7EE38E8699E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF3C864A-8F1E-4E72-A8BD-A7EE38E8699E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{818105A4-C15F-4FA1-9236-B649F419CA97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{818105A4-C15F-4FA1-9236-B649F419CA97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{818105A4-C15F-4FA1-9236-B649F419CA97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{818105A4-C15F-4FA1-9236-B649F419CA97}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{369FC825-A3A1-4A8D-9585-CE02D78F3FD5} = {E36662B0-02EB-4F57-B701-8E8CA9ED2815}
@@ -64,5 +82,10 @@ Global
 		{1AC0A02D-F877-4406-BF2B-E03B8B3FB347} = {A872821C-ADFC-45D5-A0F5-29C21CA8FEC1}
 		{2A801E18-4840-4D79-97FD-904C1A5C3E11} = {E36662B0-02EB-4F57-B701-8E8CA9ED2815}
 		{B0C979BF-B478-4159-82AD-89A7088300B8} = {296FAB6D-E952-4B02-A327-0C3E6BE3D2CF}
+		{AF3C864A-8F1E-4E72-A8BD-A7EE38E8699E} = {A872821C-ADFC-45D5-A0F5-29C21CA8FEC1}
+		{818105A4-C15F-4FA1-9236-B649F419CA97} = {A872821C-ADFC-45D5-A0F5-29C21CA8FEC1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4300C909-CBF1-4071-9623-C0F3CD6E11D7}
 	EndGlobalSection
 EndGlobal

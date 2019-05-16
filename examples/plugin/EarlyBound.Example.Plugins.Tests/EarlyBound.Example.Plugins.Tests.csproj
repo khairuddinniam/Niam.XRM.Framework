@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\src\Niam.XRM.Framework.TestHelper\Niam.XRM.Framework.TestHelper.csproj" />
-    <ProjectReference Include="..\LateBound.Example.Plugins\LateBound.Example.Plugins.csproj" />
+    <ProjectReference Include="..\EarlyBound.Example.Plugins\EarlyBound.Example.Plugins.csproj" />
   </ItemGroup>
 
 </Project>
