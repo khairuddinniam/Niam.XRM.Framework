@@ -4,6 +4,7 @@ using Niam.XRM.Framework.Interfaces.Plugin;
 using Niam.XRM.Framework.Interfaces.Plugin.Configurations;
 using Niam.XRM.Framework.Plugin;
 using EarlyBound.Example.Plugins.Business;
+using Niam.XRM.Framework;
 
 namespace EarlyBound.Example.Plugins
 {
@@ -21,7 +22,10 @@ namespace EarlyBound.Example.Plugins
 
         protected override void ExecuteCrmPlugin(IPluginContext<Entities.SalesOrder> context)
         {
-            new OnCalculateSummaryTotal(context).Execute();
+            if (context.Current.ContainsAny(e => e.SubmitDate, e => e.TotalAmount))
+            {
+                new OnCalculateSummaryTotal(context).Execute();
+            }
         }
     }
 }
