@@ -7,7 +7,7 @@ using Xunit;
 
 namespace LateBound.Example.Plugins.Tests
 {
-    public class OnCalculateSummaryTotalTest
+    public class OnCalculateSummaryTotalTests
     {
         [Fact]
         public void SalesOrder_OnCalculateSummaryTotal_CreateOrderSummaryRecord()

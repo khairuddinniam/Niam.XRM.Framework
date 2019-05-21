@@ -4,6 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
+using Niam.XRM.Framework.Data;
 using Niam.XRM.Framework.Infrastructure;
 
 namespace Niam.XRM.Framework
@@ -11,15 +12,24 @@ namespace Niam.XRM.Framework
     public static partial class Helper
     {
         // QueryExpression
-        public static void AddCondition<T>(this FilterExpression filter, Expression<Func<T, object>> attribute, 
-            ConditionOperator conditionOperator, params object[] values) 
-            where T : Entity => filter.AddCondition(Name<T>(), Name(attribute), conditionOperator, values);
-
-        public static void AddCondition<T>(this FilterExpression filter, string entityAlias,
+        public static FilterExpression AddCondition<T>(this FilterExpression filter,
             Expression<Func<T, object>> attribute,
-            ConditionOperator conditionOperator, 
+            ConditionOperator conditionOperator, params object[] values)
+            where T : Entity
+        {
+            filter.AddCondition(Name(attribute), conditionOperator, values);
+            return filter;
+        }
+
+        public static FilterExpression AddCondition<T>(this FilterExpression filter, string entityAlias,
+            Expression<Func<T, object>> attribute,
+            ConditionOperator conditionOperator,
             params object[] values)
-            where T : Entity => filter.AddCondition(entityAlias, Name(attribute), conditionOperator, values);
+            where T : Entity
+        {
+            filter.AddCondition(entityAlias, Name(attribute), conditionOperator, values);
+            return filter;
+        }
 
         public static void AddOrder<T>(this QueryExpression query, Expression<Func<T, object>> attribute, 
             OrderType orderType)
@@ -54,6 +64,24 @@ namespace Niam.XRM.Framework
             where TFrom : Entity
             where TTo : Entity =>
                 linkEntity.AddLink(Name<TTo>(), Name(fromAttribute), Name(toAttribute), joinOperator);
+
+        public static LinkEntity SetColumns(this LinkEntity linkEntity, ColumnSet columns)
+        {
+            linkEntity.Columns = columns;
+            return linkEntity;
+        }
+
+        public static LinkEntity SetColumns<TEntity>(
+            this LinkEntity linkEntity, params Expression<Func<TEntity, object>>[] attributes) where TEntity : Entity
+        {
+            return SetColumns(linkEntity, new ColumnSet<TEntity>(attributes));
+        }
+        
+        public static LinkEntity SetAlias(this LinkEntity linkEntity, string alias)
+        {
+            linkEntity.EntityAlias = alias;
+            return linkEntity;
+        }
 
         // QueryByAttribute
         public static void AddAttributeValue<T>(this QueryByAttribute query, Expression<Func<T, object>> attribute, 

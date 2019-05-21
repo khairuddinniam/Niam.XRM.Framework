@@ -14,7 +14,7 @@ namespace Niam.XRM.Framework.Tests
             filter.AddCondition<xts_entity>(e => e.xts_money, ConditionOperator.Equal, 200m);
 
             var condition = filter.Conditions[0];
-            Assert.Equal("xts_entity", condition.EntityName);
+            Assert.Null(condition.EntityName);
             Assert.Equal("xts_money", condition.AttributeName);
             Assert.Equal(new object[] { 200m }, condition.Values.ToArray());
         }
