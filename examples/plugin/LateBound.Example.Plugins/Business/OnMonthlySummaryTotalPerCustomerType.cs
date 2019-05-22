@@ -1,19 +1,17 @@
-﻿using Entities;
-using Microsoft.Xrm.Sdk;
+﻿using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 using Niam.XRM.Framework;
-using Niam.XRM.Framework.Data;
 using Niam.XRM.Framework.Interfaces.Plugin;
 using Niam.XRM.Framework.Plugin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace EarlyBound.Example.Plugins.Business
+namespace LateBound.Example.Plugins.Business
 {
-    public class OnMonthlySummaryTotalPerCustomerType : OperationBase<SalesOrder>
+    public class OnMonthlySummaryTotalPerCustomerType : OperationBase
     {
-        public OnMonthlySummaryTotalPerCustomerType(ITransactionContext<SalesOrder> context) :
+        public OnMonthlySummaryTotalPerCustomerType(ITransactionContext<Entity> context) :
             base(context)
         {
         }
@@ -34,9 +32,9 @@ namespace EarlyBound.Example.Plugins.Business
             var period = GetOrderSummaryPeriod(customerTypeCode);
 
             var orderSummary = GetOrderSummary(period)
-                .Set(e => e.new_period, period)
-                .Set(e => e.new_qty, (int)summary.TotalQuantity)
-                .Set(e => e.new_totalamount, summary.TotalAmount);
+                .Set("new_period", period)
+                .Set("new_qty", (int)summary.TotalQuantity)
+                .Set("new_totalamount", new Money(summary.TotalAmount));
 
             if (orderSummary.Id != Guid.Empty)
                 Service.Update(orderSummary);
@@ -44,26 +42,26 @@ namespace EarlyBound.Example.Plugins.Business
                 Service.Create(orderSummary);
         }
 
-        private new_ordersummary GetOrderSummary(string period)
+        private Entity GetOrderSummary(string period)
         {
-            var query = new QueryExpression(new_ordersummary.EntityLogicalName)
+            var query = new QueryExpression("new_ordersummary")
             {
                 ColumnSet = new ColumnSet(false),
                 TopCount = 1
             };
-            query.Criteria.AddCondition<new_ordersummary>(e => e.new_period, ConditionOperator.Equal, period);
+            query.Criteria.AddCondition("new_period", ConditionOperator.Equal, period);
 
             var result = Service.RetrieveMultiple(query);
 
-            return result.Entities.FirstOrDefault()?.ToEntity<new_ordersummary>() ?? new new_ordersummary();
+            return result.Entities.FirstOrDefault() ?? new Entity("new_ordersummary");
         }
 
-        private bool IsValid() => Get(e => e.SubmitDate) != null && Get(e => e.AccountId) != null;
+        private bool IsValid() => Get<DateTime?>("submitdate") != null && Get<EntityReference>("accountid") != null;
 
         private OptionSetValue GetCustomerTypeCode()
         {
-            var columnSet = new ColumnSet<Account>(e => e.CustomerTypeCode);
-            return GetRelated(e => e.AccountId, columnSet)?.Entity.Get(e => e.CustomerTypeCode);
+            var columnSet = new ColumnSet("customertypecode");
+            return GetRelated("accountid", columnSet)?.Entity.Get<OptionSetValue>("customertypecode");
         }
 
         private Summary GetSummary(OptionSetValue customerTypeCode)
@@ -74,12 +72,12 @@ namespace EarlyBound.Example.Plugins.Business
                 .Aggregate(new Summary(0, 0), (summary, group) =>
                 {
                     var totalQuantity = group.Sum(so =>
-                        so.GetAliasedEntity<SalesOrderDetail>("od").GetValue(e => e.Quantity));
+                        so.GetAliasedEntity<Entity>("od").Get<int?>("quantity").GetValueOrDefault());
 
                     var salesOrder = group.First();
                     var totalAmount = salesOrder.Id == Id
-                        ? GetValue(e => e.TotalAmount)
-                        : salesOrder.GetValue(e => e.TotalAmount);
+                        ? Get<Money>("totalamount").GetValueOrDefault()
+                        : salesOrder.Get<Money>("totalamount").GetValueOrDefault();
 
                     return new Summary(summary.TotalQuantity + totalQuantity, summary.TotalAmount + totalAmount);
                 });
@@ -87,43 +85,41 @@ namespace EarlyBound.Example.Plugins.Business
 
         private DateRange GetSummaryDateRange()
         {
-            var submitDate = GetValue(e => e.SubmitDate);
+            var submitDate = Get<DateTime?>("submitdate").GetValueOrDefault();
             var from = new DateTime(submitDate.Year, submitDate.Month, 1);
             var lastDay = DateTime.DaysInMonth(submitDate.Year, submitDate.Month);
             var to = new DateTime(submitDate.Year, submitDate.Month, lastDay);
             return new DateRange(from, to);
         }
 
-        private IList<SalesOrder> GetSalesOrderAndDetails(DateRange dateRange, OptionSetValue customerTypeCode)
+        private IList<Entity> GetSalesOrderAndDetails(DateRange dateRange, OptionSetValue customerTypeCode)
         {
-            var query = new QueryExpression(SalesOrder.EntityLogicalName)
+            var query = new QueryExpression("salesorder")
             {
-                ColumnSet = new ColumnSet<SalesOrder>(e => e.Id, e => e.TotalAmount)
+                ColumnSet = new ColumnSet("totalamount")
             };
-            query.Criteria
-                .AddCondition<SalesOrder>(e => e.SubmitDate, ConditionOperator.OnOrAfter, dateRange.From)
-                .AddCondition<SalesOrder>(e => e.SubmitDate, ConditionOperator.OnOrBefore, dateRange.To);
+            query.Criteria.AddCondition("submitdate", ConditionOperator.Between, dateRange.From, dateRange.To);
 
             if (Context.PluginExecutionContext.MessageName == "Delete")
             {
-                query.Criteria.AddCondition<SalesOrder>(e => e.SalesOrderId, ConditionOperator.NotEqual, Wrapper.Id);
+                query.Criteria.AddCondition("salesorderid", ConditionOperator.NotEqual, Wrapper.Id);
             }
 
-            query.AddLink<SalesOrder, Account>(from => from.AccountId, to => to.Id)
-                .SetAlias("ac")
-                .LinkCriteria.AddCondition<Account>(e => e.CustomerTypeCode, ConditionOperator.Equal, customerTypeCode.Value);
+            var accountLink = query.AddLink("account", "accountid", "accountid");
+            accountLink.EntityAlias = "ac";
+            accountLink.LinkCriteria.AddCondition("customertypecode", ConditionOperator.Equal, customerTypeCode.Value);
 
-            query.AddLink<SalesOrder, SalesOrderDetail>(from => from.SalesOrderId, to => to.SalesOrderId)
-                .SetAlias("od")
-                .SetColumns<SalesOrderDetail>(e => e.Quantity);
+            var salesOrderDetailLink = query.AddLink("salesorderdetail", "salesorderid", "salesorderid");
+            salesOrderDetailLink.EntityAlias = "od";
+            salesOrderDetailLink.Columns = new ColumnSet("quantity");
 
             var collection = Service.RetrieveMultiple(query);
-            return collection.Entities.Select(e => e.ToEntity<SalesOrder>()).ToList();
+            return collection.Entities.Select(e => e).ToList();
         }
 
         private string GetOrderSummaryPeriod(OptionSetValue customerTypeCode)
         {
-            var submitDate = GetValue(e => e.SubmitDate).ToString("yyyyMM");
+            var submitDate = Get<DateTime?>("submitdate").GetValueOrDefault().ToString("yyyyMM");
             var customerTypeCodeValue = customerTypeCode.Value.ToString("00");
             return $"{submitDate}{customerTypeCodeValue}";
         }

@@ -21,6 +21,7 @@ namespace LateBound.Example.Plugins
         protected override void ExecuteCrmPlugin(IPluginContext<Entity> context)
         {
             new OnCalculateSummaryTotal(context).Execute();
+            new OnMonthlySummaryTotalPerCustomerType(context).Execute();
         }
     }
 }

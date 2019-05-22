@@ -22,6 +22,7 @@ namespace EarlyBound.Example.Plugins
         protected override void ExecuteCrmPlugin(IPluginContext<Entities.SalesOrder> context)
         {
             new OnCalculateSummaryTotal(context).Execute();
+            new OnMonthlySummaryTotalPerCustomerType(context).Execute();
         }
     }
 }

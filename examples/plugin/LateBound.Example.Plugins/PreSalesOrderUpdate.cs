@@ -24,6 +24,7 @@ namespace LateBound.Example.Plugins
             if (context.Current.ContainsAny("submitdate", "totalamount"))
             {
                 new OnCalculateSummaryTotal(context).Execute();
+                new OnMonthlySummaryTotalPerCustomerType(context).Execute();
             }
         }
     }

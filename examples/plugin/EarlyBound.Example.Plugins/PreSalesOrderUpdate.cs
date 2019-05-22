@@ -25,6 +25,7 @@ namespace EarlyBound.Example.Plugins
             if (context.Current.ContainsAny(e => e.SubmitDate, e => e.TotalAmount))
             {
                 new OnCalculateSummaryTotal(context).Execute();
+                new OnMonthlySummaryTotalPerCustomerType(context).Execute();
             }
         }
     }
