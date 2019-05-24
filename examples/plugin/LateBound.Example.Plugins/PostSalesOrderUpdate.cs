@@ -4,12 +4,13 @@ using Niam.XRM.Framework.Interfaces.Plugin;
 using Niam.XRM.Framework.Interfaces.Plugin.Configurations;
 using Niam.XRM.Framework.Plugin;
 using LateBound.Example.Plugins.Business;
+using Niam.XRM.Framework;
 
 namespace LateBound.Example.Plugins
 {
-    public class PreSalesOrderCreate : PluginBase, IPlugin
+    public class PostSalesOrderUpdate : PluginBase, IPlugin
     {
-        public PreSalesOrderCreate(string unsecure, string secure) : base(unsecure, secure)
+        public PostSalesOrderUpdate(string unsecure, string secure) : base(unsecure, secure)
         {
         }
 
@@ -20,8 +21,11 @@ namespace LateBound.Example.Plugins
 
         protected override void ExecuteCrmPlugin(IPluginContext<Entity> context)
         {
-            new OnCalculateSummaryTotal(context).Execute();
-            new OnMonthlySummaryTotalPerCustomerType(context).Execute();
+            if (context.Current.ContainsAny("submitdate", "totalamount"))
+            {
+                new OnCalculateSummaryTotal(context).Execute();
+                new OnMonthlySummaryTotalPerCustomerType(context).Execute();
+            }
         }
     }
 }

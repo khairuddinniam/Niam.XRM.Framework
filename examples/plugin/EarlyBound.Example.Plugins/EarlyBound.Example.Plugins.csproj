@@ -12,6 +12,10 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
    <PropertyGroup>
     <AssemblyOriginatorKeyFile>..\..\..\asset\open-source.snk</AssemblyOriginatorKeyFile>
     <Description>Fast, easy and lightweight Microsoft Dynamics CRM Plugin Framework that support premise and online edition. One framework to rule them all.</Description>

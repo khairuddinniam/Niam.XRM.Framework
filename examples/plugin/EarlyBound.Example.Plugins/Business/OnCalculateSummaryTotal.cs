@@ -17,6 +17,8 @@ namespace EarlyBound.Example.Plugins.Business
 
         protected override void HandleExecute()
         {
+            if (!IsValid()) return;
+
             var period = GetPeriod();
 
             var orderSummary = GetOrderSummary(period);
@@ -36,6 +38,8 @@ namespace EarlyBound.Example.Plugins.Business
             Service.Update(orderSummary);
         }
 
+        private bool IsValid() => Get(e => e.SubmitDate) != null && Get(e => e.TotalAmount) != null;
+
         private decimal GetTotalAmountCurrent()
         {
             if (Context.PluginExecutionContext.MessageName == "Delete")
@@ -46,7 +50,8 @@ namespace EarlyBound.Example.Plugins.Business
             var totalAmount = (Context.PluginExecutionContext.MessageName == "Update"
                 ? Initial.Get(e => e.TotalAmount).GetValueOrDefault()
                 : 0m);
-            return GetValue(e => e.TotalAmount) - totalAmount;
+            var result = GetValue(e => e.TotalAmount) - totalAmount;
+            return result == 0 ? GetValue(e => e.TotalAmount) : result;
         }
 
         private Entities.new_ordersummary GetOrderSummary(string period)
