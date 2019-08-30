@@ -33,6 +33,8 @@ namespace Niam.XRM.Framework.Plugin.Configurations
         public static void PluginConfigureLogging<T>(IPluginConfiguration<T> config)
             where T : Entity
         {
+            config.ServiceDecorators.Add(ToEntityService.Decorate);
+
             switch (config.LogOption)
             {
                 case PluginLogOption.Crm:

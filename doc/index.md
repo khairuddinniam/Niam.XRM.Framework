@@ -1,10 +1,8 @@
 # Niam.XRM.Framework
-Fast, easy and lightweight Microsoft Dynamics CRM Plugin Framework that support premise and online edition. One framework to rule them all.
+Fast, easy and lightweight Microsoft Dynamics CRM Plugin Framework. Ease developing with TDD (Test Driven Development) method in Dynamic 365 Plugin.
 
 ## Supported Version
 
-- Microsoft Dynamic CRM 2015
-- Microsoft Dynamic CRM 2016
 - Microsoft Dynamic CRM 365
 
 ## Installation

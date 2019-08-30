@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E36662B0-02EB-4F57-B701-8E8CA9ED2815}"
 EndProject
@@ -31,6 +31,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EarlyBound.Example.Plugins", "examples\plugin\EarlyBound.Example.Plugins\EarlyBound.Example.Plugins.csproj", "{AF3C864A-8F1E-4E72-A8BD-A7EE38E8699E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EarlyBound.Example.Plugins.Tests", "examples\plugin\EarlyBound.Example.Plugins.Tests\EarlyBound.Example.Plugins.Tests.csproj", "{818105A4-C15F-4FA1-9236-B649F419CA97}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Insurgo.Plugins", "examples\plugin\Insurgo.Plugins\Insurgo.Plugins.csproj", "{7340ED65-0480-428A-AA04-1BEBE702D64B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -70,6 +72,10 @@ Global
 		{818105A4-C15F-4FA1-9236-B649F419CA97}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{818105A4-C15F-4FA1-9236-B649F419CA97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{818105A4-C15F-4FA1-9236-B649F419CA97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7340ED65-0480-428A-AA04-1BEBE702D64B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7340ED65-0480-428A-AA04-1BEBE702D64B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7340ED65-0480-428A-AA04-1BEBE702D64B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7340ED65-0480-428A-AA04-1BEBE702D64B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,8 +90,12 @@ Global
 		{B0C979BF-B478-4159-82AD-89A7088300B8} = {296FAB6D-E952-4B02-A327-0C3E6BE3D2CF}
 		{AF3C864A-8F1E-4E72-A8BD-A7EE38E8699E} = {A872821C-ADFC-45D5-A0F5-29C21CA8FEC1}
 		{818105A4-C15F-4FA1-9236-B649F419CA97} = {A872821C-ADFC-45D5-A0F5-29C21CA8FEC1}
+		{7340ED65-0480-428A-AA04-1BEBE702D64B} = {A872821C-ADFC-45D5-A0F5-29C21CA8FEC1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4300C909-CBF1-4071-9623-C0F3CD6E11D7}
+	EndGlobalSection
+	GlobalSection(CRMSolutionProperties) = preSolution
+		SolutionIsBoundToCRM = True
 	EndGlobalSection
 EndGlobal

@@ -41,7 +41,8 @@ namespace Niam.XRM.Framework.Tests.Plugin.Configurations
             DefaultConfig.PluginConfigureLogging(pluginConfig);
 
             Assert.Same(tracingService, container.GetService<ITracingService>());
-            Assert.Empty(pluginConfig.ServiceDecorators);
+            var actualDecoratedService = pluginConfig.ServiceDecorators[0].Invoke(Substitute.For<IOrganizationService>(), container);
+            Assert.IsType<ToEntityService>(actualDecoratedService);
         }
 
         [Fact]
@@ -60,7 +61,7 @@ namespace Niam.XRM.Framework.Tests.Plugin.Configurations
 
             Assert.Same(tracingService, container.GetService<ITracingService>());
             Assert.NotEmpty(pluginConfig.ServiceDecorators);
-            var actualDecoratedService = pluginConfig.ServiceDecorators[0].Invoke(Substitute.For<IOrganizationService>(), container);
+            var actualDecoratedService = pluginConfig.ServiceDecorators[1].Invoke(Substitute.For<IOrganizationService>(), container);
             Assert.IsType<LogOrganizationService>(actualDecoratedService);
         }
 
@@ -84,7 +85,7 @@ namespace Niam.XRM.Framework.Tests.Plugin.Configurations
             Assert.NotSame(tracingService, actualTracingService);
             Assert.IsType<FilePluginTracingService>(actualTracingService);
             Assert.NotEmpty(pluginConfig.ServiceDecorators);
-            var actualDecoratedService = pluginConfig.ServiceDecorators[0].Invoke(Substitute.For<IOrganizationService>(), container);
+            var actualDecoratedService = pluginConfig.ServiceDecorators[1].Invoke(Substitute.For<IOrganizationService>(), container);
             Assert.IsType<LogOrganizationService>(actualDecoratedService);
         }
     }

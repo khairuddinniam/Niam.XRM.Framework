@@ -1,14 +1,18 @@
 #Tutorial: Simple Plugin With Niam.Xrm.Framework
 This tutorial covers how you create simple Plugin with Test Driven Development.
 
-This framework works to help you create plugin with ease. Our purpose is create a framework that wrap Dynamic CRM technology without creating a big gap on it. So our function is proven to be inline with Dynamic CRM api.
+This framework works to help you create plugin with ease. Our purpose is create a framework that wrap Dynamic CRM technology without creating a big gap on it. So our function is proven to be inline with Dynamic CRM Api.
 
 The tutorial will split into 2 types:
 *Late Bound
 *Early Bound
 
 ##What You Will Learn
-In this tutorial, we will create a simple scenario. We have Sales Order and Sales Order Line Entities. When on create, update or delete Sales Order Line, the plugin will do calculation for update to sum the value of the Sales Order Lines into Sales Order Total Price. Also there is event when on Create or Update, we want to give base price, do calculation for total price, and name for our Sales Order Line based on product that user choose.
+In this tutorial, we will show you how to making plugins using the framework. We try our best to give common scenario that you mostly will use in real life. With this sample, we hope you can get to know our framework and use it in your environment.
+
+###Plugin Anatomy
+*Plugin: a class that inherit BasePlugin and IPlugin.
+*Business/Operation: a class that inherit OperationBase class. This class represent business logic.
 
 ##Late Bound Plugin
 

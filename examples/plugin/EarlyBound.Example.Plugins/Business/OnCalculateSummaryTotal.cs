@@ -50,8 +50,7 @@ namespace EarlyBound.Example.Plugins.Business
             var totalAmount = (Context.PluginExecutionContext.MessageName == "Update"
                 ? Initial.Get(e => e.TotalAmount).GetValueOrDefault()
                 : 0m);
-            var result = GetValue(e => e.TotalAmount) - totalAmount;
-            return result == 0 ? GetValue(e => e.TotalAmount) : result;
+            return totalAmount;
         }
 
         private Entities.new_ordersummary GetOrderSummary(string period)
