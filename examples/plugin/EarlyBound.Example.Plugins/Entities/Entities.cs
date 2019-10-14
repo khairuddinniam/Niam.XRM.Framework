@@ -3,7 +3,7 @@ using Microsoft.Xrm.Sdk;
 
 namespace Entities
 {
-    [System.Runtime.Serialization.DataContractAttribute]
+    [System.Runtime.Serialization.DataContract]
     public abstract class EntityBase : Entity
     {
         protected EntityBase(string entityName) : base(entityName)
@@ -26,7 +26,7 @@ namespace Entities
         public int? UTCConversionTimeZoneCode = null;
     }
 
-	[System.Runtime.Serialization.DataContractAttribute]
+	[System.Runtime.Serialization.DataContract]
     public abstract class UserOrTeamEntity : EntityBase
     {
         protected UserOrTeamEntity(string entityName) : base(entityName)
@@ -39,7 +39,7 @@ namespace Entities
         public EntityReference OwnerId = null;
     }
 
-    [System.Runtime.Serialization.DataContractAttribute]
+    [System.Runtime.Serialization.DataContract]
     public abstract class OrganizationEntity : EntityBase
     {
         protected OrganizationEntity(string entityName) : base(entityName)
@@ -47,8 +47,8 @@ namespace Entities
         }
     }
 
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_playbookcategory")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_playbookcategory")]
 	public class msdyn_playbookcategory : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_playbookcategory";
@@ -66,7 +66,7 @@ namespace Entities
                 this["msdyn_playbookcategoryid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_Description = null;
@@ -88,8 +88,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("topichistory")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("topichistory")]
 	public class TopicHistory : Entity
     {
         public const string EntityLogicalName = "topichistory";
@@ -123,15 +123,15 @@ namespace Entities
 		public readonly int? ImportSequenceNumber = null;
 		
 		public readonly Guid? TopicHistoryId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? UTCConversionTimeZoneCode = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_invoicefrequencydetail")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_invoicefrequencydetail")]
 	public class msdyn_invoicefrequencydetail : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_invoicefrequencydetail";
@@ -155,7 +155,7 @@ namespace Entities
 		public readonly OptionSetValue msdyn_dayofmonth = null;
 		
 		public readonly OptionSetValue msdyn_occurrenceofweekday = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_invoicefrequencydetailId = null;
@@ -231,8 +231,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("channelpropertygroup")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("channelpropertygroup")]
 	public class ChannelPropertyGroup : Entity
     {
         public const string EntityLogicalName = "channelpropertygroup";
@@ -252,7 +252,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference ModifiedOnBehalfBy = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue statecode = null;
 		
 		public readonly string Description = null;
@@ -260,7 +260,7 @@ namespace Entities
 		public readonly Guid? SupportingSolutionId = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly Guid? ChannelPropertyGroupIdUnique = null;
@@ -330,8 +330,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("bulkdeleteoperation")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("bulkdeleteoperation")]
 	public class BulkDeleteOperation : Entity
     {
         public const string EntityLogicalName = "bulkdeleteoperation";
@@ -357,7 +357,7 @@ namespace Entities
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly Guid? BulkDeleteOperationId = null;
@@ -419,8 +419,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_orderpricelist")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_orderpricelist")]
 	public class msdyn_orderpricelist : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_orderpricelist";
@@ -442,7 +442,7 @@ namespace Entities
 		public readonly EntityReference msdyn_Contract = null;
 		
 		public readonly EntityReference msdyn_PriceList = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly Guid? msdyn_orderpricelistId = null;
@@ -462,8 +462,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("discounttype")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("discounttype")]
 	public class DiscountType : Entity
     {
         public const string EntityLogicalName = "discounttype";
@@ -483,7 +483,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference ModifiedOnBehalfBy = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly string Description = null;
@@ -491,7 +491,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? ImportSequenceNumber = null;
@@ -535,8 +535,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("connectionrole")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("connectionrole")]
 	public class ConnectionRole : Entity
     {
         public const string EntityLogicalName = "connectionrole";
@@ -564,7 +564,7 @@ namespace Entities
 		public readonly Guid? SupportingSolutionId = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly bool? IsCustomizable = null;
@@ -590,7 +590,7 @@ namespace Entities
 		public readonly Guid? SolutionId = null;
 		
 		public readonly DateTime? ModifiedOn = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly OptionSetValue StatusCode = null;
@@ -634,8 +634,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("userqueryvisualization")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("userqueryvisualization")]
 	public class UserQueryVisualization : Entity
     {
         public const string EntityLogicalName = "userqueryvisualization";
@@ -663,7 +663,7 @@ namespace Entities
 		public readonly string Description = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly string PresentationDescription = null;
@@ -704,8 +704,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("importfile")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("importfile")]
 	public class ImportFile : Entity
     {
         public const string EntityLogicalName = "importfile";
@@ -751,7 +751,7 @@ namespace Entities
 		public readonly OptionSetValue StatusCode = null;
 		
 		public readonly EntityReference OwningTeam = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly string HeaderRow = null;
@@ -807,7 +807,7 @@ namespace Entities
 		public readonly EntityReference OwningBusinessUnit = null;
 		
 		public readonly Guid? EntityKeyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly string Content = null;
@@ -881,8 +881,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("processsession")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("processsession")]
 	public class ProcessSession : Entity
     {
         public const string EntityLogicalName = "processsession";
@@ -930,7 +930,7 @@ namespace Entities
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly string Comments = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly string StepName = null;
@@ -990,8 +990,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_expense")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_expense")]
 	public class msdyn_expense : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_expense";
@@ -1043,7 +1043,7 @@ namespace Entities
 		public readonly Guid? msdyn_expenseId = null;
 		
 		public readonly Guid? processid = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? stageid = null;
@@ -1103,8 +1103,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("documenttemplate")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("documenttemplate")]
 	public class DocumentTemplate : Entity
     {
         public const string EntityLogicalName = "documenttemplate";
@@ -1132,7 +1132,7 @@ namespace Entities
 		public readonly DateTime? CreatedOn = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? VersionNumber = null;
@@ -1171,8 +1171,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_integrationjob")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_integrationjob")]
 	public class msdyn_integrationjob : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_integrationjob";
@@ -1190,7 +1190,7 @@ namespace Entities
                 this["msdyn_integrationjobid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly OptionSetValue msdyn_Status = null;
@@ -1235,8 +1235,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_paymentmethod")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_paymentmethod")]
 	public class msdyn_paymentmethod : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_paymentmethod";
@@ -1254,7 +1254,7 @@ namespace Entities
                 this["msdyn_paymentmethodid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_paymentmethodId = null;
@@ -1283,8 +1283,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("roletemplateprivileges")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("roletemplateprivileges")]
 	public class RoleTemplatePrivileges : Entity
     {
         public const string EntityLogicalName = "roletemplateprivileges";
@@ -1321,8 +1321,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_projectparameterpricelist")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_projectparameterpricelist")]
 	public class msdyn_projectparameterpricelist : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_projectparameterpricelist";
@@ -1344,7 +1344,7 @@ namespace Entities
 		public readonly EntityReference msdyn_ProjectParameter = null;
 		
 		public readonly EntityReference msdyn_PriceList = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly EntityReference OrganizationId = null;
@@ -1366,8 +1366,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("privilege")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("privilege")]
 	public class Privilege : Entity
     {
         public const string EntityLogicalName = "privilege";
@@ -1417,7 +1417,7 @@ namespace Entities
 		public readonly DateTime? OverwriteTime = null;
 		
 		public readonly bool? CanBeParentEntityReference = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly bool? IsManaged = null;
@@ -1434,8 +1434,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_bpf_2c5fe86acc8b414b8322ae571000c799")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_bpf_2c5fe86acc8b414b8322ae571000c799")]
 	public class msdyn_bpf_2c5fe86acc8b414b8322ae571000c799 : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_bpf_2c5fe86acc8b414b8322ae571000c799";
@@ -1469,7 +1469,7 @@ namespace Entities
 		public readonly EntityReference OrganizationId = null;
 		
 		public readonly DateTime? CompletedOn = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string bpf_name = null;
 		
 		public readonly DateTime? ActiveStageStartedOn = null;
@@ -1494,8 +1494,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("multiselectattributeoptionvalues")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("multiselectattributeoptionvalues")]
 	public class MultiSelectAttributeOptionValues : Entity
     {
         public const string EntityLogicalName = "multiselectattributeoptionvalues";
@@ -1524,8 +1524,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_bpf_d8f9dc7f099f44db9d641dd81fbd470d")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_bpf_d8f9dc7f099f44db9d641dd81fbd470d")]
 	public class msdyn_bpf_d8f9dc7f099f44db9d641dd81fbd470d : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_bpf_d8f9dc7f099f44db9d641dd81fbd470d";
@@ -1559,7 +1559,7 @@ namespace Entities
 		public readonly EntityReference OrganizationId = null;
 		
 		public readonly DateTime? CompletedOn = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string bpf_name = null;
 		
 		public readonly DateTime? ActiveStageStartedOn = null;
@@ -1580,8 +1580,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("rollupjob")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("rollupjob")]
 	public class RollupJob : Entity
     {
         public const string EntityLogicalName = "rollupjob";
@@ -1643,8 +1643,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("appmodulemetadatadependency")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("appmodulemetadatadependency")]
 	public class AppModuleMetadataDependency : Entity
     {
         public const string EntityLogicalName = "appmodulemetadatadependency";
@@ -1685,8 +1685,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_opportunitylinetransactioncategory")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_opportunitylinetransactioncategory")]
 	public class msdyn_opportunitylinetransactioncategory : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_opportunitylinetransactioncategory";
@@ -1706,7 +1706,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference msdyn_OpportunityLineTransactionClassification = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly EntityReference msdyn_TransactionCategory = null;
@@ -1737,8 +1737,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("template")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("template")]
 	public class Template : Entity
     {
         public const string EntityLogicalName = "template";
@@ -1808,7 +1808,7 @@ namespace Entities
 		public readonly Guid? SolutionId = null;
 		
 		public readonly DateTime? ModifiedOn = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Title = null;
 		
 		public readonly int? ReplyRate = null;
@@ -1861,8 +1861,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("fileattachment")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("fileattachment")]
 	public class FileAttachment : Entity
     {
         public const string EntityLogicalName = "fileattachment";
@@ -1902,7 +1902,7 @@ namespace Entities
 		public readonly Guid? FileAttachmentId = null;
 		
 		public readonly string MimeType = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string FileName = null;
 
         public new static class Options
@@ -1914,8 +1914,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_contactpricelist")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_contactpricelist")]
 	public class msdyn_contactpricelist : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_contactpricelist";
@@ -1937,7 +1937,7 @@ namespace Entities
 		public readonly Guid? msdyn_contactpricelistId = null;
 		
 		public readonly EntityReference msdyn_PriceList = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly EntityReference msdyn_Contact = null;
@@ -1957,8 +1957,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("new_child")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("new_child")]
 	public class new_child : OrganizationEntity
     {
         public const string EntityLogicalName = "new_child";
@@ -1976,7 +1976,7 @@ namespace Entities
                 this["new_childid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string new_number = null;
 		
 		public readonly Guid? new_childId = null;
@@ -2004,8 +2004,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("opportunitycompetitors")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("opportunitycompetitors")]
 	public class OpportunityCompetitors : Entity
     {
         public const string EntityLogicalName = "opportunitycompetitors";
@@ -2035,7 +2035,7 @@ namespace Entities
 		public readonly Guid? OpportunityCompetitorId = null;
 		
 		public readonly int? ImportSequenceNumber = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly Guid? OpportunityId = null;
@@ -2044,8 +2044,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("subscriptionmanuallytrackedobject")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("subscriptionmanuallytrackedobject")]
 	public class SubscriptionManuallyTrackedObject : Entity
     {
         public const string EntityLogicalName = "subscriptionmanuallytrackedobject";
@@ -2086,8 +2086,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_transactionorigin")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_transactionorigin")]
 	public class msdyn_transactionorigin : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_transactionorigin";
@@ -2109,7 +2109,7 @@ namespace Entities
 		public readonly string msdyn_Origin = null;
 		
 		public readonly string msdyn_TransactionType = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_OriginType = null;
@@ -2133,8 +2133,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdynsm_servicessitemap")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdynsm_servicessitemap")]
 	public class msdynsm_servicessitemap : OrganizationEntity
     {
         public const string EntityLogicalName = "msdynsm_servicessitemap";
@@ -2154,7 +2154,7 @@ namespace Entities
         }
 		
 		public readonly Guid? msdynsm_servicessitemapId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdynsm_name = null;
 		
 		public readonly EntityReference OrganizationId = null;
@@ -2174,8 +2174,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("importlog")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("importlog")]
 	public class ImportLog : Entity
     {
         public const string EntityLogicalName = "importlog";
@@ -2199,7 +2199,7 @@ namespace Entities
 		public readonly EntityReference OwningTeam = null;
 		
 		public readonly string AdditionalInfo = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly Guid? ImportLogId = null;
@@ -2260,8 +2260,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_fieldservicepricelistitem")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_fieldservicepricelistitem")]
 	public class msdyn_fieldservicepricelistitem : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_fieldservicepricelistitem";
@@ -2289,7 +2289,7 @@ namespace Entities
 		public readonly EntityReference TransactionCurrencyId = null;
 		
 		public readonly int? msdyn_MinimumChargeDuration = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_fieldservicepricelistitemId = null;
@@ -2328,8 +2328,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("entitlementcontacts")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("entitlementcontacts")]
 	public class EntitlementContacts : Entity
     {
         public const string EntityLogicalName = "entitlementcontacts";
@@ -2361,15 +2361,15 @@ namespace Entities
 		public readonly Guid? ContactId = null;
 		
 		public readonly int? ImportSequenceNumber = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? UTCConversionTimeZoneCode = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("externalpartyitem")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("externalpartyitem")]
 	public class ExternalPartyItem : Entity
     {
         public const string EntityLogicalName = "externalpartyitem";
@@ -2403,7 +2403,7 @@ namespace Entities
 		public readonly EntityReference TransactionCurrencyId = null;
 		
 		public readonly EntityReference RegardingObjectId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly EntityReference OwningUser = null;
@@ -2451,8 +2451,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("resource")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("resource")]
 	public class Resource : Entity
     {
         public const string EntityLogicalName = "resource";
@@ -2498,7 +2498,7 @@ namespace Entities
 		public readonly Guid? ResourceId = null;
 		
 		public readonly EntityReference BusinessUnitId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 
         public new static class Options
@@ -2510,8 +2510,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_projecttask")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_projecttask")]
 	public class msdyn_projecttask : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_projecttask";
@@ -2565,7 +2565,7 @@ namespace Entities
 		public readonly bool? msdyn_skipupdateestimateline = null;
 		
 		public readonly string msdyn_WBSID = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_subject = null;
 		
 		public readonly Money msdyn_RemainingSales = null;
@@ -2681,8 +2681,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("bookableresourcegroup")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("bookableresourcegroup")]
 	public class BookableResourceGroup : Entity
     {
         public const string EntityLogicalName = "bookableresourcegroup";
@@ -2704,13 +2704,13 @@ namespace Entities
 		public readonly EntityReference ChildResource = null;
 		
 		public readonly EntityReference OwningUser = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly EntityReference ParentResource = null;
@@ -2766,8 +2766,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("competitor")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("competitor")]
 	public class Competitor : Entity
     {
         public const string EntityLogicalName = "competitor";
@@ -2927,7 +2927,7 @@ namespace Entities
 		public readonly string Opportunities = null;
 		
 		public readonly OptionSetValue Address1_ShippingMethodCode = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly string TickerSymbol = null;
@@ -2967,8 +2967,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("localconfigstore")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("localconfigstore")]
 	public class LocalConfigStore : Entity
     {
         public const string EntityLogicalName = "localconfigstore";
@@ -3001,8 +3001,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_integrationjobdetail")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_integrationjobdetail")]
 	public class msdyn_integrationjobdetail : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_integrationjobdetail";
@@ -3024,7 +3024,7 @@ namespace Entities
 		public readonly EntityReference msdyn_IntegrationJobHeader = null;
 		
 		public readonly int? msdyn_SequenceNumber = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_integrationjobdetailId = null;
@@ -3048,8 +3048,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msfp_questionresponse")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msfp_questionresponse")]
 	public class msfp_questionresponse : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msfp_questionresponse";
@@ -3071,7 +3071,7 @@ namespace Entities
 		public readonly EntityReference msfp_surveyresponseid = null;
 		
 		public readonly string msfp_sourcesurveyidentifier = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msfp_name = null;
 		
 		public readonly EntityReference msfp_questionid = null;
@@ -3105,8 +3105,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("timezonerule")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("timezonerule")]
 	public class TimeZoneRule : Entity
     {
         public const string EntityLogicalName = "timezonerule";
@@ -3152,7 +3152,7 @@ namespace Entities
 		public readonly EntityReference ModifiedBy = null;
 		
 		public readonly EntityReference CreatedBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly int? TimeZoneRuleVersionNumber = null;
 		
 		public readonly int? StandardHour = null;
@@ -3185,8 +3185,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("rollupproperties")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("rollupproperties")]
 	public class RollupProperties : Entity
     {
         public const string EntityLogicalName = "rollupproperties";
@@ -3294,8 +3294,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_requirementresourcepreference")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_requirementresourcepreference")]
 	public class msdyn_requirementresourcepreference : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_requirementresourcepreference";
@@ -3319,7 +3319,7 @@ namespace Entities
 		public readonly EntityReference msdyn_Account = null;
 		
 		public readonly OptionSetValue msdyn_PreferenceType = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly bool? msdyn_Cascade = null;
@@ -3352,8 +3352,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("knowledgearticleincident")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("knowledgearticleincident")]
 	public class KnowledgeArticleIncident : Entity
     {
         public const string EntityLogicalName = "knowledgearticleincident";
@@ -3375,7 +3375,7 @@ namespace Entities
 		public readonly EntityReference OwningUser = null;
 		
 		public readonly EntityReference KnowledgeArticleId = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue statecode = null;
 		
 		public readonly OptionSetValue statuscode = null;
@@ -3441,8 +3441,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_dimension")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_dimension")]
 	public class msdyn_dimension : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_dimension";
@@ -3464,7 +3464,7 @@ namespace Entities
 		public readonly bool? msdyn_ApplicableToSales = null;
 		
 		public readonly Guid? msdyn_dimensionId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly int? msdyn_SalesPriority = null;
@@ -3499,8 +3499,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_forecastrecurrence")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_forecastrecurrence")]
 	public class msdyn_forecastrecurrence : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_forecastrecurrence";
@@ -3526,7 +3526,7 @@ namespace Entities
 		public readonly int? msdyn_recurrenceindex = null;
 		
 		public readonly string msdyn_failureinfo = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_inprogressparticipatingrecordsfetchxml = null;
@@ -3564,8 +3564,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("socialinsightsconfiguration")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("socialinsightsconfiguration")]
 	public class SocialInsightsConfiguration : Entity
     {
         public const string EntityLogicalName = "socialinsightsconfiguration";
@@ -3622,8 +3622,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("leadproduct")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("leadproduct")]
 	public class LeadProduct : Entity
     {
         public const string EntityLogicalName = "leadproduct";
@@ -3655,15 +3655,15 @@ namespace Entities
 		public readonly Guid? ProductId = null;
 		
 		public readonly int? ImportSequenceNumber = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? UTCConversionTimeZoneCode = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("mailboxtrackingfolder")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("mailboxtrackingfolder")]
 	public class MailboxTrackingFolder : Entity
     {
         public const string EntityLogicalName = "mailboxtrackingfolder";
@@ -3720,8 +3720,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_rmaproduct")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_rmaproduct")]
 	public class msdyn_rmaproduct : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_rmaproduct";
@@ -3775,7 +3775,7 @@ namespace Entities
 		public readonly EntityReference msdyn_ReturntoVendor = null;
 		
 		public readonly EntityReference msdyn_Changeownership = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_Description = null;
@@ -3821,8 +3821,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("importdata")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("importdata")]
 	public class ImportData : Entity
     {
         public const string EntityLogicalName = "importdata";
@@ -3842,11 +3842,11 @@ namespace Entities
         }
 		
 		public readonly EntityReference OwningUser = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Data = null;
 		
 		public readonly Guid? ImportDataId = null;
@@ -3897,8 +3897,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("solutioncomponentdefinition")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("solutioncomponentdefinition")]
 	public class SolutionComponentDefinition : Entity
     {
         public const string EntityLogicalName = "solutioncomponentdefinition";
@@ -3929,7 +3929,7 @@ namespace Entities
 		
 		public readonly int? RootComponent = null;
 		
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? SolutionComponentType = null;
@@ -4010,8 +4010,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_analysisresultdetail")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_analysisresultdetail")]
 	public class msdyn_analysisresultdetail : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_analysisresultdetail";
@@ -4035,7 +4035,7 @@ namespace Entities
 		public readonly string msdyn_ResultEntityId = null;
 		
 		public readonly string msdyn_ResultEntityLogicalName = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_ResultEntityPrimaryKey = null;
@@ -4059,8 +4059,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_requirementcharacteristic")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_requirementcharacteristic")]
 	public class msdyn_requirementcharacteristic : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_requirementcharacteristic";
@@ -4080,7 +4080,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference msdyn_ResourceRequirement = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_RatingValue = null;
@@ -4110,8 +4110,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_quotelinetransactionclassification")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_quotelinetransactionclassification")]
 	public class msdyn_quotelinetransactionclassification : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_quotelinetransactionclassification";
@@ -4137,7 +4137,7 @@ namespace Entities
 		public readonly string msdyn_QuoteLine = null;
 		
 		public readonly OptionSetValue msdyn_BillingType = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly EntityReference msdyn_QuoteLineId = null;
@@ -4177,8 +4177,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("recurrencerule")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("recurrencerule")]
 	public class RecurrenceRule : Entity
     {
         public const string EntityLogicalName = "recurrencerule";
@@ -4305,8 +4305,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("entitlementtemplatechannel")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("entitlementtemplatechannel")]
 	public class EntitlementTemplateChannel : Entity
     {
         public const string EntityLogicalName = "entitlementtemplatechannel";
@@ -4330,7 +4330,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? ImportSequenceNumber = null;
@@ -4376,8 +4376,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("sdkmessageresponsefield")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("sdkmessageresponsefield")]
 	public class SdkMessageResponseField : Entity
     {
         public const string EntityLogicalName = "sdkmessageresponsefield";
@@ -4458,8 +4458,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_bookingalert")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_bookingalert")]
 	public class msdyn_bookingalert : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_bookingalert";
@@ -4521,7 +4521,7 @@ namespace Entities
 		public readonly EntityReference SLAId = null;
 		
 		public readonly OptionSetValue StateCode = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Subject = null;
 		
 		public readonly EntityCollection CC = null;
@@ -4647,8 +4647,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_customerassetcategory")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_customerassetcategory")]
 	public class msdyn_customerassetcategory : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_customerassetcategory";
@@ -4668,7 +4668,7 @@ namespace Entities
         }
 		
 		public readonly Guid? msdyn_customerassetcategoryId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 
         public new static class Options
@@ -4686,8 +4686,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("campaignactivity")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("campaignactivity")]
 	public class CampaignActivity : Entity
     {
         public const string EntityLogicalName = "campaignactivity";
@@ -4763,7 +4763,7 @@ namespace Entities
 		public readonly EntityReference SLAId = null;
 		
 		public readonly OptionSetValue StateCode = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Subject = null;
 		
 		public readonly int? ImportSequenceNumber = null;
@@ -4952,8 +4952,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_agreementsubstatus")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_agreementsubstatus")]
 	public class msdyn_agreementsubstatus : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_agreementsubstatus";
@@ -4971,7 +4971,7 @@ namespace Entities
                 this["msdyn_agreementsubstatusid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly bool? msdyn_DefaultSubStatus = null;
@@ -5002,8 +5002,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_incidenttypessetup")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_incidenttypessetup")]
 	public class msdyn_incidenttypessetup : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_incidenttypessetup";
@@ -5021,7 +5021,7 @@ namespace Entities
                 this["msdyn_incidenttypessetupid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly DateTime? msdyn_PostponeGenerationUntil = null;
@@ -5043,8 +5043,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("entitlementtemplate")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("entitlementtemplate")]
 	public class EntitlementTemplate : Entity
     {
         public const string EntityLogicalName = "entitlementtemplate";
@@ -5076,7 +5076,7 @@ namespace Entities
 		public readonly EntityReference TransactionCurrencyId = null;
 		
 		public readonly EntityReference SLAId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? ImportSequenceNumber = null;
@@ -5141,8 +5141,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("systemusermanagermap")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("systemusermanagermap")]
 	public class SystemUserManagerMap : Entity
     {
         public const string EntityLogicalName = "systemusermanagermap";
@@ -5173,8 +5173,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("activityparty")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("activityparty")]
 	public class ActivityParty : Entity
     {
         public const string EntityLogicalName = "activityparty";
@@ -5262,8 +5262,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("productassociation")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("productassociation")]
 	public class ProductAssociation : Entity
     {
         public const string EntityLogicalName = "productassociation";
@@ -5283,7 +5283,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference ModifiedOnBehalfBy = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue statecode = null;
 		
 		public readonly OptionSetValue PropertyCustomizationStatus = null;
@@ -5359,8 +5359,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_resourcerequirement")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_resourcerequirement")]
 	public class msdyn_resourcerequirement : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_resourcerequirement";
@@ -5432,7 +5432,7 @@ namespace Entities
 		public readonly EntityReference msdyn_WorkOrder = null;
 		
 		public readonly DateTime? msdyn_TimeWindowStart = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_requirementgroupcontrolviewid = null;
@@ -5511,8 +5511,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("salesliterature")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("salesliterature")]
 	public class SalesLiterature : Entity
     {
         public const string EntityLogicalName = "salesliterature";
@@ -5544,7 +5544,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly Guid? StageId = null;
@@ -5606,8 +5606,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("theme")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("theme")]
 	public class Theme : Entity
     {
         public const string EntityLogicalName = "theme";
@@ -5635,7 +5635,7 @@ namespace Entities
 		public readonly EntityReference TransactionCurrencyId = null;
 		
 		public readonly string NavBarShelfColor = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly string HoverLinkEffect = null;
@@ -5717,8 +5717,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_bookingrule")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_bookingrule")]
 	public class msdyn_bookingrule : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_bookingrule";
@@ -5736,7 +5736,7 @@ namespace Entities
                 this["msdyn_bookingruleid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_WebResource = null;
@@ -5762,8 +5762,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdynsm_marketingsitemap")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdynsm_marketingsitemap")]
 	public class msdynsm_marketingsitemap : OrganizationEntity
     {
         public const string EntityLogicalName = "msdynsm_marketingsitemap";
@@ -5781,7 +5781,7 @@ namespace Entities
                 this["msdynsm_marketingsitemapid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdynsm_name = null;
 		
 		public readonly EntityReference OrganizationId = null;
@@ -5803,8 +5803,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("incident")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("incident")]
 	public class Incident : Entity
     {
         public const string EntityLogicalName = "incident";
@@ -5946,7 +5946,7 @@ namespace Entities
 		public readonly EntityReference OwnerId = null;
 		
 		public readonly EntityReference FirstResponseByKPIId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Title = null;
 		
 		public readonly bool? Merged = null;
@@ -5962,7 +5962,7 @@ namespace Entities
 		public readonly bool? IsDecrementing = null;
 		
 		public readonly OptionSetValue CustomerSatisfactionCode = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly EntityReference CreatedBy = null;
@@ -6092,8 +6092,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("transactioncurrency")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("transactioncurrency")]
 	public class TransactionCurrency : Entity
     {
         public const string EntityLogicalName = "transactioncurrency";
@@ -6117,7 +6117,7 @@ namespace Entities
 		public readonly string CurrencySymbol = null;
 		
 		public readonly DateTime? ModifiedOn = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
@@ -6147,7 +6147,7 @@ namespace Entities
 		public readonly OptionSetValue StatusCode = null;
 		
 		public readonly DateTime? CreatedOn = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string CurrencyName = null;
 		
 		public readonly DateTime? OverriddenCreatedOn = null;
@@ -6167,8 +6167,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("slakpiinstance")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("slakpiinstance")]
 	public class SLAKPIInstance : Entity
     {
         public const string EntityLogicalName = "slakpiinstance";
@@ -6196,7 +6196,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly OptionSetValue WarningTimeReached = null;
@@ -6254,8 +6254,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("sharepointdocumentlocation")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("sharepointdocumentlocation")]
 	public class SharePointDocumentLocation : Entity
     {
         public const string EntityLogicalName = "sharepointdocumentlocation";
@@ -6275,7 +6275,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference ModifiedOnBehalfBy = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly string Description = null;
@@ -6287,7 +6287,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference RegardingObjectId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly EntityReference OwningTeam = null;
@@ -6361,8 +6361,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_transactiontype")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_transactiontype")]
 	public class msdyn_transactiontype : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_transactiontype";
@@ -6388,7 +6388,7 @@ namespace Entities
 		public readonly OptionSetValue msdyn_TransactionTypeCode = null;
 		
 		public readonly Guid? msdyn_transactiontypeId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference OrganizationId = null;
@@ -6430,8 +6430,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("monthlyfiscalcalendar")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("monthlyfiscalcalendar")]
 	public class MonthlyFiscalCalendar : Entity
     {
         public const string EntityLogicalName = "monthlyfiscalcalendar";
@@ -6530,8 +6530,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_bookingalertstatus")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_bookingalertstatus")]
 	public class msdyn_bookingalertstatus : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_bookingalertstatus";
@@ -6551,7 +6551,7 @@ namespace Entities
         }
 		
 		public readonly DateTime? msdyn_NextTimeToShow = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_bookingalertstatusId = null;
@@ -6582,8 +6582,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("plugintype")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("plugintype")]
 	public class PluginType : Entity
     {
         public const string EntityLogicalName = "plugintype";
@@ -6611,7 +6611,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly string FriendlyName = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly string Culture = null;
@@ -6674,8 +6674,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("sitemap")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("sitemap")]
 	public class SiteMap : Entity
     {
         public const string EntityLogicalName = "sitemap";
@@ -6746,8 +6746,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("webwizard")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("webwizard")]
 	public class WebWizard : Entity
     {
         public const string EntityLogicalName = "webwizard";
@@ -6773,7 +6773,7 @@ namespace Entities
 		public readonly Guid? SupportingSolutionId = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly OptionSetValue ComponentState = null;
@@ -6824,8 +6824,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("new_ordersummary")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("new_ordersummary")]
 	public class new_ordersummary : UserOrTeamEntity
     {
         public const string EntityLogicalName = "new_ordersummary";
@@ -6851,7 +6851,7 @@ namespace Entities
 		public readonly EntityReference TransactionCurrencyId = null;
 		
 		public readonly int? new_qty = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string new_period = null;
 		
 		public readonly decimal? ExchangeRate = null;
@@ -6873,8 +6873,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("transformationmapping")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("transformationmapping")]
 	public class TransformationMapping : Entity
     {
         public const string EntityLogicalName = "transformationmapping";
@@ -6896,7 +6896,7 @@ namespace Entities
 		public readonly EntityReference ModifiedOnBehalfBy = null;
 		
 		public readonly string IntroducedVersion = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly Guid? SupportingSolutionId = null;
@@ -6961,8 +6961,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_expensereceipt")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_expensereceipt")]
 	public class msdyn_expensereceipt : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_expensereceipt";
@@ -6982,7 +6982,7 @@ namespace Entities
         }
 		
 		public readonly Guid? msdyn_expensereceiptId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly EntityReference msdyn_ExpenseId = null;
@@ -7002,8 +7002,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("reportlink")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("reportlink")]
 	public class ReportLink : Entity
     {
         public const string EntityLogicalName = "reportlink";
@@ -7067,8 +7067,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("contactquotes")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("contactquotes")]
 	public class ContactQuotes : Entity
     {
         public const string EntityLogicalName = "contactquotes";
@@ -7100,15 +7100,15 @@ namespace Entities
 		public readonly int? ImportSequenceNumber = null;
 		
 		public readonly Guid? ContactQuoteId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? UTCConversionTimeZoneCode = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("notification")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("notification")]
 	public class Notification : Entity
     {
         public const string EntityLogicalName = "notification";
@@ -7143,8 +7143,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("appmodulecomponent")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("appmodulecomponent")]
 	public class AppModuleComponent : Entity
     {
         public const string EntityLogicalName = "appmodulecomponent";
@@ -7226,8 +7226,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("entitydatasource")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("entitydatasource")]
 	public class EntityDataSource : Entity
     {
         public const string EntityLogicalName = "entitydatasource";
@@ -7273,7 +7273,7 @@ namespace Entities
 		public readonly string Description = null;
 		
 		public readonly EntityReference EntityDataProviderId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly bool? IsManaged = null;
@@ -7290,8 +7290,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("appointment")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("appointment")]
 	public class Appointment : Entity
     {
         public const string EntityLogicalName = "appointment";
@@ -7433,7 +7433,7 @@ namespace Entities
 		public readonly int? OutlookOwnerApptId = null;
 		
 		public readonly int? ActualDurationMinutes = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Subject = null;
 
         public new static class Options
@@ -7498,8 +7498,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_inventorytransfer")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_inventorytransfer")]
 	public class msdyn_inventorytransfer : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_inventorytransfer";
@@ -7519,7 +7519,7 @@ namespace Entities
         }
 		
 		public readonly string msdyn_AutoNumbering = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_inventorytransferId = null;
@@ -7549,8 +7549,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("ribbontabtocommandmap")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("ribbontabtocommandmap")]
 	public class RibbonTabToCommandMap : Entity
     {
         public const string EntityLogicalName = "ribbontabtocommandmap";
@@ -7609,8 +7609,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("suggestioncardtemplate")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("suggestioncardtemplate")]
 	public class SuggestionCardTemplate : Entity
     {
         public const string EntityLogicalName = "suggestioncardtemplate";
@@ -7652,15 +7652,15 @@ namespace Entities
 		public readonly DateTime? ModifiedOn = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string name = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_geofenceevent")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_geofenceevent")]
 	public class msdyn_geofenceevent : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_geofenceevent";
@@ -7678,7 +7678,7 @@ namespace Entities
                 this["msdyn_geofenceeventid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_Geofence = null;
@@ -7711,8 +7711,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("ratingvalue")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("ratingvalue")]
 	public class RatingValue : Entity
     {
         public const string EntityLogicalName = "ratingvalue";
@@ -7732,13 +7732,13 @@ namespace Entities
         }
 		
 		public readonly EntityReference OwningUser = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? ImportSequenceNumber = null;
@@ -7795,8 +7795,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("sharepointdocument")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("sharepointdocument")]
 	public class SharePointDocument : Entity
     {
         public const string EntityLogicalName = "sharepointdocument";
@@ -7880,7 +7880,7 @@ namespace Entities
 		public readonly EntityReference OwnerId = null;
 		
 		public readonly string AppCreatedBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string FullName = null;
 		
 		public readonly string CheckedOutTo = null;
@@ -7928,8 +7928,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_quotebookingservicetask")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_quotebookingservicetask")]
 	public class msdyn_quotebookingservicetask : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_quotebookingservicetask";
@@ -7951,7 +7951,7 @@ namespace Entities
 		public readonly EntityReference msdyn_customerasset = null;
 		
 		public readonly int? msdyn_estimatedduration = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_quote = null;
@@ -7987,8 +7987,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("quarterlyfiscalcalendar")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("quarterlyfiscalcalendar")]
 	public class QuarterlyFiscalCalendar : Entity
     {
         public const string EntityLogicalName = "quarterlyfiscalcalendar";
@@ -8055,8 +8055,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_mlresultcache")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_mlresultcache")]
 	public class msdyn_mlresultcache : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_mlresultcache";
@@ -8080,7 +8080,7 @@ namespace Entities
 		public readonly int? msdyn_PartNumber = null;
 		
 		public readonly string msdyn_Entitydescription = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly DateTime? msdyn_Expiration = null;
@@ -8106,8 +8106,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("clientupdate")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("clientupdate")]
 	public class ClientUpdate : Entity
     {
         public const string EntityLogicalName = "clientupdate";
@@ -8151,8 +8151,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("plugintracelog")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("plugintracelog")]
 	public class PluginTraceLog : Entity
     {
         public const string EntityLogicalName = "plugintracelog";
@@ -8206,7 +8206,7 @@ namespace Entities
 		public readonly int? PerformanceExecutionDuration = null;
 		
 		public readonly DateTime? CreatedOn = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string TypeName = null;
 		
 		public readonly Guid? RequestId = null;
@@ -8237,8 +8237,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_analysiscomponent")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_analysiscomponent")]
 	public class msdyn_analysiscomponent : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_analysiscomponent";
@@ -8268,7 +8268,7 @@ namespace Entities
 		public readonly int? msdyn_sevmediumcount = null;
 		
 		public readonly EntityReference msdyn_AnalysisJobId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly int? msdyn_RetryCount = null;
@@ -8328,8 +8328,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("userentityinstancedata")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("userentityinstancedata")]
 	public class UserEntityInstanceData : Entity
     {
         public const string EntityLogicalName = "userentityinstancedata";
@@ -8394,8 +8394,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_purchaseorder")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_purchaseorder")]
 	public class msdyn_purchaseorder : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_purchaseorder";
@@ -8455,7 +8455,7 @@ namespace Entities
 		public readonly EntityReference msdyn_WorkOrder = null;
 		
 		public readonly Guid? processid = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Money msdyn_amountbilled_Base = null;
@@ -8527,8 +8527,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_inventoryjournal")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_inventoryjournal")]
 	public class msdyn_inventoryjournal : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_inventoryjournal";
@@ -8558,7 +8558,7 @@ namespace Entities
 		public readonly OptionSetValue msdyn_TransactionType = null;
 		
 		public readonly double? msdyn_Quantity = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_PurchaseOrderProduct = null;
@@ -8612,8 +8612,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_callablecontext")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_callablecontext")]
 	public class msdyn_callablecontext : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_callablecontext";
@@ -8635,7 +8635,7 @@ namespace Entities
 		public readonly OptionSetValue msdyn_EntityOTC = null;
 		
 		public readonly Guid? msdyn_callablecontextId = null;
-		[System.ComponentModel.DataAnnotations.Schema.Column("msdyn_EntityLogicalName")][System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Schema.Column("msdyn_EntityLogicalName")][System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_EntityLogicalName = null;
 
         public new static class Options
@@ -9320,8 +9320,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_fieldservicesystemjob")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_fieldservicesystemjob")]
 	public class msdyn_fieldservicesystemjob : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_fieldservicesystemjob";
@@ -9361,7 +9361,7 @@ namespace Entities
 		public readonly int? msdyn_ConditionCode = null;
 		
 		public readonly EntityReference OrganizationId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_jobname = null;
 		
 		public readonly Guid? msdyn_fieldservicesystemjobId = null;
@@ -9400,8 +9400,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_orderinvoicingsetup")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_orderinvoicingsetup")]
 	public class msdyn_orderinvoicingsetup : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_orderinvoicingsetup";
@@ -9419,7 +9419,7 @@ namespace Entities
                 this["msdyn_orderinvoicingsetupid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_orderinvoicingsetupId = null;
@@ -9451,8 +9451,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("offlinecommanddefinition")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("offlinecommanddefinition")]
 	public class OfflineCommandDefinition : Entity
     {
         public const string EntityLogicalName = "offlinecommanddefinition";
@@ -9474,7 +9474,7 @@ namespace Entities
 		public readonly EntityReference OrganizationId = null;
 		
 		public readonly string CommandDefinition = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string CommandName = null;
 		
 		public readonly string SolutionName = null;
@@ -9503,8 +9503,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("contactorders")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("contactorders")]
 	public class ContactOrders : Entity
     {
         public const string EntityLogicalName = "contactorders";
@@ -9536,15 +9536,15 @@ namespace Entities
 		public readonly Guid? ContactOrderId = null;
 		
 		public readonly int? ImportSequenceNumber = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? UTCConversionTimeZoneCode = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("dependencynode")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("dependencynode")]
 	public class DependencyNode : Entity
     {
         public const string EntityLogicalName = "dependencynode";
@@ -9674,8 +9674,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("resourcespec")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("resourcespec")]
 	public class ResourceSpec : Entity
     {
         public const string EntityLogicalName = "resourcespec";
@@ -9705,7 +9705,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly double? EffortRequired = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly bool? SameSite = null;
@@ -9749,8 +9749,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_projecttaskdependency")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_projecttaskdependency")]
 	public class msdyn_projecttaskdependency : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_projecttaskdependency";
@@ -9772,7 +9772,7 @@ namespace Entities
 		public readonly EntityReference msdyn_SuccessorTask = null;
 		
 		public readonly EntityReference msdyn_PredecessorTask = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly Guid? msdyn_projecttaskdependencyId = null;
@@ -9803,8 +9803,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_msdyn_journal_msdyn_expense")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_msdyn_journal_msdyn_expense")]
 	public class msdyn_msdyn_journal_msdyn_expense : Entity
     {
         public const string EntityLogicalName = "msdyn_msdyn_journal_msdyn_expense";
@@ -9833,8 +9833,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("teamroles")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("teamroles")]
 	public class TeamRoles : Entity
     {
         public const string EntityLogicalName = "teamroles";
@@ -9863,8 +9863,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_paymentterm")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_paymentterm")]
 	public class msdyn_paymentterm : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_paymentterm";
@@ -9884,7 +9884,7 @@ namespace Entities
         }
 		
 		public readonly int? msdyn_Days = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_paymenttermId = null;
@@ -9904,8 +9904,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("postregarding")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("postregarding")]
 	public class PostRegarding : Entity
     {
         public const string EntityLogicalName = "postregarding";
@@ -9940,8 +9940,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("childincidentcount")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("childincidentcount")]
 	public class ChildIncidentCount : Entity
     {
         public const string EntityLogicalName = "childincidentcount";
@@ -9973,15 +9973,15 @@ namespace Entities
 		public readonly int? ImportSequenceNumber = null;
 		
 		public readonly Guid? ChildIncidentCountId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? UTCConversionTimeZoneCode = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("opportunitysalesprocess")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("opportunitysalesprocess")]
 	public class OpportunitySalesProcess : Entity
     {
         public const string EntityLogicalName = "opportunitysalesprocess";
@@ -10003,7 +10003,7 @@ namespace Entities
 		public readonly EntityReference ActiveStageId = null;
 		
 		public readonly EntityReference ModifiedOnBehalfBy = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly EntityReference bpf_quoteid = null;
@@ -10011,7 +10011,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly EntityReference bpf_salesorderid = null;
@@ -10074,8 +10074,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_postalcode")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_postalcode")]
 	public class msdyn_postalcode : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_postalcode";
@@ -10093,7 +10093,7 @@ namespace Entities
                 this["msdyn_postalcodeid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_postalcodeId = null;
@@ -10115,8 +10115,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("transformationparametermapping")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("transformationparametermapping")]
 	public class TransformationParameterMapping : Entity
     {
         public const string EntityLogicalName = "transformationparametermapping";
@@ -10142,7 +10142,7 @@ namespace Entities
 		public readonly Guid? SupportingSolutionId = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Data = null;
 		
 		public readonly OptionSetValue ComponentState = null;
@@ -10197,8 +10197,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("replicationbacklog")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("replicationbacklog")]
 	public class ReplicationBacklog : Entity
     {
         public const string EntityLogicalName = "replicationbacklog";
@@ -10238,8 +10238,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_contractlineinvoiceschedule")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_contractlineinvoiceschedule")]
 	public class msdyn_contractlineinvoiceschedule : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_contractlineinvoiceschedule";
@@ -10261,7 +10261,7 @@ namespace Entities
 		public readonly EntityReference msdyn_Invoice = null;
 		
 		public readonly Guid? msdyn_contractlineinvoicescheduleId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly DateTime? msdyn_transactioncutoffdate = null;
@@ -10299,8 +10299,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("channelaccessprofileentityaccesslevel")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("channelaccessprofileentityaccesslevel")]
 	public class ChannelAccessProfileEntityAccessLevel : Entity
     {
         public const string EntityLogicalName = "channelaccessprofileentityaccesslevel";
@@ -10353,8 +10353,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("category")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("category")]
 	public class Category : Entity
     {
         public const string EntityLogicalName = "category";
@@ -10404,7 +10404,7 @@ namespace Entities
 		public readonly decimal? ExchangeRate = null;
 		
 		public readonly DateTime? ModifiedOn = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Title = null;
 		
 		public readonly DateTime? CreatedOn = null;
@@ -10417,8 +10417,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_agreementbookingdate")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_agreementbookingdate")]
 	public class msdyn_agreementbookingdate : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_agreementbookingdate";
@@ -10436,7 +10436,7 @@ namespace Entities
                 this["msdyn_agreementbookingdateid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_Resource = null;
@@ -10484,8 +10484,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("annotation")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("annotation")]
 	public class Annotation : Entity
     {
         public const string EntityLogicalName = "annotation";
@@ -10521,7 +10521,7 @@ namespace Entities
 		public readonly int? FileSize = null;
 		
 		public readonly int? ImportSequenceNumber = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Subject = null;
 		
 		public readonly EntityReference ModifiedOnBehalfBy = null;
@@ -10605,8 +10605,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_playbookactivityattribute")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_playbookactivityattribute")]
 	public class msdyn_playbookactivityattribute : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_playbookactivityattribute";
@@ -10624,7 +10624,7 @@ namespace Entities
                 this["msdyn_playbookactivityattributeid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.Schema.Column("msdyn_attributeLogicalName")][System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Schema.Column("msdyn_attributeLogicalName")][System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_attributeLogicalName = null;
 		
 		public readonly Guid? msdyn_playbookactivityattributeId = null;
@@ -10658,8 +10658,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("competitorsalesliterature")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("competitorsalesliterature")]
 	public class CompetitorSalesLiterature : Entity
     {
         public const string EntityLogicalName = "competitorsalesliterature";
@@ -10691,15 +10691,15 @@ namespace Entities
 		public readonly Guid? CompetitorSalesLiteratureId = null;
 		
 		public readonly int? ImportSequenceNumber = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? UTCConversionTimeZoneCode = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("reportvisibility")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("reportvisibility")]
 	public class ReportVisibility : Entity
     {
         public const string EntityLogicalName = "reportvisibility";
@@ -10778,8 +10778,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_resourcepaytype")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_resourcepaytype")]
 	public class msdyn_resourcepaytype : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_resourcepaytype";
@@ -10797,7 +10797,7 @@ namespace Entities
                 this["msdyn_resourcepaytypeid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly double? msdyn_HourlyMarkup = null;
@@ -10819,8 +10819,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("fieldsecurityprofile")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("fieldsecurityprofile")]
 	public class FieldSecurityProfile : Entity
     {
         public const string EntityLogicalName = "fieldsecurityprofile";
@@ -10846,7 +10846,7 @@ namespace Entities
 		public readonly Guid? SupportingSolutionId = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly OptionSetValue ComponentState = null;
@@ -10885,8 +10885,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("salesorder")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("salesorder")]
 	public class SalesOrder : Entity
     {
         public const string EntityLogicalName = "salesorder";
@@ -11008,7 +11008,7 @@ namespace Entities
 		public readonly EntityReference OwningUser = null;
 		
 		public readonly Money TotalAmountLessFreight_Base = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly bool? WillCall = null;
@@ -11124,7 +11124,7 @@ namespace Entities
 		public readonly decimal? DiscountPercentage = null;
 		
 		public readonly EntityReference msdyn_Account = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 
         public new static class Options
@@ -11251,8 +11251,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("accountleads")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("accountleads")]
 	public class AccountLeads : Entity
     {
         public const string EntityLogicalName = "accountleads";
@@ -11284,15 +11284,15 @@ namespace Entities
 		public readonly int? ImportSequenceNumber = null;
 		
 		public readonly Guid? AccountLeadId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? UTCConversionTimeZoneCode = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("emailsearch")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("emailsearch")]
 	public class EmailSearch : Entity
     {
         public const string EntityLogicalName = "emailsearch";
@@ -11321,8 +11321,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("principalobjectattributeaccess")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("principalobjectattributeaccess")]
 	public class PrincipalObjectAttributeAccess : Entity
     {
         public const string EntityLogicalName = "principalobjectattributeaccess";
@@ -11359,8 +11359,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_playbooktemplate")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_playbooktemplate")]
 	public class msdyn_playbooktemplate : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_playbooktemplate";
@@ -11384,7 +11384,7 @@ namespace Entities
 		public readonly int? msdyn_EstimatedDuration = null;
 		
 		public readonly EntityReference msdyn_categoryid = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_relatedentitylist = null;
@@ -11410,8 +11410,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("customerrelationship")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("customerrelationship")]
 	public class CustomerRelationship : Entity
     {
         public const string EntityLogicalName = "customerrelationship";
@@ -11476,8 +11476,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("bulkoperation")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("bulkoperation")]
 	public class BulkOperation : Entity
     {
         public const string EntityLogicalName = "bulkoperation";
@@ -11557,7 +11557,7 @@ namespace Entities
 		public readonly EntityReference SLAId = null;
 		
 		public readonly OptionSetValue StateCode = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Subject = null;
 		
 		public readonly int? ImportSequenceNumber = null;
@@ -11739,8 +11739,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_incidenttype_requirementgroup")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_incidenttype_requirementgroup")]
 	public class msdyn_incidenttype_requirementgroup : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_incidenttype_requirementgroup";
@@ -11760,7 +11760,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference msdyn_RequirementGroupId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_IncidenttypeId = null;
@@ -11782,8 +11782,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("sdkmessageprocessingstep")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("sdkmessageprocessingstep")]
 	public class SdkMessageProcessingStep : Entity
     {
         public const string EntityLogicalName = "sdkmessageprocessingstep";
@@ -11819,7 +11819,7 @@ namespace Entities
 		public readonly Guid? SupportingSolutionId = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly string Configuration = null;
@@ -11933,8 +11933,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("subscription")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("subscription")]
 	public class Subscription : Entity
     {
         public const string EntityLogicalName = "subscription";
@@ -11981,8 +11981,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("roletemplate")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("roletemplate")]
 	public class RoleTemplate : Entity
     {
         public const string EntityLogicalName = "roletemplate";
@@ -12000,7 +12000,7 @@ namespace Entities
                 this["roletemplateid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly bool? Upgrading = null;
@@ -12009,8 +12009,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("interactionforemail")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("interactionforemail")]
 	public class InteractionForEmail : Entity
     {
         public const string EntityLogicalName = "interactionforemail";
@@ -12032,7 +12032,7 @@ namespace Entities
 		public readonly EntityReference OwningUser = null;
 		
 		public readonly int? InteractionPartyTypecode = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue statecode = null;
 		
 		public readonly Guid? EmailInteractionReplyId = null;
@@ -12042,7 +12042,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string name = null;
 		
 		public readonly string InteractionReplyId = null;
@@ -12117,8 +12117,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("subscriptionstatisticsoffline")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("subscriptionstatisticsoffline")]
 	public class SubscriptionStatisticsOffline : Entity
     {
         public const string EntityLogicalName = "subscriptionstatisticsoffline";
@@ -12145,8 +12145,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("resourcegroupexpansion")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("resourcegroupexpansion")]
 	public class ResourceGroupExpansion : Entity
     {
         public const string EntityLogicalName = "resourcegroupexpansion";
@@ -12182,7 +12182,7 @@ namespace Entities
 		public readonly DateTime? ModifiedOn = null;
 		
 		public readonly int? ImportSequenceNumber = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? UTCConversionTimeZoneCode = null;
@@ -12204,8 +12204,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("appconfiginstance")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("appconfiginstance")]
 	public class AppConfigInstance : Entity
     {
         public const string EntityLogicalName = "appconfiginstance";
@@ -12284,8 +12284,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("convertruleitem")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("convertruleitem")]
 	public class ConvertRuleItem : Entity
     {
         public const string EntityLogicalName = "convertruleitem";
@@ -12317,7 +12317,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly EntityReference QueueId = null;
@@ -12372,8 +12372,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("topicmodelexecutionhistory")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("topicmodelexecutionhistory")]
 	public class TopicModelExecutionHistory : Entity
     {
         public const string EntityLogicalName = "topicmodelexecutionhistory";
@@ -12399,7 +12399,7 @@ namespace Entities
 		public readonly int? TotalTime = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly OptionSetValue StatusReason = null;
@@ -12468,8 +12468,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("knowledgearticleviews")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("knowledgearticleviews")]
 	public class KnowledgeArticleViews : Entity
     {
         public const string EntityLogicalName = "knowledgearticleviews";
@@ -12521,7 +12521,7 @@ namespace Entities
 		public readonly DateTime? ModifiedOn = null;
 		
 		public readonly decimal? ExchangeRate = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue statecode = null;
 		
 		public readonly OptionSetValue statuscode = null;
@@ -12554,8 +12554,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("businessprocessflowinstance")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("businessprocessflowinstance")]
 	public class BusinessProcessFlowInstance : Entity
     {
         public const string EntityLogicalName = "businessprocessflowinstance";
@@ -12589,7 +12589,7 @@ namespace Entities
 		public readonly string Entity1ObjectTypeCode = null;
 		
 		public readonly Guid? Entity5Id = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly Guid? Entity3Id = null;
@@ -12642,8 +12642,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_opportunitylinetransactionclassificatio")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_opportunitylinetransactionclassificatio")]
 	public class msdyn_opportunitylinetransactionclassificatio : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_opportunitylinetransactionclassificatio";
@@ -12667,7 +12667,7 @@ namespace Entities
 		public readonly bool? msdyn_Include = null;
 		
 		public readonly Guid? msdyn_opportunitylinetransactionclassificatioId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly string msdyn_OpportunityLine = null;
@@ -12707,8 +12707,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("goalrollupquery")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("goalrollupquery")]
 	public class GoalRollupQuery : Entity
     {
         public const string EntityLogicalName = "goalrollupquery";
@@ -12730,13 +12730,13 @@ namespace Entities
 		public readonly EntityReference ModifiedOnBehalfBy = null;
 		
 		public readonly EntityReference OwningTeam = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly EntityReference OwningUser = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? ImportSequenceNumber = null;
@@ -12788,8 +12788,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("pluginassembly")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("pluginassembly")]
 	public class PluginAssembly : Entity
     {
         public const string EntityLogicalName = "pluginassembly";
@@ -12819,7 +12819,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly bool? IsHidden = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly OptionSetValue AuthType = null;
@@ -12909,8 +12909,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("usermapping")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("usermapping")]
 	public class UserMapping : Entity
     {
         public const string EntityLogicalName = "usermapping";
@@ -12971,8 +12971,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_inventoryadjustment")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_inventoryadjustment")]
 	public class msdyn_inventoryadjustment : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_inventoryadjustment";
@@ -12994,7 +12994,7 @@ namespace Entities
 		public readonly EntityReference msdyn_RequestedByResource = null;
 		
 		public readonly string msdyn_AutoNumbering = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly DateTime? msdyn_AdjustmentTime = null;
@@ -13022,8 +13022,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("sdkmessage")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("sdkmessage")]
 	public class SdkMessage : Entity
     {
         public const string EntityLogicalName = "sdkmessage";
@@ -13055,7 +13055,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly bool? WorkflowSdkStepEnabled = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly bool? IsValidForExecuteAsync = null;
@@ -13112,8 +13112,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_organizationalunit")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_organizationalunit")]
 	public class msdyn_organizationalunit : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_organizationalunit";
@@ -13131,7 +13131,7 @@ namespace Entities
                 this["msdyn_organizationalunitid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly double? msdyn_Longitude = null;
@@ -13161,8 +13161,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_opportunitylineresourcecategory")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_opportunitylineresourcecategory")]
 	public class msdyn_opportunitylineresourcecategory : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_opportunitylineresourcecategory";
@@ -13186,7 +13186,7 @@ namespace Entities
 		public readonly EntityReference msdyn_OpportunityLineTransactionClassification = null;
 		
 		public readonly EntityReference msdyn_ResourceCategory = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly OptionSetValue msdyn_BillingType = null;
@@ -13213,8 +13213,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("characteristic")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("characteristic")]
 	public class Characteristic : Entity
     {
         public const string EntityLogicalName = "characteristic";
@@ -13234,7 +13234,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference OwningUser = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly string Description = null;
@@ -13242,7 +13242,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? ImportSequenceNumber = null;
@@ -13301,8 +13301,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_callablecontext_msdyn_playbooktemplate")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_callablecontext_msdyn_playbooktemplate")]
 	public class msdyn_callablecontext_msdyn_playbooktemplate : Entity
     {
         public const string EntityLogicalName = "msdyn_callablecontext_msdyn_playbooktemplate";
@@ -13331,8 +13331,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_msdyn_customerasset_msdyn_3dmodel")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_msdyn_customerasset_msdyn_3dmodel")]
 	public class msdyn_msdyn_customerasset_msdyn_3dmodel : Entity
     {
         public const string EntityLogicalName = "msdyn_msdyn_customerasset_msdyn_3dmodel";
@@ -13361,8 +13361,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_iotdevicecategorycommands")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_iotdevicecategorycommands")]
 	public class msdyn_iotdevicecategorycommands : Entity
     {
         public const string EntityLogicalName = "msdyn_iotdevicecategorycommands";
@@ -13391,8 +13391,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_bookingjournal")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_bookingjournal")]
 	public class msdyn_bookingjournal : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_bookingjournal";
@@ -13418,7 +13418,7 @@ namespace Entities
 		public readonly Guid? msdyn_bookingjournalId = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Money msdyn_AdditionalCost = null;
@@ -13468,8 +13468,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("mobileofflineprofileitem")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("mobileofflineprofileitem")]
 	public class MobileOfflineProfileItem : Entity
     {
         public const string EntityLogicalName = "mobileofflineprofileitem";
@@ -13503,7 +13503,7 @@ namespace Entities
 		public readonly EntityReference RegardingObjectId = null;
 		
 		public readonly string ProfileItemEntityFilter = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly bool? IsValidated = null;
@@ -13626,8 +13626,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_rtv")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_rtv")]
 	public class msdyn_rtv : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_rtv";
@@ -13677,7 +13677,7 @@ namespace Entities
 		public readonly Money msdyn_totalamount_Base = null;
 		
 		public readonly EntityReference msdyn_WorkOrder = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_Address2 = null;
@@ -13733,8 +13733,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_agreementbookingservicetask")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_agreementbookingservicetask")]
 	public class msdyn_agreementbookingservicetask : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_agreementbookingservicetask";
@@ -13756,7 +13756,7 @@ namespace Entities
 		public readonly EntityReference msdyn_CustomerAsset = null;
 		
 		public readonly int? msdyn_EstimatedDuration = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_AgreementBookingSetup = null;
@@ -13792,8 +13792,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_upgradeversion")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_upgradeversion")]
 	public class msdyn_upgradeversion : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_upgradeversion";
@@ -13821,7 +13821,7 @@ namespace Entities
 		public readonly string msdyn_StartingVersion = null;
 		
 		public readonly EntityReference OrganizationId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_summary = null;
 		
 		public readonly string msdyn_TargetVersion = null;
@@ -13849,8 +13849,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_estimateline")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_estimateline")]
 	public class msdyn_estimateline : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_estimateline";
@@ -13928,7 +13928,7 @@ namespace Entities
 		public readonly EntityReference msdyn_ContactVendor = null;
 		
 		public readonly DateTime? msdyn_AccountingDate = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly EntityReference msdyn_PriceList = null;
@@ -14015,8 +14015,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_servicetasktype")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_servicetasktype")]
 	public class msdyn_servicetasktype : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_servicetasktype";
@@ -14036,7 +14036,7 @@ namespace Entities
         }
 		
 		public readonly int? msdyn_EstimatedDuration = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_Description = null;
@@ -14058,8 +14058,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_transactioncategoryhierarchyelement")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_transactioncategoryhierarchyelement")]
 	public class msdyn_transactioncategoryhierarchyelement : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_transactioncategoryhierarchyelement";
@@ -14079,7 +14079,7 @@ namespace Entities
         }
 		
 		public readonly Guid? msdyn_transactioncategoryhierarchyelementId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_ChildCategory = null;
@@ -14103,8 +14103,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_forecastdefinition")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_forecastdefinition")]
 	public class msdyn_forecastdefinition : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_forecastdefinition";
@@ -14140,7 +14140,7 @@ namespace Entities
 		public readonly OptionSetValue msdyn_fiscalmonth = null;
 		
 		public readonly Guid? msdyn_forecastdefinitionId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_forecastdefinitionname = null;
 		
 		public readonly DateTime? msdyn_validto = null;
@@ -14223,8 +14223,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("exchangesyncidmapping")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("exchangesyncidmapping")]
 	public class ExchangeSyncIdMapping : Entity
     {
         public const string EntityLogicalName = "exchangesyncidmapping";
@@ -14287,8 +14287,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_quotebookingsetup")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_quotebookingsetup")]
 	public class msdyn_quotebookingsetup : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_quotebookingsetup";
@@ -14366,7 +14366,7 @@ namespace Entities
 		public readonly EntityReference msdyn_workordertype = null;
 		
 		public readonly Guid? processid = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly OptionSetValue msdyn_WorkLocation = null;
@@ -14426,8 +14426,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("email")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("email")]
 	public class Email : Entity
     {
         public const string EntityLogicalName = "email";
@@ -14585,7 +14585,7 @@ namespace Entities
 		public readonly string InReplyTo = null;
 		
 		public readonly bool? Compressed = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Subject = null;
 		
 		public readonly string ConversationIndex = null;
@@ -14718,8 +14718,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("ribboncontextgroup")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("ribboncontextgroup")]
 	public class RibbonContextGroup : Entity
     {
         public const string EntityLogicalName = "ribboncontextgroup";
@@ -14776,8 +14776,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("lead")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("lead")]
 	public class Lead : Entity
     {
         public const string EntityLogicalName = "lead";
@@ -15091,7 +15091,7 @@ namespace Entities
 		public readonly Guid? LeadId = null;
 		
 		public readonly OptionSetValue Need = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string FullName = null;
 		
 		public readonly OptionSetValue StateCode = null;
@@ -15247,8 +15247,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("kbarticlecomment")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("kbarticlecomment")]
 	public class KbArticleComment : Entity
     {
         public const string EntityLogicalName = "kbarticlecomment";
@@ -15270,7 +15270,7 @@ namespace Entities
 		public readonly EntityReference ModifiedOnBehalfBy = null;
 		
 		public readonly EntityReference CreatedBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Title = null;
 		
 		public readonly int? VersionNumber = null;
@@ -15293,8 +15293,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_salesinsightssettings")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_salesinsightssettings")]
 	public class msdyn_salesinsightssettings : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_salesinsightssettings";
@@ -15312,7 +15312,7 @@ namespace Entities
                 this["msdyn_salesinsightssettingsid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly bool? msdyn_ispreviewenabled = null;
@@ -15334,8 +15334,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_incidenttype")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_incidenttype")]
 	public class msdyn_incidenttype : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_incidenttype";
@@ -15359,7 +15359,7 @@ namespace Entities
 		public readonly int? msdyn_EstimatedDuration = null;
 		
 		public readonly int? msdyn_SuggestedDuration = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_Description = null;
@@ -15385,8 +15385,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("systemuser")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("systemuser")]
 	public class SystemUser : Entity
     {
         public const string EntityLogicalName = "systemuser";
@@ -15658,7 +15658,7 @@ namespace Entities
 		public readonly string Address1_UPSZone = null;
 		
 		public readonly OptionSetValue PreferredAddressCode = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string FullName = null;
 		
 		public readonly string DefaultOdbFolderName = null;
@@ -15755,8 +15755,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("systemuserbusinessunitentitymap")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("systemuserbusinessunitentitymap")]
 	public class SystemUserBusinessUnitEntityMap : Entity
     {
         public const string EntityLogicalName = "systemuserbusinessunitentitymap";
@@ -15796,8 +15796,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_resourcerequirement_bookableresource")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_resourcerequirement_bookableresource")]
 	public class msdyn_resourcerequirement_bookableresource : Entity
     {
         public const string EntityLogicalName = "msdyn_resourcerequirement_bookableresource";
@@ -15826,8 +15826,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_resourcerequest")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_resourcerequest")]
 	public class msdyn_resourcerequest : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_resourcerequest";
@@ -15849,7 +15849,7 @@ namespace Entities
 		public readonly EntityReference msdyn_roleid = null;
 		
 		public readonly EntityReference msdyn_requestedby = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_positiondescription = null;
@@ -15878,8 +15878,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("subscriptiontrackingdeletedobject")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("subscriptiontrackingdeletedobject")]
 	public class SubscriptionTrackingDeletedObject : Entity
     {
         public const string EntityLogicalName = "subscriptiontrackingdeletedobject";
@@ -15910,8 +15910,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("statusmap")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("statusmap")]
 	public class StatusMap : Entity
     {
         public const string EntityLogicalName = "statusmap";
@@ -15953,8 +15953,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_transactionconnection")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_transactionconnection")]
 	public class msdyn_transactionconnection : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_transactionconnection";
@@ -15974,7 +15974,7 @@ namespace Entities
         }
 		
 		public readonly string msdyn_Transaction1Role = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_Transaction2Role = null;
@@ -16004,8 +16004,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_batchjob")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_batchjob")]
 	public class msdyn_batchjob : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_batchjob";
@@ -16027,7 +16027,7 @@ namespace Entities
 		public readonly DateTime? msdyn_lastrundate = null;
 		
 		public readonly OptionSetValue msdyn_JobType = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly bool? msdyn_isactive = null;
@@ -16078,8 +16078,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_iotdevice")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_iotdevice")]
 	public class msdyn_iotdevice : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_iotdevice";
@@ -16109,7 +16109,7 @@ namespace Entities
 		public readonly string msdyn_Tags = null;
 		
 		public readonly DateTime? msdyn_LastActivityTime = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly OptionSetValue msdyn_RegistrationStatus = null;
@@ -16160,8 +16160,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_entitlementapplication")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_entitlementapplication")]
 	public class msdyn_entitlementapplication : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_entitlementapplication";
@@ -16183,7 +16183,7 @@ namespace Entities
 		public readonly EntityReference msdyn_customerasset = null;
 		
 		public readonly EntityReference msdyn_entitlement = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_entitlementapplicationId = null;
@@ -16209,8 +16209,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("userentityuisettings")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("userentityuisettings")]
 	public class UserEntityUISettings : Entity
     {
         public const string EntityLogicalName = "userentityuisettings";
@@ -16261,8 +16261,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("processtrigger")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("processtrigger")]
 	public class ProcessTrigger : Entity
     {
         public const string EntityLogicalName = "processtrigger";
@@ -16367,8 +16367,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("userfiscalcalendar")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("userfiscalcalendar")]
 	public class UserFiscalCalendar : Entity
     {
         public const string EntityLogicalName = "userfiscalcalendar";
@@ -16473,8 +16473,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_solutionhealthruleargument")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_solutionhealthruleargument")]
 	public class msdyn_solutionhealthruleargument : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_solutionhealthruleargument";
@@ -16492,7 +16492,7 @@ namespace Entities
                 this["msdyn_solutionhealthruleargumentid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_SolutionHealthRule = null;
@@ -16518,8 +16518,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("channelaccessprofilerule")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("channelaccessprofilerule")]
 	public class ChannelAccessProfileRule : Entity
     {
         public const string EntityLogicalName = "channelaccessprofilerule";
@@ -16541,7 +16541,7 @@ namespace Entities
 		public readonly EntityReference ModifiedOnBehalfBy = null;
 		
 		public readonly string IntroducedVersion = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":1}")]
+		[System.ComponentModel.Description("{\"a\":1}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly string Description = null;
@@ -16553,7 +16553,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly EntityReference OwningBusinessUnit = null;
@@ -16616,8 +16616,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("incidentknowledgebaserecord")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("incidentknowledgebaserecord")]
 	public class IncidentKnowledgeBaseRecord : Entity
     {
         public const string EntityLogicalName = "incidentknowledgebaserecord";
@@ -16647,7 +16647,7 @@ namespace Entities
 		public readonly int? TimeZoneRuleVersionNumber = null;
 		
 		public readonly int? ImportSequenceNumber = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly Guid? KnowledgeBaseRecordId = null;
@@ -16656,8 +16656,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_quoteinvoicingproduct")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_quoteinvoicingproduct")]
 	public class msdyn_quoteinvoicingproduct : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_quoteinvoicingproduct";
@@ -16681,7 +16681,7 @@ namespace Entities
 		public readonly EntityReference msdyn_QuoteInvoicingSetup = null;
 		
 		public readonly EntityReference msdyn_Unit = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Money msdyn_unitprice_Base = null;
@@ -16719,8 +16719,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("campaignresponse")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("campaignresponse")]
 	public class CampaignResponse : Entity
     {
         public const string EntityLogicalName = "campaignresponse";
@@ -16802,7 +16802,7 @@ namespace Entities
 		public readonly EntityReference SLAId = null;
 		
 		public readonly OptionSetValue StateCode = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Subject = null;
 		
 		public readonly int? ImportSequenceNumber = null;
@@ -16988,8 +16988,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("activitymimeattachment")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("activitymimeattachment")]
 	public class ActivityMimeAttachment : Entity
     {
         public const string EntityLogicalName = "activitymimeattachment";
@@ -17019,7 +17019,7 @@ namespace Entities
 		public readonly string AnonymousLink = null;
 		
 		public readonly Guid? ActivityMimeAttachmentId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string FileName = null;
 		
 		public readonly int? FileSize = null;
@@ -17075,8 +17075,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("subscriptionclients")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("subscriptionclients")]
 	public class SubscriptionClients : Entity
     {
         public const string EntityLogicalName = "subscriptionclients";
@@ -17107,8 +17107,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("annualfiscalcalendar")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("annualfiscalcalendar")]
 	public class AnnualFiscalCalendar : Entity
     {
         public const string EntityLogicalName = "annualfiscalcalendar";
@@ -17163,8 +17163,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("bookableresourcecategory")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("bookableresourcecategory")]
 	public class BookableResourceCategory : Entity
     {
         public const string EntityLogicalName = "bookableresourcecategory";
@@ -17184,7 +17184,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference OwningUser = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly string Description = null;
@@ -17194,7 +17194,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly Guid? BookableResourceCategoryId = null;
@@ -17255,8 +17255,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msfp_surveyinvite")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msfp_surveyinvite")]
 	public class msfp_surveyinvite : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msfp_surveyinvite";
@@ -17326,7 +17326,7 @@ namespace Entities
 		public readonly EntityReference SLAId = null;
 		
 		public readonly OptionSetValue StateCode = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Subject = null;
 		
 		public readonly EntityCollection CC = null;
@@ -17477,8 +17477,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("leadtoopportunitysalesprocess")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("leadtoopportunitysalesprocess")]
 	public class LeadToOpportunitySalesProcess : Entity
     {
         public const string EntityLogicalName = "leadtoopportunitysalesprocess";
@@ -17500,13 +17500,13 @@ namespace Entities
 		public readonly EntityReference ActiveStageId = null;
 		
 		public readonly EntityReference ModifiedOnBehalfBy = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly EntityReference OpportunityId = null;
@@ -17565,8 +17565,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("recommendeddocument")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("recommendeddocument")]
 	public class RecommendedDocument : Entity
     {
         public const string EntityLogicalName = "recommendeddocument";
@@ -17624,7 +17624,7 @@ namespace Entities
 		public readonly string ExternalModifiedBy = null;
 		
 		public readonly DateTime? ModifiedOn = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Title = null;
 		
 		public readonly DateTime? CreatedOn = null;
@@ -17647,8 +17647,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_rolecompetencyrequirement")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_rolecompetencyrequirement")]
 	public class msdyn_rolecompetencyrequirement : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_rolecompetencyrequirement";
@@ -17666,7 +17666,7 @@ namespace Entities
                 this["msdyn_rolecompetencyrequirementid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_ratingvalue = null;
@@ -17699,8 +17699,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("emailsignature")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("emailsignature")]
 	public class EmailSignature : Entity
     {
         public const string EntityLogicalName = "emailsignature";
@@ -17754,7 +17754,7 @@ namespace Entities
 		public readonly string PresentationXml = null;
 		
 		public readonly DateTime? ModifiedOn = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Title = null;
 		
 		public readonly Guid? EmailSignatureId = null;
@@ -17781,8 +17781,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("businessunit")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("businessunit")]
 	public class BusinessUnit : Entity
     {
         public const string EntityLogicalName = "businessunit";
@@ -17932,7 +17932,7 @@ namespace Entities
 		public readonly string DivisionName = null;
 		
 		public readonly string Address1_Telephone3 = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly string Address1_UPSZone = null;
@@ -17974,8 +17974,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("slaitem")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("slaitem")]
 	public class SLAItem : Entity
     {
         public const string EntityLogicalName = "slaitem";
@@ -18064,8 +18064,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_orderinvoicingdate")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_orderinvoicingdate")]
 	public class msdyn_orderinvoicingdate : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_orderinvoicingdate";
@@ -18087,7 +18087,7 @@ namespace Entities
 		public readonly EntityReference msdyn_Invoice = null;
 		
 		public readonly DateTime? msdyn_InvoiceDate = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_Order = null;
@@ -18119,8 +18119,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msfp_question")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msfp_question")]
 	public class msfp_question : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msfp_question";
@@ -18146,7 +18146,7 @@ namespace Entities
 		public readonly string msfp_sourcesurveyidentifier = null;
 		
 		public readonly OptionSetValue msfp_choicetype = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msfp_name = null;
 		
 		public readonly string msfp_sourceparentquestionidentifier = null;
@@ -18209,8 +18209,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_workordercharacteristic")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_workordercharacteristic")]
 	public class msdyn_workordercharacteristic : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_workordercharacteristic";
@@ -18228,7 +18228,7 @@ namespace Entities
                 this["msdyn_workordercharacteristicid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_RatingValue = null;
@@ -18258,8 +18258,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("connection")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("connection")]
 	public class Connection : Entity
     {
         public const string EntityLogicalName = "connection";
@@ -18297,7 +18297,7 @@ namespace Entities
 		public readonly EntityReference TransactionCurrencyId = null;
 		
 		public readonly OptionSetValue Record2ObjectTypeCode = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
@@ -18305,7 +18305,7 @@ namespace Entities
 		public readonly DateTime? EffectiveStart = null;
 		
 		public readonly int? ImportSequenceNumber = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly DateTime? EffectiveEnd = null;
@@ -18589,8 +18589,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_taxcodedetail")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_taxcodedetail")]
 	public class msdyn_taxcodedetail : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_taxcodedetail";
@@ -18608,7 +18608,7 @@ namespace Entities
                 this["msdyn_taxcodedetailid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_taxcodedetailId = null;
@@ -18636,8 +18636,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("sdkmessageresponse")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("sdkmessageresponse")]
 	public class SdkMessageResponse : Entity
     {
         public const string EntityLogicalName = "sdkmessageresponse";
@@ -18704,8 +18704,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("principalattributeaccessmap")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("principalattributeaccessmap")]
 	public class PrincipalAttributeAccessMap : Entity
     {
         public const string EntityLogicalName = "principalattributeaccessmap";
@@ -18758,8 +18758,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("systemuserprofiles")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("systemuserprofiles")]
 	public class SystemUserProfiles : Entity
     {
         public const string EntityLogicalName = "systemuserprofiles";
@@ -18788,8 +18788,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("expanderevent")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("expanderevent")]
 	public class ExpanderEvent : Entity
     {
         public const string EntityLogicalName = "expanderevent";
@@ -18829,15 +18829,15 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly DateTime? ModifiedOn = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly string Registrations = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("campaignactivityitem")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("campaignactivityitem")]
 	public class CampaignActivityItem : Entity
     {
         public const string EntityLogicalName = "campaignactivityitem";
@@ -18879,7 +18879,7 @@ namespace Entities
 		public readonly int? ImportSequenceNumber = null;
 		
 		public readonly EntityReference OwnerId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 
         public new static class Options
@@ -18891,8 +18891,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_processnotes")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_processnotes")]
 	public class msdyn_processnotes : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_processnotes";
@@ -18914,7 +18914,7 @@ namespace Entities
 		public readonly string msdyn_Form = null;
 		
 		public readonly string msdyn_Entity = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_processnotesId = null;
@@ -18942,8 +18942,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("productpricelevel")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("productpricelevel")]
 	public class ProductPriceLevel : Entity
     {
         public const string EntityLogicalName = "productpricelevel";
@@ -19060,8 +19060,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_actioncardrolesetting")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_actioncardrolesetting")]
 	public class msdyn_actioncardrolesetting : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_actioncardrolesetting";
@@ -19083,7 +19083,7 @@ namespace Entities
 		public readonly EntityReference msdyn_Roleid = null;
 		
 		public readonly EntityReference msdyn_cardtypeid = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly bool? msdyn_IsDisabled = null;
@@ -19105,8 +19105,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("appconfig")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("appconfig")]
 	public class AppConfig : Entity
     {
         public const string EntityLogicalName = "appconfig";
@@ -19128,7 +19128,7 @@ namespace Entities
 		public readonly EntityReference ModifiedOnBehalfBy = null;
 		
 		public readonly string IntroducedVersion = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly Guid? AppConfigId = null;
@@ -19191,8 +19191,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("kbarticletemplate")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("kbarticletemplate")]
 	public class KbArticleTemplate : Entity
     {
         public const string EntityLogicalName = "kbarticletemplate";
@@ -19252,7 +19252,7 @@ namespace Entities
 		public readonly Guid? SolutionId = null;
 		
 		public readonly DateTime? ModifiedOn = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Title = null;
 		
 		public readonly DateTime? CreatedOn = null;
@@ -19273,8 +19273,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_timegroup")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_timegroup")]
 	public class msdyn_timegroup : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_timegroup";
@@ -19294,7 +19294,7 @@ namespace Entities
         }
 		
 		public readonly bool? msdyn_ResetPerTimeGroupDetail = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? stageid = null;
@@ -19330,8 +19330,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("routingrule")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("routingrule")]
 	public class RoutingRule : Entity
     {
         public const string EntityLogicalName = "routingrule";
@@ -19351,7 +19351,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference OwningUser = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":1}")]
+		[System.ComponentModel.Description("{\"a\":1}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly string Description = null;
@@ -19363,7 +19363,7 @@ namespace Entities
 		public readonly EntityReference TransactionCurrencyId = null;
 		
 		public readonly Guid? RoutingRuleIdUnique = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly Guid? RoutingRuleId = null;
@@ -19428,8 +19428,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("imagedescriptor")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("imagedescriptor")]
 	public class ImageDescriptor : Entity
     {
         public const string EntityLogicalName = "imagedescriptor";
@@ -19490,8 +19490,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_incidenttypeservicetask")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_incidenttypeservicetask")]
 	public class msdyn_incidenttypeservicetask : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_incidenttypeservicetask";
@@ -19511,7 +19511,7 @@ namespace Entities
         }
 		
 		public readonly int? msdyn_EstimatedDuration = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly int? msdyn_LineOrder = null;
@@ -19539,8 +19539,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("team")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("team")]
 	public class Team : Entity
     {
         public const string EntityLogicalName = "team";
@@ -19574,7 +19574,7 @@ namespace Entities
 		public readonly EntityReference RegardingObjectId = null;
 		
 		public readonly Guid? TeamId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly Guid? AzureActiveDirectoryObjectId = null;
@@ -19629,8 +19629,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("isvconfig")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("isvconfig")]
 	public class IsvConfig : Entity
     {
         public const string EntityLogicalName = "isvconfig";
@@ -19671,8 +19671,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("advancedsimilarityrule")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("advancedsimilarityrule")]
 	public class AdvancedSimilarityRule : Entity
     {
         public const string EntityLogicalName = "advancedsimilarityrule";
@@ -19692,7 +19692,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference ModifiedOnBehalfBy = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly string Description = null;
@@ -19702,7 +19702,7 @@ namespace Entities
 		public readonly Guid? SupportingSolutionId = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string name = null;
 		
 		public readonly bool? IsAzureMLRequired = null;
@@ -19780,8 +19780,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_projectapproval")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_projectapproval")]
 	public class msdyn_projectapproval : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_projectapproval";
@@ -19841,7 +19841,7 @@ namespace Entities
 		public readonly DateTime? msdyn_ApprovedOn = null;
 		
 		public readonly Money msdyn_costprice_Base = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_InternalComments = null;
@@ -19911,8 +19911,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("postcomment")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("postcomment")]
 	public class PostComment : Entity
     {
         public const string EntityLogicalName = "postcomment";
@@ -19938,7 +19938,7 @@ namespace Entities
 		public readonly EntityReference CreatedBy = null;
 		
 		public readonly int? TimeZoneRuleVersionNumber = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Text = null;
 		
 		public readonly Guid? PostCommentId = null;
@@ -19951,8 +19951,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("bookableresourcebooking")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("bookableresourcebooking")]
 	public class BookableResourceBooking : Entity
     {
         public const string EntityLogicalName = "bookableresourcebooking";
@@ -20016,7 +20016,7 @@ namespace Entities
 		public readonly string msdyn_SlotText = null;
 		
 		public readonly double? msdyn_MilesTraveled = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly int? TimeZoneRuleVersionNumber = null;
@@ -20088,7 +20088,7 @@ namespace Entities
 		public readonly OptionSetValue BookingType = null;
 		
 		public readonly Money msdyn_TotalCost = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly EntityReference msdyn_WorkOrder = null;
@@ -20139,8 +20139,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("servicecontractcontacts")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("servicecontractcontacts")]
 	public class ServiceContractContacts : Entity
     {
         public const string EntityLogicalName = "servicecontractcontacts";
@@ -20174,15 +20174,15 @@ namespace Entities
 		public readonly Guid? ContactId = null;
 		
 		public readonly int? ImportSequenceNumber = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? UTCConversionTimeZoneCode = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msfp_survey")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msfp_survey")]
 	public class msfp_survey : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msfp_survey";
@@ -20202,7 +20202,7 @@ namespace Entities
         }
 		
 		public readonly string msfp_sourcesurveyidentifier = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msfp_name = null;
 		
 		public readonly string msfp_description = null;
@@ -20232,8 +20232,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_opportunitypricelist")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_opportunitypricelist")]
 	public class msdyn_opportunitypricelist : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_opportunitypricelist";
@@ -20255,7 +20255,7 @@ namespace Entities
 		public readonly EntityReference msdyn_Opportunity = null;
 		
 		public readonly EntityReference msdyn_PriceList = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly Guid? msdyn_opportunitypricelistId = null;
@@ -20275,8 +20275,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_flowcardtype")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_flowcardtype")]
 	public class msdyn_flowcardtype : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_flowcardtype";
@@ -20304,7 +20304,7 @@ namespace Entities
 		public readonly string msdyn_actionname = null;
 		
 		public readonly string msdyn_actionCommand = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_cardtypeid = null;
@@ -20336,8 +20336,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_journalline")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_journalline")]
 	public class msdyn_journalline : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_journalline";
@@ -20421,7 +20421,7 @@ namespace Entities
 		public readonly EntityReference msdyn_ContactVendor = null;
 		
 		public readonly DateTime? msdyn_AccountingDate = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly EntityReference msdyn_PriceList = null;
@@ -20521,8 +20521,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("integrationstatus")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("integrationstatus")]
 	public class IntegrationStatus : Entity
     {
         public const string EntityLogicalName = "integrationstatus";
@@ -20590,8 +20590,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("timestampdatemapping")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("timestampdatemapping")]
 	public class TimeStampDateMapping : Entity
     {
         public const string EntityLogicalName = "timestampdatemapping";
@@ -20618,8 +20618,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("dynamicpropertyinstance")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("dynamicpropertyinstance")]
 	public class DynamicPropertyInstance : Entity
     {
         public const string EntityLogicalName = "dynamicpropertyinstance";
@@ -20645,7 +20645,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly string ValueString = null;
@@ -20694,8 +20694,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_wallsavedqueryusersettings")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_wallsavedqueryusersettings")]
 	public class msdyn_wallsavedqueryusersettings : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_wallsavedqueryusersettings";
@@ -20723,7 +20723,7 @@ namespace Entities
 		public readonly int? msdyn_sortorder = null;
 		
 		public readonly int? msdyn_default = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_entityname = null;
 		
 		public readonly Guid? msdyn_wallsavedqueryusersettingsId = null;
@@ -20761,8 +20761,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("ribbonrule")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("ribbonrule")]
 	public class RibbonRule : Entity
     {
         public const string EntityLogicalName = "ribbonrule";
@@ -20827,8 +20827,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("callbackregistration")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("callbackregistration")]
 	public class CallbackRegistration : Entity
     {
         public const string EntityLogicalName = "callbackregistration";
@@ -20852,7 +20852,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly OptionSetValue Scope = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly string Url = null;
@@ -20905,8 +20905,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("invaliddependency")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("invaliddependency")]
 	public class InvalidDependency : Entity
     {
         public const string EntityLogicalName = "invaliddependency";
@@ -21131,8 +21131,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("campaignitem")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("campaignitem")]
 	public class CampaignItem : Entity
     {
         public const string EntityLogicalName = "campaignitem";
@@ -21172,15 +21172,15 @@ namespace Entities
 		public readonly DateTime? OverriddenCreatedOn = null;
 		
 		public readonly EntityReference OwnerId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly Guid? CampaignItemId = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("publisher")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("publisher")]
 	public class Publisher : Entity
     {
         public const string EntityLogicalName = "publisher";
@@ -21238,7 +21238,7 @@ namespace Entities
 		public readonly string Address1_Country = null;
 		
 		public readonly string Address1_PostalCode = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string FriendlyName = null;
 		
 		public readonly string Address1_Line3 = null;
@@ -21344,8 +21344,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("competitoraddress")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("competitoraddress")]
 	public class CompetitorAddress : Entity
     {
         public const string EntityLogicalName = "competitoraddress";
@@ -21375,7 +21375,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly Guid? CompetitorAddressId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? ImportSequenceNumber = null;
@@ -21447,8 +21447,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("syncerror")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("syncerror")]
 	public class SyncError : Entity
     {
         public const string EntityLogicalName = "syncerror";
@@ -21468,7 +21468,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference OwningUser = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly string Description = null;
@@ -21478,7 +21478,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference RegardingObjectId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly string Action = null;
@@ -21539,8 +21539,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("customcontrolresource")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("customcontrolresource")]
 	public class CustomControlResource : Entity
     {
         public const string EntityLogicalName = "customcontrolresource";
@@ -21570,7 +21570,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly Guid? CustomControlResourceId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly string VersionRequirement = null;
@@ -21613,8 +21613,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("entitlementproducts")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("entitlementproducts")]
 	public class EntitlementProducts : Entity
     {
         public const string EntityLogicalName = "entitlementproducts";
@@ -21646,15 +21646,15 @@ namespace Entities
 		public readonly Guid? ProductId = null;
 		
 		public readonly int? ImportSequenceNumber = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly Guid? EntitlementProductId = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_resourcerequirement_systemuser")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_resourcerequirement_systemuser")]
 	public class msdyn_resourcerequirement_systemuser : Entity
     {
         public const string EntityLogicalName = "msdyn_resourcerequirement_systemuser";
@@ -21683,8 +21683,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("holidaywrapper")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("holidaywrapper")]
 	public class holidaywrapper : Entity
     {
         public const string EntityLogicalName = "holidaywrapper";
@@ -21730,15 +21730,15 @@ namespace Entities
 		public readonly DateTime? StartTime = null;
 		
 		public readonly DateTime? EndTime = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string name = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("customeraddress")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("customeraddress")]
 	public class CustomerAddress : Entity
     {
         public const string EntityLogicalName = "customeraddress";
@@ -21772,7 +21772,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly EntityReference OwningBusinessUnit = null;
@@ -21875,8 +21875,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_scheduleboardsetting")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_scheduleboardsetting")]
 	public class msdyn_scheduleboardsetting : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_scheduleboardsetting";
@@ -21948,7 +21948,7 @@ namespace Entities
 		public readonly EntityReference msdyn_FilterLayout = null;
 		
 		public readonly int? msdyn_UnscheduledWOPageRecCount = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_TabName = null;
 		
 		public readonly bool? msdyn_HideCancelled = null;
@@ -22011,8 +22011,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("principalentitymap")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("principalentitymap")]
 	public class PrincipalEntityMap : Entity
     {
         public const string EntityLogicalName = "principalentitymap";
@@ -22048,8 +22048,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("uom")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("uom")]
 	public class UoM : Entity
     {
         public const string EntityLogicalName = "uom";
@@ -22077,7 +22077,7 @@ namespace Entities
 		public readonly DateTime? OverriddenCreatedOn = null;
 		
 		public readonly EntityReference ModifiedByExternalParty = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? ImportSequenceNumber = null;
@@ -22110,8 +22110,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("opportunityproduct")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("opportunityproduct")]
 	public class OpportunityProduct : Entity
     {
         public const string EntityLogicalName = "opportunityproduct";
@@ -22217,7 +22217,7 @@ namespace Entities
 		public readonly bool? IsPriceOverridden = null;
 		
 		public readonly byte[] EntityImage = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string OpportunityProductName = null;
 		
 		public readonly EntityReference msdyn_pricelist = null;
@@ -22341,8 +22341,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_actioncardregarding")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_actioncardregarding")]
 	public class msdyn_actioncardregarding : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_actioncardregarding";
@@ -22362,7 +22362,7 @@ namespace Entities
         }
 		
 		public readonly string msdyn_actioncardid = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_actioncardregardingId = null;
@@ -22382,8 +22382,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_fieldserviceslaconfiguration")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_fieldserviceslaconfiguration")]
 	public class msdyn_fieldserviceslaconfiguration : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_fieldserviceslaconfiguration";
@@ -22401,7 +22401,7 @@ namespace Entities
                 this["msdyn_fieldserviceslaconfigurationid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_SlaKpiName = null;
 		
 		public readonly Guid? msdyn_fieldserviceslaconfigurationId = null;
@@ -22427,8 +22427,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_geofence")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_geofence")]
 	public class msdyn_geofence : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_geofence";
@@ -22450,7 +22450,7 @@ namespace Entities
 		public readonly EntityReference msdyn_account = null;
 		
 		public readonly OptionSetValue msdyn_GeotrackedRecordStatus = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_bookableresourcebookingid = null;
@@ -22481,8 +22481,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("account")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("account")]
 	public class Account : Entity
     {
         public const string EntityLogicalName = "account";
@@ -22670,7 +22670,7 @@ namespace Entities
 		public readonly int? OpenRevenue_State = null;
 		
 		public readonly string PrimarySatoriId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly Money Aging90_Base = null;
@@ -22758,7 +22758,7 @@ namespace Entities
 		public readonly bool? DoNotPhone = null;
 		
 		public readonly string Address1_PrimaryContactName = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly DateTime? LastOnHoldTime = null;
@@ -23011,8 +23011,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("queueitemcount")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("queueitemcount")]
 	public class QueueItemCount : Entity
     {
         public const string EntityLogicalName = "queueitemcount";
@@ -23039,8 +23039,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("mailbox")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("mailbox")]
 	public class Mailbox : Entity
     {
         public const string EntityLogicalName = "mailbox";
@@ -23122,7 +23122,7 @@ namespace Entities
 		public readonly bool? IsForwardMailbox = null;
 		
 		public readonly OptionSetValue OutgoingEmailDeliveryMethod = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly bool? OfficeAppsDeploymentScheduled = null;
@@ -23234,7 +23234,7 @@ namespace Entities
 		public readonly Guid? MailboxId = null;
 		
 		public readonly bool? AllowEmailConnectorToUseCredentials = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 
         public new static class Options
@@ -23316,8 +23316,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("recurringappointmentmaster")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("recurringappointmentmaster")]
 	public class RecurringAppointmentMaster : Entity
     {
         public const string EntityLogicalName = "recurringappointmentmaster";
@@ -23479,7 +23479,7 @@ namespace Entities
 		public readonly int? OutlookOwnerApptId = null;
 		
 		public readonly string Category = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Subject = null;
 		
 		public readonly int? Occurrences = null;
@@ -23586,8 +23586,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("feedback")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("feedback")]
 	public class Feedback : Entity
     {
         public const string EntityLogicalName = "feedback";
@@ -23657,7 +23657,7 @@ namespace Entities
 		public readonly DateTime? CreatedOn = null;
 		
 		public readonly Guid? FeedbackId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Title = null;
 		
 		public readonly OptionSetValue Source = null;
@@ -23688,8 +23688,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("reportcategory")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("reportcategory")]
 	public class ReportCategory : Entity
     {
         public const string EntityLogicalName = "reportcategory";
@@ -23777,8 +23777,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_quotelinescheduleofvalue")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_quotelinescheduleofvalue")]
 	public class msdyn_quotelinescheduleofvalue : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_quotelinescheduleofvalue";
@@ -23804,7 +23804,7 @@ namespace Entities
 		public readonly EntityReference TransactionCurrencyId = null;
 		
 		public readonly DateTime? msdyn_invoicedate = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly bool? msdyn_isdataimport = null;
@@ -23851,8 +23851,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("personaldocumenttemplate")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("personaldocumenttemplate")]
 	public class PersonalDocumentTemplate : Entity
     {
         public const string EntityLogicalName = "personaldocumenttemplate";
@@ -23882,7 +23882,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly Guid? PersonalDocumentTemplateId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? LanguageCode = null;
@@ -23925,8 +23925,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("officegraphdocument")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("officegraphdocument")]
 	public class OfficeGraphDocument : Entity
     {
         public const string EntityLogicalName = "officegraphdocument";
@@ -24000,15 +24000,15 @@ namespace Entities
 		public readonly EntityReference OrganizationId = null;
 		
 		public readonly string ReadUrl = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Title = null;
 		
 		public readonly Guid? OfficeGraphDocumentId = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("position")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("position")]
 	public class Position : Entity
     {
         public const string EntityLogicalName = "position";
@@ -24028,7 +24028,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference ModifiedOnBehalfBy = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue statecode = null;
 		
 		public readonly string Description = null;
@@ -24036,7 +24036,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly EntityReference ParentPositionId = null;
@@ -24082,8 +24082,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("relationshiprolemap")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("relationshiprolemap")]
 	public class RelationshipRoleMap : Entity
     {
         public const string EntityLogicalName = "relationshiprolemap";
@@ -24139,8 +24139,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("delveactionhub")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("delveactionhub")]
 	public class DelveActionHub : Entity
     {
         public const string EntityLogicalName = "delveactionhub";
@@ -24198,7 +24198,7 @@ namespace Entities
 		public readonly EntityReference CreatedBy = null;
 		
 		public readonly int? TimeZoneRuleVersionNumber = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Subject = null;
 		
 		public readonly EntityReference RegardingObjectId = null;
@@ -24245,8 +24245,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("invoice")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("invoice")]
 	public class Invoice : Entity
     {
         public const string EntityLogicalName = "invoice";
@@ -24334,7 +24334,7 @@ namespace Entities
 		public readonly string ShipTo_Line1 = null;
 		
 		public readonly string ShipTo_City = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly Money TotalDiscountAmount = null;
@@ -24438,7 +24438,7 @@ namespace Entities
 		public readonly EntityReference CustomerId = null;
 		
 		public readonly EntityReference AccountId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly Money TotalDiscountAmount_Base = null;
@@ -24565,8 +24565,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("knowledgesearchmodel")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("knowledgesearchmodel")]
 	public class KnowledgeSearchModel : Entity
     {
         public const string EntityLogicalName = "knowledgesearchmodel";
@@ -24586,7 +24586,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference ModifiedOnBehalfBy = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly string Description = null;
@@ -24596,7 +24596,7 @@ namespace Entities
 		public readonly Guid? SupportingSolutionId = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? NgramSize = null;
@@ -24659,8 +24659,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("site")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("site")]
 	public class Site : Entity
     {
         public const string EntityLogicalName = "site";
@@ -24782,7 +24782,7 @@ namespace Entities
 		public readonly EntityReference ModifiedOnBehalfBy = null;
 		
 		public readonly OptionSetValue Address1_ShippingMethodCode = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly string Address1_UPSZone = null;
@@ -24816,8 +24816,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("contracttemplate")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("contracttemplate")]
 	public class ContractTemplate : Entity
     {
         public const string EntityLogicalName = "contracttemplate";
@@ -24883,7 +24883,7 @@ namespace Entities
 		public readonly DateTime? ModifiedOn = null;
 		
 		public readonly string Abbreviation = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly DateTime? CreatedOn = null;
@@ -24926,8 +24926,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_siconfig")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_siconfig")]
 	public class msdyn_siconfig : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_siconfig";
@@ -24947,7 +24947,7 @@ namespace Entities
         }
 		
 		public readonly Guid? msdyn_siconfigId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_version = null;
 
         public new static class Options
@@ -24965,8 +24965,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_projectteammembersignup")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_projectteammembersignup")]
 	public class msdyn_projectteammembersignup : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_projectteammembersignup";
@@ -24984,7 +24984,7 @@ namespace Entities
                 this["msdyn_projectteammembersignupid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_projectteammembersignupId = null;
@@ -25018,8 +25018,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("recordcountsnapshot")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("recordcountsnapshot")]
 	public class RecordCountSnapshot : Entity
     {
         public const string EntityLogicalName = "recordcountsnapshot";
@@ -25050,8 +25050,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("duplicaterule")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("duplicaterule")]
 	public class DuplicateRule : Entity
     {
         public const string EntityLogicalName = "duplicaterule";
@@ -25073,7 +25073,7 @@ namespace Entities
 		public readonly EntityReference OwningUser = null;
 		
 		public readonly EntityReference OwningTeam = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":1}")]
+		[System.ComponentModel.Description("{\"a\":1}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly string MatchingEntityMatchCodeTable = null;
@@ -25085,7 +25085,7 @@ namespace Entities
 		public readonly string BaseEntityName = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly string MatchingEntityName = null;
@@ -26470,8 +26470,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("ratingmodel")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("ratingmodel")]
 	public class RatingModel : Entity
     {
         public const string EntityLogicalName = "ratingmodel";
@@ -26491,13 +26491,13 @@ namespace Entities
         }
 		
 		public readonly EntityReference OwningUser = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? ImportSequenceNumber = null;
@@ -26558,8 +26558,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("socialprofile")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("socialprofile")]
 	public class SocialProfile : Entity
     {
         public const string EntityLogicalName = "socialprofile";
@@ -26579,13 +26579,13 @@ namespace Entities
         }
 		
 		public readonly EntityReference OwningUser = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string ProfileName = null;
 		
 		public readonly int? ImportSequenceNumber = null;
@@ -26655,8 +26655,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("duplicaterulecondition")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("duplicaterulecondition")]
 	public class DuplicateRuleCondition : Entity
     {
         public const string EntityLogicalName = "duplicaterulecondition";
@@ -26722,8 +26722,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("queueitem")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("queueitem")]
 	public class QueueItem : Entity
     {
         public const string EntityLogicalName = "queueitem";
@@ -26747,9 +26747,9 @@ namespace Entities
 		public readonly EntityReference OwningUser = null;
 		
 		public readonly string Sender = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Title = null;
 		
 		public readonly OptionSetValue StatusCode = null;
@@ -26859,8 +26859,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_agreementbookingsetup")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_agreementbookingsetup")]
 	public class msdyn_agreementbookingsetup : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_agreementbookingsetup";
@@ -26904,7 +26904,7 @@ namespace Entities
 		public readonly EntityReference msdyn_WorkOrderType = null;
 		
 		public readonly Guid? processid = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_Description = null;
@@ -26954,8 +26954,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_resourceassignmentdetail")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_resourceassignmentdetail")]
 	public class msdyn_resourceassignmentdetail : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_resourceassignmentdetail";
@@ -26973,7 +26973,7 @@ namespace Entities
                 this["msdyn_resourceassignmentdetailid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_resourceassignmentid = null;
@@ -26999,8 +26999,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("teamtemplate")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("teamtemplate")]
 	public class TeamTemplate : Entity
     {
         public const string EntityLogicalName = "teamtemplate";
@@ -27030,7 +27030,7 @@ namespace Entities
 		public readonly Guid? TeamTemplateId = null;
 		
 		public readonly EntityReference ModifiedBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string TeamTemplateName = null;
 		
 		public readonly DateTime? CreatedOn = null;
@@ -27045,8 +27045,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("ribboncommand")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("ribboncommand")]
 	public class RibbonCommand : Entity
     {
         public const string EntityLogicalName = "ribboncommand";
@@ -27103,8 +27103,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("orginsightsnotification")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("orginsightsnotification")]
 	public class OrgInsightsNotification : Entity
     {
         public const string EntityLogicalName = "orginsightsnotification";
@@ -27137,8 +27137,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("ribbonclientmetadata")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("ribbonclientmetadata")]
 	public class RibbonClientMetadata : Entity
     {
         public const string EntityLogicalName = "ribbonclientmetadata";
@@ -27173,8 +27173,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("convertrule")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("convertrule")]
 	public class ConvertRule : Entity
     {
         public const string EntityLogicalName = "convertrule";
@@ -27194,7 +27194,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference OwningUser = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":1}")]
+		[System.ComponentModel.Description("{\"a\":1}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly string Description = null;
@@ -27206,7 +27206,7 @@ namespace Entities
 		public readonly EntityReference TransactionCurrencyId = null;
 		
 		public readonly bool? CheckIfResolved = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly bool? CheckBlockedSocialProfile = null;
@@ -27309,8 +27309,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("entitlementtemplateproducts")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("entitlementtemplateproducts")]
 	public class EntitlementTemplateProducts : Entity
     {
         public const string EntityLogicalName = "entitlementtemplateproducts";
@@ -27342,15 +27342,15 @@ namespace Entities
 		public readonly Guid? ProductId = null;
 		
 		public readonly int? ImportSequenceNumber = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? UTCConversionTimeZoneCode = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("incidentresolution")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("incidentresolution")]
 	public class IncidentResolution : Entity
     {
         public const string EntityLogicalName = "incidentresolution";
@@ -27426,7 +27426,7 @@ namespace Entities
 		public readonly EntityReference SLAId = null;
 		
 		public readonly OptionSetValue StateCode = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Subject = null;
 		
 		public readonly EntityCollection CC = null;
@@ -27578,8 +27578,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_incidenttypeservice")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_incidenttypeservice")]
 	public class msdyn_incidenttypeservice : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_incidenttypeservice";
@@ -27601,7 +27601,7 @@ namespace Entities
 		public readonly EntityReference msdyn_Unit = null;
 		
 		public readonly Guid? msdyn_incidenttypeserviceId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_Service = null;
@@ -27631,8 +27631,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("leadcompetitors")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("leadcompetitors")]
 	public class LeadCompetitors : Entity
     {
         public const string EntityLogicalName = "leadcompetitors";
@@ -27664,15 +27664,15 @@ namespace Entities
 		public readonly Guid? LeadCompetitorId = null;
 		
 		public readonly int? ImportSequenceNumber = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? UTCConversionTimeZoneCode = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("salesprocessinstance")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("salesprocessinstance")]
 	public class SalesProcessInstance : Entity
     {
         public const string EntityLogicalName = "salesprocessinstance";
@@ -27710,13 +27710,13 @@ namespace Entities
 		public readonly EntityReference OpportunityId = null;
 		
 		public readonly EntityReference BusinessUnitId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("knowledgearticle")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("knowledgearticle")]
 	public class KnowledgeArticle : Entity
     {
         public const string EntityLogicalName = "knowledgearticle";
@@ -27814,7 +27814,7 @@ namespace Entities
 		public readonly EntityReference PreviousArticleContentId = null;
 		
 		public readonly EntityReference RootArticleId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Title = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
@@ -27898,8 +27898,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("productsalesliterature")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("productsalesliterature")]
 	public class ProductSalesLiterature : Entity
     {
         public const string EntityLogicalName = "productsalesliterature";
@@ -27931,15 +27931,15 @@ namespace Entities
 		public readonly Guid? ProductId = null;
 		
 		public readonly int? ImportSequenceNumber = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? UTCConversionTimeZoneCode = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_solutioncomponentsummary")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_solutioncomponentsummary")]
 	public class msdyn_solutioncomponentsummary : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_solutioncomponentsummary";
@@ -28057,15 +28057,15 @@ namespace Entities
 		public readonly string msdyn_iscustom = null;
 		
 		public readonly string msdyn_isappaware = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_isauditenabled = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("systemuserlicenses")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("systemuserlicenses")]
 	public class SystemUserLicenses : Entity
     {
         public const string EntityLogicalName = "systemuserlicenses";
@@ -28094,8 +28094,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("mobileofflineprofile")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("mobileofflineprofile")]
 	public class MobileOfflineProfile : Entity
     {
         public const string EntityLogicalName = "mobileofflineprofile";
@@ -28129,7 +28129,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly DateTime? OverwriteTime = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly Guid? StageId = null;
@@ -28174,8 +28174,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_projectteam")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_projectteam")]
 	public class msdyn_projectteam : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_projectteam";
@@ -28229,7 +28229,7 @@ namespace Entities
 		public readonly DateTime? msdyn_To = null;
 		
 		public readonly decimal? msdyn_hours = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly OptionSetValue msdyn_allocationmethod = null;
@@ -28290,8 +28290,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("mailmergetemplate")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("mailmergetemplate")]
 	public class MailMergeTemplate : Entity
     {
         public const string EntityLogicalName = "mailmergetemplate";
@@ -28315,7 +28315,7 @@ namespace Entities
 		public readonly EntityReference OwningTeam = null;
 		
 		public readonly Guid? SupportingSolutionId = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly int? LanguageCode = null;
@@ -28327,7 +28327,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly bool? IsCustomizable = null;
@@ -28428,8 +28428,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("quoteclose")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("quoteclose")]
 	public class QuoteClose : Entity
     {
         public const string EntityLogicalName = "quoteclose";
@@ -28507,7 +28507,7 @@ namespace Entities
 		public readonly EntityReference SLAId = null;
 		
 		public readonly OptionSetValue StateCode = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Subject = null;
 		
 		public readonly EntityCollection CC = null;
@@ -28659,8 +28659,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_bpf_baa0a411a239410cb8bded8b5fdd88e3")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_bpf_baa0a411a239410cb8bded8b5fdd88e3")]
 	public class msdyn_bpf_baa0a411a239410cb8bded8b5fdd88e3 : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_bpf_baa0a411a239410cb8bded8b5fdd88e3";
@@ -28698,7 +28698,7 @@ namespace Entities
 		public readonly EntityReference OrganizationId = null;
 		
 		public readonly DateTime? CompletedOn = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string bpf_name = null;
 		
 		public readonly DateTime? ActiveStageStartedOn = null;
@@ -28719,8 +28719,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_organizationalunit_pricelevel")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_organizationalunit_pricelevel")]
 	public class msdyn_organizationalunit_pricelevel : Entity
     {
         public const string EntityLogicalName = "msdyn_organizationalunit_pricelevel";
@@ -28749,8 +28749,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_delegation")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_delegation")]
 	public class msdyn_delegation : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_delegation";
@@ -28770,7 +28770,7 @@ namespace Entities
         }
 		
 		public readonly DateTime? msdyn_startdate = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly OptionSetValue msdyn_type = null;
@@ -28803,8 +28803,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_agreementbookingservice")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_agreementbookingservice")]
 	public class msdyn_agreementbookingservice : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_agreementbookingservice";
@@ -28830,7 +28830,7 @@ namespace Entities
 		public readonly Money msdyn_unitamount_Base = null;
 		
 		public readonly EntityReference msdyn_Unit = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Money msdyn_currency_Base = null;
@@ -28876,8 +28876,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_playbookactivity")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_playbookactivity")]
 	public class msdyn_playbookactivity : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_playbookactivity";
@@ -28905,7 +28905,7 @@ namespace Entities
 		public readonly EntityReference msdyn_playbooktemplateid = null;
 		
 		public readonly Guid? msdyn_playbookactivityId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_subject = null;
 
         public new static class Options
@@ -29590,8 +29590,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_resourcecategorymarkuppricelevel")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_resourcecategorymarkuppricelevel")]
 	public class msdyn_resourcecategorymarkuppricelevel : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_resourcecategorymarkuppricelevel";
@@ -29619,7 +29619,7 @@ namespace Entities
 		public readonly EntityReference msdyn_pricelist = null;
 		
 		public readonly Guid? msdyn_resourcecategorymarkuppricelevelId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly decimal? msdyn_percent = null;
@@ -29651,8 +29651,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("fixedmonthlyfiscalcalendar")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("fixedmonthlyfiscalcalendar")]
 	public class FixedMonthlyFiscalCalendar : Entity
     {
         public const string EntityLogicalName = "fixedmonthlyfiscalcalendar";
@@ -29755,8 +29755,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("solutioncomponent")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("solutioncomponent")]
 	public class SolutionComponent : Entity
     {
         public const string EntityLogicalName = "solutioncomponent";
@@ -29902,8 +29902,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_resourceassignment")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_resourceassignment")]
 	public class msdyn_resourceassignment : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_resourceassignment";
@@ -29931,7 +29931,7 @@ namespace Entities
 		public readonly Money msdyn_plannedcost = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_plannedsalescontour = null;
@@ -29989,8 +29989,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("organization")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("organization")]
 	public class Organization : Entity
     {
         public const string EntityLogicalName = "organization";
@@ -30554,7 +30554,7 @@ namespace Entities
 		public readonly bool? IsMobileOfflineEnabled = null;
 		
 		public readonly string AMDesignator = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly string PrivacyStatementUrl = null;
@@ -30830,8 +30830,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_orderlinetransactioncategory")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_orderlinetransactioncategory")]
 	public class msdyn_orderlinetransactioncategory : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_orderlinetransactioncategory";
@@ -30859,7 +30859,7 @@ namespace Entities
 		public readonly EntityReference msdyn_TransactionCategory = null;
 		
 		public readonly EntityReference msdyn_ContractLineTransactionClassification = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly string msdyn_ContractLine = null;
@@ -30899,8 +30899,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("displaystring")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("displaystring")]
 	public class DisplayString : Entity
     {
         public const string EntityLogicalName = "displaystring";
@@ -30973,8 +30973,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("leadaddress")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("leadaddress")]
 	public class LeadAddress : Entity
     {
         public const string EntityLogicalName = "leadaddress";
@@ -31004,7 +31004,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? ImportSequenceNumber = null;
@@ -31084,8 +31084,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_resourcerequirement_bookingheader")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_resourcerequirement_bookingheader")]
 	public class msdyn_resourcerequirement_bookingheader : Entity
     {
         public const string EntityLogicalName = "msdyn_resourcerequirement_bookingheader";
@@ -31114,8 +31114,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("bookableresourcecategoryassn")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("bookableresourcecategoryassn")]
 	public class BookableResourceCategoryAssn : Entity
     {
         public const string EntityLogicalName = "bookableresourcecategoryassn";
@@ -31135,7 +31135,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference OwningUser = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly DateTime? CreatedOn = null;
@@ -31143,7 +31143,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly EntityReference Resource = null;
@@ -31197,8 +31197,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("syncattributemapping")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("syncattributemapping")]
 	public class SyncAttributeMapping : Entity
     {
         public const string EntityLogicalName = "syncattributemapping";
@@ -31281,8 +31281,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("reportentity")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("reportentity")]
 	public class ReportEntity : Entity
     {
         public const string EntityLogicalName = "reportentity";
@@ -31361,8 +31361,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("ribbondiff")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("ribbondiff")]
 	public class RibbonDiff : Entity
     {
         public const string EntityLogicalName = "ribbondiff";
@@ -31436,8 +31436,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_resourcerequirementdetail")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_resourcerequirementdetail")]
 	public class msdyn_resourcerequirementdetail : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_resourcerequirementdetail";
@@ -31457,7 +31457,7 @@ namespace Entities
         }
 		
 		public readonly Guid? msdyn_resourcerequirementdetailId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_resourcerequirementid = null;
@@ -31485,8 +31485,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("privilegeobjecttypecodes")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("privilegeobjecttypecodes")]
 	public class PrivilegeObjectTypeCodes : Entity
     {
         public const string EntityLogicalName = "privilegeobjecttypecodes";
@@ -31539,8 +31539,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_dimensionfieldname")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_dimensionfieldname")]
 	public class msdyn_dimensionfieldname : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_dimensionfieldname";
@@ -31566,7 +31566,7 @@ namespace Entities
 		public readonly string msdyn_EntityLogicalName = null;
 		
 		public readonly string msdyn_FieldName = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly EntityReference OrganizationId = null;
@@ -31586,8 +31586,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_accountpricelist")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_accountpricelist")]
 	public class msdyn_accountpricelist : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_accountpricelist";
@@ -31609,7 +31609,7 @@ namespace Entities
 		public readonly EntityReference msdyn_Account = null;
 		
 		public readonly EntityReference msdyn_PriceList = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly Guid? msdyn_accountpricelistId = null;
@@ -31629,8 +31629,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("opportunityclose")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("opportunityclose")]
 	public class OpportunityClose : Entity
     {
         public const string EntityLogicalName = "opportunityclose";
@@ -31704,7 +31704,7 @@ namespace Entities
 		public readonly EntityReference SLAId = null;
 		
 		public readonly OptionSetValue StateCode = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Subject = null;
 		
 		public readonly EntityCollection CC = null;
@@ -31862,8 +31862,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("goal")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("goal")]
 	public class Goal : Entity
     {
         public const string EntityLogicalName = "goal";
@@ -31895,7 +31895,7 @@ namespace Entities
 		public readonly EntityReference ParentGoalId = null;
 		
 		public readonly Money CustomRollupFieldMoney_Base = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Title = null;
 		
 		public readonly Guid? TreeId = null;
@@ -31931,7 +31931,7 @@ namespace Entities
 		public readonly EntityReference GoalOwnerId = null;
 		
 		public readonly OptionSetValue FiscalPeriod = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly EntityReference RollupQueryActualIntegerId = null;
@@ -32173,8 +32173,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("fieldpermission")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("fieldpermission")]
 	public class FieldPermission : Entity
     {
         public const string EntityLogicalName = "fieldpermission";
@@ -32250,8 +32250,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("systemform")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("systemform")]
 	public class SystemForm : Entity
     {
         public const string EntityLogicalName = "systemform";
@@ -32279,7 +32279,7 @@ namespace Entities
 		public readonly Guid? SupportingSolutionId = null;
 		
 		public readonly bool? IsAIRMerged = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly bool? IsCustomizable = null;
@@ -32375,8 +32375,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("listmember")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("listmember")]
 	public class ListMember : Entity
     {
         public const string EntityLogicalName = "listmember";
@@ -32400,7 +32400,7 @@ namespace Entities
 		public readonly string EntityType = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly Guid? OwningUser = null;
@@ -32435,8 +32435,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_bookingtimestamp")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_bookingtimestamp")]
 	public class msdyn_bookingtimestamp : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_bookingtimestamp";
@@ -32456,7 +32456,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference msdyn_Booking = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly OptionSetValue msdyn_TimestampSource = null;
@@ -32498,8 +32498,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("appmodule")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("appmodule")]
 	public class AppModule : Entity
     {
         public const string EntityLogicalName = "appmodule";
@@ -32531,7 +32531,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly int? ClientType = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly Guid? AppModuleIdUnique = null;
@@ -32607,8 +32607,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_postalbum")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_postalbum")]
 	public class msdyn_PostAlbum : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_postalbum";
@@ -32628,7 +32628,7 @@ namespace Entities
         }
 		
 		public readonly Guid? msdyn_PostAlbumId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 
         public new static class Options
@@ -32646,8 +32646,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("phonecall")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("phonecall")]
 	public class PhoneCall : Entity
     {
         public const string EntityLogicalName = "phonecall";
@@ -32767,7 +32767,7 @@ namespace Entities
 		public readonly int? ActualDurationMinutes = null;
 		
 		public readonly EntityReference SLAId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Subject = null;
 
         public new static class Options
@@ -32816,8 +32816,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdynsm_salessitemap")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdynsm_salessitemap")]
 	public class msdynsm_salessitemap : OrganizationEntity
     {
         public const string EntityLogicalName = "msdynsm_salessitemap";
@@ -32835,7 +32835,7 @@ namespace Entities
                 this["msdynsm_salessitemapid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdynsm_name = null;
 		
 		public readonly EntityReference OrganizationId = null;
@@ -32857,8 +32857,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_roleutilization")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_roleutilization")]
 	public class msdyn_roleutilization : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_roleutilization";
@@ -32878,7 +32878,7 @@ namespace Entities
         }
 		
 		public readonly int? msdyn_utilpercentdiff = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_roleutilizationId = null;
@@ -32904,8 +32904,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_workordersubstatus")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_workordersubstatus")]
 	public class msdyn_workordersubstatus : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_workordersubstatus";
@@ -32923,7 +32923,7 @@ namespace Entities
                 this["msdyn_workordersubstatusid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly bool? msdyn_DefaultSubStatus = null;
@@ -32956,8 +32956,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_iotdevicecommanddefinition")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_iotdevicecommanddefinition")]
 	public class msdyn_iotdevicecommanddefinition : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_iotdevicecommanddefinition";
@@ -32975,7 +32975,7 @@ namespace Entities
                 this["msdyn_iotdevicecommanddefinitionid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_iotdevicecommanddefinitionId = null;
@@ -32995,8 +32995,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_orderinvoicingproduct")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_orderinvoicingproduct")]
 	public class msdyn_orderinvoicingproduct : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_orderinvoicingproduct";
@@ -33022,7 +33022,7 @@ namespace Entities
 		public readonly EntityReference TransactionCurrencyId = null;
 		
 		public readonly EntityReference msdyn_Unit = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Money msdyn_unitprice_Base = null;
@@ -33058,8 +33058,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_transactioncategorypricelevel")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_transactioncategorypricelevel")]
 	public class msdyn_transactioncategorypricelevel : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_transactioncategorypricelevel";
@@ -33089,7 +33089,7 @@ namespace Entities
 		public readonly EntityReference msdyn_TransactionCategory = null;
 		
 		public readonly EntityReference msdyn_PriceList = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly decimal? msdyn_percent = null;
@@ -33125,8 +33125,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("userquery")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("userquery")]
 	public class UserQuery : Entity
     {
         public const string EntityLogicalName = "userquery";
@@ -33148,13 +33148,13 @@ namespace Entities
 		public readonly EntityReference OwningUser = null;
 		
 		public readonly string ConditionalFormatting = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly string Description = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? QueryType = null;
@@ -33213,8 +33213,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("teammembership")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("teammembership")]
 	public class TeamMembership : Entity
     {
         public const string EntityLogicalName = "teammembership";
@@ -33243,8 +33243,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("savedquery")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("savedquery")]
 	public class SavedQuery : Entity
     {
         public const string EntityLogicalName = "savedquery";
@@ -33270,7 +33270,7 @@ namespace Entities
 		public readonly bool? IsUserDefined = null;
 		
 		public readonly Guid? SavedQueryId = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly Guid? SupportingSolutionId = null;
@@ -33282,7 +33282,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly string ConditionalFormatting = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly Guid? SolutionId = null;
@@ -33363,8 +33363,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("postrole")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("postrole")]
 	public class PostRole : Entity
     {
         public const string EntityLogicalName = "postrole";
@@ -33405,8 +33405,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("adminsettingsentity")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("adminsettingsentity")]
 	public class adminsettingsentity : UserOrTeamEntity
     {
         public const string EntityLogicalName = "adminsettingsentity";
@@ -33424,7 +33424,7 @@ namespace Entities
                 this["adminsettingsentityid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string new_name = null;
 		
 		public readonly Guid? adminsettingsentityId = null;
@@ -33444,8 +33444,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("attributemap")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("attributemap")]
 	public class AttributeMap : Entity
     {
         public const string EntityLogicalName = "attributemap";
@@ -33516,8 +33516,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("emailhash")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("emailhash")]
 	public class EmailHash : Entity
     {
         public const string EntityLogicalName = "emailhash";
@@ -33554,8 +33554,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("mobileofflineprofileitemassociation")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("mobileofflineprofileitemassociation")]
 	public class MobileOfflineProfileItemAssociation : Entity
     {
         public const string EntityLogicalName = "mobileofflineprofileitemassociation";
@@ -33589,7 +33589,7 @@ namespace Entities
 		public readonly Guid? SupportingSolutionId = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly Guid? RelationshipId = null;
@@ -33648,8 +33648,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("subscriptionsyncinfo")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("subscriptionsyncinfo")]
 	public class SubscriptionSyncInfo : Entity
     {
         public const string EntityLogicalName = "subscriptionsyncinfo";
@@ -33692,8 +33692,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_bpf_d3d97bac8c294105840e99e37a9d1c39")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_bpf_d3d97bac8c294105840e99e37a9d1c39")]
 	public class msdyn_bpf_d3d97bac8c294105840e99e37a9d1c39 : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_bpf_d3d97bac8c294105840e99e37a9d1c39";
@@ -33727,7 +33727,7 @@ namespace Entities
 		public readonly EntityReference OrganizationId = null;
 		
 		public readonly DateTime? CompletedOn = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string bpf_name = null;
 		
 		public readonly DateTime? ActiveStageStartedOn = null;
@@ -33748,8 +33748,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_workorder")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_workorder")]
 	public class msdyn_workorder : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_workorder";
@@ -33847,7 +33847,7 @@ namespace Entities
 		public readonly Guid? processid = null;
 		
 		public readonly EntityReference msdyn_ClosedBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_Instructions = null;
@@ -33942,8 +33942,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("workflow")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("workflow")]
 	public class Workflow : Entity
     {
         public const string EntityLogicalName = "workflow";
@@ -34057,7 +34057,7 @@ namespace Entities
 		public readonly EntityReference OwningBusinessUnit = null;
 		
 		public readonly OptionSetValue Scope = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? ProcessOrder = null;
@@ -34158,8 +34158,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("license")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("license")]
 	public class License : Entity
     {
         public const string EntityLogicalName = "license";
@@ -34194,8 +34194,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_findworkevent")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_findworkevent")]
 	public class msdyn_findworkevent : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_findworkevent";
@@ -34215,7 +34215,7 @@ namespace Entities
         }
 		
 		public readonly DateTime? msdyn_Timestamp = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly OptionSetValue msdyn_Type = null;
@@ -34249,8 +34249,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("equipment")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("equipment")]
 	public class Equipment : Entity
     {
         public const string EntityLogicalName = "equipment";
@@ -34280,7 +34280,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? ImportSequenceNumber = null;
@@ -34321,8 +34321,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("invoicedetail")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("invoicedetail")]
 	public class InvoiceDetail : Entity
     {
         public const string EntityLogicalName = "invoicedetail";
@@ -34474,7 +34474,7 @@ namespace Entities
 		public readonly EntityReference msdyn_WorkOrderProductId = null;
 		
 		public readonly Money msdyn_invoicedtilldate = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string InvoiceDetailName = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
@@ -34613,8 +34613,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_workorderdetailsgenerationqueue")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_workorderdetailsgenerationqueue")]
 	public class msdyn_workorderdetailsgenerationqueue : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_workorderdetailsgenerationqueue";
@@ -34638,7 +34638,7 @@ namespace Entities
 		public readonly string msdyn_Booking = null;
 		
 		public readonly string msdyn_ExceptionTrace = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_AgreementBookingDate = null;
@@ -34670,8 +34670,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_odatav4ds")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_odatav4ds")]
 	public class msdyn_odatav4ds : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_odatav4ds";
@@ -34705,7 +34705,7 @@ namespace Entities
 		public readonly string msdyn_parameter5value = null;
 		
 		public readonly string msdyn_parameter9value = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_parameter6value = null;
@@ -34776,8 +34776,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("socialactivity")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("socialactivity")]
 	public class SocialActivity : Entity
     {
         public const string EntityLogicalName = "socialactivity";
@@ -34913,7 +34913,7 @@ namespace Entities
 		public readonly OptionSetValue StatusCode = null;
 		
 		public readonly int? ActualDurationMinutes = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Subject = null;
 		
 		public readonly EntityReference ServiceId = null;
@@ -34976,8 +34976,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("sharedobjectsforread")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("sharedobjectsforread")]
 	public class SharedObjectsForRead : Entity
     {
         public const string EntityLogicalName = "sharedobjectsforread";
@@ -35008,8 +35008,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_workorderincident")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_workorderincident")]
 	public class msdyn_workorderincident : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_workorderincident";
@@ -35035,7 +35035,7 @@ namespace Entities
 		public readonly double? msdyn_TasksPercentCompleted = null;
 		
 		public readonly int? msdyn_EstimatedDuration = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly bool? msdyn_ItemsPopulated = null;
@@ -35073,8 +35073,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("entitlement")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("entitlement")]
 	public class Entitlement : Entity
     {
         public const string EntityLogicalName = "entitlement";
@@ -35122,7 +35122,7 @@ namespace Entities
 		public readonly EntityReference OwningTeam = null;
 		
 		public readonly EntityReference SLAId = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":1}")]
+		[System.ComponentModel.Description("{\"a\":1}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly decimal? RemainingTerms = null;
@@ -35172,7 +35172,7 @@ namespace Entities
 		public readonly double? msdyn_PercentDiscount = null;
 		
 		public readonly DateTime? StartDate = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly OptionSetValue StatusCode = null;
@@ -35232,8 +35232,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("list")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("list")]
 	public class List : Entity
     {
         public const string EntityLogicalName = "list";
@@ -35257,7 +35257,7 @@ namespace Entities
 		public readonly Money Cost_Base = null;
 		
 		public readonly string Description = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string ListName = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
@@ -35277,7 +35277,7 @@ namespace Entities
 		public readonly int? MemberCount = null;
 		
 		public readonly bool? LockStatus = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly int? UTCConversionTimeZoneCode = null;
@@ -35349,8 +35349,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_quotelineresourcecategory")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_quotelineresourcecategory")]
 	public class msdyn_quotelineresourcecategory : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_quotelineresourcecategory";
@@ -35376,7 +35376,7 @@ namespace Entities
 		public readonly EntityReference msdyn_ResourceCategory = null;
 		
 		public readonly EntityReference msdyn_QuoteLineTransactionClassification = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly EntityReference msdyn_QuoteLineId = null;
@@ -35418,8 +35418,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("unresolvedaddress")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("unresolvedaddress")]
 	public class UnresolvedAddress : Entity
     {
         public const string EntityLogicalName = "unresolvedaddress";
@@ -35450,8 +35450,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("constraintbasedgroup")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("constraintbasedgroup")]
 	public class ConstraintBasedGroup : Entity
     {
         public const string EntityLogicalName = "constraintbasedgroup";
@@ -35477,7 +35477,7 @@ namespace Entities
 		public readonly string Description = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? ImportSequenceNumber = null;
@@ -35517,8 +35517,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_bookingchange")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_bookingchange")]
 	public class msdyn_bookingchange : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_bookingchange";
@@ -35536,7 +35536,7 @@ namespace Entities
                 this["msdyn_bookingchangeid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_ChangesJSON = null;
@@ -35558,8 +35558,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_invoicelinetransaction")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_invoicelinetransaction")]
 	public class msdyn_invoicelinetransaction : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_invoicelinetransaction";
@@ -35651,7 +35651,7 @@ namespace Entities
 		public readonly EntityReference msdyn_ContactVendor = null;
 		
 		public readonly DateTime? msdyn_AccountingDate = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly decimal? msdyn_Percent = null;
@@ -35746,8 +35746,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_notesanalysisconfig")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_notesanalysisconfig")]
 	public class msdyn_notesanalysisconfig : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_notesanalysisconfig";
@@ -35767,7 +35767,7 @@ namespace Entities
         }
 		
 		public readonly bool? msdyn_isadminsettingenabled = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly int? msdyn_throttlelimit = null;
@@ -35791,8 +35791,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("sqlencryptionaudit")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("sqlencryptionaudit")]
 	public class SqlEncryptionAudit : Entity
     {
         public const string EntityLogicalName = "sqlencryptionaudit";
@@ -35817,8 +35817,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("similarityrule")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("similarityrule")]
 	public class SimilarityRule : Entity
     {
         public const string EntityLogicalName = "similarityrule";
@@ -35850,7 +35850,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string name = null;
 		
 		public readonly OptionSetValue MatchingEntityTypeCode = null;
@@ -35866,7 +35866,7 @@ namespace Entities
 		public readonly string RuleConditionXml = null;
 		
 		public readonly string FetchXmlList = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":1}")]
+		[System.ComponentModel.Description("{\"a\":1}")]
 		public readonly OptionSetValue statecode = null;
 		
 		public readonly OptionSetValue ComponentState = null;
@@ -37261,8 +37261,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_transactioncategory")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_transactioncategory")]
 	public class msdyn_transactioncategory : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_transactioncategory";
@@ -37282,7 +37282,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference msdyn_UnitGroup = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_transactioncategoryId = null;
@@ -37315,8 +37315,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("pricelevel")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("pricelevel")]
 	public class PriceLevel : Entity
     {
         public const string EntityLogicalName = "pricelevel";
@@ -37336,7 +37336,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference ModifiedOnBehalfBy = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly OptionSetValue FreightTermsCode = null;
@@ -37352,7 +37352,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly EntityReference msdyn_CopiedFromPriceLevel = null;
@@ -37433,8 +37433,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("bulkdeletefailure")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("bulkdeletefailure")]
 	public class BulkDeleteFailure : Entity
     {
         public const string EntityLogicalName = "bulkdeletefailure";
@@ -37475,8 +37475,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_projecttaskstatususer")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_projecttaskstatususer")]
 	public class msdyn_projecttaskstatususer : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_projecttaskstatususer";
@@ -37500,7 +37500,7 @@ namespace Entities
 		public readonly OptionSetValue msdyn_projecttaskstatusindicator = null;
 		
 		public readonly Guid? msdyn_projecttaskstatususerId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_projecttaskId = null;
@@ -37537,8 +37537,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_iotprovider")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_iotprovider")]
 	public class msdyn_iotprovider : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_iotprovider";
@@ -37556,7 +37556,7 @@ namespace Entities
                 this["msdyn_iotproviderid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly OptionSetValue msdyn_IoTSource = null;
@@ -37592,8 +37592,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_agreementinvoiceproduct")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_agreementinvoiceproduct")]
 	public class msdyn_agreementinvoiceproduct : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_agreementinvoiceproduct";
@@ -37621,7 +37621,7 @@ namespace Entities
 		public readonly Money msdyn_unitamount_Base = null;
 		
 		public readonly EntityReference msdyn_Unit = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly int? msdyn_LineOrder = null;
@@ -37653,8 +37653,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_rtvsubstatus")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_rtvsubstatus")]
 	public class msdyn_rtvsubstatus : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_rtvsubstatus";
@@ -37672,7 +37672,7 @@ namespace Entities
                 this["msdyn_rtvsubstatusid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly bool? msdyn_DefaultSubStatus = null;
@@ -37704,8 +37704,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_warehouse")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_warehouse")]
 	public class msdyn_warehouse : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_warehouse";
@@ -37723,7 +37723,7 @@ namespace Entities
                 this["msdyn_warehouseid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_Description = null;
@@ -37745,8 +37745,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("orderclose")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("orderclose")]
 	public class OrderClose : Entity
     {
         public const string EntityLogicalName = "orderclose";
@@ -37824,7 +37824,7 @@ namespace Entities
 		public readonly EntityReference SLAId = null;
 		
 		public readonly OptionSetValue StateCode = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Subject = null;
 		
 		public readonly EntityCollection CC = null;
@@ -37976,8 +37976,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_projectpricelist")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_projectpricelist")]
 	public class msdyn_projectpricelist : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_projectpricelist";
@@ -37999,7 +37999,7 @@ namespace Entities
 		public readonly Guid? msdyn_projectpricelistId = null;
 		
 		public readonly EntityReference msdyn_PriceList = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly EntityReference msdyn_Project = null;
@@ -38019,8 +38019,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("postlike")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("postlike")]
 	public class PostLike : Entity
     {
         public const string EntityLogicalName = "postlike";
@@ -38057,8 +38057,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("knowledgebaserecord")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("knowledgebaserecord")]
 	public class KnowledgeBaseRecord : Entity
     {
         public const string EntityLogicalName = "knowledgebaserecord";
@@ -38100,7 +38100,7 @@ namespace Entities
 		public readonly DateTime? ModifiedOn = null;
 		
 		public readonly string UniqueId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Title = null;
 		
 		public readonly decimal? ExchangeRate = null;
@@ -38111,8 +38111,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("systemuserprincipals")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("systemuserprincipals")]
 	public class SystemUserPrincipals : Entity
     {
         public const string EntityLogicalName = "systemuserprincipals";
@@ -38141,8 +38141,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("usersearchfacet")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("usersearchfacet")]
 	public class UserSearchFacet : Entity
     {
         public const string EntityLogicalName = "usersearchfacet";
@@ -38173,8 +38173,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_iotpropertydefinition")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_iotpropertydefinition")]
 	public class msdyn_iotpropertydefinition : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_iotpropertydefinition";
@@ -38194,7 +38194,7 @@ namespace Entities
         }
 		
 		public readonly string msdyn_AdditionalProperties = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly OptionSetValue msdyn_Type = null;
@@ -38231,8 +38231,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("dataperformance")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("dataperformance")]
 	public class DataPerformance : Entity
     {
         public const string EntityLogicalName = "dataperformance";
@@ -38293,8 +38293,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_fact")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_fact")]
 	public class msdyn_fact : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_fact";
@@ -38408,7 +38408,7 @@ namespace Entities
 		public readonly decimal? msdyn_ActNoChargeUnbilledSalesQuantity = null;
 		
 		public readonly EntityReference msdyn_SalesContractLineId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_ContactVendor = null;
@@ -38516,8 +38516,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_taxcode")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_taxcode")]
 	public class msdyn_taxcode : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_taxcode";
@@ -38535,7 +38535,7 @@ namespace Entities
                 this["msdyn_taxcodeid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly bool? msdyn_ProductsTaxable = null;
@@ -38565,8 +38565,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("textanalyticsentitymapping")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("textanalyticsentitymapping")]
 	public class TextAnalyticsEntityMapping : Entity
     {
         public const string EntityLogicalName = "textanalyticsentitymapping";
@@ -38649,8 +38649,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("wizardaccessprivilege")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("wizardaccessprivilege")]
 	public class WizardAccessPrivilege : Entity
     {
         public const string EntityLogicalName = "wizardaccessprivilege";
@@ -38682,7 +38682,7 @@ namespace Entities
 		public readonly Guid? WizardAccessPrivilegeId = null;
 		
 		public readonly EntityReference ModifiedBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string EntityName = null;
 		
 		public readonly DateTime? CreatedOn = null;
@@ -38695,8 +38695,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_bpf_989e9b1857e24af18787d5143b67523b")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_bpf_989e9b1857e24af18787d5143b67523b")]
 	public class msdyn_bpf_989e9b1857e24af18787d5143b67523b : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_bpf_989e9b1857e24af18787d5143b67523b";
@@ -38732,7 +38732,7 @@ namespace Entities
 		public readonly EntityReference OrganizationId = null;
 		
 		public readonly DateTime? CompletedOn = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string bpf_name = null;
 		
 		public readonly DateTime? ActiveStageStartedOn = null;
@@ -38753,8 +38753,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_fieldservicesetting")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_fieldservicesetting")]
 	public class msdyn_fieldservicesetting : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_fieldservicesetting";
@@ -38930,7 +38930,7 @@ namespace Entities
 		public readonly string msdyn_SchedulerFieldServiceTooltipView = null;
 		
 		public readonly bool? msdyn_CustomGPSData = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly DateTime? msdyn_AgreementRecordGeneration = null;
@@ -38988,8 +38988,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("territory")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("territory")]
 	public class Territory : Entity
     {
         public const string EntityLogicalName = "territory";
@@ -39019,7 +39019,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? ImportSequenceNumber = null;
@@ -39048,8 +39048,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("audit")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("audit")]
 	public class Audit : Entity
     {
         public const string EntityLogicalName = "audit";
@@ -39181,8 +39181,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("contact")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("contact")]
 	public class Contact : Entity
     {
         public const string EntityLogicalName = "contact";
@@ -39498,7 +39498,7 @@ namespace Entities
 		public readonly bool? DoNotPhone = null;
 		
 		public readonly string Address1_PrimaryContactName = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly DateTime? LastOnHoldTime = null;
@@ -39590,7 +39590,7 @@ namespace Entities
 		public readonly string Address1_PostOfficeBox = null;
 		
 		public readonly string Address2_PrimaryContactName = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string FullName = null;
 		
 		public readonly Guid? Address3_AddressId = null;
@@ -39739,8 +39739,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_solutionhealthruleset")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_solutionhealthruleset")]
 	public class msdyn_solutionhealthruleset : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_solutionhealthruleset";
@@ -39760,7 +39760,7 @@ namespace Entities
         }
 		
 		public readonly string msdyn_uniquename = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_solutionhealthrulesetId = null;
@@ -39784,8 +39784,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_rmareceiptproduct")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_rmareceiptproduct")]
 	public class msdyn_rmareceiptproduct : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_rmareceiptproduct";
@@ -39803,7 +39803,7 @@ namespace Entities
                 this["msdyn_rmareceiptproductid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_RMAProduct = null;
@@ -39835,8 +39835,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("importmap")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("importmap")]
 	public class ImportMap : Entity
     {
         public const string EntityLogicalName = "importmap";
@@ -39860,7 +39860,7 @@ namespace Entities
 		public readonly EntityReference OwningUser = null;
 		
 		public readonly Guid? SupportingSolutionId = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly string MapCustomizations = null;
@@ -39872,7 +39872,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly bool? IsWizardCreated = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly string IntroducedVersion = null;
@@ -40629,8 +40629,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("resourcegroup")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("resourcegroup")]
 	public class ResourceGroup : Entity
     {
         public const string EntityLogicalName = "resourcegroup";
@@ -40668,7 +40668,7 @@ namespace Entities
 		public readonly string ObjectTypeCode = null;
 		
 		public readonly EntityReference BusinessUnitId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 
         public new static class Options
@@ -40686,8 +40686,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("dependencyfeature")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("dependencyfeature")]
 	public class DependencyFeature : Entity
     {
         public const string EntityLogicalName = "dependencyfeature";
@@ -40734,8 +40734,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msfp_surveyresponse")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msfp_surveyresponse")]
 	public class msfp_surveyresponse : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msfp_surveyresponse";
@@ -40805,7 +40805,7 @@ namespace Entities
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly string msfp_embedcontextparameters = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Subject = null;
 		
 		public readonly EntityCollection CC = null;
@@ -40959,8 +40959,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("sdkmessagerequest")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("sdkmessagerequest")]
 	public class SdkMessageRequest : Entity
     {
         public const string EntityLogicalName = "sdkmessagerequest";
@@ -41035,8 +41035,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("channelaccessprofileruleitem")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("channelaccessprofileruleitem")]
 	public class ChannelAccessProfileRuleItem : Entity
     {
         public const string EntityLogicalName = "channelaccessprofileruleitem";
@@ -41068,7 +41068,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly EntityReference AssociatedChannelAccessProfile = null;
@@ -41123,8 +41123,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("importentitymapping")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("importentitymapping")]
 	public class ImportEntityMapping : Entity
     {
         public const string EntityLogicalName = "importentitymapping";
@@ -41148,7 +41148,7 @@ namespace Entities
 		public readonly Guid? ImportEntityMappingIdUnique = null;
 		
 		public readonly string IntroducedVersion = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly Guid? SupportingSolutionId = null;
@@ -41216,8 +41216,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_untrackedappointment")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_untrackedappointment")]
 	public class msdyn_untrackedappointment : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_untrackedappointment";
@@ -41235,7 +41235,7 @@ namespace Entities
                 this["msdyn_untrackedappointmentid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_untrackedappointmentId = null;
@@ -41255,8 +41255,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("serviceappointment")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("serviceappointment")]
 	public class ServiceAppointment : Entity
     {
         public const string EntityLogicalName = "serviceappointment";
@@ -41332,7 +41332,7 @@ namespace Entities
 		public readonly EntityReference SLAId = null;
 		
 		public readonly OptionSetValue StateCode = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Subject = null;
 		
 		public readonly EntityCollection CC = null;
@@ -41491,8 +41491,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_resourcecategorypricelevel")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_resourcecategorypricelevel")]
 	public class msdyn_resourcecategorypricelevel : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_resourcecategorypricelevel";
@@ -41530,7 +41530,7 @@ namespace Entities
 		public readonly EntityReference msdyn_PrimaryUnit = null;
 		
 		public readonly EntityReference msdyn_PriceList = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly Guid? msdyn_resourcecategorypricelevelId = null;
@@ -41570,8 +41570,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("actioncarduserstate")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("actioncarduserstate")]
 	public class ActionCardUserState : Entity
     {
         public const string EntityLogicalName = "actioncarduserstate";
@@ -41623,8 +41623,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_workordertype")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_workordertype")]
 	public class msdyn_workordertype : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_workordertype";
@@ -41642,7 +41642,7 @@ namespace Entities
                 this["msdyn_workordertypeid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly bool? msdyn_Taxable = null;
@@ -41668,8 +41668,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_bookableresourceassociation")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_bookableresourceassociation")]
 	public class msdyn_bookableresourceassociation : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_bookableresourceassociation";
@@ -41689,7 +41689,7 @@ namespace Entities
         }
 		
 		public readonly DateTime? msdyn_FromDate = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly OptionSetValue msdyn_Type = null;
@@ -41721,8 +41721,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("attachment")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("attachment")]
 	public class Attachment : Entity
     {
         public const string EntityLogicalName = "attachment";
@@ -41748,7 +41748,7 @@ namespace Entities
 		public readonly int? VersionNumber = null;
 		
 		public readonly string Subject = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string FileName = null;
 		
 		public readonly Guid? AttachmentId = null;
@@ -41763,8 +41763,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_geofencingsettings")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_geofencingsettings")]
 	public class msdyn_geofencingsettings : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_geofencingsettings";
@@ -41784,7 +41784,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference msdyn_UnitOfMeasure = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_geofencingsettingsId = null;
@@ -41806,8 +41806,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("traceassociation")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("traceassociation")]
 	public class TraceAssociation : Entity
     {
         public const string EntityLogicalName = "traceassociation";
@@ -41836,8 +41836,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("bulkoperationlog")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("bulkoperationlog")]
 	public class BulkOperationLog : Entity
     {
         public const string EntityLogicalName = "bulkoperationlog";
@@ -41865,7 +41865,7 @@ namespace Entities
 		public readonly string ErrorDescriptionFormatted = null;
 		
 		public readonly EntityReference RegardingObjectId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? ImportSequenceNumber = null;
@@ -41896,8 +41896,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_purchaseordersubstatus")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_purchaseordersubstatus")]
 	public class msdyn_purchaseordersubstatus : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_purchaseordersubstatus";
@@ -41917,7 +41917,7 @@ namespace Entities
         }
 		
 		public readonly Guid? msdyn_purchaseordersubstatusId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly bool? msdyn_DefaultSubStatus = null;
@@ -41947,8 +41947,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("principalobjectaccessreadsnapshot")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("principalobjectaccessreadsnapshot")]
 	public class PrincipalObjectAccessReadSnapshot : Entity
     {
         public const string EntityLogicalName = "principalobjectaccessreadsnapshot";
@@ -41991,8 +41991,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_quotebookingservice")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_quotebookingservice")]
 	public class msdyn_quotebookingservice : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_quotebookingservice";
@@ -42042,7 +42042,7 @@ namespace Entities
 		public readonly EntityReference msdyn_customerasset = null;
 		[System.ComponentModel.DataAnnotations.Schema.Column("msdyn_Internalflags")]
 		public readonly string msdyn_Internalflags = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_pricelist = null;
@@ -42084,8 +42084,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("timezonedefinition")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("timezonedefinition")]
 	public class TimeZoneDefinition : Entity
     {
         public const string EntityLogicalName = "timezonedefinition";
@@ -42119,7 +42119,7 @@ namespace Entities
 		public readonly Guid? TimeZoneDefinitionId = null;
 		
 		public readonly EntityReference ModifiedBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string UserInterfaceName = null;
 		
 		public readonly DateTime? CreatedOn = null;
@@ -42136,8 +42136,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("appmodulemetadata")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("appmodulemetadata")]
 	public class AppModuleMetadata : Entity
     {
         public const string EntityLogicalName = "appmodulemetadata";
@@ -42192,8 +42192,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("teamsyncattributemappingprofiles")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("teamsyncattributemappingprofiles")]
 	public class TeamSyncAttributeMappingProfiles : Entity
     {
         public const string EntityLogicalName = "teamsyncattributemappingprofiles";
@@ -42222,8 +42222,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_opportunitylinetransaction")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_opportunitylinetransaction")]
 	public class msdyn_opportunitylinetransaction : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_opportunitylinetransaction";
@@ -42293,7 +42293,7 @@ namespace Entities
 		public readonly EntityReference msdyn_ContactVendor = null;
 		
 		public readonly DateTime? msdyn_AccountingDate = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly EntityReference msdyn_PriceList = null;
@@ -42384,8 +42384,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("product")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("product")]
 	public class Product : Entity
     {
         public const string EntityLogicalName = "product";
@@ -42439,7 +42439,7 @@ namespace Entities
 		public readonly string HierarchyPath = null;
 		
 		public readonly string ProductUrl = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly Money Price = null;
@@ -42515,7 +42515,7 @@ namespace Entities
 		public readonly string SupplierName = null;
 		
 		public readonly DateTime? ValidToDate = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly decimal? StockWeight = null;
@@ -42568,8 +42568,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("multientitysearchentities")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("multientitysearchentities")]
 	public class MultiEntitySearchEntities : Entity
     {
         public const string EntityLogicalName = "multientitysearchentities";
@@ -42600,8 +42600,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_entityconfiguration")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_entityconfiguration")]
 	public class msdyn_entityconfiguration : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_entityconfiguration";
@@ -42623,7 +42623,7 @@ namespace Entities
 		public readonly string msdyn_Entity = null;
 		
 		public readonly string msdyn_EntityPrimaryKey = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly bool? msdyn_CopyGeoDataFromURS = null;
@@ -42660,8 +42660,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("appmodulemetadataoperationlog")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("appmodulemetadataoperationlog")]
 	public class AppModuleMetadataOperationLog : Entity
     {
         public const string EntityLogicalName = "appmodulemetadataoperationlog";
@@ -42696,8 +42696,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("semiannualfiscalcalendar")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("semiannualfiscalcalendar")]
 	public class SemiAnnualFiscalCalendar : Entity
     {
         public const string EntityLogicalName = "semiannualfiscalcalendar";
@@ -42758,8 +42758,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("campaign")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("campaign")]
 	public class Campaign : Entity
     {
         public const string EntityLogicalName = "campaign";
@@ -42803,7 +42803,7 @@ namespace Entities
 		public readonly Money BudgetedCost_Base = null;
 		
 		public readonly EntityReference OwningTeam = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly int? TimeZoneRuleVersionNumber = null;
@@ -42875,7 +42875,7 @@ namespace Entities
 		public readonly Money ExpectedRevenue = null;
 		
 		public readonly EntityReference OwningBusinessUnit = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 
         public new static class Options
@@ -42906,8 +42906,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_playbookinstance")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_playbookinstance")]
 	public class msdyn_playbookinstance : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_playbookinstance";
@@ -42931,7 +42931,7 @@ namespace Entities
 		public readonly bool? msdyn_trackprogress = null;
 		
 		public readonly EntityReference msdyn_categoryid = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly bool? msdyn_evaluateactivityclosure = null;
@@ -42965,8 +42965,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("discount")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("discount")]
 	public class Discount : Entity
     {
         public const string EntityLogicalName = "discount";
@@ -42996,7 +42996,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? ImportSequenceNumber = null;
@@ -43042,8 +43042,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("metric")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("metric")]
 	public class Metric : Entity
     {
         public const string EntityLogicalName = "metric";
@@ -43063,13 +43063,13 @@ namespace Entities
         }
 		
 		public readonly EntityReference ModifiedOnBehalfBy = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly string Description = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly EntityReference OrganizationId = null;
@@ -43123,8 +43123,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_relationshipinsightsunifiedconfig")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_relationshipinsightsunifiedconfig")]
 	public class msdyn_relationshipinsightsunifiedconfig : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_relationshipinsightsunifiedconfig";
@@ -43142,7 +43142,7 @@ namespace Entities
                 this["msdyn_relationshipinsightsunifiedconfigid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string new_name = null;
 		
 		public readonly bool? msdyn_usenewconfigexperience = null;
@@ -43164,8 +43164,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("bookableresourcebookingheader")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("bookableresourcebookingheader")]
 	public class BookableResourceBookingHeader : Entity
     {
         public const string EntityLogicalName = "bookableresourcebookingheader";
@@ -43185,7 +43185,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference OwningUser = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly EntityReference msdyn_ResourceRequirement = null;
@@ -43193,7 +43193,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly Guid? StageId = null;
@@ -43272,8 +43272,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("quote")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("quote")]
 	public class Quote : Entity
     {
         public const string EntityLogicalName = "quote";
@@ -43423,7 +43423,7 @@ namespace Entities
 		public readonly decimal? msdyn_GrossMargin = null;
 		
 		public readonly Money TotalAmountLessFreight_Base = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly bool? WillCall = null;
@@ -43547,7 +43547,7 @@ namespace Entities
 		public readonly decimal? DiscountPercentage = null;
 		
 		public readonly EntityReference msdyn_Account = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":1}")]
+		[System.ComponentModel.Description("{\"a\":1}")]
 		public readonly OptionSetValue StateCode = null;
 
         public new static class Options
@@ -43682,8 +43682,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_rmareceipt")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_rmareceipt")]
 	public class msdyn_rmareceipt : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_rmareceipt";
@@ -43703,7 +43703,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference msdyn_ReceivedBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_Note = null;
@@ -43731,8 +43731,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_systemuserschedulersetting")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_systemuserschedulersetting")]
 	public class msdyn_systemuserschedulersetting : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_systemuserschedulersetting";
@@ -43752,7 +43752,7 @@ namespace Entities
         }
 		
 		public readonly Guid? msdyn_systemuserschedulersettingId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_User = null;
@@ -43774,8 +43774,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_analysisjob")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_analysisjob")]
 	public class msdyn_analysisjob : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_analysisjob";
@@ -43801,7 +43801,7 @@ namespace Entities
 		public readonly int? msdyn_sevmediumcount = null;
 		
 		public readonly Guid? msdyn_analysisjobId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_TenantId = null;
@@ -43839,8 +43839,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("opportunity")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("opportunity")]
 	public class Opportunity : Entity
     {
         public const string EntityLogicalName = "opportunity";
@@ -43912,7 +43912,7 @@ namespace Entities
 		public readonly bool? IdentifyPursuitTeam = null;
 		
 		public readonly bool? PursuitDecision = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly OptionSetValue InitialCommunication = null;
@@ -44232,8 +44232,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("actioncard")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("actioncard")]
 	public class ActionCard : Entity
     {
         public const string EntityLogicalName = "actioncard";
@@ -44307,7 +44307,7 @@ namespace Entities
 		public readonly DateTime? CreatedOn = null;
 		
 		public readonly int? RecordIdObjectTypeCode2 = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Title = null;
 		
 		public readonly string ReferenceTokens = null;
@@ -44338,8 +44338,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("entitlemententityallocationtypemapping")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("entitlemententityallocationtypemapping")]
 	public class EntitlementEntityAllocationTypeMapping : UserOrTeamEntity
     {
         public const string EntityLogicalName = "entitlemententityallocationtypemapping";
@@ -44359,7 +44359,7 @@ namespace Entities
         }
 		
 		public readonly Guid? EntitlementEntityAllocationTypeMappingId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string name = null;
 		
 		public readonly OptionSetValue entitytype = null;
@@ -44392,8 +44392,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_agreementbookingproduct")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_agreementbookingproduct")]
 	public class msdyn_agreementbookingproduct : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_agreementbookingproduct";
@@ -44421,7 +44421,7 @@ namespace Entities
 		public readonly Money msdyn_unitamount_Base = null;
 		
 		public readonly EntityReference msdyn_Unit = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Money msdyn_currency_Base = null;
@@ -44465,8 +44465,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_project")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_project")]
 	public class msdyn_project : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_project";
@@ -44526,7 +44526,7 @@ namespace Entities
 		public readonly decimal? ExchangeRate = null;
 		
 		public readonly Money msdyn_RemainingSales = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_subject = null;
 		
 		public readonly string msdyn_calendarid = null;
@@ -44674,8 +44674,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("sdkmessagerequestfield")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("sdkmessagerequestfield")]
 	public class SdkMessageRequestField : Entity
     {
         public const string EntityLogicalName = "sdkmessagerequestfield";
@@ -44758,8 +44758,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("multientitysearch")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("multientitysearch")]
 	public class MultiEntitySearch : Entity
     {
         public const string EntityLogicalName = "multientitysearch";
@@ -44791,15 +44791,15 @@ namespace Entities
 		public readonly DateTime? CreatedOn = null;
 		
 		public readonly DateTime? ModifiedOn = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("channelproperty")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("channelproperty")]
 	public class ChannelProperty : Entity
     {
         public const string EntityLogicalName = "channelproperty";
@@ -44819,7 +44819,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference ModifiedOnBehalfBy = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue statecode = null;
 		
 		public readonly string Description = null;
@@ -44829,7 +44829,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference RegardingObjectId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly string Applicationsource = null;
@@ -44894,8 +44894,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("sharepointdata")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("sharepointdata")]
 	public class SharePointData : Entity
     {
         public const string EntityLogicalName = "sharepointdata";
@@ -44950,8 +44950,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("businessunitnewsarticle")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("businessunitnewsarticle")]
 	public class BusinessUnitNewsArticle : Entity
     {
         public const string EntityLogicalName = "businessunitnewsarticle";
@@ -44999,7 +44999,7 @@ namespace Entities
 		public readonly DateTime? CreatedOn = null;
 		
 		public readonly EntityReference OrganizationId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string ArticleTitle = null;
 		
 		public readonly OptionSetValue ArticleTypeCode = null;
@@ -45021,8 +45021,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_fieldcomputation")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_fieldcomputation")]
 	public class msdyn_fieldcomputation : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_fieldcomputation";
@@ -45042,7 +45042,7 @@ namespace Entities
         }
 		
 		public readonly OptionSetValue msdyn_ComputedField = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_ProductId = null;
@@ -45070,8 +45070,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("new_master")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("new_master")]
 	public class new_master : OrganizationEntity
     {
         public const string EntityLogicalName = "new_master";
@@ -45089,7 +45089,7 @@ namespace Entities
                 this["new_masterid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string new_number = null;
 		
 		public readonly Guid? new_masterId = null;
@@ -45111,8 +45111,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_orderinvoicingsetupdate")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_orderinvoicingsetupdate")]
 	public class msdyn_orderinvoicingsetupdate : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_orderinvoicingsetupdate";
@@ -45134,7 +45134,7 @@ namespace Entities
 		public readonly EntityReference msdyn_Invoice = null;
 		
 		public readonly DateTime? msdyn_InvoiceDate = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly DateTime? msdyn_PreviousInvoiceDate = null;
@@ -45174,8 +45174,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("columnmapping")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("columnmapping")]
 	public class ColumnMapping : Entity
     {
         public const string EntityLogicalName = "columnmapping";
@@ -45197,7 +45197,7 @@ namespace Entities
 		public readonly EntityReference ModifiedOnBehalfBy = null;
 		
 		public readonly string IntroducedVersion = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly Guid? SupportingSolutionId = null;
@@ -45235,7 +45235,7 @@ namespace Entities
 		public readonly DateTime? CreatedOn = null;
 		
 		public readonly EntityReference ImportMapId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string SourceAttributeName = null;
 
         public new static class Options
@@ -45264,8 +45264,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_actual")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_actual")]
 	public class msdyn_actual : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_actual";
@@ -45369,7 +45369,7 @@ namespace Entities
 		public readonly EntityReference msdyn_ContactVendor = null;
 		
 		public readonly DateTime? msdyn_AccountingDate = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly EntityReference msdyn_PriceList = null;
@@ -45503,8 +45503,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("documentindex")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("documentindex")]
 	public class DocumentIndex : Entity
     {
         public const string EntityLogicalName = "documentindex";
@@ -45534,7 +45534,7 @@ namespace Entities
 		public readonly EntityReference ModifiedBy = null;
 		
 		public readonly Guid? DocumentIndexId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Title = null;
 		
 		public readonly int? VersionNumber = null;
@@ -45570,8 +45570,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("import")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("import")]
 	public class Import : Entity
     {
         public const string EntityLogicalName = "import";
@@ -45591,11 +45591,11 @@ namespace Entities
         }
 		
 		public readonly EntityReference OwningUser = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? Sequence = null;
@@ -45651,8 +45651,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_requirementstatus")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_requirementstatus")]
 	public class msdyn_requirementstatus : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_requirementstatus";
@@ -45672,7 +45672,7 @@ namespace Entities
         }
 		
 		public readonly Guid? msdyn_requirementstatusId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly OptionSetValue msdyn_Status = null;
@@ -45698,8 +45698,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_quotebookingincident")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_quotebookingincident")]
 	public class msdyn_quotebookingincident : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_quotebookingincident";
@@ -45723,7 +45723,7 @@ namespace Entities
 		public readonly EntityReference msdyn_customerasset = null;
 		
 		public readonly int? msdyn_estimatedduration = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_Quote = null;
@@ -45753,8 +45753,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("orginsightsmetric")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("orginsightsmetric")]
 	public class OrgInsightsMetric : Entity
     {
         public const string EntityLogicalName = "orginsightsmetric";
@@ -45795,8 +45795,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("queue")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("queue")]
 	public class Queue : Entity
     {
         public const string EntityLogicalName = "queue";
@@ -45834,7 +45834,7 @@ namespace Entities
 		public readonly OptionSetValue QueueTypeCode = null;
 		
 		public readonly OptionSetValue OutgoingEmailDeliveryMethod = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly bool? AllowEmailCredentials = null;
@@ -45882,7 +45882,7 @@ namespace Entities
 		public readonly EntityReference OwningBusinessUnit = null;
 		
 		public readonly OptionSetValue IncomingEmailFilteringMethod = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly OptionSetValue StatusCode = null;
@@ -45944,8 +45944,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_quotelinetransaction")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_quotelinetransaction")]
 	public class msdyn_quotelinetransaction : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_quotelinetransaction";
@@ -46031,7 +46031,7 @@ namespace Entities
 		public readonly EntityReference msdyn_ContactVendor = null;
 		
 		public readonly DateTime? msdyn_AccountingDate = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly EntityReference msdyn_PriceList = null;
@@ -46122,8 +46122,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("aciviewmapper")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("aciviewmapper")]
 	public class ACIViewMapper : Entity
     {
         public const string EntityLogicalName = "aciviewmapper";
@@ -46147,7 +46147,7 @@ namespace Entities
 		public readonly Guid? ACIViewMapperId = null;
 		
 		public readonly EntityReference ModifiedOnBehalfBy = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue statecode = null;
 		
 		public readonly EntityReference CreatedBy = null;
@@ -46185,8 +46185,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("salesorderdetail")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("salesorderdetail")]
 	public class SalesOrderDetail : Entity
     {
         public const string EntityLogicalName = "salesorderdetail";
@@ -46256,7 +46256,7 @@ namespace Entities
 		public readonly bool? msdyn_IncludeFee = null;
 		
 		public readonly Money BaseAmount_Base = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string SalesOrderDetailName = null;
 		
 		public readonly EntityReference OwningTeam = null;
@@ -46480,8 +46480,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("runtimedependency")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("runtimedependency")]
 	public class RuntimeDependency : Entity
     {
         public const string EntityLogicalName = "runtimedependency";
@@ -46518,8 +46518,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_invoicefrequency")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_invoicefrequency")]
 	public class msdyn_invoicefrequency : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_invoicefrequency";
@@ -46537,7 +46537,7 @@ namespace Entities
                 this["msdyn_invoicefrequencyid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly OptionSetValue msdyn_daysofrun = null;
@@ -46583,8 +46583,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("cardtype")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("cardtype")]
 	public class CardType : Entity
     {
         public const string EntityLogicalName = "cardtype";
@@ -46602,7 +46602,7 @@ namespace Entities
                 this["cardtypeid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string CardName = null;
 		
 		public readonly EntityReference ModifiedOnBehalfBy = null;
@@ -46678,8 +46678,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_iotdevicecommandparameters")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_iotdevicecommandparameters")]
 	public class msdyn_iotdevicecommandparameters : Entity
     {
         public const string EntityLogicalName = "msdyn_iotdevicecommandparameters";
@@ -46708,8 +46708,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("globalsearchconfiguration")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("globalsearchconfiguration")]
 	public class GlobalSearchConfiguration : Entity
     {
         public const string EntityLogicalName = "globalsearchconfiguration";
@@ -46764,8 +46764,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("principalobjectaccess")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("principalobjectaccess")]
 	public class PrincipalObjectAccess : Entity
     {
         public const string EntityLogicalName = "principalobjectaccess";
@@ -46819,8 +46819,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("customeropportunityrole")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("customeropportunityrole")]
 	public class CustomerOpportunityRole : Entity
     {
         public const string EntityLogicalName = "customeropportunityrole";
@@ -46887,8 +46887,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("businessunitmap")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("businessunitmap")]
 	public class BusinessUnitMap : Entity
     {
         public const string EntityLogicalName = "businessunitmap";
@@ -46917,8 +46917,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("subject")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("subject")]
 	public class Subject : Entity
     {
         public const string EntityLogicalName = "subject";
@@ -46958,7 +46958,7 @@ namespace Entities
 		public readonly EntityReference CreatedBy = null;
 		
 		public readonly DateTime? ModifiedOn = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Title = null;
 		
 		public readonly DateTime? CreatedOn = null;
@@ -46973,8 +46973,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_userworkhistory")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_userworkhistory")]
 	public class msdyn_userworkhistory : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_userworkhistory";
@@ -46996,7 +46996,7 @@ namespace Entities
 		public readonly string msdyn_skillexperience = null;
 		
 		public readonly double? msdyn_budgetperformance = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly double? msdyn_ontimeperformance = null;
@@ -47026,8 +47026,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_rma")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_rma")]
 	public class msdyn_rma : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_rma";
@@ -47073,7 +47073,7 @@ namespace Entities
 		public readonly EntityReference msdyn_SubStatus = null;
 		
 		public readonly Money msdyn_totalamount_Base = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_ShipVia = null;
@@ -47123,8 +47123,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_bpf_477c16f59170487b8b4dc895c5dcd09b")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_bpf_477c16f59170487b8b4dc895c5dcd09b")]
 	public class msdyn_bpf_477c16f59170487b8b4dc895c5dcd09b : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_bpf_477c16f59170487b8b4dc895c5dcd09b";
@@ -47162,7 +47162,7 @@ namespace Entities
 		public readonly EntityReference OrganizationId = null;
 		
 		public readonly DateTime? CompletedOn = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string bpf_name = null;
 		
 		public readonly DateTime? ActiveStageStartedOn = null;
@@ -47183,8 +47183,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_rtvproduct")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_rtvproduct")]
 	public class msdyn_rtvproduct : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_rtvproduct";
@@ -47210,7 +47210,7 @@ namespace Entities
 		public readonly EntityReference TransactionCurrencyId = null;
 		
 		public readonly EntityReference msdyn_Unit = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Money msdyn_unitcreditamount_Base = null;
@@ -47256,8 +47256,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_quotepricelist")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_quotepricelist")]
 	public class msdyn_quotepricelist : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_quotepricelist";
@@ -47279,7 +47279,7 @@ namespace Entities
 		public readonly EntityReference msdyn_Quote = null;
 		
 		public readonly EntityReference msdyn_PriceList = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly Guid? msdyn_quotepricelistId = null;
@@ -47299,8 +47299,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("organizationui")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("organizationui")]
 	public class OrganizationUI : Entity
     {
         public const string EntityLogicalName = "organizationui";
@@ -47373,8 +47373,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("topic")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("topic")]
 	public class Topic : Entity
     {
         public const string EntityLogicalName = "topic";
@@ -47408,15 +47408,15 @@ namespace Entities
 		public readonly int? VersionNumber = null;
 		
 		public readonly int? ImportSequenceNumber = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? UTCConversionTimeZoneCode = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_configuration")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_configuration")]
 	public class msdyn_Configuration : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_configuration";
@@ -47434,7 +47434,7 @@ namespace Entities
                 this["msdyn_configurationid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_Name = null;
 		
 		public readonly OptionSetValue msdyn_Type = null;
@@ -47467,8 +47467,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_timegroupdetail")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_timegroupdetail")]
 	public class msdyn_timegroupdetail : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_timegroupdetail";
@@ -47486,7 +47486,7 @@ namespace Entities
                 this["msdyn_timegroupdetailid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? stageid = null;
@@ -47518,8 +47518,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("plugintypestatistic")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("plugintypestatistic")]
 	public class PluginTypeStatistic : Entity
     {
         public const string EntityLogicalName = "plugintypestatistic";
@@ -47580,8 +47580,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("filtertemplate")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("filtertemplate")]
 	public class FilterTemplate : Entity
     {
         public const string EntityLogicalName = "filtertemplate";
@@ -47614,8 +47614,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_agreementinvoicedate")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_agreementinvoicedate")]
 	public class msdyn_agreementinvoicedate : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_agreementinvoicedate";
@@ -47637,7 +47637,7 @@ namespace Entities
 		public readonly EntityReference msdyn_Invoice = null;
 		
 		public readonly DateTime? msdyn_InvoiceDate = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_InvoiceSetup = null;
@@ -47673,8 +47673,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("languagelocale")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("languagelocale")]
 	public class LanguageLocale : Entity
     {
         public const string EntityLogicalName = "languagelocale";
@@ -47698,9 +47698,9 @@ namespace Entities
 		public readonly OptionSetValue statuscode = null;
 		
 		public readonly string Code = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue statecode = null;
 		
 		public readonly int? LocaleId = null;
@@ -47728,8 +47728,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("uomschedule")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("uomschedule")]
 	public class UoMSchedule : Entity
     {
         public const string EntityLogicalName = "uomschedule";
@@ -47749,7 +47749,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference ModifiedOnBehalfBy = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly string BaseUoMName = null;
@@ -47759,7 +47759,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference ModifiedByExternalParty = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? ImportSequenceNumber = null;
@@ -47803,8 +47803,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_purchaseorderreceipt")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_purchaseorderreceipt")]
 	public class msdyn_purchaseorderreceipt : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_purchaseorderreceipt";
@@ -47826,7 +47826,7 @@ namespace Entities
 		public readonly Guid? msdyn_purchaseorderreceiptId = null;
 		
 		public readonly EntityReference msdyn_ReceivedBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? stageid = null;
@@ -47858,8 +47858,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("stringmap")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("stringmap")]
 	public class StringMap : Entity
     {
         public const string EntityLogicalName = "stringmap";
@@ -47905,8 +47905,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_projecttransactioncategory")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_projecttransactioncategory")]
 	public class msdyn_projecttransactioncategory : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_projecttransactioncategory";
@@ -47926,7 +47926,7 @@ namespace Entities
         }
 		
 		public readonly Guid? msdyn_projecttransactioncategoryId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_TransactionCategory = null;
@@ -47957,8 +47957,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("quotedetail")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("quotedetail")]
 	public class QuoteDetail : Entity
     {
         public const string EntityLogicalName = "quotedetail";
@@ -48152,7 +48152,7 @@ namespace Entities
 		public readonly Guid? QuoteDetailId = null;
 		
 		public readonly Money ExtendedAmount = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string QuoteDetailName = null;
 		
 		public readonly OptionSetValue PropertyConfigurationStatus = null;
@@ -48259,8 +48259,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_estimate")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_estimate")]
 	public class msdyn_estimate : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_estimate";
@@ -48280,7 +48280,7 @@ namespace Entities
         }
 		
 		public readonly OptionSetValue msdyn_estimateheadertype = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly Guid? msdyn_estimateId = null;
@@ -48309,8 +48309,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("tracelog")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("tracelog")]
 	public class TraceLog : Entity
     {
         public const string EntityLogicalName = "tracelog";
@@ -48366,7 +48366,7 @@ namespace Entities
 		public readonly string TraceParameterXml = null;
 		
 		public readonly DateTime? ModifiedOn = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Text = null;
 		
 		public readonly bool? CanBeDeleted = null;
@@ -48398,8 +48398,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("owner")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("owner")]
 	public class Owner : Entity
     {
         public const string EntityLogicalName = "owner";
@@ -48419,7 +48419,7 @@ namespace Entities
         }
 		
 		public readonly int? VersionNumber = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly Guid? OwnerId = null;
@@ -48430,8 +48430,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("untrackedemail")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("untrackedemail")]
 	public class UntrackedEmail : Entity
     {
         public const string EntityLogicalName = "untrackedemail";
@@ -48461,7 +48461,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference RegardingObjectId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Subject = null;
 		
 		public readonly string ExchangeItemId = null;
@@ -48517,8 +48517,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_forecastinstance")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_forecastinstance")]
 	public class msdyn_forecastinstance : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_forecastinstance";
@@ -48538,7 +48538,7 @@ namespace Entities
         }
 		
 		public readonly decimal? msdyn_percentageachieved = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_forecastname = null;
 		
 		public readonly Money msdyn_manualbestcaseamount = null;
@@ -48616,8 +48616,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("dependency")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("dependency")]
 	public class Dependency : Entity
     {
         public const string EntityLogicalName = "dependency";
@@ -48852,8 +48852,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("teamprofiles")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("teamprofiles")]
 	public class TeamProfiles : Entity
     {
         public const string EntityLogicalName = "teamprofiles";
@@ -48882,8 +48882,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("ownermapping")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("ownermapping")]
 	public class OwnerMapping : Entity
     {
         public const string EntityLogicalName = "ownermapping";
@@ -48907,7 +48907,7 @@ namespace Entities
 		public readonly string SourceUserValueForSourceCRMUserLink = null;
 		
 		public readonly string IntroducedVersion = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly Guid? SupportingSolutionId = null;
@@ -48974,8 +48974,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_databaseversion")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_databaseversion")]
 	public class msdyn_databaseversion : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_databaseversion";
@@ -48993,7 +48993,7 @@ namespace Entities
                 this["msdyn_databaseversionid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_solutionname = null;
 		
 		public readonly int? msdyn_dbversion = null;
@@ -49017,8 +49017,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_workhourtemplate")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_workhourtemplate")]
 	public class msdyn_workhourtemplate : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_workhourtemplate";
@@ -49036,7 +49036,7 @@ namespace Entities
                 this["msdyn_workhourtemplateid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_calendarid = null;
@@ -49062,8 +49062,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("interprocesslock")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("interprocesslock")]
 	public class InterProcessLock : Entity
     {
         public const string EntityLogicalName = "interprocesslock";
@@ -49090,8 +49090,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_agreement")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_agreement")]
 	public class msdyn_agreement : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_agreement";
@@ -49139,7 +49139,7 @@ namespace Entities
 		public readonly string msdyn_AgreementDetails = null;
 		
 		public readonly Guid? processid = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_agreementId = null;
@@ -49178,8 +49178,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_componentlayer")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_componentlayer")]
 	public class msdyn_componentlayer : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_componentlayer";
@@ -49213,15 +49213,15 @@ namespace Entities
 		public readonly string msdyn_solutionname = null;
 		
 		public readonly Guid? msdyn_componentlayerId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_changes = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("complexcontrol")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("complexcontrol")]
 	public class ComplexControl : Entity
     {
         public const string EntityLogicalName = "complexcontrol";
@@ -49265,7 +49265,7 @@ namespace Entities
 		public readonly Guid? ComplexControlIdUnique = null;
 		
 		public readonly Guid? ComplexControlId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly bool? IsManaged = null;
@@ -49287,8 +49287,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_purchaseorderreceiptproduct")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_purchaseorderreceiptproduct")]
 	public class msdyn_purchaseorderreceiptproduct : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_purchaseorderreceiptproduct";
@@ -49316,7 +49316,7 @@ namespace Entities
 		public readonly EntityReference TransactionCurrencyId = null;
 		
 		public readonly EntityReference msdyn_PurchaseOrderBill = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_PurchaseOrderProduct = null;
@@ -49354,8 +49354,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_analysisresult")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_analysisresult")]
 	public class msdyn_analysisresult : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_analysisresult";
@@ -49385,7 +49385,7 @@ namespace Entities
 		public readonly EntityReference msdyn_AnalysisJobId = null;
 		
 		public readonly string msdyn_FileUri = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly OptionSetValue msdyn_Severity = null;
@@ -49476,8 +49476,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("newprocess")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("newprocess")]
 	public class NewProcess : Entity
     {
         public const string EntityLogicalName = "newprocess";
@@ -49499,7 +49499,7 @@ namespace Entities
 		public readonly EntityReference ActiveStageId = null;
 		
 		public readonly EntityReference ModifiedOnBehalfBy = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly string TraversedPath = null;
@@ -49509,7 +49509,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? ImportSequenceNumber = null;
@@ -49558,8 +49558,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("systemapplicationmetadata")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("systemapplicationmetadata")]
 	public class SystemApplicationMetadata : Entity
     {
         public const string EntityLogicalName = "systemapplicationmetadata";
@@ -49620,8 +49620,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("publisheraddress")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("publisheraddress")]
 	public class PublisherAddress : Entity
     {
         public const string EntityLogicalName = "publisheraddress";
@@ -49651,7 +49651,7 @@ namespace Entities
 		public readonly double? Latitude = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? ImportSequenceNumber = null;
@@ -49731,8 +49731,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("officedocument")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("officedocument")]
 	public class OfficeDocument : Entity
     {
         public const string EntityLogicalName = "officedocument";
@@ -49780,7 +49780,7 @@ namespace Entities
 		public readonly Guid? OfficeDocumentId = null;
 		
 		public readonly string Content = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
@@ -49795,8 +49795,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_wallsavedquery")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_wallsavedquery")]
 	public class msdyn_wallsavedquery : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_wallsavedquery";
@@ -49816,7 +49816,7 @@ namespace Entities
         }
 		
 		public readonly Guid? msdyn_wallsavedqueryId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_entityname = null;
 		
 		public readonly EntityReference msdyn_postconfigurationid = null;
@@ -49852,8 +49852,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_expensecategory")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_expensecategory")]
 	public class msdyn_expensecategory : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_expensecategory";
@@ -49871,7 +49871,7 @@ namespace Entities
                 this["msdyn_expensecategoryid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_ExpenseCategoryuId = null;
@@ -49917,8 +49917,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_iotdeviceregistrationhistory")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_iotdeviceregistrationhistory")]
 	public class msdyn_iotdeviceregistrationhistory : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_iotdeviceregistrationhistory";
@@ -49936,7 +49936,7 @@ namespace Entities
                 this["msdyn_iotdeviceregistrationhistoryid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_iotdeviceregistrationhistoryId = null;
@@ -49967,8 +49967,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("mailboxstatistics")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("mailboxstatistics")]
 	public class MailboxStatistics : Entity
     {
         public const string EntityLogicalName = "mailboxstatistics";
@@ -50030,8 +50030,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("lookupmapping")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("lookupmapping")]
 	public class LookUpMapping : Entity
     {
         public const string EntityLogicalName = "lookupmapping";
@@ -50051,7 +50051,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference ModifiedOnBehalfBy = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly OptionSetValue StatusCode = null;
@@ -50125,8 +50125,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("contactleads")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("contactleads")]
 	public class ContactLeads : Entity
     {
         public const string EntityLogicalName = "contactleads";
@@ -50158,15 +50158,15 @@ namespace Entities
 		public readonly Guid? ContactLeadId = null;
 		
 		public readonly int? ImportSequenceNumber = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? UTCConversionTimeZoneCode = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("userform")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("userform")]
 	public class UserForm : Entity
     {
         public const string EntityLogicalName = "userform";
@@ -50192,7 +50192,7 @@ namespace Entities
 		public readonly string Description = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly string ObjectTypeCode = null;
@@ -50237,8 +50237,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("solutionhistorydata")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("solutionhistorydata")]
 	public class SolutionHistoryData : Entity
     {
         public const string EntityLogicalName = "solutionhistorydata";
@@ -50325,8 +50325,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_incidenttypeproduct")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_incidenttypeproduct")]
 	public class msdyn_incidenttypeproduct : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_incidenttypeproduct";
@@ -50348,7 +50348,7 @@ namespace Entities
 		public readonly EntityReference msdyn_Product = null;
 		
 		public readonly EntityReference msdyn_Unit = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_InternalDescription = null;
@@ -50378,8 +50378,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_solutionhistory")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_solutionhistory")]
 	public class msdyn_solutionhistory : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_solutionhistory";
@@ -50401,7 +50401,7 @@ namespace Entities
 		public readonly string msdyn_activityid = null;
 		
 		public readonly bool? msdyn_result = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_publisherid = null;
@@ -50468,8 +50468,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("workflowdependency")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("workflowdependency")]
 	public class WorkflowDependency : Entity
     {
         public const string EntityLogicalName = "workflowdependency";
@@ -50549,8 +50549,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("mailboxtrackingcategory")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("mailboxtrackingcategory")]
 	public class MailboxTrackingCategory : Entity
     {
         public const string EntityLogicalName = "mailboxtrackingcategory";
@@ -50595,8 +50595,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("connectionroleassociation")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("connectionroleassociation")]
 	public class ConnectionRoleAssociation : Entity
     {
         public const string EntityLogicalName = "connectionroleassociation";
@@ -50625,8 +50625,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_purchaseorderbill")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_purchaseorderbill")]
 	public class msdyn_purchaseorderbill : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_purchaseorderbill";
@@ -50656,7 +50656,7 @@ namespace Entities
 		public readonly Money msdyn_TaxAmount = null;
 		
 		public readonly Money msdyn_shippingamount_Base = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? stageid = null;
@@ -50702,8 +50702,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("subscriptionsyncentryoutlook")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("subscriptionsyncentryoutlook")]
 	public class SubscriptionSyncEntryOutlook : Entity
     {
         public const string EntityLogicalName = "subscriptionsyncentryoutlook";
@@ -50734,8 +50734,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("syncattributemappingprofile")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("syncattributemappingprofile")]
 	public class SyncAttributeMappingProfile : Entity
     {
         public const string EntityLogicalName = "syncattributemappingprofile";
@@ -50761,7 +50761,7 @@ namespace Entities
 		public readonly Guid? SupportingSolutionId = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly Guid? SyncAttributeMappingProfileIdUnique = null;
@@ -50800,8 +50800,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_contractlinescheduleofvalue")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_contractlinescheduleofvalue")]
 	public class msdyn_contractlinescheduleofvalue : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_contractlinescheduleofvalue";
@@ -50831,7 +50831,7 @@ namespace Entities
 		public readonly Money msdyn_price = null;
 		
 		public readonly OptionSetValue msdyn_TransactionClassification = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_externaldescription = null;
@@ -50912,8 +50912,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_approval")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_approval")]
 	public class msdyn_approval : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_approval";
@@ -50975,7 +50975,7 @@ namespace Entities
 		public readonly EntityReference SLAId = null;
 		
 		public readonly OptionSetValue StateCode = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Subject = null;
 		
 		public readonly EntityCollection CC = null;
@@ -51113,8 +51113,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("dynamicpropertyassociation")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("dynamicpropertyassociation")]
 	public class DynamicPropertyAssociation : Entity
     {
         public const string EntityLogicalName = "dynamicpropertyassociation";
@@ -51142,7 +51142,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference RegardingObjectid = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly OptionSetValue InheritanceState = null;
@@ -51194,8 +51194,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("sla")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("sla")]
 	public class SLA : Entity
     {
         public const string EntityLogicalName = "sla";
@@ -51229,13 +51229,13 @@ namespace Entities
 		public readonly EntityReference TransactionCurrencyId = null;
 		
 		public readonly Guid? SLAId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly OptionSetValue SLAType = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":1}")]
+		[System.ComponentModel.Description("{\"a\":1}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly DateTime? ModifiedOn = null;
@@ -51981,8 +51981,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("systemuserroles")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("systemuserroles")]
 	public class SystemUserRoles : Entity
     {
         public const string EntityLogicalName = "systemuserroles";
@@ -52011,8 +52011,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("knowledgearticlescategories")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("knowledgearticlescategories")]
 	public class KnowledgeArticlesCategories : Entity
     {
         public const string EntityLogicalName = "knowledgearticlescategories";
@@ -52041,8 +52041,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("dynamicpropertyoptionsetitem")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("dynamicpropertyoptionsetitem")]
 	public class DynamicPropertyOptionSetItem : Entity
     {
         public const string EntityLogicalName = "dynamicpropertyoptionsetitem";
@@ -52076,7 +52076,7 @@ namespace Entities
 		public readonly DateTime? ModifiedOn = null;
 		
 		public readonly int? UTCConversionTimeZoneCode = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string DynamicPropertyOptionName = null;
 		
 		public readonly int? VersionNumber = null;
@@ -52105,8 +52105,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_iotdevicecommand")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_iotdevicecommand")]
 	public class msdyn_iotdevicecommand : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_iotdevicecommand";
@@ -52132,7 +52132,7 @@ namespace Entities
 		public readonly EntityReference msdyn_Command = null;
 		
 		public readonly EntityReference msdyn_Device = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_CommandStatusReason = null;
@@ -52168,8 +52168,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_solutioncomponentdatasource")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_solutioncomponentdatasource")]
 	public class msdyn_solutioncomponentdatasource : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_solutioncomponentdatasource";
@@ -52189,13 +52189,13 @@ namespace Entities
         }
 		
 		public readonly Guid? msdyn_solutioncomponentdatasourceId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_inventoryadjustmentproduct")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_inventoryadjustmentproduct")]
 	public class msdyn_inventoryadjustmentproduct : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_inventoryadjustmentproduct";
@@ -52217,7 +52217,7 @@ namespace Entities
 		public readonly EntityReference msdyn_Product = null;
 		
 		public readonly EntityReference msdyn_Unit = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_inventoryadjustmentproductId = null;
@@ -52243,8 +52243,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_workorderproduct")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_workorderproduct")]
 	public class msdyn_workorderproduct : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_workorderproduct";
@@ -52326,7 +52326,7 @@ namespace Entities
 		public readonly EntityReference msdyn_Warehouse = null;
 		
 		public readonly double? msdyn_EstimateDiscountPercent = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_Entitlement = null;
@@ -52395,8 +52395,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_productinventory")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_productinventory")]
 	public class msdyn_productinventory : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_productinventory";
@@ -52424,7 +52424,7 @@ namespace Entities
 		public readonly double? msdyn_QtyOnHand = null;
 		
 		public readonly double? msdyn_QtyOnOrder = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly double? msdyn_QtyAvailable = null;
@@ -52458,8 +52458,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_workorderservice")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_workorderservice")]
 	public class msdyn_workorderservice : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_workorderservice";
@@ -52541,7 +52541,7 @@ namespace Entities
 		public readonly int? msdyn_LineOrder = null;
 		
 		public readonly double? msdyn_EstimateDiscountPercent = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_Entitlement = null;
@@ -52618,8 +52618,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_iotsettings")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_iotsettings")]
 	public class msdyn_iotsettings : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_iotsettings";
@@ -52645,7 +52645,7 @@ namespace Entities
 		public readonly bool? msdyn_ScheduledDeviceDataPull = null;
 		
 		public readonly int? msdyn_devicedatapullfrequency = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_IoTAlertAggregationRule = null;
@@ -52681,8 +52681,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("systemusersyncmappingprofiles")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("systemusersyncmappingprofiles")]
 	public class SystemUserSyncMappingProfiles : Entity
     {
         public const string EntityLogicalName = "systemusersyncmappingprofiles";
@@ -52711,8 +52711,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("customcontrol")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("customcontrol")]
 	public class CustomControl : Entity
     {
         public const string EntityLogicalName = "customcontrol";
@@ -52742,7 +52742,7 @@ namespace Entities
 		public readonly Guid? SupportingSolutionId = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly string ClientJson = null;
@@ -52787,8 +52787,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_clientextension")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_clientextension")]
 	public class msdyn_clientextension : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_clientextension";
@@ -52810,7 +52810,7 @@ namespace Entities
 		public readonly OptionSetValue msdyn_extensiontype = null;
 		
 		public readonly EntityReference msdyn_scheduleboardsettingid = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_webresource = null;
@@ -52840,8 +52840,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("principalsyncattributemap")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("principalsyncattributemap")]
 	public class PrincipalSyncAttributeMap : Entity
     {
         public const string EntityLogicalName = "principalsyncattributemap";
@@ -52911,8 +52911,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("queuemembership")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("queuemembership")]
 	public class QueueMembership : Entity
     {
         public const string EntityLogicalName = "queuemembership";
@@ -52941,8 +52941,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("letter")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("letter")]
 	public class Letter : Entity
     {
         public const string EntityLogicalName = "letter";
@@ -53062,7 +53062,7 @@ namespace Entities
 		public readonly OptionSetValue StatusCode = null;
 		
 		public readonly int? ActualDurationMinutes = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Subject = null;
 
         public new static class Options
@@ -53112,8 +53112,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("postfollow")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("postfollow")]
 	public class PostFollow : Entity
     {
         public const string EntityLogicalName = "postfollow";
@@ -53164,8 +53164,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("authorizationserver")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("authorizationserver")]
 	public class AuthorizationServer : Entity
     {
         public const string EntityLogicalName = "authorizationserver";
@@ -53185,7 +53185,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference ModifiedOnBehalfBy = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly Guid? TenantId = null;
@@ -53193,7 +53193,7 @@ namespace Entities
 		public readonly Guid? AuthorizationServerId = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly OptionSetValue AuthorizationServerType = null;
@@ -53246,8 +53246,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("appmoduleroles")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("appmoduleroles")]
 	public class AppModuleRoles : Entity
     {
         public const string EntityLogicalName = "appmoduleroles";
@@ -53300,8 +53300,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("role")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("role")]
 	public class Role : Entity
     {
         public const string EntityLogicalName = "role";
@@ -53329,7 +53329,7 @@ namespace Entities
 		public readonly Guid? SupportingSolutionId = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly bool? IsCustomizable = null;
@@ -53387,8 +53387,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("picklistmapping")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("picklistmapping")]
 	public class PickListMapping : Entity
     {
         public const string EntityLogicalName = "picklistmapping";
@@ -53410,7 +53410,7 @@ namespace Entities
 		public readonly EntityReference ModifiedOnBehalfBy = null;
 		
 		public readonly Guid? SupportingSolutionId = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly string SourceValue = null;
@@ -53474,8 +53474,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("contactinvoices")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("contactinvoices")]
 	public class ContactInvoices : Entity
     {
         public const string EntityLogicalName = "contactinvoices";
@@ -53507,15 +53507,15 @@ namespace Entities
 		public readonly Guid? ContactId = null;
 		
 		public readonly int? ImportSequenceNumber = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? UTCConversionTimeZoneCode = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("contract")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("contract")]
 	public class Contract : Entity
     {
         public const string EntityLogicalName = "contract";
@@ -53545,7 +53545,7 @@ namespace Entities
 		public readonly DateTime? CancelOn = null;
 		
 		public readonly Money NetPrice_Base = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Title = null;
 		
 		public readonly bool? UseDiscountAsPercentage = null;
@@ -53575,7 +53575,7 @@ namespace Entities
 		public readonly EntityReference OwningTeam = null;
 		
 		public readonly DateTime? ExpiresOn = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":2}")]
+		[System.ComponentModel.Description("{\"a\":2}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly EntityReference BillingContactId = null;
@@ -53683,8 +53683,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_quotelinetransactioncategory")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_quotelinetransactioncategory")]
 	public class msdyn_quotelinetransactioncategory : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_quotelinetransactioncategory";
@@ -53712,7 +53712,7 @@ namespace Entities
 		public readonly EntityReference msdyn_TransactionCategory = null;
 		
 		public readonly EntityReference msdyn_QuoteLineTransactionClassification = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly EntityReference msdyn_QuoteLineId = null;
@@ -53752,8 +53752,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_solutionhealthrule")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_solutionhealthrule")]
 	public class msdyn_solutionhealthrule : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_solutionhealthrule";
@@ -53773,7 +53773,7 @@ namespace Entities
         }
 		
 		public readonly string msdyn_uniquename = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_OwningSolutionId = null;
@@ -53803,8 +53803,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("contractdetail")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("contractdetail")]
 	public class ContractDetail : Entity
     {
         public const string EntityLogicalName = "contractdetail";
@@ -53832,7 +53832,7 @@ namespace Entities
 		public readonly int? TotalAllotments = null;
 		
 		public readonly decimal? DiscountPercentage = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Title = null;
 		
 		public readonly EntityReference CustomerId = null;
@@ -53950,8 +53950,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("ribboncustomization")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("ribboncustomization")]
 	public class RibbonCustomization : Entity
     {
         public const string EntityLogicalName = "ribboncustomization";
@@ -54004,8 +54004,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_rmasubstatus")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_rmasubstatus")]
 	public class msdyn_rmasubstatus : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_rmasubstatus";
@@ -54023,7 +54023,7 @@ namespace Entities
                 this["msdyn_rmasubstatusid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_rmasubstatusId = null;
@@ -54053,8 +54053,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_icebreakersconfig")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_icebreakersconfig")]
 	public class msdyn_icebreakersconfig : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_icebreakersconfig";
@@ -54076,7 +54076,7 @@ namespace Entities
 		public readonly bool? msdyn_issportscategoryenabled = null;
 		
 		public readonly bool? msdyn_isadminsettingenabled = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly bool? msdyn_aretermsaccepted = null;
@@ -54104,8 +54104,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("bookableresource")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("bookableresource")]
 	public class BookableResource : Entity
     {
         public const string EntityLogicalName = "bookableresource";
@@ -54157,7 +54157,7 @@ namespace Entities
 		public readonly bool? msdyn_DeriveCapacity = null;
 		
 		public readonly EntityReference OwningTeam = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly OptionSetValue msdyn_GenericType = null;
@@ -54211,7 +54211,7 @@ namespace Entities
 		public readonly double? msdyn_Latitude = null;
 		
 		public readonly bool? msdyn_TimeOffApprovalRequired = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly OptionSetValue StatusCode = null;
@@ -54264,8 +54264,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_workorderresourcerestriction")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_workorderresourcerestriction")]
 	public class msdyn_workorderresourcerestriction : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_workorderresourcerestriction";
@@ -54287,7 +54287,7 @@ namespace Entities
 		public readonly DateTime? msdyn_ExpirationDate = null;
 		
 		public readonly EntityReference msdyn_Account = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_Resource = null;
@@ -54313,8 +54313,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("task")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("task")]
 	public class Task : Entity
     {
         public const string EntityLogicalName = "task";
@@ -54428,7 +54428,7 @@ namespace Entities
 		public readonly OptionSetValue StatusCode = null;
 		
 		public readonly int? ActualDurationMinutes = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Subject = null;
 
         public new static class Options
@@ -54479,8 +54479,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_workorderservicetask")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_workorderservicetask")]
 	public class msdyn_workorderservicetask : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_workorderservicetask";
@@ -54504,7 +54504,7 @@ namespace Entities
 		public readonly EntityReference msdyn_Booking = null;
 		
 		public readonly int? msdyn_EstimatedDuration = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly int? msdyn_LineOrder = null;
@@ -54542,8 +54542,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_requirementrelationship")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_requirementrelationship")]
 	public class msdyn_requirementrelationship : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_requirementrelationship";
@@ -54565,7 +54565,7 @@ namespace Entities
 		public readonly string msdyn_requirementgroupcontrolviewid = null;
 		
 		public readonly EntityReference msdyn_requirementgroupid = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_requirementrelationshipId = null;
@@ -54595,8 +54595,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("topicmodel")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("topicmodel")]
 	public class TopicModel : Entity
     {
         public const string EntityLogicalName = "topicmodel";
@@ -54620,7 +54620,7 @@ namespace Entities
 		public readonly EntityReference ModifiedOnBehalfBy = null;
 		
 		public readonly Guid? TopicModelId = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly DateTime? TopicsLastCreatedOn = null;
@@ -54632,7 +54632,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly string AzureSchedulerJobName = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly EntityReference ConfigurationUsed = null;
@@ -54696,8 +54696,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("sdkmessageprocessingstepsecureconfig")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("sdkmessageprocessingstepsecureconfig")]
 	public class SdkMessageProcessingStepSecureConfig : Entity
     {
         public const string EntityLogicalName = "sdkmessageprocessingstepsecureconfig";
@@ -54740,8 +54740,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_priority")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_priority")]
 	public class msdyn_priority : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_priority";
@@ -54761,7 +54761,7 @@ namespace Entities
         }
 		
 		public readonly OptionSetValue msdyn_LevelofImportance = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_PriorityColor = null;
@@ -54796,8 +54796,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("bookingstatus")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("bookingstatus")]
 	public class BookingStatus : Entity
     {
         public const string EntityLogicalName = "bookingstatus";
@@ -54817,7 +54817,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference OwningUser = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly string Description = null;
@@ -54827,7 +54827,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly OptionSetValue msdyn_FieldServiceStatus = null;
@@ -54910,8 +54910,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_uniquenumber")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_uniquenumber")]
 	public class msdyn_uniquenumber : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_uniquenumber";
@@ -54929,7 +54929,7 @@ namespace Entities
                 this["msdyn_uniquenumberid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_uniquenumberId = null;
@@ -54953,8 +54953,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msfp_emailtemplate")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msfp_emailtemplate")]
 	public class msfp_emailtemplate : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msfp_emailtemplate";
@@ -54974,7 +54974,7 @@ namespace Entities
         }
 		
 		public readonly bool? msfp_Canedit = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msfp_name = null;
 		
 		public readonly string msfp_emailtemplatebody = null;
@@ -55002,8 +55002,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_3dmodel")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_3dmodel")]
 	public class msdyn_3dmodel : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_3dmodel";
@@ -55025,7 +55025,7 @@ namespace Entities
 		public readonly OptionSetValue msdyn_StorageType = null;
 		
 		public readonly byte[] EntityImage = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly OptionSetValue msdyn_FileType = null;
@@ -55062,8 +55062,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("processstage")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("processstage")]
 	public class ProcessStage : Entity
     {
         public const string EntityLogicalName = "processstage";
@@ -55081,7 +55081,7 @@ namespace Entities
                 this["processstageid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string StageName = null;
 		
 		public readonly Guid? ProcessStageId = null;
@@ -55120,8 +55120,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_agreementinvoicesetup")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_agreementinvoicesetup")]
 	public class msdyn_agreementinvoicesetup : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_agreementinvoicesetup";
@@ -55139,7 +55139,7 @@ namespace Entities
                 this["msdyn_agreementinvoicesetupid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? stageid = null;
@@ -55177,8 +55177,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("calendar")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("calendar")]
 	public class Calendar : Entity
     {
         public const string EntityLogicalName = "calendar";
@@ -55204,7 +55204,7 @@ namespace Entities
 		public readonly string Description = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly EntityReference OrganizationId = null;
@@ -55241,8 +55241,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("subscriptionstatisticsoutlook")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("subscriptionstatisticsoutlook")]
 	public class SubscriptionStatisticsOutlook : Entity
     {
         public const string EntityLogicalName = "subscriptionstatisticsoutlook";
@@ -55269,8 +55269,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_timeoffrequest")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_timeoffrequest")]
 	public class msdyn_timeoffrequest : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_timeoffrequest";
@@ -55290,7 +55290,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference msdyn_Resource = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_timeoffrequestId = null;
@@ -55318,8 +55318,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("routingruleitem")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("routingruleitem")]
 	public class RoutingRuleItem : Entity
     {
         public const string EntityLogicalName = "routingruleitem";
@@ -55349,7 +55349,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly Guid? RoutingRuleItemIdUnique = null;
@@ -55410,8 +55410,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_quotelineinvoiceschedule")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_quotelineinvoiceschedule")]
 	public class msdyn_quotelineinvoiceschedule : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_quotelineinvoiceschedule";
@@ -55429,7 +55429,7 @@ namespace Entities
                 this["msdyn_quotelineinvoicescheduleid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly DateTime? msdyn_transactioncutoffdate = null;
@@ -55461,8 +55461,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_solutionhistorydatasource")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_solutionhistorydatasource")]
 	public class msdyn_solutionhistorydatasource : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_solutionhistorydatasource";
@@ -55482,13 +55482,13 @@ namespace Entities
         }
 		
 		public readonly Guid? msdyn_solutionhistorydatasourceId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_timeoffcalendar")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_timeoffcalendar")]
 	public class msdyn_timeoffcalendar : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_timeoffcalendar";
@@ -55508,7 +55508,7 @@ namespace Entities
         }
 		
 		public readonly string msdyn_calendar = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_timeoffcalendarId = null;
@@ -55530,8 +55530,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_incidenttypecharacteristic")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_incidenttypecharacteristic")]
 	public class msdyn_incidenttypecharacteristic : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_incidenttypecharacteristic";
@@ -55551,7 +55551,7 @@ namespace Entities
         }
 		
 		public readonly Guid? msdyn_incidenttypecharacteristicId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_RatingValue = null;
@@ -55575,8 +55575,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("navigationsetting")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("navigationsetting")]
 	public class NavigationSetting : Entity
     {
         public const string EntityLogicalName = "navigationsetting";
@@ -55610,7 +55610,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly int? AdvancedSettingOrder = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? QuickSettingOrder = null;
@@ -55678,8 +55678,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("customcontroldefaultconfig")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("customcontroldefaultconfig")]
 	public class CustomControlDefaultConfig : Entity
     {
         public const string EntityLogicalName = "customcontroldefaultconfig";
@@ -55750,8 +55750,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_upgraderun")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_upgraderun")]
 	public class msdyn_upgraderun : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_upgraderun";
@@ -55783,7 +55783,7 @@ namespace Entities
 		public readonly string msdyn_Package = null;
 		
 		public readonly EntityReference OrganizationId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_Summary = null;
 		
 		public readonly string msdyn_TargetVersion = null;
@@ -55811,8 +55811,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("savedorginsightsconfiguration")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("savedorginsightsconfiguration")]
 	public class SavedOrgInsightsConfiguration : Entity
     {
         public const string EntityLogicalName = "savedorginsightsconfiguration";
@@ -55900,8 +55900,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("userapplicationmetadata")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("userapplicationmetadata")]
 	public class UserApplicationMetadata : Entity
     {
         public const string EntityLogicalName = "userapplicationmetadata";
@@ -55964,8 +55964,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("dynamicproperty")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("dynamicproperty")]
 	public class DynamicProperty : Entity
     {
         public const string EntityLogicalName = "dynamicproperty";
@@ -56001,7 +56001,7 @@ namespace Entities
 		public readonly EntityReference RegardingObjectId = null;
 		
 		public readonly Guid? RootDynamicPropertyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly decimal? DefaultValueDecimal = null;
@@ -56013,7 +56013,7 @@ namespace Entities
 		public readonly bool? IsRequired = null;
 		
 		public readonly OptionSetValue DataType = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue statecode = null;
 		
 		public readonly EntityReference DefaultValueOptionSet = null;
@@ -56087,8 +56087,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_payment")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_payment")]
 	public class msdyn_payment : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_payment";
@@ -56114,7 +56114,7 @@ namespace Entities
 		public readonly string msdyn_CheckNumber = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_PaymentMethod = null;
@@ -56157,8 +56157,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("competitorproduct")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("competitorproduct")]
 	public class CompetitorProduct : Entity
     {
         public const string EntityLogicalName = "competitorproduct";
@@ -56190,15 +56190,15 @@ namespace Entities
 		public readonly Guid? ProductId = null;
 		
 		public readonly int? ImportSequenceNumber = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? UTCConversionTimeZoneCode = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("entitlementchannel")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("entitlementchannel")]
 	public class EntitlementChannel : Entity
     {
         public const string EntityLogicalName = "entitlementchannel";
@@ -56226,7 +56226,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? ImportSequenceNumber = null;
@@ -56278,8 +56278,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("hierarchyrule")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("hierarchyrule")]
 	public class HierarchyRule : Entity
     {
         public const string EntityLogicalName = "hierarchyrule";
@@ -56317,7 +56317,7 @@ namespace Entities
 		public readonly EntityReference OrganizationId = null;
 		
 		public readonly Guid? RelatedEntityFormId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly string IntroducedVersion = null;
@@ -56350,8 +56350,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_requirementorganizationunit")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_requirementorganizationunit")]
 	public class msdyn_requirementorganizationunit : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_requirementorganizationunit";
@@ -56371,7 +56371,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference msdyn_ResourceRequirement = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_OrganizationalUnit = null;
@@ -56393,8 +56393,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_orderlineresourcecategory")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_orderlineresourcecategory")]
 	public class msdyn_orderlineresourcecategory : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_orderlineresourcecategory";
@@ -56422,7 +56422,7 @@ namespace Entities
 		public readonly Guid? msdyn_orderlineresourcecategoryId = null;
 		
 		public readonly EntityReference msdyn_ContractLineTransactionClassification = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly string msdyn_ContractLine = null;
@@ -56462,8 +56462,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("webresource")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("webresource")]
 	public class WebResource : Entity
     {
         public const string EntityLogicalName = "webresource";
@@ -56497,7 +56497,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly bool? IsHidden = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly bool? IsCustomizable = null;
@@ -56569,8 +56569,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("emailserverprofile")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("emailserverprofile")]
 	public class EmailServerProfile : Entity
     {
         public const string EntityLogicalName = "emailserverprofile";
@@ -56632,7 +56632,7 @@ namespace Entities
 		public readonly EntityReference OwningTeam = null;
 		
 		public readonly bool? OutgoingUseSSL = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly OptionSetValue IncomingCredentialRetrieval = null;
@@ -56710,7 +56710,7 @@ namespace Entities
 		public readonly bool? IsOutgoingPasswordSet = null;
 		
 		public readonly bool? UseDefaultTenantId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly string IncomingServerLocation = null;
@@ -56799,8 +56799,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_orderlinetransaction")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_orderlinetransaction")]
 	public class msdyn_orderlinetransaction : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_orderlinetransaction";
@@ -56884,7 +56884,7 @@ namespace Entities
 		public readonly EntityReference msdyn_ContactVendor = null;
 		
 		public readonly Guid? msdyn_orderlinetransactionId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly EntityReference msdyn_PriceList = null;
@@ -56975,8 +56975,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_iotalert")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_iotalert")]
 	public class msdyn_iotalert : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_iotalert";
@@ -57016,7 +57016,7 @@ namespace Entities
 		public readonly string msdyn_ParentAlertToken = null;
 		
 		public readonly Guid? processid = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_Description = null;
 		
 		public readonly EntityReference msdyn_Device = null;
@@ -57061,8 +57061,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("savedqueryvisualization")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("savedqueryvisualization")]
 	public class SavedQueryVisualization : Entity
     {
         public const string EntityLogicalName = "savedqueryvisualization";
@@ -57094,7 +57094,7 @@ namespace Entities
 		public readonly Guid? SupportingSolutionId = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly bool? IsCustomizable = null;
@@ -57157,8 +57157,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("commitment")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("commitment")]
 	public class Commitment : Entity
     {
         public const string EntityLogicalName = "commitment";
@@ -57210,7 +57210,7 @@ namespace Entities
 		public readonly OptionSetValue StatusCode = null;
 		
 		public readonly Guid? PartyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly string ActivityTypeCode = null;
@@ -57228,8 +57228,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("organizationstatistic")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("organizationstatistic")]
 	public class OrganizationStatistic : Entity
     {
         public const string EntityLogicalName = "organizationstatistic";
@@ -57260,8 +57260,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("usersettings")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("usersettings")]
 	public class UserSettings : Entity
     {
         public const string EntityLogicalName = "usersettings";
@@ -57519,8 +57519,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_iotdeviceproperty")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_iotdeviceproperty")]
 	public class msdyn_iotdeviceproperty : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_iotdeviceproperty";
@@ -57542,7 +57542,7 @@ namespace Entities
 		public readonly EntityReference msdyn_DeviceCategory = null;
 		
 		public readonly Guid? msdyn_iotdevicepropertyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_Property = null;
@@ -57564,8 +57564,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("roleprivileges")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("roleprivileges")]
 	public class RolePrivileges : Entity
     {
         public const string EntityLogicalName = "roleprivileges";
@@ -57620,8 +57620,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_postruleconfig")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_postruleconfig")]
 	public class msdyn_PostRuleConfig : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_postruleconfig";
@@ -57641,7 +57641,7 @@ namespace Entities
         }
 		
 		public readonly string msdyn_RuleSource = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_FormatId = null;
@@ -57673,8 +57673,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("duplicaterecord")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("duplicaterecord")]
 	public class DuplicateRecord : Entity
     {
         public const string EntityLogicalName = "duplicaterecord";
@@ -57713,8 +57713,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_iotdevicecategory")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_iotdevicecategory")]
 	public class msdyn_iotdevicecategory : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_iotdevicecategory";
@@ -57732,7 +57732,7 @@ namespace Entities
                 this["msdyn_iotdevicecategoryid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_iotdevicecategoryId = null;
@@ -57752,8 +57752,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("kbarticle")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("kbarticle")]
 	public class KbArticle : Entity
     {
         public const string EntityLogicalName = "kbarticle";
@@ -57815,7 +57815,7 @@ namespace Entities
 		public readonly Guid? KbArticleId = null;
 		
 		public readonly DateTime? ModifiedOn = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Title = null;
 		
 		public readonly string Content = null;
@@ -57841,8 +57841,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("sdkmessagepair")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("sdkmessagepair")]
 	public class SdkMessagePair : Entity
     {
         public const string EntityLogicalName = "sdkmessagepair";
@@ -57917,8 +57917,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("timezonelocalizedname")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("timezonelocalizedname")]
 	public class TimeZoneLocalizedName : Entity
     {
         public const string EntityLogicalName = "timezonelocalizedname";
@@ -57952,7 +57952,7 @@ namespace Entities
 		public readonly EntityReference TimeZoneDefinitionId = null;
 		
 		public readonly DateTime? ModifiedOn = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string UserInterfaceName = null;
 		
 		public readonly DateTime? CreatedOn = null;
@@ -57967,8 +57967,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_agreementbookingincident")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_agreementbookingincident")]
 	public class msdyn_agreementbookingincident : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_agreementbookingincident";
@@ -57992,7 +57992,7 @@ namespace Entities
 		public readonly EntityReference msdyn_CustomerAsset = null;
 		
 		public readonly int? msdyn_EstimatedDuration = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_AgreementBookingSetup = null;
@@ -58022,8 +58022,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_quotelineanalyticsbreakdown")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_quotelineanalyticsbreakdown")]
 	public class msdyn_quotelineanalyticsbreakdown : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_quotelineanalyticsbreakdown";
@@ -58051,7 +58051,7 @@ namespace Entities
 		public readonly Money msdyn_Price = null;
 		
 		public readonly EntityReference msdyn_QuoteLineDetail = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly DateTime? msdyn_StartDateTime = null;
@@ -58120,8 +58120,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("fax")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("fax")]
 	public class Fax : Entity
     {
         public const string EntityLogicalName = "fax";
@@ -58245,7 +58245,7 @@ namespace Entities
 		public readonly int? ActualDurationMinutes = null;
 		
 		public readonly string Tsid = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Subject = null;
 
         public new static class Options
@@ -58295,8 +58295,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("channelaccessprofile")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("channelaccessprofile")]
 	public class ChannelAccessProfile : Entity
     {
         public const string EntityLogicalName = "channelaccessprofile";
@@ -58318,7 +58318,7 @@ namespace Entities
 		public readonly EntityReference OwningUser = null;
 		
 		public readonly string IntroducedVersion = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly bool? SubmitFeedback = null;
@@ -58330,7 +58330,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly bool? FacebookAccess = null;
@@ -58415,8 +58415,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("languageprovisioningstate")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("languageprovisioningstate")]
 	public class LanguageProvisioningState : Entity
     {
         public const string EntityLogicalName = "languageprovisioningstate";
@@ -58460,8 +58460,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_transactioncategoryclassification")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_transactioncategoryclassification")]
 	public class msdyn_transactioncategoryclassification : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_transactioncategoryclassification";
@@ -58483,7 +58483,7 @@ namespace Entities
 		public readonly OptionSetValue msdyn_transactionclassification = null;
 		
 		public readonly Guid? msdyn_transactioncategoryclassificationId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_transactioncategory = null;
@@ -58516,8 +58516,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("salesliteratureitem")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("salesliteratureitem")]
 	public class SalesLiteratureItem : Entity
     {
         public const string EntityLogicalName = "salesliteratureitem";
@@ -58579,7 +58579,7 @@ namespace Entities
 		public readonly string DocumentBody = null;
 		
 		public readonly DateTime? ModifiedOn = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Title = null;
 		
 		public readonly DateTime? CreatedOn = null;
@@ -58599,8 +58599,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("workflowwaitsubscription")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("workflowwaitsubscription")]
 	public class WorkflowWaitSubscription : Entity
     {
         public const string EntityLogicalName = "workflowwaitsubscription";
@@ -58645,8 +58645,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_iotproviderinstance")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_iotproviderinstance")]
 	public class msdyn_iotproviderinstance : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_iotproviderinstance";
@@ -58664,7 +58664,7 @@ namespace Entities
                 this["msdyn_iotproviderinstanceid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_ProviderInstanceId = null;
@@ -58690,8 +58690,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("entitymap")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("entitymap")]
 	public class EntityMap : Entity
     {
         public const string EntityLogicalName = "entitymap";
@@ -58756,8 +58756,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_businessclosure")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_businessclosure")]
 	public class msdyn_businessclosure : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_businessclosure";
@@ -58777,7 +58777,7 @@ namespace Entities
         }
 		
 		public readonly bool? msdyn_IsAllDayEvent = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_businessclosureId = null;
@@ -58805,8 +58805,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("businessdatalocalizedlabel")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("businessdatalocalizedlabel")]
 	public class BusinessDataLocalizedLabel : Entity
     {
         public const string EntityLogicalName = "businessdatalocalizedlabel";
@@ -58841,8 +58841,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_purchaseorderproduct")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_purchaseorderproduct")]
 	public class msdyn_purchaseorderproduct : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_purchaseorderproduct";
@@ -58872,7 +58872,7 @@ namespace Entities
 		public readonly EntityReference TransactionCurrencyId = null;
 		
 		public readonly EntityReference msdyn_Unit = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_purchaseorderproductId = null;
@@ -58928,8 +58928,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_resourceterritory")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_resourceterritory")]
 	public class msdyn_resourceterritory : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_resourceterritory";
@@ -58947,7 +58947,7 @@ namespace Entities
                 this["msdyn_resourceterritoryid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_Territory = null;
@@ -58971,8 +58971,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_dataexport")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_dataexport")]
 	public class msdyn_dataexport : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_dataexport";
@@ -58992,7 +58992,7 @@ namespace Entities
         }
 		
 		public readonly Guid? msdyn_dataexportId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_pagingdata = null;
@@ -59029,8 +59029,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_bpf_665e73aa18c247d886bfc50499c73b82")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_bpf_665e73aa18c247d886bfc50499c73b82")]
 	public class msdyn_bpf_665e73aa18c247d886bfc50499c73b82 : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_bpf_665e73aa18c247d886bfc50499c73b82";
@@ -59064,7 +59064,7 @@ namespace Entities
 		public readonly EntityReference OrganizationId = null;
 		
 		public readonly DateTime? CompletedOn = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string bpf_name = null;
 		
 		public readonly DateTime? ActiveStageStartedOn = null;
@@ -59085,8 +59085,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdynsm_settingssitemap")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdynsm_settingssitemap")]
 	public class msdynsm_settingssitemap : OrganizationEntity
     {
         public const string EntityLogicalName = "msdynsm_settingssitemap";
@@ -59106,7 +59106,7 @@ namespace Entities
         }
 		
 		public readonly Guid? msdynsm_settingssitemapId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdynsm_name = null;
 		
 		public readonly EntityReference OrganizationId = null;
@@ -59126,8 +59126,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_componentlayerdatasource")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_componentlayerdatasource")]
 	public class msdyn_componentlayerdatasource : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_componentlayerdatasource";
@@ -59147,13 +59147,13 @@ namespace Entities
         }
 		
 		public readonly Guid? msdyn_componentlayerdatasourceId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("actioncardusersettings")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("actioncardusersettings")]
 	public class ActionCardUserSettings : Entity
     {
         public const string EntityLogicalName = "actioncardusersettings";
@@ -59198,8 +59198,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("partnerapplication")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("partnerapplication")]
 	public class PartnerApplication : Entity
     {
         public const string EntityLogicalName = "partnerapplication";
@@ -59219,13 +59219,13 @@ namespace Entities
         }
 		
 		public readonly EntityReference ModifiedOnBehalfBy = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly Guid? TenantId = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly OptionSetValue ApplicationRole = null;
@@ -59278,8 +59278,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("serviceendpoint")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("serviceendpoint")]
 	public class ServiceEndpoint : Entity
     {
         public const string EntityLogicalName = "serviceendpoint";
@@ -59323,7 +59323,7 @@ namespace Entities
 		public readonly EntityReference OrganizationId = null;
 		
 		public readonly string SolutionNamespace = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly DateTime? CreatedOn = null;
@@ -59422,8 +59422,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("wizardpage")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("wizardpage")]
 	public class WizardPage : Entity
     {
         public const string EntityLogicalName = "wizardpage";
@@ -59441,7 +59441,7 @@ namespace Entities
                 this["wizardpageid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly int? PageSequenceNumber = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
@@ -59470,8 +59470,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_schedulingparameter")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_schedulingparameter")]
 	public class msdyn_schedulingparameter : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_schedulingparameter";
@@ -59509,7 +59509,7 @@ namespace Entities
 		public readonly string msdyn_CustomGeoResourceField = null;
 		
 		public readonly string msdyn_CustomGeoLatitudeField = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly bool? msdyn_EnableCustomGeoLocation = null;
@@ -59559,8 +59559,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_connector")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_connector")]
 	public class msdyn_Connector : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_connector";
@@ -59588,7 +59588,7 @@ namespace Entities
 		public readonly Guid? msdyn_ConnectorIdUnique = null;
 		
 		public readonly string IntroducedVersion = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_Name = null;
 		
 		public readonly OptionSetValue msdyn_ConnectorType = null;
@@ -59638,8 +59638,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("sharepointsite")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("sharepointsite")]
 	public class SharePointSite : Entity
     {
         public const string EntityLogicalName = "sharepointsite";
@@ -59661,7 +59661,7 @@ namespace Entities
 		public readonly EntityReference ModifiedOnBehalfBy = null;
 		
 		public readonly OptionSetValue ValidationStatus = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly string Description = null;
@@ -59673,7 +59673,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly bool? IsGridPresent = null;
@@ -59774,8 +59774,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("azureserviceconnection")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("azureserviceconnection")]
 	public class AzureServiceConnection : Entity
     {
         public const string EntityLogicalName = "azureserviceconnection";
@@ -59795,7 +59795,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference ModifiedOnBehalfBy = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly DateTime? LastConnectionTime = null;
@@ -59805,7 +59805,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly string AccountKey = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly string ServiceUri = null;
@@ -59853,8 +59853,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("rollupfield")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("rollupfield")]
 	public class RollupField : Entity
     {
         public const string EntityLogicalName = "rollupfield";
@@ -59928,8 +59928,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("queuemembercount")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("queuemembercount")]
 	public class QueueMemberCount : Entity
     {
         public const string EntityLogicalName = "queuemembercount";
@@ -59956,8 +59956,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("canvasapp")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("canvasapp")]
 	public class CanvasApp : Entity
     {
         public const string EntityLogicalName = "canvasapp";
@@ -59993,7 +59993,7 @@ namespace Entities
 		public readonly bool? IsHidden = null;
 		
 		public readonly bool? IsCdsUpgraded = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly string EmbeddedApp = null;
@@ -60070,8 +60070,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("report")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("report")]
 	public class Report : Entity
     {
         public const string EntityLogicalName = "report";
@@ -60169,7 +60169,7 @@ namespace Entities
 		public readonly bool? IsPersonal = null;
 		
 		public readonly OptionSetValue ComponentState = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly bool? IsCustomReport = null;
@@ -60206,8 +60206,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("translationprocess")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("translationprocess")]
 	public class TranslationProcess : Entity
     {
         public const string EntityLogicalName = "translationprocess";
@@ -60229,7 +60229,7 @@ namespace Entities
 		public readonly EntityReference ActiveStageId = null;
 		
 		public readonly EntityReference ModifiedOnBehalfBy = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly string TraversedPath = null;
@@ -60239,7 +60239,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? ImportSequenceNumber = null;
@@ -60288,8 +60288,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_orderlinetransactionclassification")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_orderlinetransactionclassification")]
 	public class msdyn_orderlinetransactionclassification : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_orderlinetransactionclassification";
@@ -60315,7 +60315,7 @@ namespace Entities
 		public readonly EntityReference msdyn_ContractLineId = null;
 		
 		public readonly Guid? msdyn_orderlinetransactionclassificationId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly string msdyn_ContractLine = null;
@@ -60355,8 +60355,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("entitydataprovider")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("entitydataprovider")]
 	public class EntityDataProvider : Entity
     {
         public const string EntityLogicalName = "entitydataprovider";
@@ -60400,7 +60400,7 @@ namespace Entities
 		public readonly Guid? EntityDataProviderId = null;
 		
 		public readonly Guid? RetrievePlugin = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly Guid? SolutionId = null;
@@ -60423,8 +60423,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("applicationfile")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("applicationfile")]
 	public class ApplicationFile : Entity
     {
         public const string EntityLogicalName = "applicationfile";
@@ -60467,8 +60467,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_msdyn_journal_msdyn_timeentry")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_msdyn_journal_msdyn_timeentry")]
 	public class msdyn_msdyn_journal_msdyn_timeentry : Entity
     {
         public const string EntityLogicalName = "msdyn_msdyn_journal_msdyn_timeentry";
@@ -60497,8 +60497,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("solution")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("solution")]
 	public class Solution : Entity
     {
         public const string EntityLogicalName = "solution";
@@ -60526,7 +60526,7 @@ namespace Entities
 		public readonly bool? IsInternal = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string FriendlyName = null;
 		
 		public readonly EntityReference ParentSolutionId = null;
@@ -60582,8 +60582,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_iotdevicedatahistory")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_iotdevicedatahistory")]
 	public class msdyn_iotdevicedatahistory : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_iotdevicedatahistory";
@@ -60607,7 +60607,7 @@ namespace Entities
 		public readonly DateTime? msdyn_LastActivityTime = null;
 		
 		public readonly EntityReference msdyn_Device = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_iotdevicedatahistoryId = null;
@@ -60643,8 +60643,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("importjob")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("importjob")]
 	public class ImportJob : Entity
     {
         public const string EntityLogicalName = "importjob";
@@ -60703,8 +60703,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_timeentry")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_timeentry")]
 	public class msdyn_timeentry : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_timeentry";
@@ -60746,7 +60746,7 @@ namespace Entities
 		public readonly EntityReference msdyn_transactioncategory = null;
 		
 		public readonly Guid? processid = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly OptionSetValue msdyn_entryStatus = null;
@@ -60807,8 +60807,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_requirementresourcecategory")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_requirementresourcecategory")]
 	public class msdyn_requirementresourcecategory : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_requirementresourcecategory";
@@ -60828,7 +60828,7 @@ namespace Entities
         }
 		
 		public readonly EntityReference msdyn_ResourceRequirement = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly bool? msdyn_isprimary = null;
@@ -60852,8 +60852,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("topicmodelconfiguration")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("topicmodelconfiguration")]
 	public class TopicModelConfiguration : Entity
     {
         public const string EntityLogicalName = "topicmodelconfiguration";
@@ -60879,7 +60879,7 @@ namespace Entities
 		public readonly string FetchXmlList = null;
 		
 		public readonly Guid? SupportingSolutionId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? NgramSize = null;
@@ -60941,8 +60941,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_requirementgroup")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_requirementgroup")]
 	public class msdyn_requirementgroup : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_requirementgroup";
@@ -60960,7 +60960,7 @@ namespace Entities
                 this["msdyn_requirementgroupid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly OptionSetValue msdyn_autogrouptype = null;
@@ -60991,8 +60991,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("bookableresourcebookingexchangesyncidmapping")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("bookableresourcebookingexchangesyncidmapping")]
 	public class BookableResourceBookingExchangeSyncIdMapping : Entity
     {
         public const string EntityLogicalName = "bookableresourcebookingexchangesyncidmapping";
@@ -61016,7 +61016,7 @@ namespace Entities
 		public readonly string ExchangeEntryId = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? LastSyncErrorCode = null;
@@ -61076,8 +61076,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("displaystringmap")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("displaystringmap")]
 	public class DisplayStringMap : Entity
     {
         public const string EntityLogicalName = "displaystringmap";
@@ -61126,8 +61126,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_entityrankingrule")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_entityrankingrule")]
 	public class msdyn_entityrankingrule : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_entityrankingrule";
@@ -61147,7 +61147,7 @@ namespace Entities
         }
 		
 		public readonly int? msdyn_RulePriority = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly int? msdyn_ObjectTypeCode = null;
@@ -61179,8 +61179,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("sdkmessagefilter")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("sdkmessagefilter")]
 	public class SdkMessageFilter : Entity
     {
         public const string EntityLogicalName = "sdkmessagefilter";
@@ -61269,8 +61269,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("hierarchysecurityconfiguration")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("hierarchysecurityconfiguration")]
 	public class HierarchySecurityConfiguration : Entity
     {
         public const string EntityLogicalName = "hierarchysecurityconfiguration";
@@ -61299,8 +61299,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_paymentdetail")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_paymentdetail")]
 	public class msdyn_paymentdetail : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_paymentdetail";
@@ -61326,7 +61326,7 @@ namespace Entities
 		public readonly Money msdyn_paymentamount_Base = null;
 		
 		public readonly EntityReference msdyn_Payment = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_Invoice = null;
@@ -61352,8 +61352,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("bookableresourcecharacteristic")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("bookableresourcecharacteristic")]
 	public class BookableResourceCharacteristic : Entity
     {
         public const string EntityLogicalName = "bookableresourcecharacteristic";
@@ -61375,13 +61375,13 @@ namespace Entities
 		public readonly EntityReference OwningUser = null;
 		
 		public readonly EntityReference msdyn_supportingrecord = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly EntityReference Resource = null;
@@ -61453,8 +61453,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("expiredprocess")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("expiredprocess")]
 	public class ExpiredProcess : Entity
     {
         public const string EntityLogicalName = "expiredprocess";
@@ -61476,7 +61476,7 @@ namespace Entities
 		public readonly EntityReference ActiveStageId = null;
 		
 		public readonly EntityReference ModifiedOnBehalfBy = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly string TraversedPath = null;
@@ -61486,7 +61486,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? ImportSequenceNumber = null;
@@ -61535,8 +61535,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("traceregarding")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("traceregarding")]
 	public class TraceRegarding : Entity
     {
         public const string EntityLogicalName = "traceregarding";
@@ -61567,8 +61567,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_quoteinvoicingsetup")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_quoteinvoicingsetup")]
 	public class msdyn_quoteinvoicingsetup : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_quoteinvoicingsetup";
@@ -61592,7 +61592,7 @@ namespace Entities
 		public readonly EntityReference TransactionCurrencyId = null;
 		
 		public readonly EntityReference msdyn_Quote = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly string msdyn_RecurrenceSettings = null;
@@ -61624,8 +61624,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("relationshiprole")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("relationshiprole")]
 	public class RelationshipRole : Entity
     {
         public const string EntityLogicalName = "relationshiprole";
@@ -61645,13 +61645,13 @@ namespace Entities
         }
 		
 		public readonly EntityReference ModifiedOnBehalfBy = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly string Description = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly Guid? RelationshipRoleId = null;
@@ -61687,8 +61687,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_projectparameter")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_projectparameter")]
 	public class msdyn_projectparameter : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_projectparameter";
@@ -61722,7 +61722,7 @@ namespace Entities
 		public readonly EntityReference msdyn_teammemberrole = null;
 		
 		public readonly EntityReference msdyn_defaultWorkTemplate = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly EntityReference OrganizationId = null;
@@ -61751,8 +61751,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("internaladdress")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("internaladdress")]
 	public class InternalAddress : Entity
     {
         public const string EntityLogicalName = "internaladdress";
@@ -61856,8 +61856,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_upgradestep")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_upgradestep")]
 	public class msdyn_upgradestep : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_upgradestep";
@@ -61877,7 +61877,7 @@ namespace Entities
         }
 		[System.ComponentModel.DataAnnotations.Schema.Column("msdyn_finished")]
 		public readonly DateTime? msdyn_FinishedDate = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_Name = null;
 		
 		public readonly OptionSetValue msdyn_Status = null;
@@ -61917,8 +61917,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("sdkmessageprocessingstepimage")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("sdkmessageprocessingstepimage")]
 	public class SdkMessageProcessingStepImage : Entity
     {
         public const string EntityLogicalName = "sdkmessageprocessingstepimage";
@@ -61950,7 +61950,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly DateTime? OverwriteTime = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly Guid? SdkMessageProcessingStepImageId = null;
@@ -62007,8 +62007,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_customerasset")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_customerasset")]
 	public class msdyn_customerasset : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_customerasset";
@@ -62036,7 +62036,7 @@ namespace Entities
 		public readonly DateTime? msdyn_LastCommandSentTime = null;
 		
 		public readonly EntityReference msdyn_CustomerAssetCategory = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly OptionSetValue msdyn_RegistrationStatus = null;
@@ -62078,8 +62078,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_journal")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_journal")]
 	public class msdyn_journal : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_journal";
@@ -62119,7 +62119,7 @@ namespace Entities
 		public readonly string traversedpath = null;
 		
 		public readonly Guid? processid = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_description = null;
 		
 		public readonly EntityReference msdyn_BookableResource = null;
@@ -62150,8 +62150,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("productsubstitute")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("productsubstitute")]
 	public class ProductSubstitute : Entity
     {
         public const string EntityLogicalName = "productsubstitute";
@@ -62171,13 +62171,13 @@ namespace Entities
         }
 		
 		public readonly EntityReference ModifiedOnBehalfBy = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue statecode = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? ImportSequenceNumber = null;
@@ -62241,8 +62241,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("connectionroleobjecttypecode")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("connectionroleobjecttypecode")]
 	public class ConnectionRoleObjectTypeCode : Entity
     {
         public const string EntityLogicalName = "connectionroleobjecttypecode";
@@ -62273,8 +62273,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_characteristicreqforteammember")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_characteristicreqforteammember")]
 	public class msdyn_characteristicreqforteammember : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_characteristicreqforteammember";
@@ -62292,7 +62292,7 @@ namespace Entities
                 this["msdyn_characteristicreqforteammemberid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly EntityReference msdyn_ratingvalue = null;
@@ -62325,8 +62325,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_bookingsetupmetadata")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_bookingsetupmetadata")]
 	public class msdyn_bookingsetupmetadata : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_bookingsetupmetadata";
@@ -62368,7 +62368,7 @@ namespace Entities
 		public readonly Guid? msdyn_bookingsetupmetadataId = null;
 		
 		public readonly string msdyn_BookingStatusFieldLogicalName = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_EntityLogicalName = null;
 		
 		public readonly int? msdyn_DefaultBookingDuration = null;
@@ -62398,8 +62398,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_postconfig")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_postconfig")]
 	public class msdyn_PostConfig : OrganizationEntity
     {
         public const string EntityLogicalName = "msdyn_postconfig";
@@ -62429,7 +62429,7 @@ namespace Entities
 		public readonly string msdyn_Status = null;
 		
 		public readonly int? msdyn_Otc = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_EntityDisplayName = null;
 		
 		public readonly EntityReference OrganizationId = null;
@@ -62451,8 +62451,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_quotebookingproduct")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_quotebookingproduct")]
 	public class msdyn_quotebookingproduct : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_quotebookingproduct";
@@ -62504,7 +62504,7 @@ namespace Entities
 		public readonly EntityReference msdyn_customerasset = null;
 		[System.ComponentModel.DataAnnotations.Schema.Column("msdyn_Internalflags")]
 		public readonly string msdyn_Internalflags = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Money msdyn_EstimatedCost = null;
@@ -62538,8 +62538,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("service")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("service")]
 	public class Service : Entity
     {
         public const string EntityLogicalName = "service";
@@ -62565,7 +62565,7 @@ namespace Entities
 		public readonly string Description = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly Guid? ServiceId = null;
@@ -62625,8 +62625,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("activitypointer")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("activitypointer")]
 	public class ActivityPointer : Entity
     {
         public const string EntityLogicalName = "activitypointer";
@@ -62688,7 +62688,7 @@ namespace Entities
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly Guid? SeriesId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Subject = null;
 		
 		public readonly OptionSetValue Community = null;
@@ -62822,8 +62822,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("externalparty")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("externalparty")]
 	public class ExternalParty : Entity
     {
         public const string EntityLogicalName = "externalparty";
@@ -62841,7 +62841,7 @@ namespace Entities
                 this["externalpartyid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string FullName = null;
 		
 		public readonly EntityReference OwningUser = null;
@@ -62925,8 +62925,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msfp_unsubscribedrecipient")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msfp_unsubscribedrecipient")]
 	public class msfp_unsubscribedrecipient : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msfp_unsubscribedrecipient";
@@ -62944,7 +62944,7 @@ namespace Entities
                 this["msfp_unsubscribedrecipientid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msfp_name = null;
 		
 		public readonly string msfp_emailaddress = null;
@@ -62966,8 +62966,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("metadatadifference")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("metadatadifference")]
 	public class MetadataDifference : Entity
     {
         public const string EntityLogicalName = "metadatadifference";
@@ -63002,8 +63002,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_teamscollaboration")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_teamscollaboration")]
 	public class msdyn_TeamsCollaboration : Entity
     {
         public const string EntityLogicalName = "msdyn_teamscollaboration";
@@ -63043,7 +63043,7 @@ namespace Entities
 		public readonly int? ImportSequenceNumber = null;
 		
 		public readonly EntityReference OrganizationId = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue statecode = null;
 		
 		public readonly int? UTCConversionTimeZoneCode = null;
@@ -63061,7 +63061,7 @@ namespace Entities
 		public readonly Guid? msdyn_TeamsCollaborationId = null;
 		
 		public readonly DateTime? ModifiedOn = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_TeamName = null;
 		
 		public readonly OptionSetValue statuscode = null;
@@ -63089,8 +63089,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("msdyn_shipvia")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("msdyn_shipvia")]
 	public class msdyn_shipvia : UserOrTeamEntity
     {
         public const string EntityLogicalName = "msdyn_shipvia";
@@ -63108,7 +63108,7 @@ namespace Entities
                 this["msdyn_shipviaid"] = value;
             }
         }
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string msdyn_name = null;
 		
 		public readonly Guid? msdyn_shipviaId = null;
@@ -63128,8 +63128,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("asyncoperation")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("asyncoperation")]
 	public class AsyncOperation : Entity
     {
         public const string EntityLogicalName = "asyncoperation";
@@ -63191,7 +63191,7 @@ namespace Entities
 		public readonly string WorkflowStageName = null;
 		
 		public readonly EntityReference OwningExtensionId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
@@ -63339,8 +63339,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("workflowlog")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("workflowlog")]
 	public class WorkflowLog : Entity
     {
         public const string EntityLogicalName = "workflowlog";
@@ -63422,8 +63422,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("post")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("post")]
 	public class Post : Entity
     {
         public const string EntityLogicalName = "post";
@@ -63469,7 +63469,7 @@ namespace Entities
 		public readonly Guid? PostId = null;
 		
 		public readonly DateTime? ModifiedOn = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Text = null;
 		
 		public readonly EntityReference RegardingObjectOwningBusinessUnit = null;
@@ -63503,8 +63503,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("phonetocaseprocess")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("phonetocaseprocess")]
 	public class PhoneToCaseProcess : Entity
     {
         public const string EntityLogicalName = "phonetocaseprocess";
@@ -63526,13 +63526,13 @@ namespace Entities
 		public readonly EntityReference ActiveStageId = null;
 		
 		public readonly EntityReference ModifiedOnBehalfBy = null;
-		[System.ComponentModel.DescriptionAttribute("{\"a\":0}")]
+		[System.ComponentModel.Description("{\"a\":0}")]
 		public readonly OptionSetValue StateCode = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly EntityReference TransactionCurrencyId = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly int? ImportSequenceNumber = null;
@@ -63589,8 +63589,8 @@ namespace Entities
 
         }
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("calendarrule")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("calendarrule")]
 	public class CalendarRule : Entity
     {
         public const string EntityLogicalName = "calendarrule";
@@ -63618,7 +63618,7 @@ namespace Entities
 		public readonly EntityReference CreatedOnBehalfBy = null;
 		
 		public readonly int? SubCode = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly EntityReference ServiceId = null;
@@ -63677,8 +63677,8 @@ namespace Entities
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("appconfigmaster")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("appconfigmaster")]
 	public class AppConfigMaster : Entity
     {
         public const string EntityLogicalName = "appconfigmaster";
@@ -63726,15 +63726,15 @@ namespace Entities
 		public readonly string DefaultValue = null;
 		
 		public readonly DateTime? CreatedOn = null;
-		[System.ComponentModel.DataAnnotations.KeyAttribute]
+		[System.ComponentModel.DataAnnotations.Key]
 		public readonly string Name = null;
 		
 		public readonly EntityReference CreatedOnBehalfBy = null;
 
 
     }
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("subscriptionsyncentryoffline")]
+    [System.Runtime.Serialization.DataContract]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalName("subscriptionsyncentryoffline")]
 	public class SubscriptionSyncEntryOffline : Entity
     {
         public const string EntityLogicalName = "subscriptionsyncentryoffline";

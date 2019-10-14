@@ -1116,7 +1116,7 @@ namespace Niam.XRM.Framework.Tests
         }
     }
 
-    [EntityLogicalName("new_testentity")]
+    [EntityName("new_testentity")]
     public class new_testentity : UserOrTeamEntity
     {
         public const string EntityLogicalName = "new_testentity";
@@ -1163,7 +1163,7 @@ namespace Niam.XRM.Framework.Tests
 
     }
 
-    [EntityLogicalName("xts_entity")]
+    [EntityName("xts_entity")]
     public partial class xts_entity : Entity
     {
         public const string EntityLogicalName = "xts_entity";
@@ -1206,7 +1206,7 @@ namespace Niam.XRM.Framework.Tests
         public readonly EntityCollection xts_activityparties = null;
     }
 
-    [EntityLogicalName("xts_relatedentity")]
+    [EntityName("xts_relatedentity")]
     public partial class xts_relatedentity : Entity
     {
         public const string EntityLogicalName = "xts_relatedentity";
@@ -1232,7 +1232,7 @@ namespace Niam.XRM.Framework.Tests
         public readonly EntityReference xts_derivedattribute = null;
     }
 
-    [EntityLogicalName("xts_earlyboundentity")]
+    [EntityName("xts_earlyboundentity")]
     public partial class xts_earlyboundentity : Entity, INotifyPropertyChanging, INotifyPropertyChanged
     {
         public const string EntityLogicalName = "xts_earlyboundentity";
@@ -1298,8 +1298,8 @@ namespace Niam.XRM.Framework.Tests
         }
     }
     
-    [System.Runtime.Serialization.DataContractAttribute]
-    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("transactioncurrency")]
+    [System.Runtime.Serialization.DataContract]
+    [EntityName("transactioncurrency")]
     public class TransactionCurrency : Entity
     {
         public const string EntityLogicalName = "transactioncurrency";
@@ -1307,7 +1307,7 @@ namespace Niam.XRM.Framework.Tests
         {
         }
 
-        [System.ComponentModel.DataAnnotations.Schema.Column("transactioncurrencyid")]
+        [Column("transactioncurrencyid")]
         public override Guid Id
         {
             get { return base.Id; }
@@ -1376,7 +1376,7 @@ namespace Niam.XRM.Framework.Tests
         }
     }
     
-    [EntityLogicalName("xts_keytest")]
+    [EntityName("xts_keytest")]
     public partial class xts_keytest : Entity
     {
         public const string EntityLogicalName = "xts_keytest";
@@ -1410,7 +1410,7 @@ namespace Niam.XRM.Framework.Tests
         public readonly EntityReference xts_lookuptoheaderid = null;
     }
 
-    [EntityLogicalName("xts_nokeytest")]
+    [EntityName("xts_nokeytest")]
     public partial class xts_nokeytest : Entity
     {
         public const string EntityLogicalName = "xts_nokeytest";
@@ -1434,7 +1434,7 @@ namespace Niam.XRM.Framework.Tests
         public readonly string xts_key = null;
     }
 
-    [EntityLogicalName("xts_activestatecodetest")]
+    [EntityName("xts_activestatecodetest")]
     public partial class xts_activestatecodetest : Entity
     {
         public const string EntityLogicalName = "xts_activestatecodetest";
@@ -1457,7 +1457,7 @@ namespace Niam.XRM.Framework.Tests
         [Column("PrimaryNameAttributeKey")]
         [Key]
         public readonly string xts_key = null;
-        [System.ComponentModel.DescriptionAttribute("{\"a\":12}")]
+        [Description("{\"a\":12}")]
         public readonly OptionSetValue statecode = null;
     }
 }

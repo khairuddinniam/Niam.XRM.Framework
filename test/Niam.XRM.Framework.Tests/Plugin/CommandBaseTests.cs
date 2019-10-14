@@ -473,7 +473,7 @@ namespace Niam.XRM.Framework.Tests.Plugin
                     e => e.xts_name
                 );
 
-                var childrenGenerics = GetAllRelated<xts_relatedentity>(e => e.xts_relatedid, childColumnSet).ToArray();
+                var childrenGenerics = GetAllRelated(e => e.xts_relatedid, childColumnSet).ToArray();
                 Assert.Single(childrenGenerics);
                 Assert.Equal("CHILD", childrenGenerics[0].Get(e => e.xts_name));
 

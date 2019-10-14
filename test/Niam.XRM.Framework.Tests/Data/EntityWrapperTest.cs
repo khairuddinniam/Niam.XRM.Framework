@@ -37,7 +37,7 @@ namespace Niam.XRM.Framework.Tests.Data
 
             var genericWrapper = new XtsEntityWrapper(entity.ToEntity<xts_entity>(), context);
             Assert.Equal(relatedEntity.ToEntityReference(), genericWrapper.GetRelated("xts_attribute", new ColumnSet()).ToEntityReference());
-            Assert.Equal(relatedEntity.ToEntityReference(), genericWrapper.GetRelated<xts_relatedentity>(e => e.xts_attribute, new ColumnSet<xts_relatedentity>()).ToEntityReference());
+            Assert.Equal(relatedEntity.ToEntityReference(), genericWrapper.GetRelated(e => e.xts_attribute, new ColumnSet<xts_relatedentity>()).ToEntityReference());
             Assert.Equal(relatedEntity.ToEntityReference(), genericWrapper.GetRelated<xts_relatedentity, XtsRelatedEntityWrapper>(e => e.xts_attribute, new ColumnSet<xts_relatedentity>()).ToEntityReference());
         }
 
@@ -71,12 +71,12 @@ namespace Niam.XRM.Framework.Tests.Data
 
             var wrapper = new TestWrapper(entity, context);
             Assert.Equal(relatedEntity.ToEntityReference(), wrapper.GetAllRelated("xts_relatedentity", "xts_relatedid", new ColumnSet()).First().ToEntityReference());
-            Assert.Equal(relatedEntity.ToEntityReference(), wrapper.GetAllRelated<xts_relatedentity>(e => e.xts_relatedid, new ColumnSet<xts_relatedentity>()).First().ToEntityReference());
+            Assert.Equal(relatedEntity.ToEntityReference(), wrapper.GetAllRelated(e => e.xts_relatedid, new ColumnSet<xts_relatedentity>()).First().ToEntityReference());
             Assert.Equal(relatedEntity.ToEntityReference(), wrapper.GetAllRelated<xts_relatedentity, XtsRelatedEntityWrapper>(e => e.xts_relatedid, new ColumnSet<xts_relatedentity>()).First().ToEntityReference());
 
             var genericWrapper = new XtsEntityWrapper(entity.ToEntity<xts_entity>(), context);
             Assert.Equal(relatedEntity.ToEntityReference(), genericWrapper.GetAllRelated("xts_relatedentity", "xts_relatedid", new ColumnSet()).First().ToEntityReference());
-            Assert.Equal(relatedEntity.ToEntityReference(), genericWrapper.GetAllRelated<xts_relatedentity>(e => e.xts_relatedid, new ColumnSet<xts_relatedentity>()).First().ToEntityReference());
+            Assert.Equal(relatedEntity.ToEntityReference(), genericWrapper.GetAllRelated(e => e.xts_relatedid, new ColumnSet<xts_relatedentity>()).First().ToEntityReference());
             Assert.Equal(relatedEntity.ToEntityReference(), genericWrapper.GetAllRelated<xts_relatedentity, XtsRelatedEntityWrapper>(e => e.xts_relatedid, new ColumnSet<xts_relatedentity>()).First().ToEntityReference());
         }
 

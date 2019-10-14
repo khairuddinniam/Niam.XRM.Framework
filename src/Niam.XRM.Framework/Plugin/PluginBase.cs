@@ -30,7 +30,7 @@ namespace Niam.XRM.Framework.Plugin
             var container = new Container(serviceProvider);
             var config = new PluginConfiguration<TE>(this, container);
             ConfigurePlugin(config);
-            var context = container.ToTransactionContext<TE>(config);
+            var context = container.ToTransactionContext(config);
             var pluginContext = new PluginContext<TE>(context);
             try
             {

@@ -5,7 +5,7 @@ using Microsoft.Xrm.Sdk.Client;
 
 namespace Niam.XRM.Framework.TestHelper.Tests.EarlyBound
 {
-    [System.Runtime.Serialization.DataContractAttribute]
+    [System.Runtime.Serialization.DataContract]
     [EntityLogicalName("new_order")]
     public partial class new_order : Entity
     {
@@ -33,7 +33,7 @@ namespace Niam.XRM.Framework.TestHelper.Tests.EarlyBound
         public readonly string new_name = null;
     }
 
-    [System.Runtime.Serialization.DataContractAttribute]
+    [System.Runtime.Serialization.DataContract]
     [EntityLogicalName("new_orderdetail")]
     public partial class new_orderdetail : Entity
     {
@@ -64,7 +64,7 @@ namespace Niam.XRM.Framework.TestHelper.Tests.EarlyBound
         public readonly Money new_priceperitem = null;
     }
     
-    [System.Runtime.Serialization.DataContractAttribute]
+    [System.Runtime.Serialization.DataContract]
     [EntityLogicalName("new_orderdetailsummary")]
     public partial class new_orderdetailsummary : Entity
     {

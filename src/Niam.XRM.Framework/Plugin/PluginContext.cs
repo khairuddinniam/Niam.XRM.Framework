@@ -68,7 +68,7 @@ namespace Niam.XRM.Framework.Plugin
 
         public IEntityWrapper<TR> GetRelated<TR>(Expression<Func<TE, EntityReference>> relatedReference, 
             IColumnSet<TR> relatedColumnSet) 
-            where TR : Entity => _currentWrapper.Value.GetRelated<TR>(relatedReference, relatedColumnSet);
+            where TR : Entity => _currentWrapper.Value.GetRelated(relatedReference, relatedColumnSet);
 
         public TW GetRelated<TR, TW>(Expression<Func<TE, EntityReference>> relatedReference, IColumnSet<TR> relatedColumnSet) 
             where TR : Entity 
@@ -78,7 +78,7 @@ namespace Niam.XRM.Framework.Plugin
         public IEnumerable<IEntityWrapper<TR>> GetAllRelated<TR>(Expression<Func<TR, EntityReference>> relatedToParentAttribute, 
             IColumnSet<TR> relatedColumnSet) 
             where TR : Entity
-            => _currentWrapper.Value.GetAllRelated<TR>(relatedToParentAttribute, relatedColumnSet);
+            => _currentWrapper.Value.GetAllRelated(relatedToParentAttribute, relatedColumnSet);
 
         public IEnumerable<TW> GetAllRelated<TR, TW>(Expression<Func<TR, EntityReference>> relatedToParentAttribute, 
             IColumnSet<TR> relatedColumnSet) 

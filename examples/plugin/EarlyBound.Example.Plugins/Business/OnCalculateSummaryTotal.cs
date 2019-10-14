@@ -47,25 +47,25 @@ namespace EarlyBound.Example.Plugins.Business
                 return GetValue(e => e.TotalAmount) * -1;
             }
 
-            var totalAmount = (Context.PluginExecutionContext.MessageName == "Update"
+            var totalAmount = Context.PluginExecutionContext.MessageName == "Update"
                 ? Initial.Get(e => e.TotalAmount).GetValueOrDefault()
-                : 0m);
+                : GetValue(e => e.TotalAmount);
             return totalAmount;
         }
 
-        private Entities.new_ordersummary GetOrderSummary(string period)
+        private new_ordersummary GetOrderSummary(string period)
         {
-            var query = new QueryExpression(Entities.new_ordersummary.EntityLogicalName)
+            var query = new QueryExpression(new_ordersummary.EntityLogicalName)
             {
-                ColumnSet = new ColumnSet<Entities.new_ordersummary>(e => e.new_period,
+                ColumnSet = new ColumnSet<new_ordersummary>(e => e.new_period,
                     e => e.new_totalamount),
                 TopCount = 1
             };
             query.Criteria.AddCondition("new_period", ConditionOperator.Equal, period);
             var result = Service.RetrieveMultiple(query);
 
-            return result.Entities.Any() ? result.Entities[0].ToEntity<Entities.new_ordersummary>() :
-                new Entities.new_ordersummary();
+            return result.Entities.Any() ? result.Entities[0].ToEntity<new_ordersummary>() :
+                new new_ordersummary();
         }
 
         private string GetPeriod()

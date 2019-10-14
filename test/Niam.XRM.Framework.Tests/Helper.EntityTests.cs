@@ -347,7 +347,7 @@ namespace Niam.XRM.Framework.Tests
 
             var spesificValueProvider = Substitute.For<IValueProvider<int>>();
             spesificValueProvider.GetValue().Returns(4567);
-            entity.Set<int>("xts_number", spesificValueProvider);
+            entity.Set("xts_number", spesificValueProvider);
             Assert.Equal(4567, entity.Get<int>("xts_number"));
         }
         
