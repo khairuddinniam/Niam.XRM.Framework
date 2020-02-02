@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28803.352
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E36662B0-02EB-4F57-B701-8E8CA9ED2815}"
 EndProject
@@ -18,21 +18,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "asset", "asset", "{70C62F6A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{A1D3319E-EE23-42A3-AD4D-7A6A2EC4F517}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "plugin", "plugin", "{A872821C-ADFC-45D5-A0F5-29C21CA8FEC1}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LateBound.Example.Plugins", "examples\plugin\LateBound.Example.Plugins\LateBound.Example.Plugins.csproj", "{143F087B-C3B1-4CFE-AB46-32C9E8AE017B}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LateBound.Example.Plugins.Tests", "examples\plugin\LateBound.Example.Plugins.Tests\LateBound.Example.Plugins.Tests.csproj", "{1AC0A02D-F877-4406-BF2B-E03B8B3FB347}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Niam.XRM.Framework.TestHelper", "src\Niam.XRM.Framework.TestHelper\Niam.XRM.Framework.TestHelper.csproj", "{2A801E18-4840-4D79-97FD-904C1A5C3E11}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Niam.XRM.Framework.TestHelper.Tests", "test\Niam.XRM.Framework.TestHelper.Tests\Niam.XRM.Framework.TestHelper.Tests.csproj", "{B0C979BF-B478-4159-82AD-89A7088300B8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EarlyBound.Example.Plugins", "examples\plugin\EarlyBound.Example.Plugins\EarlyBound.Example.Plugins.csproj", "{AF3C864A-8F1E-4E72-A8BD-A7EE38E8699E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Insurgo.Plugins", "examples\Insurgo.Plugins\Insurgo.Plugins.csproj", "{FB84FBF5-C449-4DB6-86E6-8BE066F5C1D8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EarlyBound.Example.Plugins.Tests", "examples\plugin\EarlyBound.Example.Plugins.Tests\EarlyBound.Example.Plugins.Tests.csproj", "{818105A4-C15F-4FA1-9236-B649F419CA97}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Insurgo.Plugins", "examples\plugin\Insurgo.Plugins\Insurgo.Plugins.csproj", "{7340ED65-0480-428A-AA04-1BEBE702D64B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Insurgo.Plugins.Tests", "examples\Insurgo.Plugins.Tests\Insurgo.Plugins.Tests.csproj", "{75616836-BCB7-498E-B571-7B5A337AC038}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,14 +40,6 @@ Global
 		{443EBC54-2B3C-444D-B8A8-57A7CF316F2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{443EBC54-2B3C-444D-B8A8-57A7CF316F2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{443EBC54-2B3C-444D-B8A8-57A7CF316F2B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{143F087B-C3B1-4CFE-AB46-32C9E8AE017B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{143F087B-C3B1-4CFE-AB46-32C9E8AE017B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{143F087B-C3B1-4CFE-AB46-32C9E8AE017B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{143F087B-C3B1-4CFE-AB46-32C9E8AE017B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1AC0A02D-F877-4406-BF2B-E03B8B3FB347}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1AC0A02D-F877-4406-BF2B-E03B8B3FB347}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1AC0A02D-F877-4406-BF2B-E03B8B3FB347}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1AC0A02D-F877-4406-BF2B-E03B8B3FB347}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2A801E18-4840-4D79-97FD-904C1A5C3E11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2A801E18-4840-4D79-97FD-904C1A5C3E11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A801E18-4840-4D79-97FD-904C1A5C3E11}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -64,18 +48,14 @@ Global
 		{B0C979BF-B478-4159-82AD-89A7088300B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0C979BF-B478-4159-82AD-89A7088300B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0C979BF-B478-4159-82AD-89A7088300B8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AF3C864A-8F1E-4E72-A8BD-A7EE38E8699E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AF3C864A-8F1E-4E72-A8BD-A7EE38E8699E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AF3C864A-8F1E-4E72-A8BD-A7EE38E8699E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AF3C864A-8F1E-4E72-A8BD-A7EE38E8699E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{818105A4-C15F-4FA1-9236-B649F419CA97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{818105A4-C15F-4FA1-9236-B649F419CA97}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{818105A4-C15F-4FA1-9236-B649F419CA97}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{818105A4-C15F-4FA1-9236-B649F419CA97}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7340ED65-0480-428A-AA04-1BEBE702D64B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7340ED65-0480-428A-AA04-1BEBE702D64B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7340ED65-0480-428A-AA04-1BEBE702D64B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7340ED65-0480-428A-AA04-1BEBE702D64B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB84FBF5-C449-4DB6-86E6-8BE066F5C1D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB84FBF5-C449-4DB6-86E6-8BE066F5C1D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB84FBF5-C449-4DB6-86E6-8BE066F5C1D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB84FBF5-C449-4DB6-86E6-8BE066F5C1D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75616836-BCB7-498E-B571-7B5A337AC038}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75616836-BCB7-498E-B571-7B5A337AC038}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75616836-BCB7-498E-B571-7B5A337AC038}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75616836-BCB7-498E-B571-7B5A337AC038}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,14 +63,10 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{369FC825-A3A1-4A8D-9585-CE02D78F3FD5} = {E36662B0-02EB-4F57-B701-8E8CA9ED2815}
 		{443EBC54-2B3C-444D-B8A8-57A7CF316F2B} = {296FAB6D-E952-4B02-A327-0C3E6BE3D2CF}
-		{A872821C-ADFC-45D5-A0F5-29C21CA8FEC1} = {A1D3319E-EE23-42A3-AD4D-7A6A2EC4F517}
-		{143F087B-C3B1-4CFE-AB46-32C9E8AE017B} = {A872821C-ADFC-45D5-A0F5-29C21CA8FEC1}
-		{1AC0A02D-F877-4406-BF2B-E03B8B3FB347} = {A872821C-ADFC-45D5-A0F5-29C21CA8FEC1}
 		{2A801E18-4840-4D79-97FD-904C1A5C3E11} = {E36662B0-02EB-4F57-B701-8E8CA9ED2815}
 		{B0C979BF-B478-4159-82AD-89A7088300B8} = {296FAB6D-E952-4B02-A327-0C3E6BE3D2CF}
-		{AF3C864A-8F1E-4E72-A8BD-A7EE38E8699E} = {A872821C-ADFC-45D5-A0F5-29C21CA8FEC1}
-		{818105A4-C15F-4FA1-9236-B649F419CA97} = {A872821C-ADFC-45D5-A0F5-29C21CA8FEC1}
-		{7340ED65-0480-428A-AA04-1BEBE702D64B} = {A872821C-ADFC-45D5-A0F5-29C21CA8FEC1}
+		{FB84FBF5-C449-4DB6-86E6-8BE066F5C1D8} = {A1D3319E-EE23-42A3-AD4D-7A6A2EC4F517}
+		{75616836-BCB7-498E-B571-7B5A337AC038} = {A1D3319E-EE23-42A3-AD4D-7A6A2EC4F517}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4300C909-CBF1-4071-9623-C0F3CD6E11D7}

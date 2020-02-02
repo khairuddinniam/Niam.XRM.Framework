@@ -5,7 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\Niam.XRM.Framework\Niam.XRM.Framework.csproj" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Niam.XRM.Framework\Niam.XRM.Framework.csproj" />
   </ItemGroup>
 
    <PropertyGroup>
