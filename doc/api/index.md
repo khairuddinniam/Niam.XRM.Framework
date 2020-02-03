@@ -1,1 +1,0 @@
-## **Niam.XRM.Framework API documentation**

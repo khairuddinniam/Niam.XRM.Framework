@@ -7,7 +7,7 @@
   <!-- NuSpec -->
   <PropertyGroup>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>9.0.2.5</Version>
+    <Version>9.0.2.6</Version>
   </PropertyGroup>
 
   <PropertyGroup>
