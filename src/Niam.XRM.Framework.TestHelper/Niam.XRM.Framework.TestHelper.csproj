@@ -33,7 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FakeXrmEasy.9" Version="1.*" />
+    <PackageReference Include="FakeXrmEasy.9" Version="1.57.0" />
   </ItemGroup>
 
   <ItemGroup>
