@@ -2,7 +2,7 @@
   <PropertyGroup>
     <SignAssembly>True</SignAssembly>
     <DelaySign>False</DelaySign>
-    <TargetFramework>net452</TargetFramework>
+    <TargetFramework>net462</TargetFramework>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -35,7 +35,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="9.0.2.5" />
+    <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="9.0.2.24" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.ComponentModel.DataAnnotations" />
