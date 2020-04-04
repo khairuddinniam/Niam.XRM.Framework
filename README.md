@@ -1,17 +1,12 @@
 # Niam.XRM.Framework
-Fast, easy and lightweight Microsoft Dynamics CRM Plugin Framework that support premise and online edition. One framework to rule them all.
+Fast, easy and lightweight Microsoft Dynamics CRM Plugin Framework. It helps developers to focus on business logic and create tests easier with [Niam.XRM.TestHelper](https://www.nuget.org/packages/Niam.XRM.Framework.TestHelper).
 
 ## Supported Version
-- Microsoft Dynamic CRM 2015
-- Microsoft Dynamic CRM 2016
-- Microsoft Dynamic CRM 365
+Online Version (Microsoft.Crm.Sdk.CoreAssemblies 9.0++)
 
 ## Installation
 Using nuget package manager:
 ```
 PM> Install-Package Niam.XRM.Framework
 ```
-
-Please see the [Niam.Xrm.Framework nuget packages](https://www.nuget.org/packages/Niam.XRM.Framework) to see the version of supported [Microsoft.Crm.Sdk.CoreAssemblies](https://www.nuget.org/packages/Microsoft.CrmSdk.CoreAssemblies). This framework version number will follow the version number of Microsoft.Crm.Sdk.CoreAssemblies.
-
-For further information, see [the documentation](https://khairuddinniam.github.io/Niam.XRM.Framework/index.html).
+[See More](https://github.com/khairuddinniam/Niam.XRM.Framework/wiki)
