@@ -3,6 +3,7 @@ using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Metadata;
 using Microsoft.Xrm.Sdk.Query;
+using Niam.XRM.Framework.Data;
 using NSubstitute;
 using Xunit;
 
@@ -164,6 +165,72 @@ namespace Niam.XRM.Framework.Tests
 
             service.RetrieveMultiple("this-is-fetch-xml");
             Assert.Equal("this-is-fetch-xml", fetchXml);
+        }
+        
+        [Fact]
+        public void Can_retrieve_single_entity_strong_type_all_columns()
+        {
+            var service = Substitute.For<IOrganizationService>();
+            string entityName = null;
+            Guid? entityId = null;
+            ColumnSet columnSet = null;
+            service.Retrieve(Arg.Any<string>(), Arg.Any<Guid>(), Arg.Any<ColumnSet>()).Returns(ci =>
+            {
+                entityName = ci.ArgAt<string>(0);
+                entityId = ci.ArgAt<Guid>(1);
+                columnSet = ci.ArgAt<ColumnSet>(2);
+                return new Entity(entityName, entityId.Value);
+            });
+            
+            var id = Guid.NewGuid();
+            service.Retrieve<Organization>(id);
+            Assert.Equal(Organization.EntityLogicalName, entityName);
+            Assert.Equal(id, entityId);
+            Assert.True(columnSet.AllColumns);
+        }
+
+        [Fact]
+        public void Can_retrieve_single_entity_strong_type_with_column_set()
+        {
+            var service = Substitute.For<IOrganizationService>();
+            string entityName = null;
+            Guid? entityId = null;
+            ColumnSet columnSet = null;
+            service.Retrieve(Arg.Any<string>(), Arg.Any<Guid>(), Arg.Any<ColumnSet>()).Returns(ci =>
+            {
+                entityName = ci.ArgAt<string>(0);
+                entityId = ci.ArgAt<Guid>(1);
+                columnSet = ci.ArgAt<ColumnSet>(2);
+                return new Entity(entityName, entityId.Value);
+            });
+            
+            var id = Guid.NewGuid();
+            service.Retrieve(id, new ColumnSet<Organization>(e => e.Name));
+            Assert.Equal(Organization.EntityLogicalName, entityName);
+            Assert.Equal(id, entityId);
+            Assert.Equal(new [] { "name" }, columnSet.Columns);
+        }
+        
+        [Fact]
+        public void Can_retrieve_single_entity_strong_type_with_attributes()
+        {
+            var service = Substitute.For<IOrganizationService>();
+            string entityName = null;
+            Guid? entityId = null;
+            ColumnSet columnSet = null;
+            service.Retrieve(Arg.Any<string>(), Arg.Any<Guid>(), Arg.Any<ColumnSet>()).Returns(ci =>
+            {
+                entityName = ci.ArgAt<string>(0);
+                entityId = ci.ArgAt<Guid>(1);
+                columnSet = ci.ArgAt<ColumnSet>(2);
+                return new Entity(entityName, entityId.Value);
+            });
+            
+            var id = Guid.NewGuid();
+            service.Retrieve<Organization>(id, e => e.Name, e => e.CreatedOn);
+            Assert.Equal(Organization.EntityLogicalName, entityName);
+            Assert.Equal(id, entityId);
+            Assert.Equal(new [] { "name", "createdon" }, columnSet.Columns);
         }
     }
 }

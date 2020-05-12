@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Linq.Expressions;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Metadata;
 using Microsoft.Xrm.Sdk.Query;
+using Niam.XRM.Framework.Data;
 
 namespace Niam.XRM.Framework
 {
@@ -59,5 +61,14 @@ namespace Niam.XRM.Framework
             var response = service.Execute<RetrieveEntityResponse>(request);
             return response.EntityMetadata.PrimaryNameAttribute.ToLowerInvariant();
         }
+        
+        public static TE Retrieve<TE>(this IOrganizationService service, Guid id)
+            where TE : Entity => service.Retrieve(id, new ColumnSet<TE>(true));
+
+        public static TE Retrieve<TE>(this IOrganizationService service, Guid id, params Expression<Func<TE, object>>[] attributes)
+            where TE : Entity => service.Retrieve(id, new ColumnSet<TE>(attributes));
+
+        public static TE Retrieve<TE>(this IOrganizationService service, Guid id, ColumnSet<TE> columnSet)
+            where TE : Entity => service.Retrieve(Name<TE>(), id, columnSet).ToEntity<TE>();
     }
 }
