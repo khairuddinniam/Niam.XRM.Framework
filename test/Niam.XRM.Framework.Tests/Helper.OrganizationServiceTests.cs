@@ -37,17 +37,6 @@ namespace Niam.XRM.Framework.Tests
         }
 
         [Fact]
-        public void Can_cast_result_from_execute()
-        {
-            var service = Substitute.For<IOrganizationService>();
-			var response = new RetrieveEntityResponse();
-            service.Execute(Arg.Any<OrganizationRequest>()).Returns(response);
-			
-			var request = new RetrieveEntityRequest();
-			Assert.Same(response, service.Execute<RetrieveEntityResponse>(request));
-        }
-
-        [Fact]
         public void Null_get_name_on_null_entity_reference()
         {
             var service = Substitute.For<IOrganizationService>();

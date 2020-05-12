@@ -20,9 +20,6 @@ namespace Niam.XRM.Framework
         public static EntityCollection RetrieveMultiple(this IOrganizationService service, string fetchXml)
             => service.RetrieveMultiple(new FetchExpression(fetchXml));
 
-        public static T Execute<T>(this IOrganizationService service, OrganizationRequest request)
-            where T : OrganizationResponse => (T) service.Execute(request);
-
         public static string GetReferenceName<T>(this IOrganizationService service, EntityReference reference)
             where T : Entity
         {

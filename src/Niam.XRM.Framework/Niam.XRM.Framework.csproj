@@ -4,18 +4,15 @@
     <DelaySign>False</DelaySign>
     <TargetFramework>net462</TargetFramework>
   </PropertyGroup>
-
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>..\..\asset\open-source.snk</AssemblyOriginatorKeyFile>
     <Description>Fast, easy and lightweight Microsoft Dynamics CRM Plugin Framework that support premise and online edition. One framework to rule them all.</Description>
   </PropertyGroup>
-
   <!-- NuSpec -->
   <PropertyGroup>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Version>9.0.0.0</Version>
   </PropertyGroup>
-
   <PropertyGroup>
     <PackageId>$(AssemblyName)</PackageId>
     <Title>$(AssemblyName)</Title>
@@ -26,18 +23,13 @@
     <PackageLicenseFile>License.txt</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/khairuddinniam/Niam.XRM.Framework</PackageProjectUrl>
     <PackageTags>Dynamics CRM 365 XRM D365 Dynamics 365</PackageTags>
-
     <PackageOutputPath>$(SolutionDir)build\packages</PackageOutputPath>
-
     <AssemblyVersion>9.0.0.0</AssemblyVersion>
-
     <FileVersion>9.0.0.0</FileVersion>
   </PropertyGroup>
-
   <ItemGroup>
     <None Include="License.txt" Pack="true" Visible="false" PackagePath="" />
   </ItemGroup>
-  
   <ItemGroup>
     <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="[9.0, 9.1)" />
   </ItemGroup>
