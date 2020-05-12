@@ -1,17 +1,21 @@
-﻿using System;
-using Microsoft.Crm.Sdk.Messages;
+﻿using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Messages;
-using Microsoft.Xrm.Sdk.Metadata;
-using Microsoft.Xrm.Sdk.Query;
-using Niam.XRM.Framework.Data;
 using NSubstitute;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace Niam.XRM.Framework.Tests
 {
     public class HelperOrganizationServiceExecuteTests
     {
+        private readonly ITestOutputHelper _output;
+
+        public HelperOrganizationServiceExecuteTests(ITestOutputHelper output)
+        {
+            _output = output;
+        }
+        
         [Fact]
         public void Can_cast_result_from_execute()
         {
