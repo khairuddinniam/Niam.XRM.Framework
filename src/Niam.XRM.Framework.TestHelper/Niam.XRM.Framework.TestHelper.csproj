@@ -7,7 +7,7 @@
   <!-- NuSpec -->
   <PropertyGroup>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>9.0.0.0</Version>
+    <Version>9.0.0.1</Version>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -16,12 +16,14 @@
     <Company>Khairuddin Ni'am</Company>
     <Authors>Khairuddin Ni'am;Temmy Wahyu Raharjo</Authors>
     <Product>$(AssemblyName)</Product>
-    <Copyright>2019</Copyright>
+    <Copyright>2020</Copyright>
     <PackageLicenseFile>License.txt</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/khairuddinniam/Niam.XRM.Framework</PackageProjectUrl>
     <PackageTags>Dynamics CRM 365 XRM D365 Dynamics 365</PackageTags>
 
     <PackageOutputPath>$(SolutionDir)build\packages</PackageOutputPath>
+
+    <Description>Test Framework for Niam.XRM.Framework. Make testing super easy in Microsoft Dynamics CRM Plugin Development.</Description>
   </PropertyGroup>
 
   <ItemGroup>
