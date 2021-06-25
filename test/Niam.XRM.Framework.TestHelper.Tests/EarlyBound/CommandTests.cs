@@ -1,6 +1,6 @@
-using System;
 using Microsoft.Xrm.Sdk;
 using Niam.XRM.Framework.TestHelper.Tests.EarlyBound.Commands;
+using System;
 using Xunit;
 
 namespace Niam.XRM.Framework.TestHelper.Tests.EarlyBound
@@ -65,6 +65,29 @@ namespace Niam.XRM.Framework.TestHelper.Tests.EarlyBound
             var test = new TestEvent<new_orderdetail>(order, orderDetail, orderDetailSummary);
             test.DeleteEventCommand<DeleteOrderDetailSummary>(orderDetail.ToEntityReference());
             Assert.Equal(orderDetailSummary.ToEntityReference(), test.Db.Event.Deleted[0]);
+        }
+
+
+        [Fact]
+        public void Can_execute_command_for_retrieve()
+        {
+            var order = new new_order(Guid.NewGuid()).Set(e => e.new_name, "TEST");
+            var orderDetail1 = new new_orderdetail(Guid.NewGuid())
+                .Set(e => e.new_orderid, order.ToEntityReference())
+                .Set(e => e.new_priceperitem, 100)
+                .Set(e => e.new_quantity, 10);
+
+            var orderDetail2 = new new_orderdetail(Guid.NewGuid())
+                .Set(e => e.new_orderid, order.ToEntityReference())
+                .Set(e => e.new_priceperitem, 10)
+                .Set(e => e.new_quantity, 10);
+
+            var orderDetailSummary = new new_orderdetailsummary(Guid.NewGuid());
+
+            var test = new TestEvent<new_orderdetailsummary>(order, orderDetail1, orderDetail2);
+            test.CreateEventCommand<RetrieveTotalPrice>(orderDetailSummary);
+
+            Assert.Equal(1100m, orderDetailSummary.GetValue(e => e.new_totalprice));
         }
     }
 }

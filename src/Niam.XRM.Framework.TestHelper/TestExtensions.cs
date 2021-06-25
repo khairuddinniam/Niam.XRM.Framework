@@ -4,7 +4,6 @@ using System.Reflection;
 using System.Runtime.Serialization;
 using FakeXrmEasy;
 using Microsoft.Xrm.Sdk;
-using Microsoft.Xrm.Sdk.Messages;
 
 namespace Niam.XRM.Framework.TestHelper
 {

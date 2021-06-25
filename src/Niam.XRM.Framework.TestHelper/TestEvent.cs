@@ -1,12 +1,12 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Reflection;
-using FakeXrmEasy;
+﻿using FakeXrmEasy;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Messages;
 using Niam.XRM.Framework.Interfaces.Plugin;
 using Niam.XRM.Framework.Interfaces.Plugin.Configurations;
+using System;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Reflection;
 
 namespace Niam.XRM.Framework.TestHelper
 {
@@ -32,7 +32,7 @@ namespace Niam.XRM.Framework.TestHelper
 
         public TestEvent(params Entity[] initialEntities)
         {
-            _initialEntities = initialEntities;
+            _initialEntities = initialEntities.Select(entity => entity.ToEntity<Entity>()).ToArray();
             _xrmFakedContext = new InternalXrmFakedContext();
 
             PluginExecutionContext = FakedContext.GetDefaultPluginContext();
