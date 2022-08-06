@@ -7,7 +7,7 @@
   <!-- NuSpec -->
   <PropertyGroup>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>9.0.0.3</Version>
+    <Version>9.0.2.45</Version>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -16,7 +16,7 @@
     <Company>Khairuddin Ni'am</Company>
     <Authors>Khairuddin Ni'am;Temmy Wahyu Raharjo</Authors>
     <Product>$(AssemblyName)</Product>
-    <Copyright>2020</Copyright>
+    <Copyright>2022</Copyright>
     <PackageLicenseFile>License.txt</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/khairuddinniam/Niam.XRM.Framework</PackageProjectUrl>
     <PackageTags>Dynamics CRM 365 XRM D365 Dynamics 365</PackageTags>
@@ -35,7 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FakeXrmEasy.9" Version="1.57.1" />
+    <PackageReference Include="FakeXrmEasy.9" Version="1.58.1" />
   </ItemGroup>
 
   <ItemGroup>

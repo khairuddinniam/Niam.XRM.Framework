@@ -89,5 +89,22 @@ namespace Niam.XRM.Framework.TestHelper.Tests.EarlyBound
 
             Assert.Equal(1100m, orderDetailSummary.GetValue(e => e.new_totalprice));
         }
+
+        [Fact]
+        public void Can_execute_command_other_early_bound_generator()
+        {
+            var account = new Account { Id = Guid.NewGuid() }.Set(e => e.StateCode, Account.OptionSets.StateCode.Active);
+
+            var test = new TestEvent<Account>(account);
+            test.CreateEventCommand<AccountCommand>(null);
+
+            Assert.NotNull(test.Db.Event.Deleted);
+            Assert.Equal(account.Id, test.Db.Event.Deleted[0].Id);
+
+            Assert.NotNull(test.Db.Event.Created);
+
+            Assert.NotNull(test.Db.Event.Updated);
+            Assert.Equal(test.Db.Event.Created[0].Id, test.Db.Event.Updated[0].Id);
+        }
     }
 }
