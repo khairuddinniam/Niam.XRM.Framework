@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Niam.XRM.Framework\Niam.XRM.Framework.csproj" />
+    <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="9.0.2.45" PrivateAssets="All" />
   </ItemGroup>
 
    <PropertyGroup>

@@ -11,7 +11,7 @@
   <!-- NuSpec -->
   <PropertyGroup>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>9.0.2.45</Version>
+    <Version>9.0.2.451</Version>
   </PropertyGroup>
   <PropertyGroup>
     <PackageId>$(AssemblyName)</PackageId>
@@ -24,14 +24,14 @@
     <PackageProjectUrl>https://github.com/khairuddinniam/Niam.XRM.Framework</PackageProjectUrl>
     <PackageTags>Dynamics CRM 365 XRM D365 Dynamics 365</PackageTags>
     <PackageOutputPath>$(SolutionDir)build\packages</PackageOutputPath>
-    <AssemblyVersion>9.0.2.45</AssemblyVersion>
-    <FileVersion>9.0.2.45</FileVersion>
+    <AssemblyVersion>9.0.2.451</AssemblyVersion>
+    <FileVersion>9.0.2.451</FileVersion>
   </PropertyGroup>
   <ItemGroup>
     <None Include="License.txt" Pack="true" Visible="false" PackagePath="" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="9.0.2.45" />
+    <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="9.0.2.45" PrivateAssets="All" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.ComponentModel.DataAnnotations" />
