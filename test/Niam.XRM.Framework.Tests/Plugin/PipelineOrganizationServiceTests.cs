@@ -1,7 +1,6 @@
 using System;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
-using Niam.XRM.Framework.Interfaces;
 using Niam.XRM.Framework.Plugin;
 using NSubstitute;
 using Shouldly;
@@ -28,7 +27,15 @@ namespace Niam.XRM.Framework.Tests.Plugin
             {
                 var crmService = Substitute.For<IOrganizationService>();
                 var service = new PipelineOrganizationService(crmService);
-                service.CreatePipelines.Add(new SinglePipeline());
+                var pipeline = new XrmCreatePipeline((request, next) =>
+                {
+                    request.Entity["crm_hello"] = "world"; // Pre
+                    var result = next();
+                    request.Entity.FormattedValues["crm_foo"] = "bar"; // Post
+
+                    return result;
+                });
+                service.CreatePipelines.Add(pipeline);
                 var entity = new Entity();
                 service.Create(entity);
                 
@@ -42,8 +49,24 @@ namespace Niam.XRM.Framework.Tests.Plugin
             {
                 var crmService = Substitute.For<IOrganizationService>();
                 var service = new PipelineOrganizationService(crmService);
-                service.CreatePipelines.Add(new Pipeline1());
-                service.CreatePipelines.Add(new Pipeline2());
+                var pipeline1 = new XrmCreatePipeline((request, next) =>
+                {
+                    request.Entity["crm_attr"] = "hello"; // Pre
+                    var result = next();
+                    request.Entity.FormattedValues["crm_attr"] += " bar"; // Post
+
+                    return result;
+                });
+                var pipeline2 = new XrmCreatePipeline((request, next) =>
+                {
+                    request.Entity["crm_attr"] += " world"; // Pre
+                    var result = next();
+                    request.Entity.FormattedValues["crm_attr"] = "foo"; // Post
+                    
+                    return result;
+                });
+                service.CreatePipelines.Add(pipeline1);
+                service.CreatePipelines.Add(pipeline2);
                 var entity = new Entity();
                 service.Create(entity);
                 
@@ -61,54 +84,6 @@ namespace Niam.XRM.Framework.Tests.Plugin
                 crmService.Received(1).Create(Arg.Any<Entity>());
                 entity["crm_attr"].ShouldBe("hello world");
                 entity.FormattedValues["crm_attr"].ShouldBe("foo bar");
-            }
-            
-            private class SinglePipeline : IPipeline<XrmCreateRequest, Guid>
-            {
-                public Guid Handle(XrmCreateRequest request, Func<Guid> next)
-                {
-                    // Pre
-                    request.Entity["crm_hello"] = "world";
-                    
-                    var result = next();
-                    
-                    // Post
-                    request.Entity.FormattedValues["crm_foo"] = "bar";
-                    
-                    return result;
-                }
-            }
-            
-            private class Pipeline1 : IPipeline<XrmCreateRequest, Guid>
-            {
-                public Guid Handle(XrmCreateRequest request, Func<Guid> next)
-                {
-                    // Pre
-                    request.Entity["crm_attr"] = "hello";
-                    
-                    var result = next();
-                    
-                    // Post
-                    request.Entity.FormattedValues["crm_attr"] += " bar";
-                    
-                    return result;
-                }
-            }
-            
-            private class Pipeline2 : IPipeline<XrmCreateRequest, Guid>
-            {
-                public Guid Handle(XrmCreateRequest request, Func<Guid> next)
-                {
-                    // Pre
-                    request.Entity["crm_attr"] += " world";
-                    
-                    var result = next();
-                    
-                    // Post
-                    request.Entity.FormattedValues["crm_attr"] = "foo";
-                    
-                    return result;
-                }
             }
         }
         
@@ -136,7 +111,15 @@ namespace Niam.XRM.Framework.Tests.Plugin
                 crmService.Retrieve(Arg.Any<string>(), Arg.Any<Guid>(), Arg.Any<ColumnSet>())
                     .Returns(new Entity());
                 var service = new PipelineOrganizationService(crmService);
-                service.RetrievePipelines.Add(new SinglePipeline());
+                var pipeline = new XrmRetrievePipeline((request, next) =>
+                {
+                    request.ColumnSet.AddColumn("crm_column"); // Pre
+                    var result = next();
+                    result["crm_attr"] = "hello world"; // Post
+
+                    return result;
+                });
+                service.RetrievePipelines.Add(pipeline);
                 var id = Guid.NewGuid();
                 var columnSet = new ColumnSet();
                 var entity = service.Retrieve("crm_entity", id, columnSet);
@@ -156,8 +139,24 @@ namespace Niam.XRM.Framework.Tests.Plugin
                 crmService.Retrieve(Arg.Any<string>(), Arg.Any<Guid>(), Arg.Any<ColumnSet>())
                     .Returns(new Entity());
                 var service = new PipelineOrganizationService(crmService);
-                service.RetrievePipelines.Add(new Pipeline1());
-                service.RetrievePipelines.Add(new Pipeline2());
+                var pipeline1 = new XrmRetrievePipeline((request, next) =>
+                {
+                    request.ColumnSet.AddColumn("hello"); // Pre
+                    var result = next();
+                    result["crm_attr"] += " bar"; // Post
+                    
+                    return result;
+                });
+                var pipeline2 = new XrmRetrievePipeline((request, next) =>
+                {
+                    request.ColumnSet.AddColumn("world"); // Pre
+                    var result = next();
+                    result["crm_attr"] = "foo"; // Post
+                    
+                    return result;
+                });
+                service.RetrievePipelines.Add(pipeline1);
+                service.RetrievePipelines.Add(pipeline2);
                 var id = Guid.NewGuid();
                 var columnSet = new ColumnSet();
                 var entity = service.Retrieve("crm_entity", id, columnSet);
@@ -181,54 +180,6 @@ namespace Niam.XRM.Framework.Tests.Plugin
                 columnSet.Columns[0].ShouldBe("hello");
                 columnSet.Columns[1].ShouldBe("world");
                 entity["crm_attr"].ShouldBe("foo bar");
-            }
-            
-            private class SinglePipeline : IPipeline<XrmRetrieveRequest, Entity>
-            {
-                public Entity Handle(XrmRetrieveRequest request, Func<Entity> next)
-                {
-                    // Pre
-                    request.ColumnSet.AddColumn("crm_column");
-                    
-                    var result = next();
-                    
-                    // Post
-                    result["crm_attr"] = "hello world";
-                    
-                    return result;
-                }
-            }
-            
-            private class Pipeline1 : IPipeline<XrmRetrieveRequest, Entity>
-            {
-                public Entity Handle(XrmRetrieveRequest request, Func<Entity> next)
-                {
-                    // Pre
-                    request.ColumnSet.AddColumn("hello");
-                    
-                    var result = next();
-                    
-                    // Post
-                    result["crm_attr"] += " bar";
-                    
-                    return result;
-                }
-            }
-            
-            private class Pipeline2 : IPipeline<XrmRetrieveRequest, Entity>
-            {
-                public Entity Handle(XrmRetrieveRequest request, Func<Entity> next)
-                {
-                    // Pre
-                    request.ColumnSet.AddColumn("world");
-                    
-                    var result = next();
-                    
-                    // Post
-                    result["crm_attr"] = "foo";
-                    
-                    return result;
-                }
             }
         }
     }
