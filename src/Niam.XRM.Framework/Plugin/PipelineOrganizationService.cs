@@ -13,6 +13,9 @@ namespace Niam.XRM.Framework.Plugin
 
         public List<IPipeline<XrmCreateRequest, Guid>> CreatePipelines { get; } =
             new List<IPipeline<XrmCreateRequest, Guid>>();
+        
+        public List<IPipeline<XrmRetrieveRequest, Entity>> RetrievePipelines { get; } =
+            new List<IPipeline<XrmRetrieveRequest, Entity>>();
 
         public PipelineOrganizationService(IOrganizationService service)
         {
@@ -32,7 +35,13 @@ namespace Niam.XRM.Framework.Plugin
 
         public Entity Retrieve(string entityName, Guid id, ColumnSet columnSet)
         {
-            return _service.Retrieve(entityName, id, columnSet);
+            var request = new XrmRetrieveRequest(entityName, id, columnSet);
+            var handler = RetrievePipelines
+                .AsEnumerable()
+                .Reverse()
+                .Aggregate(new Func<Entity>(() => _service.Retrieve(request.EntityName, request.Id, request.ColumnSet)), 
+                    (next, pipeline) => () => pipeline.Handle(request, next));
+            return handler();
         }
 
         public void Update(Entity entity)
