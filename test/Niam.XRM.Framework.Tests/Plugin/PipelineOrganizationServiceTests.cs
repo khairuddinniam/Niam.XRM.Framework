@@ -8,7 +8,7 @@ using Xunit;
 
 namespace Niam.XRM.Framework.Tests.Plugin
 {
-    public static class OrganizationServiceTests
+    public static class PipelineOrganizationServiceTests
     {
         public class CreateTests
         {
@@ -16,7 +16,7 @@ namespace Niam.XRM.Framework.Tests.Plugin
             public void Without_pipeline()
             {
                 var crmService = Substitute.For<IOrganizationService>();
-                var service = new OrganizationService(crmService);
+                var service = new PipelineOrganizationService(crmService);
                 service.Create(new Entity());
                 
                 crmService.Received(1).Create(Arg.Any<Entity>());
@@ -26,7 +26,7 @@ namespace Niam.XRM.Framework.Tests.Plugin
             public void With_pipeline()
             {
                 var crmService = Substitute.For<IOrganizationService>();
-                var service = new OrganizationService(crmService);
+                var service = new PipelineOrganizationService(crmService);
                 service.CreatePipelines.Add(new SinglePipeline());
                 var entity = new Entity();
                 service.Create(entity);
@@ -40,7 +40,7 @@ namespace Niam.XRM.Framework.Tests.Plugin
             public void With_pipelines()
             {
                 var crmService = Substitute.For<IOrganizationService>();
-                var service = new OrganizationService(crmService);
+                var service = new PipelineOrganizationService(crmService);
                 service.CreatePipelines.Add(new Pipeline1());
                 service.CreatePipelines.Add(new Pipeline2());
                 var entity = new Entity();
@@ -62,9 +62,9 @@ namespace Niam.XRM.Framework.Tests.Plugin
                 entity.FormattedValues["crm_attr"].ShouldBe("foo bar");
             }
             
-            private class SinglePipeline : IPipeline<OrganizationService.CreateRequest, Guid>
+            private class SinglePipeline : IPipeline<XrmCreateRequest, Guid>
             {
-                public Guid Handle(OrganizationService.CreateRequest request, Func<Guid> next)
+                public Guid Handle(XrmCreateRequest request, Func<Guid> next)
                 {
                     // Pre
                     request.Entity.Attributes["crm_hello"] = "world";
@@ -78,9 +78,9 @@ namespace Niam.XRM.Framework.Tests.Plugin
                 }
             }
             
-            private class Pipeline1 : IPipeline<OrganizationService.CreateRequest, Guid>
+            private class Pipeline1 : IPipeline<XrmCreateRequest, Guid>
             {
-                public Guid Handle(OrganizationService.CreateRequest request, Func<Guid> next)
+                public Guid Handle(XrmCreateRequest request, Func<Guid> next)
                 {
                     // Pre
                     request.Entity.Attributes["crm_attr"] = "hello";
@@ -94,9 +94,9 @@ namespace Niam.XRM.Framework.Tests.Plugin
                 }
             }
             
-            private class Pipeline2 : IPipeline<OrganizationService.CreateRequest, Guid>
+            private class Pipeline2 : IPipeline<XrmCreateRequest, Guid>
             {
-                public Guid Handle(OrganizationService.CreateRequest request, Func<Guid> next)
+                public Guid Handle(XrmCreateRequest request, Func<Guid> next)
                 {
                     // Pre
                     request.Entity.Attributes["crm_attr"] += " world";

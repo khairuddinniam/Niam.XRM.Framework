@@ -7,21 +7,21 @@ using Niam.XRM.Framework.Interfaces;
 
 namespace Niam.XRM.Framework.Plugin
 {
-    public class OrganizationService : IOrganizationService
+    public class PipelineOrganizationService : IOrganizationService
     {
         private readonly IOrganizationService _service;
 
-        public List<IPipeline<CreateRequest, Guid>> CreatePipelines { get; } =
-            new List<IPipeline<CreateRequest, Guid>>();
+        public List<IPipeline<XrmCreateRequest, Guid>> CreatePipelines { get; } =
+            new List<IPipeline<XrmCreateRequest, Guid>>();
 
-        public OrganizationService(IOrganizationService service)
+        public PipelineOrganizationService(IOrganizationService service)
         {
             _service = service;
         }
 
         public Guid Create(Entity entity)
         {
-            var request = new CreateRequest(entity);
+            var request = new XrmCreateRequest(entity);
             var handler = CreatePipelines
                 .AsEnumerable()
                 .Reverse()
@@ -64,16 +64,6 @@ namespace Niam.XRM.Framework.Plugin
         public EntityCollection RetrieveMultiple(QueryBase query)
         {
             return _service.RetrieveMultiple(query);
-        }
-        
-        public class CreateRequest
-        {
-            public Entity Entity { get; }
-
-            public CreateRequest(Entity entity)
-            {
-                Entity = entity;
-            }    
         }
     }
 }
