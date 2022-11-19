@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net462</TargetFramework>
+    <LangVersion>11</LangVersion>
   </PropertyGroup>
 
   <!-- NuSpec -->

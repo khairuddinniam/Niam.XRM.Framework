@@ -4,6 +4,7 @@
     <DelaySign>False</DelaySign>
     <TargetFramework>net462</TargetFramework>
     <AssemblyOriginatorKeyFile>..\..\asset\open-source.snk</AssemblyOriginatorKeyFile>
+    <LangVersion>11</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />

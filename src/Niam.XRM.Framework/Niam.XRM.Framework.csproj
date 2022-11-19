@@ -3,6 +3,7 @@
     <SignAssembly>True</SignAssembly>
     <DelaySign>False</DelaySign>
     <TargetFramework>net462</TargetFramework>
+    <LangVersion>11</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>..\..\asset\open-source.snk</AssemblyOriginatorKeyFile>
