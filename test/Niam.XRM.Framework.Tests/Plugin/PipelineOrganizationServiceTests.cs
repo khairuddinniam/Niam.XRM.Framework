@@ -76,7 +76,7 @@ public static class PipelineOrganizationServiceTests
              * - Pipeline2.Pre
              * - next
              * - Pipeline2.Post
-             * - Pipeline2.Post
+             * - Pipeline1.Post
              *
              * Pre = code before call next func.
              * Post = code after call next func.
@@ -167,7 +167,7 @@ public static class PipelineOrganizationServiceTests
              * - Pipeline2.Pre
              * - next
              * - Pipeline2.Post
-             * - Pipeline2.Post
+             * - Pipeline1.Post
              *
              * Pre = code before call next func.
              * Post = code after call next func.
