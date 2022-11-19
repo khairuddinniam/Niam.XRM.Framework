@@ -8,9 +8,9 @@ using Niam.XRM.Framework.Plugin;
 
 namespace Insurgo.Plugins
 {
-    public class PreSubcriptionDelete : PluginBase<cr953_subscription>, IPlugin
+    public class PreSubscriptionDelete : PluginBase<cr953_subscription>, IPlugin
     {
-        public PreSubcriptionDelete(string unsecure, string secure) : base(unsecure, secure)
+        public PreSubscriptionDelete(string unsecure, string secure) : base(unsecure, secure)
         {
         }
 
