@@ -1,20 +1,19 @@
 using System;
-using Niam.XRM.Framework.Interfaces;
+using Niam.XRM.Framework.Interfaces.Plugin;
 
-namespace Niam.XRM.Framework.Plugin
+namespace Niam.XRM.Framework.Plugin;
+
+public class XrmCreatePipeline : ICreatePipeline
 {
-    public class XrmCreatePipeline : IPipeline<XrmCreateRequest, Guid>
-    {
-        private readonly Func<XrmCreateRequest, Func<Guid>, Guid> _handler;
+    private readonly Func<XrmCreateRequest, Func<Guid>, Guid> _handler;
 
-        public XrmCreatePipeline(Func<XrmCreateRequest, Func<Guid>, Guid> handler)
-        {
-            _handler = handler;
-        }
+    public XrmCreatePipeline(Func<XrmCreateRequest, Func<Guid>, Guid> handler)
+    {
+        _handler = handler;
+    }
             
-        public Guid Handle(XrmCreateRequest request, Func<Guid> next)
-        {
-            return _handler(request, next);
-        }
+    public Guid Handle(XrmCreateRequest request, Func<Guid> next)
+    {
+        return _handler(request, next);
     }
 }
