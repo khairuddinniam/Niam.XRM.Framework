@@ -2,11 +2,11 @@ using Microsoft.Xrm.Sdk;
 
 namespace Niam.XRM.Framework.Plugin
 {
-    public class XrmCreateRequest
+    public class XrmUpdateRequest
     {
         public Entity Entity { get; internal set; }
 
-        public XrmCreateRequest(Entity entity)
+        public XrmUpdateRequest(Entity entity)
         {
             Entity = entity;
         }    

@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Niam.XRM.Framework;
 
-public class DisposableItemCollection
+public class SubscriptionCollection
 {
     private readonly List<object> _collection = new();
 
@@ -23,10 +23,10 @@ public class DisposableItemCollection
 
     private class Subscription<T> : IDisposable where T : class
     {
-        private readonly DisposableItemCollection _collection;
+        private readonly SubscriptionCollection _collection;
         private readonly T _item;
 
-        public Subscription(DisposableItemCollection collection, T item)
+        public Subscription(SubscriptionCollection collection, T item)
         {
             _collection = collection;
             _item = item;

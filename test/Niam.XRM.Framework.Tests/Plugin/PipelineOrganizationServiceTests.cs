@@ -182,4 +182,81 @@ public static class PipelineOrganizationServiceTests
             entity["crm_attr"].ShouldBe("foo bar");
         }
     }
+    
+    public class UpdateTests
+    {
+        [Fact]
+        public void Without_pipelines()
+        {
+            var crmService = Substitute.For<IOrganizationService>();
+            var service = new PipelineOrganizationService(crmService);
+            service.Update(new Entity());
+                
+            crmService.Received(1).Update(Arg.Any<Entity>());
+        }
+
+        [Fact]
+        public void With_a_pipeline()
+        {
+            var crmService = Substitute.For<IOrganizationService>();
+            var service = new PipelineOrganizationService(crmService);
+            var pipeline = new XrmUpdatePipeline((request, next) =>
+            {
+                request.Entity["crm_hello"] = "world"; // Pre
+                var result = next();
+                request.Entity.FormattedValues["crm_foo"] = "bar"; // Post
+
+                return result;
+            });
+            service.AddPipeline(pipeline);
+            var entity = new Entity();
+            service.Update(entity);
+                
+            crmService.Received(1).Update(Arg.Any<Entity>());
+            entity["crm_hello"].ShouldBe("world");
+            entity.FormattedValues["crm_foo"].ShouldBe("bar");
+        }
+            
+        [Fact]
+        public void With_pipelines()
+        {
+            var crmService = Substitute.For<IOrganizationService>();
+            var service = new PipelineOrganizationService(crmService);
+            var pipeline1 = new XrmUpdatePipeline((request, next) =>
+            {
+                request.Entity["crm_attr"] = "hello"; // Pre
+                var result = next();
+                request.Entity.FormattedValues["crm_attr"] += " bar"; // Post
+
+                return result;
+            });
+            var pipeline2 = new XrmUpdatePipeline((request, next) =>
+            {
+                request.Entity["crm_attr"] += " world"; // Pre
+                var result = next();
+                request.Entity.FormattedValues["crm_attr"] = "foo"; // Post
+                    
+                return result;
+            });
+            service.AddPipeline(pipeline1);
+            service.AddPipeline(pipeline2);
+            var entity = new Entity();
+            service.Update(entity);
+                
+            /*
+             * Orders:
+             * - Pipeline1.Pre
+             * - Pipeline2.Pre
+             * - next
+             * - Pipeline2.Post
+             * - Pipeline1.Post
+             *
+             * Pre = code before call next func.
+             * Post = code after call next func.
+             */
+            crmService.Received(1).Update(Arg.Any<Entity>());
+            entity["crm_attr"].ShouldBe("hello world");
+            entity.FormattedValues["crm_attr"].ShouldBe("foo bar");
+        }
+    }
 }
