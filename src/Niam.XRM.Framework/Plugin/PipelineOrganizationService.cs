@@ -56,7 +56,16 @@ namespace Niam.XRM.Framework.Plugin
 
         public void Delete(string entityName, Guid id)
         {
-            _service.Delete(entityName, id);
+            var request = new XrmDeleteRequest(entityName, id);
+            var handler = _pipelines.GetAll<IPipeline<XrmDeleteRequest, Unit>>()
+                .Reverse()
+                .Aggregate(() =>
+                    {
+                        _service.Delete(entityName, id);
+                        return Unit.Value;
+                    }, 
+                    (next, pipeline) => () => pipeline.Handle(request, next));
+            handler();
         }
 
         public OrganizationResponse Execute(OrganizationRequest request)

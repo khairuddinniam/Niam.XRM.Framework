@@ -259,4 +259,84 @@ public static class PipelineOrganizationServiceTests
             entity.FormattedValues["crm_attr"].ShouldBe("foo bar");
         }
     }
+    
+    public class DeleteTests
+    {
+        [Fact]
+        public void Without_pipelines()
+        {
+            var crmService = Substitute.For<IOrganizationService>();
+            var service = new PipelineOrganizationService(crmService);
+            service.Delete("crm_entity", Guid.NewGuid());
+                
+            crmService.Received(1).Delete(Arg.Any<string>(), Arg.Any<Guid>());
+        }
+
+        [Fact]
+        public void With_a_pipeline()
+        {
+            var crmService = Substitute.For<IOrganizationService>();
+            var service = new PipelineOrganizationService(crmService);
+            var before = string.Empty;
+            var after = string.Empty;
+            var pipeline = new XrmDeletePipeline((request, next) =>
+            {
+                before = "BEFORE";
+                var result = next();
+                after = "AFTER";
+
+                return result;
+            });
+            service.AddPipeline(pipeline);
+            service.Delete("crm_entity", Guid.NewGuid());
+                
+            crmService.Received(1).Delete(Arg.Any<string>(), Arg.Any<Guid>());
+            before.ShouldBe("BEFORE");
+            after.ShouldBe("AFTER");
+        }
+            
+        [Fact]
+        public void With_pipelines()
+        {
+            var crmService = Substitute.For<IOrganizationService>();
+            var service = new PipelineOrganizationService(crmService);
+            var before = string.Empty;
+            var after = string.Empty;
+            var pipeline1 = new XrmDeletePipeline((request, next) =>
+            {
+                before += "HELLO";
+                var result = next();
+                after += " BAR";
+
+                return result;
+            });
+            var pipeline2 = new XrmDeletePipeline((request, next) =>
+            {
+                before += " WORLD";
+                var result = next();
+                after += "FOO";
+                    
+                return result;
+            });
+            service.AddPipeline(pipeline1);
+            service.AddPipeline(pipeline2);
+            var entity = new Entity();
+            service.Delete("crm_entity", Guid.NewGuid());
+                
+            /*
+             * Orders:
+             * - Pipeline1.Pre
+             * - Pipeline2.Pre
+             * - next
+             * - Pipeline2.Post
+             * - Pipeline1.Post
+             *
+             * Pre = code before call next func.
+             * Post = code after call next func.
+             */
+            crmService.Received(1).Delete(Arg.Any<string>(), Arg.Any<Guid>());
+            before.ShouldBe("HELLO WORLD");
+            after.ShouldBe("FOO BAR");
+        }
+    }
 }
