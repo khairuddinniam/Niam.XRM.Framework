@@ -16,74 +16,77 @@ public static class PipelineOrganizationServiceTests
         public void Without_pipelines()
         {
             var crmService = Substitute.For<IOrganizationService>();
+            var expectedId = Guid.NewGuid();
+            crmService.Create(Arg.Any<Entity>()).Returns(expectedId);
             var service = new PipelineOrganizationService(crmService);
-            service.Create(new Entity());
+            var entity = new Entity();
+            var id = service.Create(entity);
                 
-            crmService.Received(1).Create(Arg.Any<Entity>());
+            crmService.Received(1).Create(Arg.Is(entity));
+            id.ShouldBe(expectedId);
         }
 
         [Fact]
         public void With_a_pipeline()
         {
             var crmService = Substitute.For<IOrganizationService>();
+            var expectedId = Guid.NewGuid();
+            crmService.Create(Arg.Any<Entity>()).Returns(expectedId);
             var service = new PipelineOrganizationService(crmService);
+            var before = string.Empty;
+            var after = string.Empty;
             var pipeline = new XrmCreatePipeline((request, next) =>
             {
-                request.Entity["crm_hello"] = "world"; // Pre
+                before = "BEFORE";
                 var result = next();
-                request.Entity.FormattedValues["crm_foo"] = "bar"; // Post
+                after = "AFTER";
 
                 return result;
             });
             service.AddPipeline(pipeline);
             var entity = new Entity();
-            service.Create(entity);
+            var id = service.Create(entity);
                 
-            crmService.Received(1).Create(Arg.Any<Entity>());
-            entity["crm_hello"].ShouldBe("world");
-            entity.FormattedValues["crm_foo"].ShouldBe("bar");
+            crmService.Received(1).Create(Arg.Is(entity));
+            before.ShouldBe("BEFORE");
+            after.ShouldBe("AFTER");
+            id.ShouldBe(expectedId);
         }
             
         [Fact]
         public void With_pipelines()
         {
             var crmService = Substitute.For<IOrganizationService>();
+            var expectedId = Guid.NewGuid();
+            crmService.Create(Arg.Any<Entity>()).Returns(expectedId);
             var service = new PipelineOrganizationService(crmService);
+            var before = string.Empty;
+            var after = string.Empty;
             var pipeline1 = new XrmCreatePipeline((request, next) =>
             {
-                request.Entity["crm_attr"] = "hello"; // Pre
+                before += "HELLO";
                 var result = next();
-                request.Entity.FormattedValues["crm_attr"] += " bar"; // Post
+                after += " BAR";
 
                 return result;
             });
             var pipeline2 = new XrmCreatePipeline((request, next) =>
             {
-                request.Entity["crm_attr"] += " world"; // Pre
+                before += " WORLD";
                 var result = next();
-                request.Entity.FormattedValues["crm_attr"] = "foo"; // Post
+                after += "FOO";
                     
                 return result;
             });
             service.AddPipeline(pipeline1);
             service.AddPipeline(pipeline2);
             var entity = new Entity();
-            service.Create(entity);
-                
-            /*
-             * Orders:
-             * - Pipeline1.Pre
-             * - Pipeline2.Pre
-             * - next
-             * - Pipeline2.Post
-             * - Pipeline1.Post
-             *
-             * Pre = code before call next func.
-             * Post = code after call next func.
-             */
-            crmService.Received(1).Create(Arg.Any<Entity>());
-            entity["crm_attr"].ShouldBe("hello world");
-            entity.FormattedValues["crm_attr"].ShouldBe("foo bar");
+            var id = service.Create(entity);
+            
+            crmService.Received(1).Create(Arg.Is(entity));
+            before.ShouldBe("HELLO WORLD");
+            after.ShouldBe("FOO BAR");
+            id.ShouldBe(expectedId);
         }
     }
         
@@ -93,29 +96,36 @@ public static class PipelineOrganizationServiceTests
         public void Without_pipelines()
         {
             var crmService = Substitute.For<IOrganizationService>();
+            var expectedEntity = new Entity();
+            crmService.Retrieve(Arg.Any<string>(), Arg.Any<Guid>(), Arg.Any<ColumnSet>())
+                .Returns(expectedEntity);
             var service = new PipelineOrganizationService(crmService);
             var id = Guid.NewGuid();
             var columnSet = new ColumnSet();
-            service.Retrieve("crm_entity", id, columnSet);
+            var entity = service.Retrieve("crm_entity", id, columnSet);
                 
             crmService.Received(1).Retrieve(
                 Arg.Is("crm_entity"),
                 Arg.Is(id),
                 Arg.Is(columnSet));
+            entity.ShouldBe(expectedEntity);
         }
 
         [Fact]
         public void With_a_pipeline()
         {
             var crmService = Substitute.For<IOrganizationService>();
+            var expectedEntity = new Entity();
             crmService.Retrieve(Arg.Any<string>(), Arg.Any<Guid>(), Arg.Any<ColumnSet>())
-                .Returns(new Entity());
+                .Returns(expectedEntity);
             var service = new PipelineOrganizationService(crmService);
+            var before = string.Empty;
+            var after = string.Empty;
             var pipeline = new XrmRetrievePipeline((request, next) =>
             {
-                request.ColumnSet.AddColumn("crm_column"); // Pre
+                before = "BEFORE";
                 var result = next();
-                result["crm_attr"] = "hello world"; // Post
+                after = "AFTER";
 
                 return result;
             });
@@ -128,30 +138,34 @@ public static class PipelineOrganizationServiceTests
                 Arg.Is("crm_entity"),
                 Arg.Is(id),
                 Arg.Is(columnSet));
-            columnSet.Columns[0].ShouldBe("crm_column");
-            entity["crm_attr"].ShouldBe("hello world");
+            before.ShouldBe("BEFORE");
+            after.ShouldBe("AFTER");
+            entity.ShouldBe(expectedEntity);
         }
             
         [Fact]
         public void With_pipelines()
         {
             var crmService = Substitute.For<IOrganizationService>();
+            var expectedEntity = new Entity();
             crmService.Retrieve(Arg.Any<string>(), Arg.Any<Guid>(), Arg.Any<ColumnSet>())
-                .Returns(new Entity());
+                .Returns(expectedEntity);
             var service = new PipelineOrganizationService(crmService);
+            var before = string.Empty;
+            var after = string.Empty;
             var pipeline1 = new XrmRetrievePipeline((request, next) =>
             {
-                request.ColumnSet.AddColumn("hello"); // Pre
+                before += "HELLO";
                 var result = next();
-                result["crm_attr"] += " bar"; // Post
+                after += " BAR";
                     
                 return result;
             });
             var pipeline2 = new XrmRetrievePipeline((request, next) =>
             {
-                request.ColumnSet.AddColumn("world"); // Pre
+                before += " WORLD";
                 var result = next();
-                result["crm_attr"] = "foo"; // Post
+                after += "FOO";
                     
                 return result;
             });
@@ -160,26 +174,14 @@ public static class PipelineOrganizationServiceTests
             var id = Guid.NewGuid();
             var columnSet = new ColumnSet();
             var entity = service.Retrieve("crm_entity", id, columnSet);
-                
-            /*
-             * Orders:
-             * - Pipeline1.Pre
-             * - Pipeline2.Pre
-             * - next
-             * - Pipeline2.Post
-             * - Pipeline1.Post
-             *
-             * Pre = code before call next func.
-             * Post = code after call next func.
-             */
+           
             crmService.Received(1).Retrieve(
                 Arg.Is("crm_entity"),
                 Arg.Is(id),
                 Arg.Is(columnSet));
-                
-            columnSet.Columns[0].ShouldBe("hello");
-            columnSet.Columns[1].ShouldBe("world");
-            entity["crm_attr"].ShouldBe("foo bar");
+            before.ShouldBe("HELLO WORLD");
+            after.ShouldBe("FOO BAR");
+            entity.ShouldBe(expectedEntity);
         }
     }
     
@@ -190,9 +192,10 @@ public static class PipelineOrganizationServiceTests
         {
             var crmService = Substitute.For<IOrganizationService>();
             var service = new PipelineOrganizationService(crmService);
-            service.Update(new Entity());
+            var entity = new Entity();
+            service.Update(entity);
                 
-            crmService.Received(1).Update(Arg.Any<Entity>());
+            crmService.Received(1).Update(Arg.Is(entity));
         }
 
         [Fact]
@@ -200,11 +203,13 @@ public static class PipelineOrganizationServiceTests
         {
             var crmService = Substitute.For<IOrganizationService>();
             var service = new PipelineOrganizationService(crmService);
+            var before = string.Empty;
+            var after = string.Empty;
             var pipeline = new XrmUpdatePipeline((request, next) =>
             {
-                request.Entity["crm_hello"] = "world"; // Pre
+                before = "BEFORE";
                 var result = next();
-                request.Entity.FormattedValues["crm_foo"] = "bar"; // Post
+                after = "AFTER";
 
                 return result;
             });
@@ -212,9 +217,9 @@ public static class PipelineOrganizationServiceTests
             var entity = new Entity();
             service.Update(entity);
                 
-            crmService.Received(1).Update(Arg.Any<Entity>());
-            entity["crm_hello"].ShouldBe("world");
-            entity.FormattedValues["crm_foo"].ShouldBe("bar");
+            crmService.Received(1).Update(Arg.Is(entity));
+            before.ShouldBe("BEFORE");
+            after.ShouldBe("AFTER");
         }
             
         [Fact]
@@ -222,19 +227,21 @@ public static class PipelineOrganizationServiceTests
         {
             var crmService = Substitute.For<IOrganizationService>();
             var service = new PipelineOrganizationService(crmService);
+            var before = string.Empty;
+            var after = string.Empty;
             var pipeline1 = new XrmUpdatePipeline((request, next) =>
             {
-                request.Entity["crm_attr"] = "hello"; // Pre
+                before += "HELLO";
                 var result = next();
-                request.Entity.FormattedValues["crm_attr"] += " bar"; // Post
+                after += " BAR";
 
                 return result;
             });
             var pipeline2 = new XrmUpdatePipeline((request, next) =>
             {
-                request.Entity["crm_attr"] += " world"; // Pre
+                before += " WORLD";
                 var result = next();
-                request.Entity.FormattedValues["crm_attr"] = "foo"; // Post
+                after += "FOO";
                     
                 return result;
             });
@@ -242,21 +249,10 @@ public static class PipelineOrganizationServiceTests
             service.AddPipeline(pipeline2);
             var entity = new Entity();
             service.Update(entity);
-                
-            /*
-             * Orders:
-             * - Pipeline1.Pre
-             * - Pipeline2.Pre
-             * - next
-             * - Pipeline2.Post
-             * - Pipeline1.Post
-             *
-             * Pre = code before call next func.
-             * Post = code after call next func.
-             */
-            crmService.Received(1).Update(Arg.Any<Entity>());
-            entity["crm_attr"].ShouldBe("hello world");
-            entity.FormattedValues["crm_attr"].ShouldBe("foo bar");
+            
+            crmService.Received(1).Update(Arg.Is(entity));
+            before.ShouldBe("HELLO WORLD");
+            after.ShouldBe("FOO BAR");
         }
     }
     
@@ -267,9 +263,10 @@ public static class PipelineOrganizationServiceTests
         {
             var crmService = Substitute.For<IOrganizationService>();
             var service = new PipelineOrganizationService(crmService);
-            service.Delete("crm_entity", Guid.NewGuid());
+            var id = Guid.NewGuid();
+            service.Delete("crm_entity", id);
                 
-            crmService.Received(1).Delete(Arg.Any<string>(), Arg.Any<Guid>());
+            crmService.Received(1).Delete(Arg.Is("crm_entity"), Arg.Is(id));
         }
 
         [Fact]
@@ -288,9 +285,10 @@ public static class PipelineOrganizationServiceTests
                 return result;
             });
             service.AddPipeline(pipeline);
-            service.Delete("crm_entity", Guid.NewGuid());
+            var id = Guid.NewGuid();
+            service.Delete("crm_entity", id);
                 
-            crmService.Received(1).Delete(Arg.Any<string>(), Arg.Any<Guid>());
+            crmService.Received(1).Delete(Arg.Is("crm_entity"), Arg.Is(id));
             before.ShouldBe("BEFORE");
             after.ShouldBe("AFTER");
         }
@@ -320,21 +318,10 @@ public static class PipelineOrganizationServiceTests
             });
             service.AddPipeline(pipeline1);
             service.AddPipeline(pipeline2);
-            var entity = new Entity();
-            service.Delete("crm_entity", Guid.NewGuid());
+            var id = Guid.NewGuid();
+            service.Delete("crm_entity", id);
                 
-            /*
-             * Orders:
-             * - Pipeline1.Pre
-             * - Pipeline2.Pre
-             * - next
-             * - Pipeline2.Post
-             * - Pipeline1.Post
-             *
-             * Pre = code before call next func.
-             * Post = code after call next func.
-             */
-            crmService.Received(1).Delete(Arg.Any<string>(), Arg.Any<Guid>());
+            crmService.Received(1).Delete(Arg.Is("crm_entity"), Arg.Is(id));
             before.ShouldBe("HELLO WORLD");
             after.ShouldBe("FOO BAR");
         }
