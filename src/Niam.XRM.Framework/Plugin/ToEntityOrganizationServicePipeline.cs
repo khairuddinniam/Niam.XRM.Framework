@@ -6,15 +6,13 @@ namespace Niam.XRM.Framework.Plugin;
 
 public class ToEntityOrganizationServicePipeline : ICreatePipeline, IUpdatePipeline
 {
-    public Guid Handle(XrmCreateRequest request, Func<Guid> next)
+    public Guid Handle(XrmCreateRequest request, Func<XrmCreateRequest, Guid> next)
     {
-        request.Entity = request.Entity.ToEntity<Entity>();
-        return next();
+        return next(new XrmCreateRequest(request.Entity.ToEntity<Entity>()));
     }
 
-    public Unit Handle(XrmUpdateRequest request, Func<Unit> next)
+    public Unit Handle(XrmUpdateRequest request, Func<XrmUpdateRequest, Unit> next)
     {
-        request.Entity = request.Entity.ToEntity<Entity>();
-        return next();
+        return next(new XrmUpdateRequest(request.Entity.ToEntity<Entity>()));
     }
 }

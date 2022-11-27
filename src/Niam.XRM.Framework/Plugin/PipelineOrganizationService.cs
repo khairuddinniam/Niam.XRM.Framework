@@ -22,59 +22,56 @@ namespace Niam.XRM.Framework.Plugin
 
         public Guid Create(Entity entity)
         {
-            var request = new XrmCreateRequest(entity);
             var handler = _pipelines.GetAll<IPipeline<XrmCreateRequest, Guid>>()
                 .Reverse()
-                .Aggregate(() => _service.Create(request.Entity), 
-                    (next, pipeline) => () => pipeline.Handle(request, next));
-            return handler();
+                .Aggregate((XrmCreateRequest req) => _service.Create(req.Entity), 
+                    (next, pipeline) => (req) => pipeline.Handle(req, next));
+            return handler(new XrmCreateRequest(entity));
         }
 
         public Entity Retrieve(string entityName, Guid id, ColumnSet columnSet)
         {
-            var request = new XrmRetrieveRequest(entityName, id, columnSet);
             var handler = _pipelines.GetAll<IPipeline<XrmRetrieveRequest, Entity>>()
                 .Reverse()
-                .Aggregate(() => _service.Retrieve(request.EntityName, request.Id, request.ColumnSet), 
-                    (next, pipeline) => () => pipeline.Handle(request, next));
-            return handler();
+                .Aggregate((XrmRetrieveRequest req) => _service.Retrieve(req.EntityName, req.Id, req.ColumnSet), 
+                    (next, pipeline) => (req) => pipeline.Handle(req, next));
+            return handler(new XrmRetrieveRequest(entityName, id, columnSet));
         }
 
         public void Update(Entity entity)
         {
-            var request = new XrmUpdateRequest(entity);
             var handler = _pipelines.GetAll<IPipeline<XrmUpdateRequest, Unit>>()
                 .Reverse()
-                .Aggregate(() =>
+                .Aggregate((XrmUpdateRequest req) =>
                     {
-                        _service.Update(request.Entity);
+                        _service.Update(req.Entity);
                         return Unit.Value;
                     }, 
-                    (next, pipeline) => () => pipeline.Handle(request, next));
-            handler();
+                    (next, pipeline) => (req) => pipeline.Handle(req, next));
+            handler(new XrmUpdateRequest(entity));
         }
 
         public void Delete(string entityName, Guid id)
         {
-            var request = new XrmDeleteRequest(entityName, id);
             var handler = _pipelines.GetAll<IPipeline<XrmDeleteRequest, Unit>>()
                 .Reverse()
-                .Aggregate(() =>
+                .Aggregate((XrmDeleteRequest req) =>
                     {
-                        _service.Delete(entityName, id);
+                        _service.Delete(req.EntityName, req.Id);
                         return Unit.Value;
                     }, 
-                    (next, pipeline) => () => pipeline.Handle(request, next));
-            handler();
+                    (next, pipeline) => (req) => pipeline.Handle(req, next));
+
+            handler(new XrmDeleteRequest(entityName, id));
         }
 
         public OrganizationResponse Execute(OrganizationRequest request)
         {
             var handler = _pipelines.GetAll<IPipeline<OrganizationRequest, OrganizationResponse>>()
                 .Reverse()
-                .Aggregate(() => _service.Execute(request), 
-                    (next, pipeline) => () => pipeline.Handle(request, next));
-            return handler();
+                .Aggregate((OrganizationRequest req) => _service.Execute(req), 
+                    (next, pipeline) => (req) => pipeline.Handle(req, next));
+            return handler(request);
         }
 
         public void Associate(

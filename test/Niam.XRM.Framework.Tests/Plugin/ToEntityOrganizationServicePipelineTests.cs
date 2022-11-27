@@ -11,24 +11,32 @@ public class ToEntityOrganizationServicePipelineTests
     [Fact]
     public void To_entity_on_create()
     {
-        var request = new XrmCreateRequest(new CustomEntity());
         var id = Guid.NewGuid();
-        var next = () => id;
+        Entity entity = null;
+        var next = (XrmCreateRequest req) =>
+        {
+            entity = req.Entity;
+            return id;
+        };
         
-        var result = new ToEntityOrganizationServicePipeline().Handle(request, next);
-        request.Entity.ShouldBeOfType<Entity>();
+        var result = new ToEntityOrganizationServicePipeline().Handle(new XrmCreateRequest(new CustomEntity()), next);
         result.ShouldBe(id);
+        entity.ShouldBeOfType<Entity>();
     }
     
     [Fact]
     public void To_entity_on_update()
     {
-        var request = new XrmUpdateRequest(new CustomEntity());
-        var next = () => Unit.Value;
+        Entity entity = null;
+        var next = (XrmUpdateRequest req) =>
+        {
+            entity = req.Entity;
+            return Unit.Value;
+        };
         
-        var result = new ToEntityOrganizationServicePipeline().Handle(request, next);
-        request.Entity.ShouldBeOfType<Entity>();
+        var result = new ToEntityOrganizationServicePipeline().Handle(new XrmUpdateRequest(new CustomEntity()), next);
         result.ShouldBe(Unit.Value);
+        entity.ShouldBeOfType<Entity>();
     }
     
     private class CustomEntity : Entity

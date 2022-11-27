@@ -4,17 +4,9 @@ using Niam.XRM.Framework.Interfaces.Plugin;
 
 namespace Niam.XRM.Framework.Plugin;
 
-public class XrmRetrievePipeline : IRetrievePipeline
+public class XrmRetrievePipeline : HandlerPipeline<XrmRetrieveRequest, Entity>, IRetrievePipeline
 {
-    private readonly Func<XrmRetrieveRequest, Func<Entity>, Entity> _handler;
-
-    public XrmRetrievePipeline(Func<XrmRetrieveRequest, Func<Entity>, Entity> handler)
+    public XrmRetrievePipeline(Func<XrmRetrieveRequest, Func<XrmRetrieveRequest, Entity>, Entity> handler) : base(handler)
     {
-        _handler = handler;
-    }
-            
-    public Entity Handle(XrmRetrieveRequest request, Func<Entity> next)
-    {
-        return _handler(request, next);
     }
 }

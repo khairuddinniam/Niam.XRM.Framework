@@ -3,17 +3,9 @@ using Niam.XRM.Framework.Interfaces.Plugin;
 
 namespace Niam.XRM.Framework.Plugin;
 
-public class XrmDeletePipeline : IDeletePipeline
+public class XrmDeletePipeline : HandlerPipeline<XrmDeleteRequest, Unit>, IDeletePipeline
 {
-    private readonly Func<XrmDeleteRequest, Func<Unit>, Unit> _handler;
-
-    public XrmDeletePipeline(Func<XrmDeleteRequest, Func<Unit>, Unit> handler)
+    public XrmDeletePipeline(Func<XrmDeleteRequest, Func<XrmDeleteRequest, Unit>, Unit> handler) : base(handler)
     {
-        _handler = handler;
-    }
-            
-    public Unit Handle(XrmDeleteRequest request, Func<Unit> next)
-    {
-        return _handler(request, next);
     }
 }

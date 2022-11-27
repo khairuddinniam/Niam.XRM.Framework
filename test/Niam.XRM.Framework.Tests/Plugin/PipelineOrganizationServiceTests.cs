@@ -38,7 +38,7 @@ public static class PipelineOrganizationServiceTests
             var pipeline = new XrmCreatePipeline((request, next) =>
             {
                 before = "BEFORE";
-                var result = next();
+                var result = next(request);
                 after = "AFTER";
 
                 return result;
@@ -65,7 +65,7 @@ public static class PipelineOrganizationServiceTests
             var pipeline1 = new XrmCreatePipeline((request, next) =>
             {
                 before += "HELLO";
-                var result = next();
+                var result = next(request);
                 after += " BAR";
 
                 return result;
@@ -73,7 +73,7 @@ public static class PipelineOrganizationServiceTests
             var pipeline2 = new XrmCreatePipeline((request, next) =>
             {
                 before += " WORLD";
-                var result = next();
+                var result = next(request);
                 after += "FOO";
                     
                 return result;
@@ -124,7 +124,7 @@ public static class PipelineOrganizationServiceTests
             var pipeline = new XrmRetrievePipeline((request, next) =>
             {
                 before = "BEFORE";
-                var result = next();
+                var result = next(request);
                 after = "AFTER";
 
                 return result;
@@ -156,7 +156,7 @@ public static class PipelineOrganizationServiceTests
             var pipeline1 = new XrmRetrievePipeline((request, next) =>
             {
                 before += "HELLO";
-                var result = next();
+                var result = next(request);
                 after += " BAR";
                     
                 return result;
@@ -164,7 +164,7 @@ public static class PipelineOrganizationServiceTests
             var pipeline2 = new XrmRetrievePipeline((request, next) =>
             {
                 before += " WORLD";
-                var result = next();
+                var result = next(request);
                 after += "FOO";
                     
                 return result;
@@ -208,7 +208,7 @@ public static class PipelineOrganizationServiceTests
             var pipeline = new XrmUpdatePipeline((request, next) =>
             {
                 before = "BEFORE";
-                var result = next();
+                var result = next(request);
                 after = "AFTER";
 
                 return result;
@@ -232,7 +232,7 @@ public static class PipelineOrganizationServiceTests
             var pipeline1 = new XrmUpdatePipeline((request, next) =>
             {
                 before += "HELLO";
-                var result = next();
+                var result = next(request);
                 after += " BAR";
 
                 return result;
@@ -240,7 +240,7 @@ public static class PipelineOrganizationServiceTests
             var pipeline2 = new XrmUpdatePipeline((request, next) =>
             {
                 before += " WORLD";
-                var result = next();
+                var result = next(request);
                 after += "FOO";
                     
                 return result;
@@ -279,7 +279,7 @@ public static class PipelineOrganizationServiceTests
             var pipeline = new XrmDeletePipeline((request, next) =>
             {
                 before = "BEFORE";
-                var result = next();
+                var result = next(request);
                 after = "AFTER";
 
                 return result;
@@ -303,7 +303,7 @@ public static class PipelineOrganizationServiceTests
             var pipeline1 = new XrmDeletePipeline((request, next) =>
             {
                 before += "HELLO";
-                var result = next();
+                var result = next(request);
                 after += " BAR";
 
                 return result;
@@ -311,7 +311,7 @@ public static class PipelineOrganizationServiceTests
             var pipeline2 = new XrmDeletePipeline((request, next) =>
             {
                 before += " WORLD";
-                var result = next();
+                var result = next(request);
                 after += "FOO";
                     
                 return result;
@@ -350,7 +350,7 @@ public static class PipelineOrganizationServiceTests
             var pipeline = new XrmExecutePipeline((request, next) =>
             {
                 before = "BEFORE";
-                var result = next();
+                var result = next(request);
                 after = "AFTER";
 
                 return result;
@@ -374,7 +374,7 @@ public static class PipelineOrganizationServiceTests
             var pipeline1 = new XrmExecutePipeline((request, next) =>
             {
                 before += "HELLO";
-                var result = next();
+                var result = next(request);
                 after += " BAR";
 
                 return result;
@@ -382,7 +382,7 @@ public static class PipelineOrganizationServiceTests
             var pipeline2 = new XrmExecutePipeline((request, next) =>
             {
                 before += " WORLD";
-                var result = next();
+                var result = next(request);
                 after += "FOO";
                     
                 return result;

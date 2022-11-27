@@ -4,7 +4,7 @@ namespace Niam.XRM.Framework.Plugin;
 
 public class XrmUpdateRequest
 {
-    public Entity Entity { get; internal set; }
+    public Entity Entity { get; }
 
     public XrmUpdateRequest(Entity entity)
     {
