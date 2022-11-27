@@ -326,4 +326,75 @@ public static class PipelineOrganizationServiceTests
             after.ShouldBe("FOO BAR");
         }
     }
+
+    public class ExecuteTests
+    {
+        [Fact]
+        public void Without_pipelines()
+        {
+            var crmService = Substitute.For<IOrganizationService>();
+            var service = new PipelineOrganizationService(crmService);
+            var request = new OrganizationRequest();
+            service.Execute(request);
+                
+            crmService.Received(1).Execute(Arg.Is(request));
+        }
+
+        [Fact]
+        public void With_a_pipeline()
+        {
+            var crmService = Substitute.For<IOrganizationService>();
+            var service = new PipelineOrganizationService(crmService);
+            var before = string.Empty;
+            var after = string.Empty;
+            var pipeline = new XrmExecutePipeline((request, next) =>
+            {
+                before = "BEFORE";
+                var result = next();
+                after = "AFTER";
+
+                return result;
+            });
+            service.AddPipeline(pipeline);
+            var request = new OrganizationRequest();
+            service.Execute(request);
+                
+            crmService.Received(1).Execute(Arg.Is(request));
+            before.ShouldBe("BEFORE");
+            after.ShouldBe("AFTER");
+        }
+            
+        [Fact]
+        public void With_pipelines()
+        {
+            var crmService = Substitute.For<IOrganizationService>();
+            var service = new PipelineOrganizationService(crmService);
+            var before = string.Empty;
+            var after = string.Empty;
+            var pipeline1 = new XrmExecutePipeline((request, next) =>
+            {
+                before += "HELLO";
+                var result = next();
+                after += " BAR";
+
+                return result;
+            });
+            var pipeline2 = new XrmExecutePipeline((request, next) =>
+            {
+                before += " WORLD";
+                var result = next();
+                after += "FOO";
+                    
+                return result;
+            });
+            service.AddPipeline(pipeline1);
+            service.AddPipeline(pipeline2);
+            var request = new OrganizationRequest();
+            service.Execute(request);
+                
+            crmService.Received(1).Execute(Arg.Is(request));
+            before.ShouldBe("HELLO WORLD");
+            after.ShouldBe("FOO BAR");
+        }
+    }
 }

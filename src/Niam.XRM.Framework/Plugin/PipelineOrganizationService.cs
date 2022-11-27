@@ -70,7 +70,11 @@ namespace Niam.XRM.Framework.Plugin
 
         public OrganizationResponse Execute(OrganizationRequest request)
         {
-            return _service.Execute(request);
+            var handler = _pipelines.GetAll<IPipeline<OrganizationRequest, OrganizationResponse>>()
+                .Reverse()
+                .Aggregate(() => _service.Execute(request), 
+                    (next, pipeline) => () => pipeline.Handle(request, next));
+            return handler();
         }
 
         public void Associate(
