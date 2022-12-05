@@ -80,7 +80,16 @@ namespace Niam.XRM.Framework.Plugin
             Relationship relationship, 
             EntityReferenceCollection relatedEntities)
         {
-            _service.Associate(entityName, entityId, relationship, relatedEntities);
+            var handler = _pipelines.GetAll<IPipeline<XrmAssociateRequest, Unit>>()
+                .Reverse()
+                .Aggregate((XrmAssociateRequest req) =>
+                    {
+                        _service.Associate(req.EntityName, req.EntityId, req.Relationship, req.RelatedEntities);
+                        return Unit.Value;
+                    }, 
+                    (next, pipeline) => (req) => pipeline.Handle(req, next));
+
+            handler(new XrmAssociateRequest(entityName, entityId, relationship, relatedEntities));
         }
 
         public void Disassociate(
@@ -89,12 +98,26 @@ namespace Niam.XRM.Framework.Plugin
             Relationship relationship,
             EntityReferenceCollection relatedEntities)
         {
-            _service.Disassociate(entityName, entityId, relationship, relatedEntities);
+            var handler = _pipelines.GetAll<IPipeline<XrmDisassociateRequest, Unit>>()
+                .Reverse()
+                .Aggregate((XrmDisassociateRequest req) =>
+                    {
+                        _service.Disassociate(entityName, entityId, relationship, relatedEntities);
+                        return Unit.Value;
+                    }, 
+                    (next, pipeline) => (req) => pipeline.Handle(req, next));
+
+            handler(new XrmDisassociateRequest(entityName, entityId, relationship, relatedEntities));
         }
 
         public EntityCollection RetrieveMultiple(QueryBase query)
         {
-            return _service.RetrieveMultiple(query);
+            var handler = _pipelines.GetAll<IPipeline<XrmRetrieveMultipleRequest, EntityCollection>>()
+                .Reverse()
+                .Aggregate((XrmRetrieveMultipleRequest req) => _service.RetrieveMultiple(query), 
+                    (next, pipeline) => (req) => pipeline.Handle(req, next));
+
+            return handler(new XrmRetrieveMultipleRequest(query));
         }
     }
 }

@@ -397,4 +397,232 @@ public static class PipelineOrganizationServiceTests
             after.ShouldBe("FOO BAR");
         }
     }
+
+    public class AssociateTests
+    {
+        [Fact]
+        public void Without_pipelines()
+        {
+            var crmService = Substitute.For<IOrganizationService>();
+            var service = new PipelineOrganizationService(crmService);
+            var entityReference = new EntityReference("contact", 
+                new Guid("cf76763a-ba1c-e811-a954-000d3af451d6"));
+            service.Associate(entityReference.LogicalName, entityReference.Id,
+                new Relationship("account_primary_contact"), new EntityReferenceCollection());
+            crmService.Received(1).Associate(Arg.Any<string>(), 
+                Arg.Any<Guid>(), Arg.Any<Relationship>(), 
+                Arg.Any<EntityReferenceCollection>());
+        }
+        
+        [Fact]
+        public void With_a_pipeline()
+        {
+            var crmService = Substitute.For<IOrganizationService>();
+            var service = new PipelineOrganizationService(crmService);
+            var before = string.Empty;
+            var after = string.Empty;
+            var pipeline = new XrmAssociatePipeline((request, next) =>
+            {
+                before = "BEFORE";
+                var result = next(request);
+                after = "AFTER";
+
+                return result;
+            });
+            service.AddPipeline(pipeline);
+            var entityReference = new EntityReference("contact", 
+                new Guid("cf76763a-ba1c-e811-a954-000d3af451d6"));
+            service.Associate(entityReference.LogicalName, entityReference.Id,
+                new Relationship("account_primary_contact"), new EntityReferenceCollection());
+
+            crmService.Received(1).Associate(Arg.Any<string>(), Arg.Any<Guid>(), Arg.Any<Relationship>(),
+                Arg.Any<EntityReferenceCollection>());
+            before.ShouldBe("BEFORE");
+            after.ShouldBe("AFTER");
+        }
+        
+        [Fact]
+        public void With_pipelines()
+        {
+            var crmService = Substitute.For<IOrganizationService>();
+            var service = new PipelineOrganizationService(crmService);
+            var before = string.Empty;
+            var after = string.Empty;
+            var pipeline1 = new XrmAssociatePipeline((request, next) =>
+            {
+                before += "HELLO";
+                var result = next(request);
+                after += " BAR";
+
+                return result;
+            });
+            var pipeline2 = new XrmAssociatePipeline((request, next) =>
+            {
+                before += " WORLD";
+                var result = next(request);
+                after += "FOO";
+                    
+                return result;
+            });
+            service.AddPipeline(pipeline1);
+            service.AddPipeline(pipeline2);
+            var entityReference = new EntityReference("contact", 
+                new Guid("cf76763a-ba1c-e811-a954-000d3af451d6"));
+            service.Associate(entityReference.LogicalName, entityReference.Id,
+                new Relationship("account_primary_contact"), new EntityReferenceCollection());
+
+            crmService.Received(1).Associate(Arg.Any<string>(), Arg.Any<Guid>(), Arg.Any<Relationship>(),
+                Arg.Any<EntityReferenceCollection>());
+            before.ShouldBe("HELLO WORLD");
+            after.ShouldBe("FOO BAR");
+        }
+    }
+
+    public class DisassociateTests
+    {
+        [Fact]
+        public void Without_pipelines()
+        {
+            var crmService = Substitute.For<IOrganizationService>();
+            var service = new PipelineOrganizationService(crmService);
+            var entityReference = new EntityReference("contact",
+                new Guid("cf76763a-ba1c-e811-a954-000d3af451d6"));
+            service.Disassociate(entityReference.LogicalName, entityReference.Id,
+                new Relationship("account_primary_contact"), new EntityReferenceCollection());
+            crmService.Received(1).Disassociate(Arg.Any<string>(),
+                Arg.Any<Guid>(), Arg.Any<Relationship>(),
+                Arg.Any<EntityReferenceCollection>());
+        }
+        
+        [Fact]
+        public void With_a_pipeline()
+        {
+            var crmService = Substitute.For<IOrganizationService>();
+            var service = new PipelineOrganizationService(crmService);
+            var before = string.Empty;
+            var after = string.Empty;
+            var pipeline = new XrmDisassociatePipeline((request, next) =>
+            {
+                before = "BEFORE";
+                var result = next(request);
+                after = "AFTER";
+
+                return result;
+            });
+            service.AddPipeline(pipeline);
+            var entityReference = new EntityReference("contact", 
+                new Guid("cf76763a-ba1c-e811-a954-000d3af451d6"));
+            service.Disassociate(entityReference.LogicalName, entityReference.Id,
+                new Relationship("account_primary_contact"), new EntityReferenceCollection());
+
+            crmService.Received(1).Disassociate(Arg.Any<string>(), Arg.Any<Guid>(), Arg.Any<Relationship>(),
+                Arg.Any<EntityReferenceCollection>());
+            before.ShouldBe("BEFORE");
+            after.ShouldBe("AFTER");
+        }
+        
+        [Fact]
+        public void With_pipelines()
+        {
+            var crmService = Substitute.For<IOrganizationService>();
+            var service = new PipelineOrganizationService(crmService);
+            var before = string.Empty;
+            var after = string.Empty;
+            var pipeline1 = new XrmDisassociatePipeline((request, next) =>
+            {
+                before += "HELLO";
+                var result = next(request);
+                after += " BAR";
+
+                return result;
+            });
+            var pipeline2 = new XrmDisassociatePipeline((request, next) =>
+            {
+                before += " WORLD";
+                var result = next(request);
+                after += "FOO";
+                    
+                return result;
+            });
+            service.AddPipeline(pipeline1);
+            service.AddPipeline(pipeline2);
+            var entityReference = new EntityReference("contact", 
+                new Guid("cf76763a-ba1c-e811-a954-000d3af451d6"));
+            service.Disassociate(entityReference.LogicalName, entityReference.Id,
+                new Relationship("account_primary_contact"), new EntityReferenceCollection());
+
+            crmService.Received(1).Disassociate(Arg.Any<string>(), Arg.Any<Guid>(), Arg.Any<Relationship>(),
+                Arg.Any<EntityReferenceCollection>());
+            before.ShouldBe("HELLO WORLD");
+            after.ShouldBe("FOO BAR");
+        }
+    }
+
+    public class RetrieveMultipleTests
+    {
+        [Fact]
+        public void Without_pipelines()
+        {
+            var crmService = Substitute.For<IOrganizationService>();
+            var service = new PipelineOrganizationService(crmService);
+            var request = new QueryExpression();
+            service.RetrieveMultiple(request);
+            crmService.Received(1).RetrieveMultiple(Arg.Is(request));
+        }
+        
+        [Fact]
+        public void With_a_pipeline()
+        {
+            var crmService = Substitute.For<IOrganizationService>();
+            var service = new PipelineOrganizationService(crmService);
+            var before = string.Empty;
+            var after = string.Empty;
+            var pipeline = new XrmRetrieveMultiplePipeline((request, next) =>
+            {
+                before = "BEFORE";
+                var result = next(request);
+                after = "AFTER";
+
+                return result;
+            });
+            service.AddPipeline(pipeline);
+            var request = new QueryExpression();
+            service.RetrieveMultiple(request);
+            crmService.Received(1).RetrieveMultiple(Arg.Is(request));
+            before.ShouldBe("BEFORE");
+            after.ShouldBe("AFTER");
+        }
+        
+        [Fact]
+        public void With_pipelines()
+        {
+            var crmService = Substitute.For<IOrganizationService>();
+            var service = new PipelineOrganizationService(crmService);
+            var before = string.Empty;
+            var after = string.Empty;
+            var pipeline1 = new XrmRetrieveMultiplePipeline((request, next) =>
+            {
+                before += "HELLO";
+                var result = next(request);
+                after += " BAR";
+
+                return result;
+            });
+            var pipeline2 = new XrmRetrieveMultiplePipeline((request, next) =>
+            {
+                before += " WORLD";
+                var result = next(request);
+                after += "FOO";
+                    
+                return result;
+            });
+            service.AddPipeline(pipeline1);
+            service.AddPipeline(pipeline2);
+            var request = new QueryExpression();
+            service.RetrieveMultiple(request);
+            crmService.Received(1).RetrieveMultiple(Arg.Is(request));
+            before.ShouldBe("HELLO WORLD");
+            after.ShouldBe("FOO BAR");
+        }
+    }
 }
