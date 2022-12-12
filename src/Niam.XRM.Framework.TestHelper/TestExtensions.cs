@@ -3,6 +3,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.Serialization;
 using FakeXrmEasy;
+using FakeXrmEasy.Abstractions.Plugins;
 using Microsoft.Xrm.Sdk;
 
 namespace Niam.XRM.Framework.TestHelper
