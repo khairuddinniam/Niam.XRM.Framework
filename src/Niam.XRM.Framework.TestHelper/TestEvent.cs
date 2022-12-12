@@ -1,5 +1,4 @@
-﻿using FakeXrmEasy;
-using Microsoft.Xrm.Sdk;
+﻿using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Messages;
 using Niam.XRM.Framework.Interfaces.Plugin;
 using Niam.XRM.Framework.Interfaces.Plugin.Configurations;
@@ -7,6 +6,14 @@ using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Reflection;
+using FakeXrmEasy.Abstractions;
+using FakeXrmEasy.Abstractions.Enums;
+using FakeXrmEasy.Abstractions.Plugins;
+using FakeXrmEasy.Middleware;
+using FakeXrmEasy.Middleware.Crud;
+using FakeXrmEasy.Middleware.Messages;
+using FakeXrmEasy.Middleware.Pipeline;
+using FakeXrmEasy.Plugins;
 
 namespace Niam.XRM.Framework.TestHelper
 {
@@ -20,24 +27,32 @@ namespace Niam.XRM.Framework.TestHelper
     public partial class TestEvent<TE> where TE : Entity
     {
         private readonly Entity[] _initialEntities;
-        private readonly InternalXrmFakedContext _xrmFakedContext;
+        private readonly IXrmFakedContext _xrmFakedContext;
 
-        public XrmFakedContext FakedContext => _xrmFakedContext;
+        public IXrmFakedContext FakedContext => _xrmFakedContext;
 
         public XrmFakedPluginExecutionContext PluginExecutionContext { get; }
 
-        public XrmFakedTracingService TracingService { get; }
+        public IXrmFakedTracingService TracingService { get; }
 
-        public TestDatabase Db => _xrmFakedContext.Db;
+        public TestDatabase Db { get; }
 
         public TestEvent(params Entity[] initialEntities)
         {
             _initialEntities = initialEntities.Select(entity => entity.ToEntity<Entity>()).ToArray();
-            _xrmFakedContext = new InternalXrmFakedContext();
+            _xrmFakedContext = MiddlewareBuilder
+                .New()
+                .AddCrud()
+                .AddFakeMessageExecutors()
+                .AddPipelineSimulation()
+                .UseCrud()
+                .UseMessages()
+                .SetLicense(FakeXrmEasyLicense.NonCommercial)
+                .Build();
 
             PluginExecutionContext = FakedContext.GetDefaultPluginContext();
-
-            TracingService = FakedContext.GetFakeTracingService();
+            Db = new TestDatabase(_xrmFakedContext);
+            TracingService = FakedContext.GetTracingService();
         }
 
         public TCommand ExecuteCommand<TCommand>(
@@ -72,8 +87,7 @@ namespace Niam.XRM.Framework.TestHelper
             PluginExecutionContext.Stage = stage ?? 20;
 
             PrepareXrmFakedContext();
-            var serviceProvider = _xrmFakedContext.CreateServiceProvider(PluginExecutionContext);
-            plugin.Execute(serviceProvider);
+            _xrmFakedContext.ExecutePluginWith(PluginExecutionContext, plugin);
             return plugin;
         }
 
@@ -83,8 +97,7 @@ namespace Niam.XRM.Framework.TestHelper
             var isCustomEarlyBound = typeof(TE).GetProperty("Id")?.GetCustomAttribute<ColumnAttribute>() != null;
             if (isCustomEarlyBound)
             {
-                _xrmFakedContext.IsCustomEarlyBound = true;
-                FakedContext.ProxyTypesAssembly = null;
+                _xrmFakedContext.EnableProxyTypes(Assembly.GetAssembly(typeof(TE)));
             }
         }
 
@@ -102,32 +115,9 @@ namespace Niam.XRM.Framework.TestHelper
 
             var defaultConstructor = constructors.FirstOrDefault(c => c.GetParameters().Length == 0);
             if (defaultConstructor != null)
-                return (TP)defaultConstructor.Invoke(new object[0]);
+                return (TP)defaultConstructor.Invoke(Array.Empty<object>());
 
             throw new ArgumentException("The plugin does not have constructor for passing in two configuration strings or constructor without arguments.");
-        }
-
-        private class InternalXrmFakedContext : XrmFakedContext
-        {
-            public TestDatabase Db { get; }
-
-            public bool IsCustomEarlyBound { get; set; }
-
-            public InternalXrmFakedContext()
-            {
-                Db = new TestDatabase(this);
-            }
-
-            public IServiceProvider CreateServiceProvider(XrmFakedPluginExecutionContext plugCtx)
-                => GetFakedServiceProvider(plugCtx);
-
-            public override IOrganizationService GetOrganizationService()
-            {
-                var service = IsCustomEarlyBound
-                    ? new ClearProxyOrganizationService(base.GetOrganizationService(), this)
-                    : base.GetOrganizationService();
-                return new TestOrganizationService(service, Db);
-            }
         }
     }
 
