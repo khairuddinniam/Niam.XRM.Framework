@@ -60,13 +60,11 @@ namespace Niam.XRM.Framework.TestHelper
         private void Do(Action action)
         {
             action();
-            _xrmFakedContext.ProxyTypesAssembly = null;
         }
 
         private T Do<T>(Func<T> func)
         {
             var result = func();
-            _xrmFakedContext.ProxyTypesAssembly = null;
             return result;
         }
     }

@@ -3,7 +3,7 @@ using Microsoft.Xrm.Sdk.Messages;
 using Niam.XRM.Framework.Interfaces.Plugin;
 using Niam.XRM.Framework.Interfaces.Plugin.Configurations;
 using System;
-using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using FakeXrmEasy.Abstractions;
@@ -14,6 +14,8 @@ using FakeXrmEasy.Middleware.Crud;
 using FakeXrmEasy.Middleware.Messages;
 using FakeXrmEasy.Middleware.Pipeline;
 using FakeXrmEasy.Plugins;
+using FakeXrmEasy;
+using Microsoft.Xrm.Sdk.Metadata;
 
 namespace Niam.XRM.Framework.TestHelper
 {
@@ -27,7 +29,7 @@ namespace Niam.XRM.Framework.TestHelper
     public partial class TestEvent<TE> where TE : Entity
     {
         private readonly Entity[] _initialEntities;
-        private readonly IXrmFakedContext _xrmFakedContext;
+        private readonly InternalXrmFakedContext _xrmFakedContext;
 
         public IXrmFakedContext FakedContext => _xrmFakedContext;
 
@@ -35,23 +37,23 @@ namespace Niam.XRM.Framework.TestHelper
 
         public IXrmFakedTracingService TracingService { get; }
 
-        public TestDatabase Db { get; }
+        public TestDatabase Db => _xrmFakedContext.Db;
 
         public TestEvent(params Entity[] initialEntities)
         {
-            _initialEntities = initialEntities.Select(entity => entity.ToEntity<Entity>()).ToArray();
-            _xrmFakedContext = MiddlewareBuilder
+            _initialEntities = initialEntities.Select(e => e.ToEntity<Entity>()).ToArray();
+            var tempContext = (XrmFakedContext)MiddlewareBuilder
                 .New()
                 .AddCrud()
                 .AddFakeMessageExecutors()
                 .AddPipelineSimulation()
                 .UseCrud()
                 .UseMessages()
-                .SetLicense(FakeXrmEasyLicense.NonCommercial)
+                .SetLicense(FakeXrmEasyLicense.RPL_1_5)
                 .Build();
 
+            _xrmFakedContext = new InternalXrmFakedContext(tempContext);
             PluginExecutionContext = FakedContext.GetDefaultPluginContext();
-            Db = new TestDatabase(_xrmFakedContext);
             TracingService = FakedContext.GetTracingService();
         }
 
@@ -94,11 +96,6 @@ namespace Niam.XRM.Framework.TestHelper
         private void PrepareXrmFakedContext()
         {
             FakedContext.Initialize(_initialEntities);
-            var isCustomEarlyBound = typeof(TE).GetProperty("Id")?.GetCustomAttribute<ColumnAttribute>() != null;
-            if (isCustomEarlyBound)
-            {
-                _xrmFakedContext.EnableProxyTypes(Assembly.GetAssembly(typeof(TE)));
-            }
         }
 
         private TP CreatePlugin<TP>(string unsecure, string secure) where TP : IPlugin
@@ -118,6 +115,196 @@ namespace Niam.XRM.Framework.TestHelper
                 return (TP)defaultConstructor.Invoke(Array.Empty<object>());
 
             throw new ArgumentException("The plugin does not have constructor for passing in two configuration strings or constructor without arguments.");
+        }
+
+        private class InternalXrmFakedContext : IXrmFakedContext
+        {
+            private XrmFakedContext Context { get; }
+
+            public InternalXrmFakedContext(XrmFakedContext context)
+            {
+                Context = context;
+                Db = new TestDatabase(Context);
+            }
+
+            public TestDatabase Db { get; }
+
+            public bool IsCustomEarlyBound { get; set; }
+
+            public IOrganizationService GetOrganizationService()
+            {
+                var service = IsCustomEarlyBound
+                    ? new ClearProxyOrganizationService(Context.GetOrganizationService(), Context)
+                    : Context.GetOrganizationService();
+                return new TestOrganizationService(service, Db);
+            }
+
+            public void SetProperty<T>(T property)
+            {
+                Context.SetProperty(property);
+            }
+
+            public T GetProperty<T>()
+            {
+                return Context.GetProperty<T>();
+            }
+
+            public bool HasProperty<T>()
+            {
+                return Context.HasProperty<T>();
+            }
+
+            public FakeXrmEasyLicense? LicenseContext
+            {
+                get => Context.LicenseContext;
+                set => Context.LicenseContext = value;
+            }
+
+            public IXrmFakedTracingService GetTracingService()
+            {
+                return Context.GetTracingService();
+            }
+
+            public IQueryable<T> CreateQuery<T>() where T : Entity
+            {
+                return Context.CreateQuery<T>();
+            }
+
+            public IQueryable<Entity> CreateQuery(string logicalName)
+            {
+                return Context.CreateQuery(logicalName);
+            }
+
+            public T GetEntityById<T>(Guid id) where T : Entity
+            {
+                return Context.GetEntityById<T>(id);
+            }
+
+            public Entity GetEntityById(string logicalName, Guid id)
+            {
+                return Context.GetEntityById(logicalName, id);
+            }
+
+            public bool ContainsEntity(string logicalName, Guid id)
+            {
+                return Context.ContainsEntity(logicalName, id);
+            }
+
+            public void Initialize(IEnumerable<Entity> entities)
+            {
+                Context.Initialize(entities);
+            }
+
+            public void Initialize(Entity entity)
+            {
+                Context.Initialize(entity);
+            }
+
+            public void AddEntity(Entity e)
+            {
+                Context.AddEntity(e);
+            }
+
+            public void AddEntityWithDefaults(Entity e, bool clone = false)
+            {
+                Context.AddEntityWithDefaults(e, clone);
+            }
+
+            public Guid CreateEntity(Entity e)
+            {
+                return Context.CreateEntity(e);
+            }
+
+            public void UpdateEntity(Entity e)
+            {
+                Context.UpdateEntity(e);
+            }
+
+            public void DeleteEntity(EntityReference er)
+            {
+                Context.DeleteEntity(er);
+            }
+
+            public Type FindReflectedType(string logicalName)
+            {
+                return Context.FindReflectedType(logicalName);
+            }
+
+            public Type FindReflectedAttributeType(Type earlyBoundType, string sEntityName, string attributeName)
+            {
+                return Context.FindReflectedAttributeType(earlyBoundType, sEntityName, attributeName);
+            }
+
+            public void EnableProxyTypes(Assembly assembly)
+            {
+                Context.EnableProxyTypes(assembly);
+            }
+
+            public void InitializeMetadata(IEnumerable<EntityMetadata> entityMetadataList)
+            {
+                Context.InitializeMetadata(entityMetadataList);
+            }
+
+            public void InitializeMetadata(EntityMetadata entityMetadata)
+            {
+                Context.InitializeMetadata(entityMetadata);
+            }
+
+            public void InitializeMetadata(Assembly earlyBoundEntitiesAssembly)
+            {
+                Context.InitializeMetadata(earlyBoundEntitiesAssembly);
+            }
+
+            public IQueryable<EntityMetadata> CreateMetadataQuery()
+            {
+                return Context.CreateMetadataQuery();
+            }
+
+            public EntityMetadata GetEntityMetadataByName(string sLogicalName)
+            {
+                return Context.GetEntityMetadataByName(sLogicalName);
+            }
+
+            public void SetEntityMetadata(EntityMetadata em)
+            {
+                Context.SetEntityMetadata(em);
+            }
+
+            public void AddRelationship(string schemaname, XrmFakedRelationship relationship)
+            {
+                Context.AddRelationship(schemaname, relationship);
+            }
+
+            public void RemoveRelationship(string schemaname)
+            {
+                Context.RemoveRelationship(schemaname);
+            }
+
+            public XrmFakedRelationship GetRelationship(string schemaName)
+            {
+                return Context.GetRelationship(schemaName);
+            }
+
+            public Guid GetRecordUniqueId(EntityReference record, bool validate = true)
+            {
+                return Context.GetRecordUniqueId(record, validate);
+            }
+
+            public ICallerProperties CallerProperties
+            {
+                get => Context.CallerProperties;
+                set => Context.CallerProperties = value;
+            }
+
+            public IXrmFakedPluginContextProperties PluginContextProperties
+            {
+                get => Context.PluginContextProperties;
+                set => Context.PluginContextProperties = value;
+            }
+
+            public IEnumerable<Assembly> ProxyTypesAssemblies => Context.ProxyTypesAssemblies;
+
+            public IEnumerable<XrmFakedRelationship> Relationships => Context.Relationships;
         }
     }
 
