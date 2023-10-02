@@ -21,6 +21,7 @@
    <PropertyGroup>
     <AssemblyOriginatorKeyFile>..\..\..\asset\open-source.snk</AssemblyOriginatorKeyFile>
     <Description>Fast, easy and lightweight Microsoft Dynamics CRM Plugin Framework that support premise and online edition. One framework to rule them all.</Description>
+    <RepositoryUrl>https://github.com/khairuddinniam/Niam.XRM.Framework</RepositoryUrl>
   </PropertyGroup>
 
 </Project>

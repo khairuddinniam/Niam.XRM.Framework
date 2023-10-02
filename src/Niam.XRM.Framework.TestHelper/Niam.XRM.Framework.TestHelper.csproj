@@ -7,7 +7,7 @@
   <!-- NuSpec -->
   <PropertyGroup>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>9.0.2.45</Version>
+    <Version>9.0.2.27</Version>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -39,7 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FakeXrmEasy.v9" Version="2.2.0" />
+    <PackageReference Include="FakeXrmEasy.v9" Version="2.3.1" />
   </ItemGroup>
 
 </Project>

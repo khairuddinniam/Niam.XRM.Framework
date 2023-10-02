@@ -1,4 +1,4 @@
-﻿using FakeXrmEasy.Abstractions.Plugins;
+﻿using FakeXrmEasy.Plugins;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Messages;
 using Xunit;
