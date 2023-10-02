@@ -1,4 +1,11 @@
 using System;
+using FakeXrmEasy;
+using FakeXrmEasy.Abstractions;
+using FakeXrmEasy.Abstractions.Enums;
+using FakeXrmEasy.Middleware;
+using FakeXrmEasy.Middleware.Crud;
+using FakeXrmEasy.Middleware.Messages;
+using FakeXrmEasy.Middleware.Pipeline;
 using Microsoft.Xrm.Sdk;
 using Niam.XRM.Framework.Interfaces.Plugin;
 using Niam.XRM.Framework.Plugin;
@@ -9,6 +16,16 @@ namespace Niam.XRM.Framework.TestHelper.Tests.EarlyBound
 {
     public class PluginOnCRUDTests
     {
+        private IXrmFakedContext Context => (XrmFakedContext)MiddlewareBuilder
+            .New()
+            .AddCrud()
+            .AddFakeMessageExecutors()
+            .AddPipelineSimulation()
+            .UseCrud()
+            .UseMessages()
+            .SetLicense(FakeXrmEasyLicense.NonCommercial)
+            .Build();
+
         [Fact]
         public void Can_execute_command_on_create()
         {
@@ -19,7 +36,7 @@ namespace Niam.XRM.Framework.TestHelper.Tests.EarlyBound
                 .Set(e => e.new_quantity, 2)
                 .Set(e => e.new_priceperitem, 1500);
 
-            var test = new TestEvent(order);
+            var test = new TestEvent(Context, order);
             test.CreateEvent<Plugin>(target);
             var summaryRef = target.Get(e => e.new_orderdetailsummaryid);
             Assert.NotNull(summaryRef);
@@ -47,7 +64,7 @@ namespace Niam.XRM.Framework.TestHelper.Tests.EarlyBound
             var target = new new_orderdetail(orderDetailId)
                 .Set(e => e.new_quantity, 3);
             
-            var test = new TestEvent(order, orderDetail, orderDetailSummary);
+            var test = new TestEvent(Context, order, orderDetail, orderDetailSummary);
             test.UpdateEvent<Plugin>(target);
             var summary = test.Db.Event.Updated[0].ToEntity<new_orderdetailsummary>();
             Assert.Equal(4500m, summary.Get(e => e.new_totalprice).Value);
@@ -64,7 +81,7 @@ namespace Niam.XRM.Framework.TestHelper.Tests.EarlyBound
                 .Set(e => e.new_orderid, order.ToEntityReference())
                 .Set(e => e.new_orderdetailsummaryid, orderDetailSummary.ToEntityReference());
             
-            var test = new TestEvent(order, orderDetail, orderDetailSummary);
+            var test = new TestEvent(Context, order, orderDetail, orderDetailSummary);
             test.DeleteEvent<Plugin>(orderDetail.ToEntityReference());
             Assert.Equal(orderDetailSummary.ToEntityReference(), test.Db.Event.Deleted[0]);
         }

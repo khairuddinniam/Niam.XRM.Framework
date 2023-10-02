@@ -1,12 +1,29 @@
 using Microsoft.Xrm.Sdk;
 using Niam.XRM.Framework.TestHelper.Tests.EarlyBound.Commands;
 using System;
+using FakeXrmEasy;
+using FakeXrmEasy.Abstractions;
+using FakeXrmEasy.Abstractions.Enums;
+using FakeXrmEasy.Middleware;
+using FakeXrmEasy.Middleware.Crud;
+using FakeXrmEasy.Middleware.Messages;
+using FakeXrmEasy.Middleware.Pipeline;
 using Xunit;
 
 namespace Niam.XRM.Framework.TestHelper.Tests.EarlyBound
 {
     public class CommandTests
     {
+        private IXrmFakedContext Context => (XrmFakedContext)MiddlewareBuilder
+            .New()
+            .AddCrud()
+            .AddFakeMessageExecutors()
+            .AddPipelineSimulation()
+            .UseCrud()
+            .UseMessages()
+            .SetLicense(FakeXrmEasyLicense.NonCommercial)
+            .Build();
+
         [Fact]
         public void Can_execute_command_on_create()
         {
@@ -17,7 +34,7 @@ namespace Niam.XRM.Framework.TestHelper.Tests.EarlyBound
                 .Set(e => e.new_quantity, 2)
                 .Set(e => e.new_priceperitem, 1500);
 
-            var test = new TestEvent<new_orderdetail>(order);
+            var test = new TestEvent<new_orderdetail>(Context, order);
             test.CreateEventCommand<CalculateTotalPrice>(target);
             var summaryRef = target.Get(e => e.new_orderdetailsummaryid);
             Assert.NotNull(summaryRef);
@@ -45,7 +62,7 @@ namespace Niam.XRM.Framework.TestHelper.Tests.EarlyBound
             var target = new new_orderdetail(orderDetailId)
                 .Set(e => e.new_quantity, 3);
 
-            var test = new TestEvent<new_orderdetail>(order, orderDetail, orderDetailSummary);
+            var test = new TestEvent<new_orderdetail>(Context, order, orderDetail, orderDetailSummary);
             test.UpdateEventCommand<CalculateTotalPrice>(target);
             var summary = test.Db.Event.Updated[0].ToEntity<new_orderdetailsummary>();
             Assert.Equal(4500m, summary.Get(e => e.new_totalprice).Value);
@@ -62,7 +79,7 @@ namespace Niam.XRM.Framework.TestHelper.Tests.EarlyBound
                 .Set(e => e.new_orderid, order.ToEntityReference())
                 .Set(e => e.new_orderdetailsummaryid, orderDetailSummary.ToEntityReference());
 
-            var test = new TestEvent<new_orderdetail>(order, orderDetail, orderDetailSummary);
+            var test = new TestEvent<new_orderdetail>(Context, order, orderDetail, orderDetailSummary);
             test.DeleteEventCommand<DeleteOrderDetailSummary>(orderDetail.ToEntityReference());
             Assert.Equal(orderDetailSummary.ToEntityReference(), test.Db.Event.Deleted[0]);
         }
@@ -84,7 +101,7 @@ namespace Niam.XRM.Framework.TestHelper.Tests.EarlyBound
 
             var orderDetailSummary = new new_orderdetailsummary(Guid.NewGuid());
 
-            var test = new TestEvent<new_orderdetailsummary>(order, orderDetail1, orderDetail2);
+            var test = new TestEvent<new_orderdetailsummary>(Context, order, orderDetail1, orderDetail2);
             test.CreateEventCommand<RetrieveTotalPrice>(orderDetailSummary);
 
             Assert.Equal(1100m, orderDetailSummary.GetValue(e => e.new_totalprice));
@@ -95,7 +112,7 @@ namespace Niam.XRM.Framework.TestHelper.Tests.EarlyBound
         {
             var account = new Account { Id = Guid.NewGuid() }.Set(e => e.StateCode, Account.OptionSets.StateCode.Active);
 
-            var test = new TestEvent<Account>(account);
+            var test = new TestEvent<Account>(Context, account);
             test.CreateEventCommand<AccountCommand>(null);
 
             Assert.NotNull(test.Db.Event.Deleted);

@@ -4,12 +4,29 @@ using Niam.XRM.Framework;
 using Niam.XRM.Framework.TestHelper;
 using System;
 using System.Linq;
+using FakeXrmEasy;
+using FakeXrmEasy.Abstractions;
+using FakeXrmEasy.Abstractions.Enums;
+using FakeXrmEasy.Middleware;
+using FakeXrmEasy.Middleware.Crud;
+using FakeXrmEasy.Middleware.Messages;
+using FakeXrmEasy.Middleware.Pipeline;
 using Xunit;
 
 namespace Insurgo.Plugins.Tests.Business
 {
     public class CalculatePackageSummariesOnSubscriptionChangeTests
     {
+        private IXrmFakedContext Context => (XrmFakedContext)MiddlewareBuilder
+            .New()
+            .AddCrud()
+            .AddFakeMessageExecutors()
+            .AddPipelineSimulation()
+            .UseCrud()
+            .UseMessages()
+            .SetLicense(FakeXrmEasyLicense.NonCommercial)
+            .Build();
+
         [Fact]
         public void Can_add_summary_package()
         {
@@ -23,7 +40,7 @@ namespace Insurgo.Plugins.Tests.Business
                 .Set(e => e.cr953_customerid, customer.ToEntityReference())
                 .Set(e => e.cr953_packageid, package.ToEntityReference())
                 .Set(e => e.cr953_qty, 2);
-            var test = new TestEvent<cr953_subscription>(customer, package);
+            var test = new TestEvent<cr953_subscription>(Context, customer, package);
             test.CreateEventCommand<CalculatePackageSummariesOnSubscriptionChange>(target);
 
             Assert.True(test.Db.Event.Created.Any());
@@ -50,7 +67,7 @@ namespace Insurgo.Plugins.Tests.Business
                     .Set(e => e.cr953_qty, 2);
             var initial = new cr953_subscription { Id = target.Id }.
                 Set(e => e.cr953_total, 300);
-            var test = new TestEvent<cr953_subscription>(initial, customer, package, packageSummary);
+            var test = new TestEvent<cr953_subscription>(Context, initial, customer, package, packageSummary);
             test.UpdateEventCommand<CalculatePackageSummariesOnSubscriptionChange>(target);
 
             Assert.Equal(200, target.GetValue(e => e.cr953_total));
@@ -78,7 +95,7 @@ namespace Insurgo.Plugins.Tests.Business
                     .Set(e => e.cr953_qty, 1)
                     .Set(e => e.cr953_total, 100);
 
-            var test = new TestEvent<cr953_subscription>(target, customer, package, packageSummary);
+            var test = new TestEvent<cr953_subscription>(Context, target, customer, package, packageSummary);
             test.DeleteEventCommand<CalculatePackageSummariesOnSubscriptionChange>(target.ToEntityReference());
 
             Assert.True(test.Db.Event.Updated.Any());

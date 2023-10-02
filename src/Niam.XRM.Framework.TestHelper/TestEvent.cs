@@ -9,19 +9,14 @@ using System.Reflection;
 using FakeXrmEasy.Abstractions;
 using FakeXrmEasy.Abstractions.Enums;
 using FakeXrmEasy.Abstractions.Plugins;
-using FakeXrmEasy.Middleware;
-using FakeXrmEasy.Middleware.Crud;
-using FakeXrmEasy.Middleware.Messages;
-using FakeXrmEasy.Middleware.Pipeline;
 using FakeXrmEasy.Plugins;
-using FakeXrmEasy;
 using Microsoft.Xrm.Sdk.Metadata;
 
 namespace Niam.XRM.Framework.TestHelper
 {
     public class TestEvent : TestEvent<Entity>
     {
-        public TestEvent(params Entity[] initialEntities) : base(initialEntities)
+        public TestEvent(IXrmFakedContext xrmFakedContext, params Entity[] initialEntities) : base(xrmFakedContext, initialEntities)
         {
         }
     }
@@ -39,20 +34,11 @@ namespace Niam.XRM.Framework.TestHelper
 
         public TestDatabase Db => _xrmFakedContext.Db;
 
-        public TestEvent(params Entity[] initialEntities)
+        public TestEvent(IXrmFakedContext xrmFakedContext, params Entity[] initialEntities)
         {
             _initialEntities = initialEntities.Select(e => e.ToEntity<Entity>()).ToArray();
-            var tempContext = (XrmFakedContext)MiddlewareBuilder
-                .New()
-                .AddCrud()
-                .AddFakeMessageExecutors()
-                .AddPipelineSimulation()
-                .UseCrud()
-                .UseMessages()
-                .SetLicense(FakeXrmEasyLicense.RPL_1_5)
-                .Build();
 
-            _xrmFakedContext = new InternalXrmFakedContext(tempContext);
+            _xrmFakedContext = new InternalXrmFakedContext(xrmFakedContext);
             PluginExecutionContext = FakedContext.GetDefaultPluginContext();
             TracingService = FakedContext.GetTracingService();
         }
@@ -119,9 +105,9 @@ namespace Niam.XRM.Framework.TestHelper
 
         private class InternalXrmFakedContext : IXrmFakedContext
         {
-            private XrmFakedContext Context { get; }
+            private IXrmFakedContext Context { get; }
 
-            public InternalXrmFakedContext(XrmFakedContext context)
+            public InternalXrmFakedContext(IXrmFakedContext context)
             {
                 Context = context;
                 Db = new TestDatabase(Context);
