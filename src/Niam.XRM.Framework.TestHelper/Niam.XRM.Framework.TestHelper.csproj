@@ -35,11 +35,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FakeXrmEasy.9" Version="1.58.1" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <PackageReference Include="FakeXrmEasy.v9" Version="2.2.0" />
   </ItemGroup>
 
 </Project>

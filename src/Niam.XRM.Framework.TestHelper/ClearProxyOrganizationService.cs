@@ -1,5 +1,6 @@
 ﻿using System;
 using FakeXrmEasy;
+using FakeXrmEasy.Abstractions;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 
@@ -8,9 +9,9 @@ namespace Niam.XRM.Framework.TestHelper
     internal class ClearProxyOrganizationService : IOrganizationService
     {
         private readonly IOrganizationService _service;
-        private readonly XrmFakedContext _xrmFakedContext;
+        private readonly IXrmFakedContext _xrmFakedContext;
 
-        public ClearProxyOrganizationService(IOrganizationService service, XrmFakedContext xrmFakedContext)
+        public ClearProxyOrganizationService(IOrganizationService service, IXrmFakedContext xrmFakedContext)
         {
             _service = service;
             _xrmFakedContext = xrmFakedContext;
@@ -60,13 +61,11 @@ namespace Niam.XRM.Framework.TestHelper
         private void Do(Action action)
         {
             action();
-            _xrmFakedContext.ProxyTypesAssembly = null;
         }
 
         private T Do<T>(Func<T> func)
         {
             var result = func();
-            _xrmFakedContext.ProxyTypesAssembly = null;
             return result;
         }
     }

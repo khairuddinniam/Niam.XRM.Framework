@@ -1,4 +1,11 @@
 ﻿using System;
+using FakeXrmEasy;
+using FakeXrmEasy.Abstractions;
+using FakeXrmEasy.Abstractions.Enums;
+using FakeXrmEasy.Middleware;
+using FakeXrmEasy.Middleware.Crud;
+using FakeXrmEasy.Middleware.Messages;
+using FakeXrmEasy.Middleware.Pipeline;
 using Microsoft.Xrm.Sdk;
 using Niam.XRM.Framework.Interfaces.Plugin;
 using Niam.XRM.Framework.Plugin;
@@ -8,10 +15,20 @@ namespace Niam.XRM.Framework.TestHelper.Tests
 {
     public class TestEventTests
     {
+        private IXrmFakedContext Context => (XrmFakedContext)MiddlewareBuilder
+            .New()
+            .AddCrud()
+            .AddFakeMessageExecutors()
+            .AddPipelineSimulation()
+            .UseCrud()
+            .UseMessages()
+            .SetLicense(FakeXrmEasyLicense.NonCommercial)
+            .Build();
+
         [Fact]
         public void Can_execute_plugin_with_default_constructor()
         {
-            var plugin = new TestEvent().ExecutePlugin<TestPluginDefaultConstructor>(new OrganizationRequest());
+            var plugin = new TestEvent(Context).ExecutePlugin<TestPluginDefaultConstructor>(new OrganizationRequest());
 
             Assert.Equal("execute-crm-plugin", plugin.Value);
         }
@@ -33,7 +50,7 @@ namespace Niam.XRM.Framework.TestHelper.Tests
         [Fact]
         public void Can_execute_plugin_with_configuration()
         {
-            var plugin = new TestEvent().ExecutePlugin<TestPluginWithConfiguration>(
+            var plugin = new TestEvent(Context).ExecutePlugin<TestPluginWithConfiguration>(
                 "hello", "world", new OrganizationRequest());
             Assert.Equal("hello", plugin.UnsecureConfig);
             Assert.Equal("world", plugin.SecureConfig);
@@ -53,7 +70,7 @@ namespace Niam.XRM.Framework.TestHelper.Tests
         [Fact]
         public void Invalid_when_executing_plugin_with_unknown_constructors()
         {
-            var testEvent = new TestEvent();
+            var testEvent = new TestEvent(Context);
             var ex = Assert.Throws<ArgumentException>(() => testEvent.ExecutePlugin<InvalidPlugin>(new OrganizationRequest()));
             Assert.Equal("The plugin does not have constructor for passing in two configuration strings or constructor without arguments.", ex.Message);
         }

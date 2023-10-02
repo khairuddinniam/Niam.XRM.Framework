@@ -1,19 +1,17 @@
 using System;
 using System.Collections.Generic;
-using FakeXrmEasy;
+using FakeXrmEasy.Abstractions;
 using Microsoft.Xrm.Sdk;
 
 namespace Niam.XRM.Framework.TestHelper
 {
     public class TestDatabase
     {
-        private readonly XrmFakedContext _xrmFakedContext;
+        private readonly IXrmFakedContext _xrmFakedContext;
         
         public DbEvent Event { get; } = new DbEvent();
-
-        public Dictionary<string, Dictionary<Guid, Entity>> Data => _xrmFakedContext.Data;
         
-        public TestDatabase(XrmFakedContext xrmFakedContext)
+        public TestDatabase(IXrmFakedContext xrmFakedContext)
         {
             _xrmFakedContext = xrmFakedContext;
         }
@@ -24,22 +22,13 @@ namespace Niam.XRM.Framework.TestHelper
 
         public TEntity Get<TEntity>(Guid id) where TEntity : Entity
         {
-            foreach (var entities in Data.Values)
-            {
-                if (entities.TryGetValue(id, out var entity))
-                    return (TEntity) entity;
-            }
-
-            return null;
+            return _xrmFakedContext.GetEntityById<TEntity>(id);
         }
             
 
         public TEntity Get<TEntity>(EntityReference reference) where TEntity : Entity
         {
-            if (!Data.TryGetValue(reference.LogicalName, out var entities))
-                return null;
-
-            return entities.TryGetValue(reference.Id, out var entity) ? (TEntity) entity : null;
+            return _xrmFakedContext.GetEntityById(reference.LogicalName, reference.Id).ToEntity<TEntity>();
         }
 
         public class DbEvent
